@@ -284,7 +284,6 @@
         .service-card h4 { color: var(--color-gold-highlight); margin-bottom: 0.7rem; } 
         .service-card p { font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0; flex-grow: 1; } 
 
-        /* Client Success Section (Formerly Credibility) */
         .client-success-section { background-color: var(--color-black); }
         .testimonial-grid {
             display: grid;
@@ -332,25 +331,32 @@
             text-transform: none; 
             letter-spacing: 0.5px;
             font-size: clamp(1.3rem, 3vw, 1.8rem); 
-            margin-bottom: 2.5rem; /* More space for logo emphasis */
+            margin-bottom: 2.5rem; 
         }
-        .recognition-logos span { /* MODIFIED for more emphasis */
+        .recognition-logos span { /* MODIFIED for a more refined outline style */
             display: inline-block;
-            margin: 0.7rem 1.2rem; /* More margin */
-            padding: 0.6rem 1.2rem; /* More padding */
+            margin: 0.7rem 1.2rem; 
+            padding: 0.6rem 1.2rem; 
             font-family: var(--font-body);
-            font-size: 0.85rem; /* Slightly larger */
-            color: var(--color-deep-black); /* Dark text for contrast on gold */
-            font-weight: 600; /* Bolder */
-            border: 1px solid var(--color-gold-mid); 
-            border-radius: 6px; /* Slightly larger radius */
-            background-color: var(--color-gold-highlight); /* Gold background */
-            box-shadow: 0 2px 5px rgba(184,134,11,0.2); /* Subtle shadow */
-            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+            font-size: 0.85rem; 
+            color: var(--color-gold-highlight); /* Gold text */
+            font-weight: 500; /* Slightly less bold */
+            border: 1.5px solid var(--color-gold-mid); /* Clear gold border */
+            border-radius: 6px; 
+            background-color: transparent; /* No background fill */
+            box-shadow: none; /* Remove previous shadow in normal state */
+            transition: color var(--transition-interactive), 
+                        border-color var(--transition-interactive), 
+                        background-color var(--transition-interactive),
+                        transform var(--transition-interactive), 
+                        box-shadow var(--transition-interactive);
         }
         .recognition-logos span:hover {
+            color: var(--color-gold-brilliant); /* Brighter gold text on hover */
+            border-color: var(--color-gold-highlight); /* Brighter border on hover */
+            background-color: rgba(184, 134, 11, 0.08); /* Very subtle gold glow */
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(184,134,11,0.3);
+            box-shadow: 0 3px 8px rgba(184,134,11,0.15); /* Softer shadow on hover */
         }
 
 
@@ -467,7 +473,7 @@
             .why-invest-grid, .services-grid { grid-template-columns: 1fr; gap: 1.8rem; }
             .form-title { font-size: clamp(1.3rem, 5vw, 1.8rem); margin-bottom: 2rem;}
             .recognition-strip h4 { margin-bottom: 1.5rem; }
-            .recognition-logos span { font-size: 0.75rem; margin: 0.4rem 0.6rem; padding: 0.4rem 0.8rem; }
+            .recognition-logos span { font-size: 0.75rem; margin: 0.4rem 0.6rem; padding: 0.4rem 0.8rem; border-width: 1px;}
         }
 
         @media (max-width: 480px) {
@@ -539,7 +545,7 @@
                             <li><a href="#hero" class="active">Home</a></li>
                             <li><a href="#services">Expertise</a></li>
                             <li><a href="#why-invest">The Standard</a></li>
-                            <li><a href="#client-success">Client Success</a></li> <!-- MODIFIED NAV LINK -->
+                            <li><a href="#client-success">Client Success</a></li> 
                             <li><a href="#contact">Connect</a></li>
                         </ul>
                     </nav>
@@ -649,11 +655,9 @@
                     </div>
                 </section>
 
-                <!-- MODIFIED SECTION ID & CLASS -->
                 <section id="client-success" class="content-section client-success-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                             <!-- MODIFIED H2 TITLE -->
                             <h2><span class="shiny-gold-heading">Proven Impact: Verifiable Client Success</span></h2>
                         </div>
                         <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our dedication to forging digital dynasties is best reflected in the transformative success of our partners. While discretion is paramount, the profound impact we deliver for elite brands speaks volumes. (Detailed case studies and verified results shared during private consultation.)</p>
@@ -759,7 +763,6 @@
             const preloader = document.getElementById('preloader');
             if (preloader) {
                 window.addEventListener('load', () => {
-                    // MODIFIED: Preloader timeout reduced
                     setTimeout(() => { preloader.classList.add('loaded'); }, 1200); 
                 });
             }
