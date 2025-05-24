@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GoldenLuxe Media | Luxury Digital Marketing</title>
+<style>
+  /* Reset & Base */
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0.5em 0;
+  }
+  /* Colors */
+  :root {
+    --gold: #D4AF37;
+    --white: #fff;
+    --black: #000;
+  }
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    background: #000;
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    z-index: 1000;
+  }
+  nav .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 700;
+    cursor: default;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  nav ul li {
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+  }
+  nav ul li:hover::after,
+  nav ul li:focus::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+  nav ul li a {
+    color: #fff;
+    transition: color 0.3s;
+  }
+  nav ul li:hover a,
+  nav ul li:focus a {
+    color: var(--gold);
+  }
+
+  /* Hero */
+  #hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:
+      radial-gradient(circle at center, rgba(212,175,55,0.1), transparent 80%),
+      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    color: var(--gold);
+    text-align: center;
+    padding: 0 1rem;
+  }
+  #hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 6px rgba(212,175,55,0.7);
+  }
+  #hero p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #fff;
+    min-height: 24px;
+  }
+  #hero .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #hero .btn-primary,
+  #hero .btn-secondary {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 2px solid var(--gold);
+    transition: all 0.3s ease;
+    user-select: none;
+    text-transform: uppercase;
+  }
+  #hero .btn-primary {
+    background-color: var(--gold);
+    color: var(--black);
+  }
+  #hero .btn-primary:hover {
+    background-color: #b59222;
+  }
+  #hero .btn-secondary {
+    background-color: transparent;
+    color: var(--gold);
+  }
+  #hero .btn-secondary:hover {
+    background-color: var(--gold);
+    color: var(--black);
+  }
+
+  /* Typed effect */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .typed-cursor {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--gold);
+    animation: blink 1s infinite;
+  }
+
+  /* Section styles */
+  section {
+    max-width: 960px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  h2.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  p.section-hook {
+    color: #bbb;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* About */
+  #about .values {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .value-item {
+    flex: 1 1 28%;
+    background: rgba(212,175,55,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px rgba(212,175,55,0.3);
+  }
+
+  /* Services */
+  #services .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    width: 280px;
+    padding: 2rem 1.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    box-shadow: 0 0 12px rgba(212,175,55,0.1);
+  }
+  .service-card:hover,
+  .service-card:focus {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+    box-shadow: 0 0 18px rgba(212,175,55,0.6);
+    outline: none;
+  }
+  .service-card .title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .service-card .details {
+    font-size: 0.95rem;
+    color: #fff;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s, max-height 0.4s;
+  }
+  .service-card:hover .details,
+  .service-card:focus .details {
+    opacity: 1;
+    max-height: 150px;
+  }
+
+  /* Counters */
+  #results .counters {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .counter {
+    flex: 1 1 180px;
+    font-weight: 700;
+  }
+  .counter .number {
+    font-size: 3rem;
+    color: var(--gold);
+  }
+  .counter .label {
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+  /* Case studies thumbnails */
+  #results .case-studies {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .case {
+    background: rgba(212,175,55,0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    width: 280px;
+    box-shadow: 0 0 12px rgba(212,175,55,0.3);
+    color: var(--gold);
+    font-weight: 600;
+    cursor: default;
+  }
+  .case h4 {
+    margin-bottom: 0.5rem;
+  }
+  .case p {
+    font-size: 0.9rem;
+    color: #eee;
+  }
+
+  /* Branding Showcase */
+  #branding .slider-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(212,175,55,0.3);
+  }
+  #branding img {
+    width: 100%;
+    display: block;
+    user-select: none;
+  }
+  #branding .caption {
+    background: rgba(0,0,0,0.7);
+    padding: 0.8rem 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-align: center;
+    font-size: 1rem;
+  }
+  #branding .slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  #branding button {
+    background: rgba(212,175,55,0.7);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: 50%;
+    user-select: none;
+  }
+  #branding button:hover {
+    background: var(--gold);
+  }
+
+  /* Testimonials */
+  #testimonials .testimonial-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .testimonial {
+    background: rgba(255,255,255,0.05);
+    border-left: 5px solid var(--gold);
+    padding: 1rem 1.5rem;
+    font-style: italic;
+    color: #ddd;
+    border-radius: 8px;
+  }
+  .testimonial .author {
+    margin-top: 0.5rem;
+    text-align: right;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  /* CTA Section */
+  #cta {
+    background: var(--gold);
+    color: var(--black);
+    padding: 3rem 1rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  #cta h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  #cta button {
+    background: #000;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--gold);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  #cta button:hover {
+    background-color: #222;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid rgba(212,175,55,0.2);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      gap: 1rem;
+    }
+    #hero h1 {
+      font-size: 2.2rem;
+    }
+    #hero p {
+      font-size: 1.1rem;
+    }
+    #services .cards,
+    #results .counters,
+    #results .case-studies {
+      flex-direction: column;
+      align-items: center;
+    }
+    #about .values {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">GoldenLuxe Media</div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#branding">Branding</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero" role="banner" aria-label="Hero Section">
+  <h1>GoldenLuxe Media</h1>
+  <p id="typed-text" aria-live="polite" aria-atomic="true"></p>
+  <div class="cta-buttons">
+    <button class="btn-primary" onclick="location.href='#contact-form';" aria-label="Get Started Today">Get Started Today</button>
+    <button class="btn-secondary" onclick="location.href='#services';" aria-label="Learn More About Our Services">Learn More</button>
+  </div>
+</section>
+
+<section id="about" tabindex="0" aria-labelledby="about-title">
+  <h2 id="about-title" class="section-title">About Us</h2>
+  <p class="section-hook">Crafting premium digital experiences with an unmatched touch of luxury.</p>
+  <div class="values" role="list">
+    <div class="value-item" role="listitem">Exquisite Design</div>
+    <div class="value-item" role="listitem">Bespoke Marketing Strategies</div>
+    <div class="value-item" role="listitem">Unrivaled Customer Care</div>
+  </div>
+</section>
+
+<section id="services" tabindex="0" aria-labelledby="services-title">
+  <h2 id="services-title" class="section-title">Our Services</h2>
+  <p class="section-hook">Luxury marketing tailored to elevate your brand.</p>
+  <div class="cards">
+    <article tabindex="0" class="service-card" aria-label="Social Media Marketing Service">
+      <div class="title">Social Media Marketing</div>
+      <div class="details">Strategic campaigns to engage and expand your luxury clientele on all platforms.</div>
+    </article>
+    <article tabindex="0" class="service-card" aria-label="SEO Optimization Service">
+      <div class="title">SEO Optimization</div>
+      <div class="details">Increase your visibility on search engines with tailored SEO strategies for luxury brands.</div>
+    </article>
+    <article tabindex="0" class="service-card" aria-label="Content Creation Service">
+      <div class="title">Content Creation</div>
+      <div class="details">Premium photography, video, and copywriting to reflect your brand’s elegance.</div>
+    </article>
+  </div>
+</section>
+
+<section id="results" tabindex="0" aria-labelledby="results-title">
+  <h2 id="results-title" class="section-title">Our Results</h2>
+  <p class="section-hook">Delivering measurable growth with a golden touch.</p>
+  <div class="counters" role="list" aria-label="Achievements">
+    <div class="counter" role="listitem">
+      <div class="number" id="clients-counter">0</div>
+      <div class="label">Happy Clients</div>
+    </div>
+    <div class="counter" role="listitem">
+      <div class="number" id="projects-counter">0</div>
+      <div class="label">Projects Completed</div>
+    </div>
+    <div class="counter" role="listitem">
+      <div class="number" id="awards-counter">0</div>
+      <div class="label">Awards Won</div>
+    </div>
+  </div>
+  <div class="case-studies" aria-label="Case Studies">
+    <div class="case">
+      <h4>Luxury Fashion Brand</h4>
+      <p>Boosted social engagement by 300% in 6 months.</p>
+    </div>
+    <div class="case">
+      <h4>Exclusive Jewelry Line</h4>
+      <p>Tripled website traffic via SEO and targeted campaigns.</p>
+    </div>
+    <div class="case">
+      <h4>Luxury Travel Service</h4>
+      <p>Generated over 500 qualified leads in 4 months.</p>
+    </div>
+  </div>
+</section>
+
+<section id="branding" tabindex="0" aria-labelledby="branding-title">
+  <h2 id="branding-title" class="section-title">Branding Showcase</h2>
+  <div class="slider-container" aria-live="polite" aria-atomic="true">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Branding Image 1" id="branding-image" />
+    <div class="caption" id="branding-caption">Elegant Logo Design</div>
+    <div class="slider-controls">
+      <button aria-label="Previous Image" id="prev-btn">&#10094;</button>
+      <button aria-label="Next Image" id="next-btn">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" tabindex="0" aria-labelledby="testimonials-title">
+  <h2 id="testimonials-title" class="section-title">Testimonials</h2>
+  <div class="testimonial-list">
+    <blockquote class="testimonial">
+      "GoldenLuxe transformed our digital presence with elegance and precision. Our sales soared!"
+      <footer class="author">— Alexandra M., CEO</footer>
+    </blockquote>
+    <blockquote class="testimonial">
+      "Exceptional service with an eye for luxury detail. Highly recommend their bespoke marketing!"
+      <footer class="author">— Marco T., Brand Manager</footer>
+    </blockquote>
+    <blockquote class="testimonial">
+      "A partner that truly understands the essence of luxury branding and marketing."
+      <footer class="author">— Sophia L., Creative Director</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section id="cta" aria-label="Call to Action">
+  <h2>Ready to Elevate Your Brand?</h2>
+  <button onclick="location.href='#contact-form';" aria-label="Contact GoldenLuxe Media">Contact Us Now</button>
+</section>
+
+<section id="contact" tabindex="0" aria-labelledby="contact-title" style="max-width:600px; margin:3rem auto 5rem auto; padding:0 1rem;">
+  <h2 id="contact-title" class="section-title">Get In Touch</h2>
+  <form id="contact-form" aria-label="Contact Form" action="https://formspree.io/f/mwkajnqe" method="POST" style="display:flex; flex-direction: column; gap:1rem;">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required placeholder="Your full name" />
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required placeholder="you@example.com" />
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required placeholder="Write your message here"></textarea>
+    <button type="submit" style="background: var(--gold); border:none; color:#000; font-weight:700; padding:0.8rem; border-radius:30px; cursor:pointer;">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 GoldenLuxe Media. All Rights Reserved.
+</footer>
+
+<script>
+  // Typed text effect for hero
+  const phrases = [
+    "Luxury Marketing Experts",
+    "Elevate Your Brand With Us",
+    "Crafting Bespoke Digital Experiences",
+    "Your Success, Our Passion"
+  ];
+  let typedIndex = 0;
+  let charIndex = 0;
+  const typedText = document.getElementById('typed-text');
+
+  function type() {
+    if(charIndex < phrases[typedIndex].length) {
+      typedText.textContent += phrases[typedIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 2000);
+    }
+  }
+  function erase() {
+    if(charIndex > 0) {
+      typedText.textContent = phrases[typedIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 50);
+    } else {
+      typedIndex = (typedIndex + 1) % phrases.length;
+      setTimeout(type, 500);
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    if(phrases.length) type();
+
+    // Counters Animation
+    function animateCounter(id, target) {
+      let count = 0;
+      const speed = 30;
+      const step = Math.ceil(target / (2000 / speed));
+      const el = document.getElementById(id);
+      const interval = setInterval(() => {
+        count += step;
+        if(count >= target) {
+          el.textContent = target;
+          clearInterval(interval);
+        } else {
+          el.textContent = count;
+        }
+      }, speed);
+    }
+    animateCounter('clients-counter', 120);
+    animateCounter('projects-counter', 85);
+    animateCounter('awards-counter', 10);
+
+    // Branding slider
+    const images = [
+      {
+        src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+        caption: "Elegant Logo Design"
+      },
+      {
+        src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+        caption: "Sophisticated Brand Palette"
+      },
+      {
+        src: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80",
+        caption: "Luxury Packaging Concepts"
+      }
+    ];
+    let currentIndex = 0;
+    const brandingImage = document.getElementById('branding-image');
+    const brandingCaption = document.getElementById('branding-caption');
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      brandingImage.src = images[currentIndex].src;
+      brandingCaption.textContent = images[currentIndex].caption;
+    });
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      brandingImage.src = images[currentIndex].src;
+      brandingCaption.textContent = images[currentIndex].caption;
+    });
+  });
+</script>
+
+</body>
+</html>
