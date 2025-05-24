@@ -17,7 +17,7 @@
 
             --color-gold-brilliant: #FAF0D8;
             --color-gold-highlight: #E8C88C;
-            --color-gold-primary: #B8860B; /* Original GLM Gold */
+            --color-gold-primary: #B8860B;
             --color-gold-mid: #A0740A;
             --color-gold-shadow: #6E5007;
             --color-gold-antique: #8B734B;
@@ -64,7 +64,7 @@
             transition: opacity 0.8s var(--transition-smooth) 0.3s, visibility 0.8s var(--transition-smooth) 0.3s;
         }
         #preloader.loaded { opacity: 0; visibility: hidden; }
-        .preloader-logo { /* GLM Preloader Logo */
+        .preloader-logo {
             font-family: var(--font-display); font-size: clamp(4rem, 15vw, 6rem); font-weight: 900;
             background: linear-gradient(135deg, var(--color-gold-highlight) 0%, var(--color-gold-primary) 50%, var(--color-gold-shadow) 100%);
             -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -108,7 +108,7 @@
         .main-header.scrolled { background-color: rgba(8,8,9,0.85); padding: 1rem 0; }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo-link { display: flex; align-items: center; gap: 0.8rem; }
-        .logo-svg-icon { width: 50px; height: 50px; } /* GLM Logo SVG Icon */
+        .logo-svg-icon { width: 50px; height: 50px; }
         .logo-svg-icon .circle { fill: var(--color-gold-primary); transition: fill var(--transition-interactive); }
         .logo-svg-icon .letter-g { font-family: var(--font-display); fill: var(--color-deep-black); font-weight: 900; }
         .logo-link:hover .logo-svg-icon .circle { fill: var(--color-gold-highlight); }
@@ -142,7 +142,7 @@
             background: radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.07) 0%, transparent 50%), var(--color-deep-black);
             overflow: hidden;
         }
-        .hero-content-wrapper { max-width: 900px; position: relative; z-index: 1; }
+        .hero-content-wrapper { max-width: 900px; position: relative; z-index: 1; margin: 0 auto; } /* Ensure centering */
         .hero-section h1 { margin-bottom: 1.5rem; color: var(--color-text-primary); font-weight: 800; line-height: 1.2; }
         .hero-section p.subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--color-text-secondary);
@@ -198,14 +198,14 @@
             box-shadow: var(--shadow-depth-2), var(--shadow-gold-aura);
             border-color: rgba(184,134,11,0.3);
         }
-        .usp-icon-wrapper { /* MODIFIED: Renamed from .usp-icon for consistency, styled for emoji */
+        .usp-icon-wrapper {
             width: 60px; height: 60px;
             background-color: rgba(184,134,11,0.08);
-            border-radius: 15px; /* Softer radius */
+            border-radius: 15px;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 1.5rem;
-            font-size: 28px; /* Emoji size */
-            color: var(--color-gold-primary); /* Emoji color */
+            font-size: 28px;
+            color: var(--color-gold-primary);
         }
         .usp-card h4 { margin-bottom: 1rem; color: var(--color-gold-highlight); }
         .usp-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 0; flex-grow: 1; }
@@ -227,13 +227,13 @@
             box-shadow: var(--shadow-depth-2), var(--shadow-gold-aura);
             border-left-color: var(--color-gold-highlight);
         }
-        .service-icon-wrapper { /* MODIFIED: Styled for emoji */
-            width: 60px; height: 60px; /* Consistent with USP icons */
+        .service-icon-wrapper {
+            width: 60px; height: 60px;
             background-color: rgba(184,134,11,0.08);
             border-radius: 15px; display: flex; align-items: center; justify-content: center;
             margin-bottom: 1.5rem;
-            font-size: 28px; /* Emoji size */
-            color: var(--color-gold-primary); /* Emoji color */
+            font-size: 28px;
+            color: var(--color-gold-primary);
         }
         .service-card h4 { color: var(--color-gold-highlight); margin-bottom: 0.8rem; }
         .service-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 0; flex-grow: 1; }
@@ -305,12 +305,12 @@
         }
 
         /* --- Responsive --- */
-        @media (max-width: 991px) { /* Medium Tablets and below */
+        @media (max-width: 991px) {
             .main-nav li { margin-left: 2rem; }
             .main-nav a { font-size: 0.9rem; }
         }
 
-        @media (max-width: 767px) { /* Small Tablets and Mobile Phones */
+        @media (max-width: 767px) {
             .menu-toggle { display: block; }
             .main-nav {
                 display: none; flex-direction: column; width: 100%;
@@ -338,7 +338,7 @@
             .why-invest-grid, .services-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
 
-        @media (max-width: 480px) { /* Very Small Mobile screens adjustments */
+        @media (max-width: 480px) {
             h1 { font-size: clamp(2rem, 8vw, 3rem); }
             h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
             .hero-section p.subtitle { font-size: 1rem; }
@@ -355,7 +355,7 @@
         }
         @media (min-width: 1440px) { /* Very Large Desktops */
             .container { max-width: 1360px; }
-            .hero-content-wrapper { max-width: 960px; }
+            .hero-content-wrapper { max-width: 960px; } /* Increased max-width for hero content on large screens */
             .section-intro-text { max-width: 860px; }
         }
 
@@ -370,7 +370,7 @@
     </style>
 </head>
 <body>
-    <div id="preloader"><div class="preloader-logo">G</div></div> <!-- G for Golden Luxe -->
+    <div id="preloader"><div class="preloader-logo">G</div></div>
 
     <div id="lenis-wrapper">
         <div id="lenis-content">
@@ -413,17 +413,17 @@
                         <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">In a saturated digital landscape, "good enough" is invisible. Golden Luxe Media delivers exceptional. We are more than an agency; we are your strategic partners in crafting a dominant, profitable, and unforgettable digital presence.</p>
                         <div class="why-invest-grid">
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
-                                <div class="usp-icon-wrapper">🚀</div> {/* Replaced SVG */}
+                                <div class="usp-icon-wrapper">🚀</div>
                                 <h4>Elite Expertise, Visionary Strategy</h4>
                                 <p>Our collective genius in digital marketing is your unfair advantage. We blend battle-tested methodologies with innovative foresight to craft strategies that are not just current, but future-proof, ensuring sustained market leadership.</p>
                             </div>
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
-                                 <div class="usp-icon-wrapper">📈</div> {/* Replaced SVG */}
+                                 <div class="usp-icon-wrapper">📈</div>
                                 <h4>Obsessive Focus on Measurable ROI</h4>
                                 <p>Luxury demands results. We are meticulously data-driven, tracking every metric that matters to ensure your investment translates directly into tangible growth, increased conversions, and a formidable return.</p>
                             </div>
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
-                                <div class="usp-icon-wrapper">🎯</div> {/* Replaced SVG */}
+                                <div class="usp-icon-wrapper">🎯</div>
                                 <h4>Bespoke Craftsmanship, True Partnership</h4>
                                 <p>Your brand is unique; your strategy will be too. We immerse ourselves in your world, operating as dedicated extensions of your team to deliver tailor-made solutions and unparalleled, transparent service.</p>
                             </div>
@@ -439,32 +439,32 @@
                         <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">From foundational SEO to sophisticated AI integrations, our comprehensive suite of services is engineered to elevate every facet of your digital presence, ensuring cohesive brand messaging and maximized market impact.</p>
                         <div class="services-grid">
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
-                                <div class="service-icon-wrapper">🔍</div> {/* Replaced SVG */}
+                                <div class="service-icon-wrapper">🔍</div>
                                 <h4>Google SEO Supremacy & Content Authority</h4>
                                 <p>Dominate search rankings with our elite SEO strategies. We conduct exhaustive keyword research, technical optimization, high-authority link building, and craft compelling, SEO-driven content (articles, blogs, pillar pages) that establishes your brand as the definitive voice in your industry.</p>
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
-                                <div class="service-icon-wrapper">💰</div> {/* Replaced SVG */}
+                                <div class="service-icon-wrapper">💰</div>
                                 <h4>ROI-Driven Performance Marketing (PPC)</h4>
                                 <p>Maximize conversions and ad spend efficiency with precision-engineered PPC campaigns. We leverage Google Ads, Meta, LinkedIn, and emerging platforms, focusing on granular targeting, compelling ad copy, A/B testing, and rigorous conversion tracking for optimal ROI.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.2s">
-                                <div class="service-icon-wrapper">📱</div> {/* Replaced SVG */}
+                                <div class="service-icon-wrapper">📱</div>
                                 <h4>Dynamic Social Media & Content Creation</h4>
                                 <p>Ignite your brand across social platforms (Instagram, Facebook, LinkedIn, TikTok). We manage your social presence with strategic finesse, creating thumb-stopping static posts, viral-potential Reels, engaging stories, and comprehensive content calendars that build community and drive action. Full content creation services from ideation to execution.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
-                                <div class="service-icon-wrapper">🌐</div> {/* Replaced SVG, using globe for web */}
+                                <div class="service-icon-wrapper">🌐</div>
                                 <h4>Elite Web Development & Secure Hosting</h4>
                                 <p>Your website: a masterpiece of design and functionality. We develop bespoke, high-performance websites on robust platforms (e.g., WordPress, Shopify, custom builds), ensuring seamless user experience, mobile perfection, and scalability. Paired with our premium, secure hosting solutions for optimal uptime and peace of mind.</p>
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
-                                <div class="service-icon-wrapper">💬</div> {/* Replaced SVG, using speech bubble */}
+                                <div class="service-icon-wrapper">💬</div>
                                 <h4>Conversational AI & Messaging Solutions</h4>
                                 <p>Enhance customer engagement 24/7 and streamline support with intelligent Chatbot integrations. We also leverage WhatsApp Business API and targeted LinkedIn messaging for direct, impactful communication, lead nurturing, and personalized customer service at scale.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
-                                <div class="service-icon-wrapper">💎</div> {/* Replaced SVG */}
+                                <div class="service-icon-wrapper">💎</div>
                                 <h4>Strategic Brand Amplification & Analytics</h4>
                                 <p>Beyond individual services, we offer holistic brand strategy consultation, competitor analysis, market positioning, and advanced analytics dashboards to provide a 360-degree view of your digital performance and uncover new growth avenues. We ensure your brand story resonates powerfully across all touchpoints.</p>
                             </div>
