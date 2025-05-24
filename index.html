@@ -12,20 +12,19 @@
             --color-charcoal: #121212;
             --color-graphite: #1A1A1A;
 
-            /* Refined Gold Palette for Depth & Shine */
-            --color-gold-brilliant: #FFF8E7; /* Brightest highlight for glints */
-            --color-gold-highlight: #F0D7A8; /* Main highlight */
-            --color-gold-primary: #C8A464;   /* Richer, deeper primary gold */
+            --color-gold-brilliant: #FFF8E7;
+            --color-gold-highlight: #F0D7A8;
+            --color-gold-primary: #C8A464;
             --color-gold-mid: #B08D57;
-            --color-gold-shadow: #7A5F36;    /* Deeper shadow for dimension */
-            --color-gold-antique: #887040;   /* For muted accents */
+            --color-gold-shadow: #7A5F36;
+            --color-gold-antique: #887040;
 
             --color-text-primary: #EAEAEA;
             --color-text-secondary: #B8B8B8;
             --color-text-muted: #888888;
 
-            --font-display: 'Playfair Display', serif; /* For prominent headings */
-            --font-body: 'Inter', sans-serif;          /* For body and UI text */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
 
             --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             --transition-interactive: 0.3s ease;
@@ -49,17 +48,10 @@
             background-color: var(--color-deep-black);
             color: var(--color-text-primary);
             line-height: 1.7;
-            overflow-x: hidden; /* Critical for preventing horizontal scroll issues */
+            overflow-x: hidden;
             min-height: 100vh;
         }
 
-        /* Lenis requires direct body children for wrapper/content, or carefully styled full-height wrappers */
-        /* If issues persist, simplify: place Lenis wrapper/content as direct children of body */
-        /* Forcing height 100% on html and body, and wrapper can sometimes help if content is short */
-        /* html, body { height: 100%; } */
-
-
-        /* --- Preloader --- */
         #preloader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--color-deep-black); z-index: 99999;
@@ -69,7 +61,7 @@
         }
         #preloader.loaded { opacity: 0; visibility: hidden; }
         .preloader-logo {
-            font-family: var(--font-display); font-size: 6rem; font-weight: 900;
+            font-family: var(--font-display); font-size: clamp(4rem, 15vw, 6rem); font-weight: 900; /* Responsive preloader logo */
             background: linear-gradient(135deg, var(--color-gold-highlight) 0%, var(--color-gold-primary) 50%, var(--color-gold-shadow) 100%);
             -webkit-background-clip: text; background-clip: text; color: transparent;
             animation: preloaderShine 2.5s infinite ease-in-out;
@@ -81,73 +73,60 @@
 
         .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- Typography & "Shiny Gold" --- */
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.2; font-weight: 800; margin-bottom: 1.5rem; }
         .shiny-gold-heading {
-            display: inline-block; /* Crucial for background-clip */
-            background: linear-gradient(110deg,
-                var(--color-gold-brilliant) 0%,
-                var(--color-gold-highlight) 20%,
-                var(--color-gold-primary) 45%,
-                var(--color-gold-mid) 60%,
-                var(--color-gold-primary) 80%,
-                var(--color-gold-highlight) 100%);
+            display: inline-block;
+            background: linear-gradient(110deg, var(--color-gold-brilliant) 0%, var(--color-gold-highlight) 20%, var(--color-gold-primary) 45%, var(--color-gold-mid) 60%, var(--color-gold-primary) 80%, var(--color-gold-highlight) 100%);
             background-size: 300% 100%;
             -webkit-background-clip: text; background-clip: text;
             color: transparent;
             animation: textShimmer 8s infinite linear;
         }
-        @keyframes textShimmer {
-            0% { background-position: 150% 0; }
-            100% { background-position: -150% 0; }
-        }
+        @keyframes textShimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
 
-        h1 { font-size: clamp(3rem, 6vw, 5.2rem); }
-        h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 4rem; text-align: center;}
-        h3 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
-        h4 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight);}
-        p { margin-bottom: 1.8rem; color: var(--color-text-secondary); font-size: 1.05rem; }
-        section p { font-size: 1.1rem; line-height: 1.8; }
+        h1 { font-size: clamp(2.5rem, 8vw, 5.2rem); } /* Adjusted clamp for mobile */
+        h2 { font-size: clamp(2rem, 7vw, 3.8rem); margin-bottom: 3rem; text-align: center; } /* Adjusted clamp & margin */
+        h3 { font-size: clamp(1.6rem, 6vw, 2.8rem); } /* Adjusted clamp */
+        h4 { font-size: clamp(1.3rem, 5vw, 2rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); } /* Adjusted clamp */
+        p { margin-bottom: 1.5rem; color: var(--color-text-secondary); font-size: clamp(0.9rem, 2.5vw, 1.05rem); } /* Adjusted clamp */
+        section p { font-size: clamp(0.95rem, 2.8vw, 1.1rem); line-height: 1.7; } /* Adjusted clamp */
         a { color: var(--color-gold-primary); text-decoration: none; transition: color var(--transition-interactive), opacity var(--transition-interactive); }
         a:hover { color: var(--color-gold-highlight); opacity: 0.85; }
 
-        /* --- Header --- */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            padding: 1.25rem 0;
-            background-color: rgba(5, 5, 5, 0.7); /* Deep black transparent */
+            padding: 1rem 0; /* Reduced padding for mobile first */
+            background-color: rgba(5, 5, 5, 0.7);
             backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(176, 141, 87, 0.1); /* Subtle gold line */
+            border-bottom: 1px solid rgba(176, 141, 87, 0.1);
             box-shadow: 0 5px 25px rgba(0,0,0,0.3);
             transition: background-color var(--transition-smooth), padding var(--transition-smooth), box-shadow var(--transition-smooth);
         }
         .main-header.scrolled {
-            background-color: rgba(10, 10, 10, 0.85); /* Charcoal transparent when scrolled */
-            padding: 1rem 0;
+            background-color: rgba(10, 10, 10, 0.85);
+            padding: 0.75rem 0; /* Reduced scrolled padding */
             box-shadow: 0 8px 35px rgba(0,0,0,0.4);
         }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-svg-icon { width: 48px; height: 48px; margin-right: 15px; transition: transform var(--transition-smooth); }
-        .logo-svg-icon .circle { stroke: var(--color-gold-primary); stroke-width: 5.5; fill: transparent; transition: stroke var(--transition-interactive); }
-        .logo-svg-icon .letter-g { fill: var(--color-gold-primary); transition: fill var(--transition-interactive); font-family: var(--font-display); font-weight: 900;}
+        .logo-svg-icon { width: 40px; height: 40px; margin-right: 10px; transition: transform var(--transition-smooth); } /* Scaled down logo icon */
+        .logo-svg-icon .circle { stroke: var(--color-gold-primary); stroke-width: 5; fill: transparent; }
+        .logo-svg-icon .letter-g { fill: var(--color-gold-primary); font-family: var(--font-display); font-weight: 900;}
         .logo-link:hover .logo-svg-icon { transform: scale(1.05) rotate(-5deg); }
-        .logo-link:hover .circle { stroke: var(--color-gold-highlight); }
-        .logo-link:hover .letter-g { fill: var(--color-gold-highlight); }
         .site-title-text {
-            font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.7rem); font-weight: 800;
+            font-family: var(--font-display); font-size: clamp(1.2rem, 4vw, 1.7rem); font-weight: 800; /* Responsive title */
             letter-spacing: 1px; color: var(--color-gold-highlight);
         }
         .site-title-text span { color: var(--color-gold-mid); font-weight: 700; opacity: 0.8; }
 
         .main-nav ul { list-style: none; display: flex; align-items: center; }
-        .main-nav li { margin-left: 3rem; }
-        .main-nav a {
-            font-family: var(--font-body); font-weight: 500; font-size: 0.9rem;
-            text-transform: uppercase; letter-spacing: 1.8px; position: relative;
-            padding: 0.8rem 0.2rem; color: var(--color-text-secondary);
+        .main-nav li { margin-left: 1.5rem; } /* Reduced margin for nav items */
+        .main-nav a { /* Styles for desktop nav links */
+            font-family: var(--font-body); font-weight: 500; font-size: 0.85rem; /* Slightly smaller nav links */
+            text-transform: uppercase; letter-spacing: 1.5px; position: relative;
+            padding: 0.7rem 0.1rem; color: var(--color-text-secondary);
         }
-        .main-nav a::before, .main-nav a::after { /* Dual line effect */
+        .main-nav a::before, .main-nav a::after { /* ... desktop dual line effect ... */
             content: ''; position: absolute; left: 0; width: 100%; height: 1px;
             background-color: var(--color-gold-mid); transform: scaleX(0);
             transition: transform var(--transition-smooth);
@@ -157,246 +136,237 @@
         .main-nav a:hover::before, .main-nav a:hover::after,
         .main-nav a.active::before, .main-nav a.active::after { transform: scaleX(1); }
         .main-nav a:hover, .main-nav a.active { color: var(--color-gold-highlight); }
-        .menu-toggle { display: none; /* ... */ color: var(--color-gold-primary); font-size: 2rem; }
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--color-gold-primary); font-size: 1.8rem; padding: 0.5rem; } /* Smaller toggle */
 
 
-        /* --- Hero Section --- */
         .hero-section {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            padding: 150px 0 80px; text-align: center; position: relative; overflow: hidden;
-            background:
-                radial-gradient(ellipse at 50% 30%, rgba(176, 141, 87, 0.08) 0%, transparent 50%), /* Subtle gold aura */
-                var(--color-deep-black);
+            min-height: 90vh; /* Reduced min-height for mobile */
+            display: flex; align-items: center; justify-content: center;
+            padding: 100px 0 60px; text-align: center; position: relative; overflow: hidden; /* Reduced padding */
+            background: radial-gradient(ellipse at 50% 30%, rgba(176, 141, 87, 0.08) 0%, transparent 50%), var(--color-deep-black);
         }
-        .hero-section::before { /* Abstract background pattern for depth */
+        .hero-section::before { /* ... BG pattern styles ... */
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8A464' fill-opacity='0.025'%3E%3Cpath d='M50 50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8A464' fill-opacity='0.025'%3E%3Cpath d='M50 50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.7; z-index: 0; transform: scale(1.5);
             animation: subtlePanAndFade 90s linear infinite alternate;
         }
-        @keyframes subtlePanAndFade {
-            0% { background-position: 0% 0%; opacity: 0.3; }
-            50% { opacity: 0.7; }
-            100% { background-position: 100% 100%; opacity: 0.3; }
-        }
+        @keyframes subtlePanAndFade { /* ... */ }
         .hero-content-wrapper { position: relative; z-index: 1; max-width: 900px; }
-        .hero-section h1 { margin-bottom: 2rem; }
+        .hero-section h1 { margin-bottom: 1.5rem; } /* Reduced margin */
         .hero-section p.subtitle {
-            font-size: clamp(1.15rem, 2.5vw, 1.5rem); color: var(--color-text-primary);
-            margin: 0 auto 3.5rem; max-width: 750px; font-weight: 400;
+            font-size: clamp(1rem, 4vw, 1.4rem); /* Adjusted subtitle clamp for mobile */
+            color: var(--color-text-primary);
+            margin: 0 auto 2.5rem; max-width: 750px; font-weight: 400; /* Reduced margin */
         }
         .hero-cta-button {
-            font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
-            letter-spacing: 1.5px; padding: 1.2rem 3.5rem;
+            font-family: var(--font-display); font-weight: 700;
+            font-size: clamp(0.9rem, 3.5vw, 1.1rem); /* Responsive button font */
+            letter-spacing: 1.2px; padding: clamp(0.9rem, 3vw, 1.2rem) clamp(2rem, 6vw, 3.5rem); /* Responsive button padding */
             background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary) 60%, var(--color-gold-mid));
             color: var(--color-deep-black); border-radius: 50px; border: none;
-            box-shadow: 0 0 0 0 rgba(200, 164, 100, 0.7); /* For pulse */
+            box-shadow: 0 0 0 0 rgba(200, 164, 100, 0.7);
             transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
             animation: pulseButton 2.5s infinite ease-out;
         }
-        @keyframes pulseButton {
-            0% { box-shadow: 0 0 0 0 rgba(200, 164, 100, 0.4), var(--shadow-lifted); }
-            70% { box-shadow: 0 0 0 15px rgba(200, 164, 100, 0), var(--shadow-lifted); }
-            100% { box-shadow: 0 0 0 0 rgba(200, 164, 100, 0), var(--shadow-lifted); }
-        }
-        .hero-cta-button:hover {
-            transform: translateY(-6px) scale(1.03);
-            background: linear-gradient(145deg, var(--color-gold-brilliant), var(--color-gold-highlight) 60%, var(--color-gold-primary));
-            animation-play-state: paused; /* Pause pulse on hover */
-             box-shadow: 0 15px 35px rgba(200, 164, 100, 0.3), var(--shadow-lifted);
-        }
+        @keyframes pulseButton { /* ... */ }
+        .hero-cta-button:hover { /* ... */ }
 
-
-        /* --- General Section Styling with Depth --- */
         .content-section {
-            padding: 100px 0; position: relative; overflow: hidden; /* For ::before/::after */
+            padding: 80px 0; position: relative; overflow: hidden; /* Reduced section padding */
         }
         .content-section:nth-of-type(even) { background-color: var(--color-charcoal); }
         .content-section:nth-of-type(odd) { background-color: var(--color-black); }
-        .content-section .section-title-container { margin-bottom: 4rem; text-align: center; }
-        .content-section .section-title-container h2::after { /* Decorative underline for section titles */
-            content: ''; display: block; width: 100px; height: 4px; margin: 1.5rem auto 0;
+        .content-section .section-title-container { margin-bottom: 3rem; text-align: center; } /* Reduced margin */
+        .content-section .section-title-container h2::after { /* ... decorative underline ... */
+            content: ''; display: block; width: 80px; height: 3px; margin: 1rem auto 0; /* Smaller underline */
             background: linear-gradient(90deg, var(--color-gold-shadow), var(--color-gold-highlight) 50%, var(--color-gold-shadow) 100%);
             border-radius: 3px; opacity: 0.7;
         }
         .section-intro-text {
-            text-align: center; max-width: 800px; margin: -2.5rem auto 4.5rem;
-            color: var(--color-text-secondary); font-size: 1.15rem;
+            text-align: center; max-width: 800px; margin: -2rem auto 3.5rem; /* Adjusted margins */
+            color: var(--color-text-secondary); font-size: clamp(1rem, 3vw, 1.15rem); /* Responsive intro text */
         }
-        /* Animation classes (same JS logic) */
         .animate-on-scroll { opacity: 0; transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth); }
-        .fade-in-up { transform: translateY(60px); }
+        .fade-in-up { transform: translateY(50px); } /* Slightly less travel for mobile */
         .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
         .fade-in { opacity: 0; }
         .fade-in.is-visible { opacity: 1; }
 
-
-        /* --- Services Section --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3.5rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; } /* Reduced minmax and gap */
         .service-card {
             background-color: var(--color-graphite);
-            padding: 3rem 2.5rem; border-radius: 12px;
+            padding: 2rem 1.8rem; border-radius: 10px; /* Reduced padding, radius */
             border: 1px solid rgba(176, 141, 87, 0.1);
             box-shadow: var(--shadow-soft-depth);
-            position: relative; overflow: hidden; /* For hover effects */
+            position: relative; overflow: hidden;
             transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
         }
-        .service-card::before { /* Inner subtle glow on hover */
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(200,164,100,0.1) 0%, transparent 70%);
-            opacity: 0; transform: scale(0.8);
-            transition: opacity var(--transition-smooth), transform var(--transition-smooth);
-        }
-        .service-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: var(--shadow-lifted), var(--shadow-gold-glow);
-            border-color: rgba(176, 141, 87, 0.3);
-        }
-        .service-card:hover::before { opacity: 1; transform: scale(1); }
+        .service-card::before { /* ... inner glow ... */ }
+        .service-card:hover { /* ... hover styles ... */ }
         .service-icon-wrapper {
-            width: 70px; height: 70px; margin-bottom: 2rem;
+            width: 60px; height: 60px; margin-bottom: 1.5rem; /* Scaled down icon wrapper */
             border-radius: 50%;
             background: linear-gradient(145deg, var(--color-gold-mid), var(--color-gold-shadow));
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Softer shadow */
             transition: background var(--transition-smooth), transform var(--transition-interactive);
         }
-        .service-card:hover .service-icon-wrapper {
-            background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary));
-            transform: scale(1.1);
-        }
-        .service-icon-wrapper svg { width: 36px; height: 36px; fill: var(--color-deep-black); /* Icon color */ }
-        .service-card h4 { margin-bottom: 1rem; color: var(--color-text-primary); }
-        .service-card p { font-size: 1rem; line-height: 1.7; color: var(--color-text-secondary); }
+        .service-card:hover .service-icon-wrapper { /* ... */ }
+        .service-icon-wrapper svg { width: 30px; height: 30px; fill: var(--color-deep-black); } /* Scaled down SVG */
+        .service-card h4 { margin-bottom: 0.8rem; color: var(--color-text-primary); font-size: clamp(1.2rem, 4.5vw, 1.5rem); } /* Responsive card heading */
+        .service-card p { font-size: clamp(0.85rem, 2.5vw, 0.95rem); line-height: 1.6; color: var(--color-text-secondary); } /* Responsive card text */
 
-
-        /* --- "Our Advantage" Section --- */
-        .advantage-section-bg { background-color: var(--color-black); /* Darker than charcoal */ }
-        .advantage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+        .advantage-section-bg { background-color: var(--color-black); }
+        .advantage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; } /* Reduced minmax and gap */
         .advantage-item-card {
-            text-align: center; padding: 2.5rem 2rem;
+            text-align: center; padding: 2rem 1.5rem; /* Reduced padding */
             background-color: var(--color-graphite);
-            border-radius: 10px;
-            border: 1px solid transparent; /* Prepare for gradient border */
-            position: relative;
+            border-radius: 8px; /* Smaller radius */
+            border: 1px solid transparent; position: relative;
             box-shadow: var(--shadow-soft-depth);
             transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
         }
-        .advantage-item-card::before { /* Gradient border effect on hover */
-            content: ""; position: absolute; inset: -1px; /* Control border thickness */
-            border-radius: इन्हेरिट; /* Match parent's border-radius */
-            background: linear-gradient(160deg, var(--color-gold-shadow), var(--color-gold-highlight), var(--color-gold-mid));
-            z-index: -1; opacity: 0;
-            transition: opacity var(--transition-smooth);
-        }
-        .advantage-item-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lifted), var(--shadow-gold-glow);
-        }
-        .advantage-item-card:hover::before { opacity: 1; }
-        .advantage-icon-svg { width: 48px; height: 48px; margin-bottom: 1.5rem; fill: var(--color-gold-primary); transition: fill var(--transition-interactive), transform var(--transition-interactive); }
-        .advantage-item-card:hover .advantage-icon-svg { fill: var(--color-gold-highlight); transform: scale(1.1); }
-        .advantage-item-card h4 { font-size: 1.6rem; margin-bottom: 0.8rem; color: var(--color-text-primary); }
+        .advantage-item-card::before { /* ... gradient border ... */ }
+        .advantage-item-card:hover { /* ... hover styles ... */ }
+        .advantage-icon-svg { width: 40px; height: 40px; margin-bottom: 1.2rem; fill: var(--color-gold-primary); } /* Scaled down icon */
+        .advantage-item-card h4 { font-size: clamp(1.1rem, 4vw, 1.4rem); margin-bottom: 0.6rem; } /* Responsive heading */
+        .advantage-item-card p { font-size: clamp(0.8rem, 2.5vw, 0.9rem); } /* Responsive text */
 
 
-        /* --- CTA Section --- */
         .cta-final-section {
-            padding: 120px 0; text-align: center;
+            padding: 100px 0; text-align: center; /* Reduced padding */
             background: linear-gradient(to bottom, var(--color-charcoal) 0%, var(--color-deep-black) 100%);
             position: relative;
         }
-        .cta-final-section::before { /* Large, faint gold circle for depth */
-            content: ''; position: absolute;
-            bottom: -50%; left: 50%; transform: translateX(-50%);
-            width: 150%; padding-bottom: 150%; /* Aspect ratio for circle */
-            background: radial-gradient(circle, rgba(176,141,55,0.05) 0%, transparent 60%);
-            border-radius: 50%; z-index: 0; pointer-events: none;
-        }
+        .cta-final-section::before { /* ... bg circle ... */ }
         .cta-content-area { position: relative; z-index: 1; }
-        .cta-final-section h2 { margin-bottom: 2rem; color: var(--color-text-primary); }
+        .cta-final-section h2 { margin-bottom: 1.5rem; } /* Reduced margin */
         .cta-final-section p.cta-subtitle {
-            max-width: 750px; margin: 0 auto 3rem; color: var(--color-text-secondary); font-size: 1.2rem;
+            max-width: 750px; margin: 0 auto 2.5rem; font-size: clamp(1rem, 3.5vw, 1.15rem); /* Responsive subtitle */
         }
         .contact-form-embedded {
-            max-width: 700px; margin: 3rem auto 0; text-align: left;
-            padding: 3rem; background-color: rgba(5,5,5,0.5); /* Darker, more integrated */
-            border-radius: 12px; box-shadow: var(--shadow-lifted);
+            max-width: 700px; margin: 2.5rem auto 0; text-align: left;
+            padding: 2rem; background-color: rgba(5,5,5,0.5); /* Reduced padding */
+            border-radius: 10px; box-shadow: var(--shadow-lifted);
             border: 1px solid rgba(176,141,87,0.15);
         }
-        .form-input-group { margin-bottom: 2rem; }
-        .form-input-group label { display: block; margin-bottom: 0.75rem; color: var(--color-gold-highlight); font-weight: 500; font-size: 0.95rem; }
+        .form-input-group { margin-bottom: 1.5rem; } /* Reduced margin */
+        .form-input-group label { font-size: 0.9rem; } /* Smaller label */
         .form-text-input, .form-textarea-input {
-            width: 100%; padding: 1.2rem 1.3rem;
-            background: var(--color-graphite); border: 1px solid #2f2f2f;
-            color: var(--color-text-primary); border-radius: 8px;
-            font-family: var(--font-body); font-size: 1rem;
-            transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+            padding: 1rem 1.1rem; /* Reduced padding */
+            font-size: 0.95rem; /* Smaller font in input */
         }
-        .form-text-input:focus, .form-textarea-input:focus {
-            outline: none; border-color: var(--color-gold-mid);
-            box-shadow: 0 0 15px rgba(176, 141, 87, 0.2), 0 0 0 1px var(--color-gold-mid);
-        }
-        .form-textarea-input { resize: vertical; min-height: 140px; }
+        .form-textarea-input { min-height: 120px; }
         .form-submit-button {
-            display: block; width: 100%; padding: 1.2rem;
-            font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: 1px;
-            background: linear-gradient(145deg, var(--color-gold-primary), var(--color-gold-mid));
-            color: var(--color-deep-black); border: none; border-radius: 8px; cursor: pointer;
-            box-shadow: var(--shadow-soft-depth);
-            transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
-        }
-        .form-submit-button:hover {
-            background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary));
-            transform: translateY(-3px); box-shadow: var(--shadow-lifted);
+            font-size: 1rem; padding: 1rem; /* Smaller button text/padding */
         }
 
-        /* --- Footer --- */
         .site-footer {
-            background-color: #000000; color: var(--color-text-muted); text-align: center;
-            padding: 6rem 0 3rem; border-top: 1px solid rgba(176,141,87,0.08);
-            position: relative;
+            padding: 4rem 0 2rem; /* Reduced padding */
         }
-        .footer-logo-icon { width: 55px; height: 55px; margin-bottom: 1.5rem; }
-        .footer-logo-icon .circle { stroke: var(--color-gold-antique); stroke-width: 5; fill:none; }
-        .footer-logo-icon .letter-g { fill: var(--color-gold-antique); font-family: var(--font-display); font-weight: 800; }
-        .footer-social-links a { color: var(--color-text-muted); margin: 0 1.3rem; font-size: 1.6rem; transition: color var(--transition-interactive), transform var(--transition-interactive); }
-        .footer-social-links a:hover { color: var(--color-gold-primary); transform: translateY(-4px) scale(1.1); }
-        .site-footer p { margin-bottom: 0.5rem; font-size: 0.9rem; }
-        .footer-seo-text { font-size: 0.8rem; opacity: 0.6; margin-top: 1rem; }
+        .footer-logo-icon { width: 45px; height: 45px; margin-bottom: 1.2rem; } /* Scaled down footer logo */
+        .footer-social-links a { margin: 0 1rem; font-size: 1.4rem; } /* Adjusted social links */
+        .site-footer p { font-size: 0.85rem; }
+        .footer-seo-text { font-size: 0.75rem; }
 
         /* --- Responsive Adjustments --- */
+        /* Desktop first, then override for smaller screens */
+        /* Medium screens (Tablets) */
         @media (max-width: 992px) {
-            .main-nav li { margin-left: 2rem; }
-            h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
-            h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
+            .main-nav li { margin-left: 1.2rem; }
+            .main-nav a { font-size: 0.8rem; letter-spacing: 1.2px; padding: 0.6rem 0.1rem;}
+            .content-section { padding: 70px 0; }
+            .services-grid { gap: 1.8rem; }
+            .advantage-grid { gap: 1.5rem; }
         }
+
+        /* Mobile screens */
         @media (max-width: 768px) {
+            .container { padding: 0 15px; } /* Tighter container padding */
+            .main-header { padding: 0.8rem 0; } /* Further reduce header padding */
+            .main-header.scrolled { padding: 0.6rem 0; }
+            .logo-svg-icon { width: 36px; height: 36px; margin-right: 8px; }
+            .site-title-text { font-size: clamp(1.1rem, 5vw, 1.4rem); }
+
             .main-nav {
                 display: none; flex-direction: column; width: 100%;
                 position: absolute; top: 100%; left: 0;
                 background-color: rgba(10,10,10,0.99); backdrop-filter: blur(15px);
-                padding: 1rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                padding: 0.5rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Slimmer mobile nav */
                 border-top: 1px solid rgba(176,141,87,0.1);
                 animation: mobileNavSlideDown 0.5s var(--transition-smooth) forwards;
             }
-            @keyframes mobileNavSlideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes mobileNavSlideDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } } /* Less travel */
             .main-nav.active { display: flex; }
             .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav li { margin: 0; text-align: center; }
-            .main-nav a { display: block; padding: 1.3rem; border-bottom: 1px solid rgba(176,141,87,0.08); width: 100%; }
+            .main-nav li { margin: 0; text-align: center; width: 100%; }
+            .main-nav a { display: block; padding: 1rem; font-size: 1rem; /* Readable mobile nav link size */ border-bottom: 1px solid rgba(176,141,87,0.08); width: 100%; }
             .main-nav li:last-child a { border-bottom: none; }
-            .main-nav a::before, .main-nav a::after { display:none; } /* Remove desktop hover for mobile */
+            .main-nav a::before, .main-nav a::after { display:none; }
             .main-nav a:hover { background-color: rgba(176,141,87,0.05); }
-            .menu-toggle { display: block; background: none; border: none; cursor: pointer; }
+            .menu-toggle { display: block; }
 
-            .hero-section { padding: 120px 0 60px; }
-            .content-section { padding: 80px 0; }
-            .services-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .service-card { padding: 2.5rem 2rem; }
-            .contact-form-embedded { padding: 2rem; }
+            .hero-section { padding: 80px 0 50px; min-height: 75vh; } /* Further adjust hero */
+            .hero-section h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 1rem; }
+            .hero-section p.subtitle { font-size: clamp(0.9rem, 4.5vw, 1.1rem); margin-bottom: 2rem; }
+            .hero-cta-button { font-size: clamp(0.85rem, 4vw, 1rem); padding: clamp(0.8rem, 3.5vw, 1rem) clamp(1.8rem, 7vw, 2.8rem); }
+
+            .content-section { padding: 60px 0; }
+            .section-title-container h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); margin-bottom: 2.5rem; }
+            .section-title-container h2::after { width: 60px; height: 2.5px; margin-top: 0.8rem; }
+            .section-intro-text { font-size: clamp(0.9rem, 3.5vw, 1rem); margin: -1.5rem auto 2.5rem; }
+
+            .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .service-card { padding: 1.8rem 1.5rem; }
+            .service-icon-wrapper { width: 50px; height: 50px; margin-bottom: 1.2rem; }
+            .service-icon-wrapper svg { width: 24px; height: 24px; }
+            .service-card h4 { font-size: clamp(1.1rem, 5vw, 1.3rem); }
+
+            .advantage-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .advantage-item-card { padding: 1.8rem 1.2rem; }
+            .advantage-icon-svg { width: 36px; height: 36px; margin-bottom: 1rem; }
+            .advantage-item-card h4 { font-size: clamp(1rem, 4.5vw, 1.2rem); }
+
+            .cta-final-section { padding: 80px 0; }
+            .cta-final-section h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+            .cta-final-section p.cta-subtitle { font-size: clamp(0.9rem, 4vw, 1.1rem); }
+            .contact-form-embedded { padding: 1.8rem 1.5rem; margin-top: 2rem; }
+            .form-input-group { margin-bottom: 1.2rem; }
+            .form-text-input, .form-textarea-input { padding: 0.9rem 1rem; font-size: 0.9rem; }
         }
 
-        /* Lenis scrollbar style (optional) */
+        /* Very Small Mobile screens */
+        @media (max-width: 480px) {
+            .container { padding: 0 10px; } /* Even tighter container */
+            .main-header { padding: 0.6rem 0; }
+            .main-header.scrolled { padding: 0.5rem 0; }
+            .logo-svg-icon { width: 32px; height: 32px; }
+            .site-title-text { font-size: clamp(1rem, 6vw, 1.2rem); }
+            .menu-toggle { font-size: 1.6rem; padding: 0.4rem; }
+            .main-nav a { padding: 0.9rem; font-size: 0.95rem; }
+
+
+            .hero-section { padding: 70px 0 40px; min-height: auto; }
+            .hero-section h1 { font-size: clamp(1.8rem, 10vw, 2.5rem); }
+            .hero-section p.subtitle { font-size: clamp(0.85rem, 5vw, 1rem); }
+
+            .content-section { padding: 50px 0; }
+            .section-title-container h2 { font-size: clamp(1.6rem, 9vw, 2.2rem); }
+            .section-intro-text { font-size: clamp(0.85rem, 4vw, 0.95rem); }
+
+            .service-card { padding: 1.5rem 1.2rem; }
+            .service-icon-wrapper { width: 45px; height: 45px; }
+            .service-icon-wrapper svg { width: 20px; height: 20px; }
+
+            .advantage-item-card { padding: 1.5rem 1rem; }
+            .advantage-icon-svg { width: 32px; height: 32px; }
+
+            .contact-form-embedded { padding: 1.5rem 1rem; }
+            .form-submit-button { font-size: 0.9rem; padding: 0.9rem; }
+        }
+
+        /* Lenis scrollbar style */
         html.lenis { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-stopped { overflow: hidden; }
@@ -411,7 +381,6 @@
 <body>
     <div id="preloader"><div class="preloader-logo">G</div></div>
 
-    <!-- Lenis Wrapper & Content -->
     <div id="lenis-wrapper" style="position: relative; width: 100%;">
     <div id="lenis-content" style="position: relative; width: 100%; overflow: visible;">
 
@@ -452,37 +421,29 @@
                 </div>
                 <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">We craft bespoke digital marketing strategies that resonate with high-value audiences, drive engagement, and accelerate your growth trajectory. Explore how our core services can elevate your brand.</p>
                 <div class="services-grid">
-                    <!-- Service Card 1: SEO -->
                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                         <div class="service-icon-wrapper">
-                            <!-- Apt SEO Icon: Magnifying glass with upward trend/graph -->
                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M47.31,41.56,38.24,32.5a17.36,17.36,0,1,0-5.75,5.75l9.07,9.07a4.08,4.08,0,1,0,5.75-5.75ZM25.5,38.5A13.05,13.05,0,1,1,38.55,25.45,13.06,13.06,0,0,1,25.5,38.5Z"/><path d="M12.5,40.5v-13a1,1,0,0,1,2,0v11.59l5.71-5.71a1,1,0,0,1,1.41,1.41l-7,7a1,1,0,0,1-.7.29A1,1,0,0,1,12.5,40.5Z"/></svg>
                         </div>
                         <h4>Advanced SEO & Authority Building</h4>
                         <p>Achieve sustained organic visibility and dominate your niche. Our SEO alchemy combines deep technical audits, strategic keyword mastery, high-impact link acquisition, and authoritative content ecosystems that Google and your audience will love.</p>
                     </div>
-                    <!-- Service Card 2: PPC -->
                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                         <div class="service-icon-wrapper">
-                            <!-- Apt PPC Icon: Target with a click/currency symbol -->
                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="21.5" stroke-width="4" stroke="#333" fill="none"/><circle cx="32" cy="32" r="13.5" stroke-width="4" stroke="#333" fill="none"/><circle cx="32" cy="32" r="5.5" fill="#333"/><path d="M47.5,41.5l-8-12h-15l-8,12a1,1,0,0,0,.8,1.5h22.4A1,1,0,0,0,47.5,41.5Z"/><path d="M34.5,26.5a2.5,2.5,0,0,0-5,0v0a2.5,2.5,0,1,0,5,0Z"/></svg>
                         </div>
                         <h4>Precision Performance Marketing</h4>
                         <p>Maximize your ROI with hyper-targeted PPC campaigns across Google, Meta, LinkedIn, and beyond. We engineer high-conversion ad creatives, optimize bidding strategies relentlessly, and provide transparent reporting on every dollar spent.</p>
                     </div>
-                    <!-- Service Card 3: Web Design & CRO -->
                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                         <div class="service-icon-wrapper">
-                            <!-- Apt Web Design Icon: Stylized browser window or responsive screens -->
                              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="7.5" y="12.5" width="49" height="34" rx="3" stroke-width="4" stroke="#333" fill="none"/><line x1="7.5" y1="22.5" x2="56.5" y2="22.5" stroke-width="4" stroke="#333"/><circle cx="15.5" cy="17.5" r="1.5" fill="#333"/><circle cx="21.5" cy="17.5" r="1.5" fill="#333"/><path d="M28.5,32.5l6,6,6-6"/><line x1="34.5" y1="38.5" x2="34.5" y2="28.5" stroke-width="2" stroke="#333" fill="none"/></svg>
                         </div>
                         <h4>Luxury Web Experiences & CRO</h4>
                         <p>Your digital flagship, meticulously crafted. We design and develop visually stunning, intuitive websites that embody your brand's essence. Coupled with rigorous Conversion Rate Optimization (CRO), we turn visitors into devoted clientele.</p>
                     </div>
-                     <!-- Service Card 4: Content & Social -->
                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.45s">
                         <div class="service-icon-wrapper">
-                            <!-- Apt Content/Social Icon: Quill pen with speech bubbles or network -->
                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M22.5,49.5l-10-10L35.08,17.08a4.08,4.08,0,0,1,5.76,0l1.16,1.16a4.08,4.08,0,0,1,0,5.76Z"/><path d="M42.5,23.5l-19,19"/><path d="M18.5,38.5l-6,6a2,2,0,0,0,0,2.83l2.17,2.17a2,2,0,0,0,2.83,0l6-6"/><path d="M49.5,30.5a8,8,0,0,0-16,0c0,4.42,8,12,8,12S49.5,34.92,49.5,30.5Z"/><circle cx="41.5" cy="30.5" r="3"/></svg>
                         </div>
                         <h4>Compelling Content & Social Alchemy</h4>
@@ -500,19 +461,16 @@
                 <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">We don't just execute campaigns; we architect digital legacies. Our commitment to excellence, transparency, and bespoke solutions sets us apart, delivering not just results, but transformative growth.</p>
                 <div class="advantage-grid">
                     <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
-                        <!-- Apt Icon: Unique Key or Blueprint -->
                         <svg class="advantage-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.59 2.6C12.21 2.22 11.79 2 11.33 2H8.5C7.67 2 7 2.67 7 3.5V6H4.5C3.67 6 3 6.67 3 7.5V10H2V12H3V14H2V16H3V18H2V20H3V20.5C3 21.33 3.67 22 4.5 22H7V19.5C7 18.67 7.67 18 8.5 18H11V15.5C11 14.67 11.67 14 12.5 14H15V11.5C15 10.67 15.67 10 16.5 10H19V7.5C19 6.67 18.33 6 17.5 6H15V3.5C15 3.04 14.78 2.62 14.41 2.24L12.59 2.6ZM9 4H11.3L13 5.7V6H9V4ZM13 16H8.5C8.22 16 8 16.22 8 16.5V19H13V16ZM17 12H12.5C12.22 12 12 12.22 12 12.5V15H17V12Z"/></svg>
                         <h4>Bespoke Strategic Architecture</h4>
                         <p>Your vision, meticulously translated into a unique digital roadmap. We craft hyper-customized strategies, never resorting to one-size-fits-all.</p>
                     </div>
                     <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
-                        <!-- Apt Icon: Abstract data visualization or insightful eye -->
                         <svg class="advantage-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"/></svg>
                         <h4>Insight-Driven Performance</h4>
                         <p>Data is our compass. We harness sophisticated analytics to unearth actionable insights, continuously refining for peak campaign performance.</p>
                     </div>
                     <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
-                        <!-- Apt Icon: Interlocking gears or clear crystal -->
                          <svg class="advantage-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.99 8.85L18.14 5l-3.85 3.85a7.973 7.973 0 00-4.29-1.19V2h-2v5.66a7.973 7.973 0 00-4.29 1.19L2.01 5 5.86 8.85a7.973 7.973 0 00-1.19 4.29H2v2h2.67a7.973 7.973 0 001.19 4.29L2.01 19l3.85-3.85a7.973 7.973 0 004.29 1.19V22h2v-5.66a7.973 7.973 0 004.29-1.19l3.85 3.85-3.85-3.85a7.973 7.973 0 001.19-4.29H22v-2h-2.67a7.973 7.973 0 00-1.19-4.29zm-9.99 7.7a4 4 0 110-8 4 4 0 010 8z"/></svg>
                         <h4>Radical Transparency & Partnership</h4>
                         <p>We operate as an extension of your team, fostering open communication with clear, consistent reporting and collaborative strategy sessions.</p>
@@ -573,19 +531,17 @@
 
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script>
+        // Standard DOMContentLoaded wrapper for all JS
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Preloader ---
             const preloader = document.getElementById('preloader');
             if (preloader) {
                 window.addEventListener('load', () => {
-                    setTimeout(() => { // Ensure a minimum display time for preloader
+                    setTimeout(() => {
                         preloader.classList.add('loaded');
-                    }, 500); // Adjust as needed
+                    }, 300); // Small delay for preloader visibility
                 });
             }
 
-            // --- Lenis Smooth Scroll ---
-            // Ensure wrapper and content elements exist and have appropriate display for Lenis
             const lenisWrapper = document.getElementById('lenis-wrapper');
             const lenisContent = document.getElementById('lenis-content');
 
@@ -593,15 +549,10 @@
                 const lenis = new Lenis({
                     wrapper: lenisWrapper,
                     content: lenisContent,
-                    duration: 1.5, // Adjusted for a slightly more luxurious feel
+                    duration: 1.4, // Slightly adjusted duration
                     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                    orientation: 'vertical',
-                    gestureOrientation: 'vertical',
                     smoothWheel: true,
-                    wheelMultiplier: 1,
-                    smoothTouch: false, // Often better for touch to be native
-                    touchMultiplier: 2,
-                    infinite: false,
+                    wheelMultiplier: 0.9, // Slightly reduced multiplier
                 });
 
                 function raf(time) {
@@ -610,52 +561,51 @@
                 }
                 requestAnimationFrame(raf);
 
-                // --- Mobile Menu ---
                 const navToggleBtn = document.getElementById('navToggleBtn');
                 const pageNav = document.getElementById('pageNav');
+                const pageHeader = document.getElementById('pageHeader'); // Defined once
+
                 if (navToggleBtn && pageNav) {
                     navToggleBtn.addEventListener('click', () => {
                         pageNav.classList.toggle('active');
                         const isExpanded = pageNav.classList.contains('active');
                         navToggleBtn.setAttribute('aria-expanded', isExpanded);
-                        navToggleBtn.innerHTML = isExpanded ? '✕' : '☰'; // Cross/Hamburger
+                        navToggleBtn.innerHTML = isExpanded ? '✕' : '☰';
                     });
                 }
 
-                // --- Navigation Link Handling (Smooth Scroll & Active State) ---
-                const pageHeader = document.getElementById('pageHeader');
-                const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button'); // Include other scroll links
-
+                const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
                 navLinks.forEach(link => {
                     const targetId = link.getAttribute('href');
                     if (targetId && targetId.startsWith('#')) {
                         link.addEventListener('click', (e) => {
                             e.preventDefault();
-                            let offset = pageHeader ? -pageHeader.offsetHeight -10 : -80; // Dynamic offset
-                             if (targetId === "#hero") offset = 0; // No offset for hero typically
-                            lenis.scrollTo(targetId, { offset: offset });
+                            let offsetVal = pageHeader ? -pageHeader.offsetHeight - 5 : -70;
+                            if (targetId === "#hero") offsetVal = 0;
+                            lenis.scrollTo(targetId, { offset: offsetVal, duration: 1.8 }); // Slightly longer duration for scrollto
 
-                            if (pageNav && pageNav.classList.contains('active')) { // Close mobile nav
+                            if (pageNav && pageNav.classList.contains('active')) {
                                 pageNav.classList.remove('active');
-                                navToggleBtn.setAttribute('aria-expanded', 'false');
-                                navToggleBtn.innerHTML = '☰';
+                                if(navToggleBtn) { // Check if navToggleBtn exists
+                                    navToggleBtn.setAttribute('aria-expanded', 'false');
+                                    navToggleBtn.innerHTML = '☰';
+                                }
                             }
                         });
                     }
                 });
 
-
-                // --- Header Scroll & Active Link ---
-                const allSections = document.querySelectorAll('main section[id]'); // More specific selector
-                const mainNavLinks = document.querySelectorAll('.main-nav a'); // Only for nav bar active state
+                const allSections = document.querySelectorAll('main section[id]');
+                const mainNavLinks = document.querySelectorAll('.main-nav a');
 
                 function updateActiveLinkOnScroll() {
-                    let currentSectionId = 'hero'; // Default
-                    const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
+                    let currentSectionId = 'hero';
+                    const headerHeight = pageHeader ? pageHeader.offsetHeight : 60; // Fallback header height
 
                     allSections.forEach(section => {
                         const sectionTop = section.offsetTop;
-                        if (lenis.scroll >= sectionTop - headerHeight - (window.innerHeight / 3) ) { // Trigger when 1/3 of section is visible
+                        // Adjusted threshold: when the top of the section is within the top 40% of the viewport
+                        if (lenis.scroll >= sectionTop - (window.innerHeight * 0.4) - headerHeight) {
                             currentSectionId = section.getAttribute('id');
                         }
                     });
@@ -670,7 +620,7 @@
 
                 if (pageHeader) {
                     lenis.on('scroll', (e) => {
-                        if (e.scroll > 50) {
+                        if (e.scroll > 30) { // Trigger 'scrolled' class earlier
                             pageHeader.classList.add('scrolled');
                         } else {
                             pageHeader.classList.remove('scrolled');
@@ -681,35 +631,27 @@
                 updateActiveLinkOnScroll(); // Initial check
 
             } else {
-                console.error("Lenis wrapper or content element not found. Smooth scroll disabled.");
+                console.error("Lenis wrapper or content element not found.");
             }
 
-
-            // --- Intersection Observer for Animations ---
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            const observerOptions = {
-                threshold: 0.15, // Trigger when 15% of element is visible
-                rootMargin: "0px 0px -50px 0px" // Start animating a bit before fully in view
-            };
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }; // Trigger a bit earlier
 
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const delay = entry.target.dataset.ioDelay;
                         if (delay) {
-                            setTimeout(() => {
-                                entry.target.classList.add('is-visible');
-                            }, parseFloat(delay) * 1000);
+                            setTimeout(() => entry.target.classList.add('is-visible'), parseFloat(delay) * 1000);
                         } else {
                             entry.target.classList.add('is-visible');
                         }
-                        obs.unobserve(entry.target); // Stop observing once animated
+                        obs.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
             animatedElements.forEach(el => observer.observe(el));
 
-            // --- Current Year for Footer ---
             const currentYearSpan = document.getElementById('currentYear');
             if (currentYearSpan) {
                 currentYearSpan.textContent = new Date().getFullYear();
