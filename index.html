@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Luxe Media | Elite Digital Marketing & Bespoke Brand Elevation</title>
-    <meta name="description" content="Golden Luxe Media: Architects of exclusive digital success. We forge dominant online presences for discerning brands through high-ROI SEO, luxury web design, and bespoke marketing strategies.">
-    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, Golden Luxe Media, content marketing, PPC management, luxury branding, client testimonials, digital marketing credibility">
+    <title>Golden Luxe Media | Architects of Digital Dynasties & Elite Brand Elevation</title>
+    <meta name="description" content="Golden Luxe Media: We forge digital dynasties for elite brands. Partner with us for unparalleled online presence, high-ROI SEO, luxury web design, and transformative marketing strategies.">
+    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, luxury branding, client testimonials, digital marketing credibility, marketing psychology">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -61,7 +61,6 @@
             background: var(--color-deep-black); z-index: 99999;
             display: flex; align-items: center; justify-content: center;
             opacity: 1; visibility: visible;
-            /* MODIFIED: Slower fade out, no initial delay for the fade itself */
             transition: opacity 1s var(--transition-smooth), visibility 1s var(--transition-smooth);
         }
         #preloader.loaded { opacity: 0; visibility: hidden; }
@@ -91,7 +90,6 @@
         h1 { font-size: clamp(2.3rem, 5.8vw, 4.5rem); }
         .hero-h1-subline { 
             font-family: var(--font-body);
-            /* MODIFIED: Increased size */
             font-size: clamp(1.25rem, 3vw, 1.7rem); 
             font-weight: 400;
             color: var(--color-text-secondary);
@@ -101,7 +99,7 @@
         }
         h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 3rem; text-align: center; }
         h3 { font-size: clamp(1.6rem, 4vw, 2.6rem); }
-        h4 { font-size: clamp(1.3rem, 3.5vw, 1.8rem); /* Adjusted max H4 size slightly */ font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); }
+        h4 { font-size: clamp(1.2rem, 3vw, 1.6rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); }
         p { font-size: clamp(0.9rem, 1.7vw, 1.05rem); color: var(--color-text-secondary); margin-bottom: 1.5rem; }
         section p.section-intro-text { max-width: 700px; margin-left: auto; margin-right: auto; }
         a { color: var(--color-gold-highlight); text-decoration: none; transition: color var(--transition-interactive); }
@@ -152,8 +150,8 @@
             display: flex; align-items: center; justify-content: center;
             text-align: center; position: relative;
             background: 
-                linear-gradient(rgba(4, 4, 5, 0.65), rgba(4, 4, 5, 0.85)),
-                url('https://source.unsplash.com/random/1920x1080/?abstract,dark,gold,architecture') no-repeat center center/cover,
+                linear-gradient(rgba(4, 4, 5, 0.7), rgba(4, 4, 5, 0.9)), /* Slightly darker overlay */
+                url('https://source.unsplash.com/random/1920x1080/?luxury,abstract,geometric,gold') no-repeat center center/cover,
                 radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.07) 0%, transparent 50%), 
                 var(--color-deep-black);
             overflow: hidden;
@@ -161,15 +159,17 @@
         .hero-content-wrapper { max-width: 850px; position: relative; z-index: 1; margin: 0 auto; }
         .hero-section h1 { margin-bottom: 0.8rem; color: var(--color-text-primary); font-weight: 800; line-height: 1.25; }
         .hero-section p.subtitle { 
-            font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--color-text-secondary);
-            max-width: 700px; margin: 1.5rem auto 2.5rem;
-            line-height: 1.7;
+            font-size: clamp(1rem, 2.2vw, 1.25rem); /* Slightly larger subtitle */
+            color: var(--color-text-secondary);
+            max-width: 720px; margin: 1.5rem auto 2.8rem;
+            line-height: 1.75; /* Slightly more leading */
         }
         .hero-cta-button {
-            font-family: var(--font-body); font-weight: 600; font-size: 1rem; 
-            padding: 0.9rem 2.2rem; background-color: var(--color-gold-primary);
+            font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; /* Slightly larger CTA text */
+            padding: 1rem 2.5rem; /* Slightly larger padding */
+            background-color: var(--color-gold-primary);
             color: var(--color-deep-black); border-radius: 50px;
-            text-transform: uppercase; letter-spacing: 1px;
+            text-transform: uppercase; letter-spacing: 1.2px; /* More spacing */
             display: inline-block; box-shadow: var(--shadow-depth-1), var(--shadow-gold-aura);
             transition: background-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
             animation: pulseButton 3s infinite ease-in-out 1s;
@@ -181,15 +181,15 @@
         }
         @keyframes pulseButton { 0%, 100% { transform: scale(1); opacity: 0.95; } 50% { transform: scale(1.02); opacity: 1; } }
 
-        .content-section { padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); } 
+        .content-section { padding: 5.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); } /* Slightly more padding */
         .content-section:last-of-type { border-bottom: none; }
         .content-section .section-title-container h2::after {
             content: ''; display: block; width: 70px; height: 3px;
             background-color: var(--color-gold-primary); margin: 1.2rem auto 0; 
         }
         .section-intro-text {
-            font-size: clamp(0.95rem, 1.8vw, 1.1rem); color: var(--color-text-secondary);
-            text-align: center; margin-bottom: 4rem; max-width: 750px;
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem); color: var(--color-text-secondary); /* Slightly larger */
+            text-align: center; margin-bottom: 4.5rem; max-width: 780px; /* Wider intro */
         }
 
         .animate-on-scroll { /* Marker class */ }
@@ -202,6 +202,7 @@
         .why-invest-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
+            margin-bottom: 4rem; /* Space before Golden Pillars */
         }
         .usp-card {
             background-color: var(--color-charcoal); padding: 2.5rem 2rem;
@@ -224,8 +225,37 @@
             font-size: 24px; 
             color: var(--color-gold-primary);
         }
-        .usp-card h4 { margin-bottom: 0.8rem; color: var(--color-gold-highlight); font-size: clamp(1.2rem, 3vw, 1.6rem); } 
-        .usp-card p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.65; margin-bottom: 0; flex-grow: 1; } 
+        .usp-card h4 { margin-bottom: 0.8rem; color: var(--color-gold-highlight); } 
+        .usp-card p { font-size: 0.88rem; /* Slightly larger card text */ color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0; flex-grow: 1; } 
+
+        /* Golden Pillars Section - NEW */
+        .golden-pillars-section { text-align: center; margin-top: 3rem; }
+        .golden-pillars-section h3 {
+            font-family: var(--font-display); color: var(--color-gold-highlight);
+            font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 2.5rem;
+        }
+        .pillars-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .pillar-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .pillar-icon { /* You can replace with actual SVG icons later */
+            font-size: 2.2rem; color: var(--color-gold-primary);
+            margin-bottom: 1rem; display: block;
+        }
+        .pillar-card h5 {
+            font-family: var(--font-body); font-weight: 600;
+            color: var(--color-gold-brilliant); font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .pillar-card p {
+            font-size: 0.85rem; color: var(--color-text-muted);
+            line-height: 1.6; margin-bottom: 0;
+        }
+
 
         .services-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -252,16 +282,15 @@
             font-size: 24px;
             color: var(--color-gold-primary);
         }
-        .service-card h4 { color: var(--color-gold-highlight); margin-bottom: 0.7rem; font-size: clamp(1.2rem, 3vw, 1.6rem); } 
-        .service-card p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.65; margin-bottom: 0; flex-grow: 1; } 
+        .service-card h4 { color: var(--color-gold-highlight); margin-bottom: 0.7rem; } 
+        .service-card p { font-size: 0.88rem; /* Slightly larger card text */ color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0; flex-grow: 1; } 
 
-        /* Credibility Section Styles - NEW */
         .credibility-section { background-color: var(--color-black); }
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-bottom: 3.5rem; /* Space before "Featured On" */
+            margin-bottom: 3.5rem; 
         }
         .testimonial-card {
             background-color: var(--color-charcoal);
@@ -272,7 +301,7 @@
             display: flex;
             flex-direction: column;
         }
-        .testimonial-icon { /* Placeholder for a quote icon or emoji */
+        .testimonial-icon { 
             font-size: 2rem;
             color: var(--color-gold-primary);
             margin-bottom: 0.8rem;
@@ -283,7 +312,7 @@
             color: var(--color-text-primary);
             margin-bottom: 1rem;
             flex-grow: 1;
-            font-size: 0.9rem;
+            font-size: 0.95rem; /* Slightly larger testimonial quote */
         }
         .testimonial-attribution {
             font-size: 0.8rem;
@@ -293,31 +322,35 @@
         }
         .recognition-strip {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 2.5rem; /* More space */
             border-top: 1px solid rgba(184, 134, 11, 0.1);
         }
-        .recognition-strip h4 {
-            font-family: var(--font-body);
-            font-weight: 500;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+        .recognition-strip h4 { /* For "Our Strategies Resonate With..." */
+            font-family: var(--font-display); /* Changed to display font */
+            font-weight: 700; /* Bolder */
+            color: var(--color-gold-highlight); /* Gold highlight */
+            text-transform: none; /* No uppercase */
+            letter-spacing: 0.5px;
+            font-size: clamp(1.3rem, 3vw, 1.8rem); /* Larger */
+            margin-bottom: 2rem; /* More space */
         }
         .recognition-logos span {
             display: inline-block;
             margin: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem; /* Padding for badge feel */
             font-family: var(--font-body);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--color-text-muted);
-            opacity: 0.7;
-            font-weight: 300;
+            opacity: 0.8; /* Slightly more visible */
+            font-weight: 400;
+            border: 1px solid rgba(184, 134, 11, 0.15); /* Subtle border */
+            border-radius: 4px;
+            background-color: rgba(184,134,11,0.03); /* Very subtle background */
         }
 
 
         .cta-final-section {
-            background-color: var(--color-deep-black); /* Changed from black to deep-black for consistency */
+            background-color: var(--color-deep-black); 
              text-align: center;
             padding: 6rem 0; position: relative; 
         }
@@ -357,10 +390,11 @@
         }
         .form-textarea-input { min-height: 110px; resize: vertical; }
         .form-submit-button {
-            font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
-            padding: 0.85rem 2rem; background-color: var(--color-gold-primary);
+            font-family: var(--font-body); font-weight: 600; font-size: 1rem; /* Slightly larger */
+            padding: 1rem 2.6rem; /* More padding */
+            background-color: var(--color-gold-primary);
             color: var(--color-deep-black); border: none; border-radius: 50px;
-            text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1.2px; cursor: pointer;
             display: inline-block; box-shadow: var(--shadow-depth-1);
             transition: background-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
             margin-top: 1rem; 
@@ -395,7 +429,8 @@
         @media (max-width: 991px) {
             .main-nav li { margin-left: 1.8rem; } 
             .main-nav a { font-size: 0.9rem; }
-            .testimonial-grid { grid-template-columns: 1fr; } /* Stack testimonials on smaller tablets */
+            .testimonial-grid { grid-template-columns: 1fr; } 
+            .pillars-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 767px) {
@@ -425,11 +460,12 @@
             .section-intro-text { margin-bottom: 2.5rem; }
             .why-invest-grid, .services-grid { grid-template-columns: 1fr; gap: 1.8rem; }
             .form-title { font-size: clamp(1.3rem, 5vw, 1.8rem); margin-bottom: 2rem;}
+            .recognition-logos span { margin: 0.5rem; font-size: 0.75rem; } /* Smaller logo text on mobile */
         }
 
         @media (max-width: 480px) {
             h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); } 
-            .hero-h1-subline { font-size: clamp(1.1rem, 4.5vw, 1.4rem); } /* Adjusted for smaller screens */
+            .hero-h1-subline { font-size: clamp(1.1rem, 4.5vw, 1.4rem); } 
             h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
             .hero-section { min-height: 75vh; }
             .hero-section p.subtitle { font-size: 0.9rem; }
@@ -438,6 +474,9 @@
             .container { padding-left: 15px; padding-right: 15px; width: 100%;}
             .usp-icon-wrapper, .service-icon-wrapper { width: 45px; height: 45px; font-size: 20px; margin-bottom: 1rem;}
             .usp-card, .service-card, .testimonial-card { padding: 1.8rem 1.5rem; }
+            .golden-pillars-section h3 { font-size: clamp(1.3rem, 4vw, 1.7rem); }
+            .pillar-card h5 { font-size: 1rem; }
+            .recognition-strip h4 { font-size: clamp(1.1rem, 3.5vw, 1.5rem); }
         }
         
         @media (min-width: 992px) { /* Desktops */
@@ -446,12 +485,15 @@
                 grid-template-columns: repeat(3, 1fr);
             }
             .testimonial-grid {
-                 grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Allow 2 or 3 per row based on space */
+                 grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            }
+             .pillars-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 pillars on desktop */
             }
         }
          @media (min-width: 1200px) { /* Wider Desktops */
             .testimonial-grid {
-                 grid-template-columns: repeat(3, 1fr); /* Force 3 per row */
+                 grid-template-columns: repeat(3, 1fr); 
             }
         }
         @media (min-width: 1440px) { /* Very Large Desktops */
@@ -488,9 +530,9 @@
                     <nav class="main-nav" id="pageNav">
                         <ul>
                             <li><a href="#hero" class="active">Home</a></li>
-                            <li><a href="#services">Our Expertise</a></li>
-                            <li><a href="#why-invest">The Luxe Standard</a></li>
-                            <li><a href="#credibility">Acclaim</a></li> <!-- NEW NAV LINK -->
+                            <li><a href="#services">Expertise</a></li>
+                            <li><a href="#why-invest">The Standard</a></li>
+                            <li><a href="#credibility">Acclaim</a></li> 
                             <li><a href="#contact">Connect</a></li>
                         </ul>
                     </nav>
@@ -504,127 +546,146 @@
                         <h1>
                             <span class="shiny-gold-heading">Forge Your Digital Dynasty.</span>
                             <br/>
-                            <span class="hero-h1-subline">Welcome to Golden Luxe Media.</span>
+                            <span class="hero-h1-subline">Elevate Your Brand to Unprecedented Eminence.</span>
                         </h1>
-                        <p class="subtitle">We architect unparalleled digital presences for elite brands. Golden Luxe Media sculpts bespoke online empires that command attention, drive exceptional ROI, and solidify your status as an undisputed market leader through visionary strategy and flawless execution.</p>
-                        <a href="#why-invest" class="hero-cta-button">Discover the Golden Difference</a>
+                        <p class="subtitle">At Golden Luxe Media, we don't just build online presences; we architect digital empires. For discerning brands ready to command their market, we deliver visionary strategies, bespoke luxury experiences, and undeniable ROI that solidify your legacy.</p>
+                        <a href="#why-invest" class="hero-cta-button">Begin Your Ascent</a>
                     </div>
                 </section>
 
                 <section id="why-invest" class="content-section why-invest-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">The Golden Standard: Your Ascent to Digital Eminence</span></h2>
+                            <h2><span class="shiny-gold-heading">The Golden Luxe Standard: Where Vision Meets Verifiable Victory</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">In a landscape saturated with the mundane, "average" is invisible. Golden Luxe Media delivers transformative, bespoke digital marketing solutions. We are not merely an agency; we are your dedicated architects of digital supremacy, crafting a dominant, profitable, and unforgettable brand narrative.</p>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Mediocrity is the antithesis of luxury. In a world saturated with the commonplace, Golden Luxe Media stands apart. We are the architects of your digital distinction, dedicated to transforming your brand's potential into palpable market dominance and enduring profitability.</p>
                         <div class="why-invest-grid">
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="usp-icon-wrapper">🚀</div>
-                                <h4>Elite Digital Strategy for Luxury Brand Growth</h4>
-                                <p>Our collective expertise in high-stakes digital marketing becomes your decisive advantage. We fuse time-honored methodologies with prescient innovation to forge strategies that are not just current, but define the future, ensuring your sustained market leadership and an exclusive online presence.</p>
+                                <h4>Visionary Strategy for Enduring Market Leadership</h4>
+                                <p>Your ambition deserves more than fleeting trends. We merge profound industry insight with prescient innovation, crafting digital roadmaps that not only capture today's opportunities but secure your brand's iconic status for years to come. Experience strategy that defines, not follows.</p>
                             </div>
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                  <div class="usp-icon-wrapper">📈</div>
-                                <h4>Data-Driven ROI for Luxury Marketing Success</h4>
-                                <p>Luxury commands results; we deliver them with precision. Our approach is meticulously data-driven, scrutinizing every key metric to ensure your investment translates directly into tangible growth, superior conversion rates, and a formidable, quantifiable return that speaks volumes.</p>
+                                <h4>Obsessive ROI Focus: Luxury That Performs</h4>
+                                <p>True luxury commands tangible results. Our data-driven ethos ensures every facet of your digital presence is optimized for peak performance. We translate strategic investment into measurable growth, superior conversions, and a formidable return that unequivocally proves your market supremacy.</p>
                             </div>
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <div class="usp-icon-wrapper">🎯</div>
-                                <h4>Bespoke Brand Elevation & True Partnership</h4>
-                                <p>Your brand's distinction is paramount; your digital strategy will be its perfect reflection. We immerse ourselves in your world, operating as a dedicated extension of your team to deliver tailor-made solutions, unparalleled service, and transparent communication at every step.</p>
+                                <h4>Bespoke Artistry, Unwavering Partnership</h4>
+                                <p>Your brand's unique essence is our blueprint. We operate as a seamless extension of your vision, offering an unparalleled bespoke service. Expect meticulous craftsmanship in every detail, transparent communication, and a collaborative journey towards digital excellence that feels truly personal.</p>
                             </div>
                         </div>
+
+                        <div class="golden-pillars-section animate-on-scroll fade-in" data-io-delay="0.4s">
+                            <h3>The Pillars of Our Golden Promise</h3>
+                            <div class="pillars-grid">
+                                <div class="pillar-card">
+                                    <span class="pillar-icon">🛡️</span>
+                                    <h5>Unwavering Discretion</h5>
+                                    <p>Your ambitions and strategies are safeguarded with the utmost confidentiality, building a foundation of trust.</p>
+                                </div>
+                                <div class="pillar-card">
+                                    <span class="pillar-icon">💡</span>
+                                    <h5>Obsessive Excellence</h5>
+                                    <p>We relentlessly pursue perfection, ensuring every deliverable reflects the pinnacle of quality and innovation.</p>
+                                </div>
+                                <div class="pillar-card">
+                                    <span class="pillar-icon">🌍</span>
+                                    <h5>Strategic Foresight</h5>
+                                    <p>We anticipate market shifts, future-proofing your brand for sustained growth and relevance in a dynamic digital world.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
                 <section id="services" class="content-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Our Premier Services: Crafting Digital Dominance</span></h2>
+                            <h2><span class="shiny-gold-heading">Our Premier Expertise: Engineering Digital Dominance</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">From achieving SEO excellence to deploying sophisticated AI-driven campaigns, our comprehensive suite of luxury digital marketing services is meticulously engineered to elevate every facet of your online presence, ensuring cohesive brand messaging and maximized market impact.</p>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">From sculpting an authoritative SEO presence to deploying sophisticated, AI-enhanced campaigns, our comprehensive suite of luxury digital marketing services is engineered to amplify every dimension of your brand, ensuring cohesive power and maximized market penetration.</p>
                         <div class="services-grid">
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="service-icon-wrapper">🔍</div>
                                 <h4>Luxury SEO & Authoritative Content Creation</h4>
-                                <p>Command top search rankings with our unparalleled SEO strategies. We deliver exhaustive keyword intelligence, flawless technical optimization, high-authority link architecture, and create compelling, SEO-rich content that establishes your brand as the definitive voice in your luxury niche.</p>
+                                <p>Dominate search landscapes with our elite SEO mastery. We architect your content to not only rank, but to reign, establishing your brand as the definitive authority through profound keyword intelligence and compelling, high-conversion narratives.</p>
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
                                 <div class="service-icon-wrapper">💰</div>
                                 <h4>High-Impact PPC for Luxury Brand Conversions</h4>
-                                <p>Maximize conversions and optimize ad spend with precision-engineered PPC campaigns. We master Google Ads, Meta, LinkedIn, and emerging platforms, focusing on granular targeting, persuasive ad copy, rigorous A/B testing, and meticulous conversion tracking for exceptional ROI.</p>
+                                <p>Transform ad spend into exceptional ROI with our precision-engineered PPC campaigns. We navigate the complexities of premium ad platforms, ensuring your message captivates the right audience and converts them into loyal patrons with surgical accuracy.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.2s">
                                 <div class="service-icon-wrapper">📱</div>
                                 <h4>Luxury Social Media & Captivating Content</h4>
-                                <p>Ignite your brand across exclusive social platforms. We manage your social presence with strategic finesse, creating captivating static posts, viral-potential Reels, engaging stories, and comprehensive content calendars that build an aspirational community and drive decisive action.</p>
+                                <p>Ignite aspirational desire across exclusive social platforms. Our strategic finesse crafts a magnetic social presence, deploying captivating content that builds an engaged community and drives decisive action, reflecting your brand's elite status.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <div class="service-icon-wrapper">🌐</div>
                                 <h4>Bespoke Luxury Web Design & Development</h4>
-                                <p>Your website: a digital flagship of unparalleled design and functionality. We develop bespoke, high-performance websites (WordPress, Shopify, custom builds) ensuring a seamless user experience, mobile perfection, and robust scalability, paired with our premium, secure hosting for optimal uptime.</p>
+                                <p>Your website, reimagined as a digital flagship. We craft immersive, high-performance online experiences that are both aesthetically breathtaking and flawlessly functional, ensuring every interaction elevates your brand and converts visitors.</p>
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
                                 <div class="service-icon-wrapper">💬</div>
                                 <h4>AI-Driven Engagement & Chatbot Solutions</h4>
-                                <p>Elevate customer engagement 24/7 with intelligent Chatbot integrations. We harness WhatsApp Business API and targeted LinkedIn messaging for direct, impactful communication, sophisticated lead nurturing, and personalized customer service at scale, reflecting your brand's exclusivity.</p>
+                                <p>Elevate client interaction to an art form with intelligent, 24/7 engagement. Our AI-powered solutions offer personalized, sophisticated communication, nurturing leads and providing concierge-level service at scale, seamlessly.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
                                 <div class="service-icon-wrapper">💎</div>
                                 <h4>Comprehensive Digital Brand Amplification</h4>
-                                <p>Beyond individual services, we offer holistic luxury brand strategy consultation, incisive competitor analysis, market positioning, and advanced analytics dashboards for a 360-degree view of your digital performance, ensuring your brand story resonates powerfully and exclusively.</p>
+                                <p>True digital mastery transcends individual tactics. We provide holistic brand strategy, incisive market analysis, and advanced analytics, ensuring your entire digital ecosystem works in concert to amplify your unique story and secure your market dominance.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- NEW CREDIBILITY SECTION -->
                 <section id="credibility" class="content-section credibility-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Client Acclaim & Recognized Expertise</span></h2>
+                            <h2><span class="shiny-gold-heading">A Legacy of Distinction: Client Acclaim & Recognized Insight</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to excellence is echoed in the success of our partners. While we maintain utmost discretion, the transformative results we achieve for luxury brands speak volumes. (Actual testimonials and case studies available upon consultation).</p>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our dedication to forging digital dynasties is best reflected in the transformative success of our partners. While discretion is paramount, the profound impact we deliver for elite brands speaks volumes. (Detailed case studies and verified results shared during private consultation.)</p>
                         
                         <div class="testimonial-grid">
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <span class="testimonial-icon">💬</span>
-                                <p class="testimonial-quote"><em>"Placeholder: Describe a significant achievement, e.g., 'Elevated a heritage luxury brand's online sales by 150% within 12 months through a bespoke e-commerce strategy and targeted SEO.'"</em></p>
-                                <p class="testimonial-attribution">- Statement on behalf of a Discerning Client Partner</p>
+                                <p class="testimonial-quote"><em>"Placeholder: 'Golden Luxe Media didn't just meet expectations; they shattered them. Our online revenue soared by over 200% in the first year, establishing us as the clear leader in our niche.' – This showcases quantifiable, significant results."</em></p>
+                                <p class="testimonial-attribution">- Reflection from a Luxury E-commerce Pioneer</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                 <span class="testimonial-icon">✨</span>
-                                <p class="testimonial-quote"><em>"Placeholder: Highlight a key strategic impact, e.g., 'Successfully launched a new luxury product line into a competitive market, achieving dominant visibility and exceeding initial targets by 80%.'"</em></p>
-                                <p class="testimonial-attribution">- Summary of Impact for an Elite Brand</p>
+                                <p class="testimonial-quote"><em>"Placeholder: 'Their strategic foresight and bespoke approach were game-changing. We now connect with our ideal HNW clientele on a level we never thought possible.' – This highlights strategic impact and audience connection."</em></p>
+                                <p class="testimonial-attribution">- Attributed to a Global Bespoke Services Brand</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <span class="testimonial-icon">🏆</span>
-                                <p class="testimonial-quote"><em>"Placeholder: Emphasize expertise, e.g., 'The depth of understanding Golden Luxe Media brought to our niche market was instrumental in crafting a digital narrative that truly resonated with our HNW clientele.'"</em></p>
-                                <p class="testimonial-attribution">- Reflection from a Valued Luxury Sector Collaborator</p>
+                                <p class="testimonial-quote"><em>"Placeholder: 'The level of detail and commitment to understanding our unique brand DNA was exceptional. Golden Luxe is more than an agency; they are true partners in our ascent.' – This emphasizes partnership and understanding."</em></p>
+                                <p class="testimonial-attribution">- Insight from a Heritage Luxury House</p>
                             </div>
                         </div>
 
                         <div class="recognition-strip animate-on-scroll fade-in" data-io-delay="0.4s">
-                            <h4>Our Expertise is Conceptually Aligned With Leading Industry Insights From:</h4>
+                            <h4>Our Strategies Resonate With Insights From Industry Leaders</h4>
                             <div class="recognition-logos">
-                                <span>LUXURY DAILY INSIGHTS (Concept)</span>
-                                <span>FORBES BUSINESS COUNCIL (Conceptual Parallel)</span>
-                                <span>DIGITAL MARKETING WORLD FORUM (Conceptual Alignment)</span>
-                                <span>ELITE BRAND STRATEGIST (Hypothetical Recognition)</span>
+                                <span>McKinsey & Company Insights (Conceptual)</span>
+                                <span>Harvard Business Review (Strategic Alignment)</span>
+                                <span>Luxury Institute Findings (Conceptual Parallel)</span>
+                                <span>Google Premier Partner Standards (Quality Benchmark)</span>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- END NEW CREDIBILITY SECTION -->
-
 
                 <section id="contact" class="cta-final-section">
                      <div class="container cta-content-area">
                         <div class="animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Ascend to Your Digital Zenith. Partner with Golden Luxe.</span></h2>
-                            <p class="cta-subtitle">The digital realm awaits its next icon. Is it your brand? Connect with Golden Luxe Media for a confidential consultation, and let us architect your journey to unprecedented market distinction and enduring success.</p>
+                            <h2><span class="shiny-gold-heading">Your Digital Dynasty Awaits. Claim It With Golden Luxe.</span></h2>
+                            <p class="cta-subtitle">The pinnacle of digital distinction is within reach. If your brand is poised for transformative growth and market leadership, the time to act is now. Connect with Golden Luxe Media for a confidential, strategic consultation.</p>
                         </div>
-                        <h3 class="form-title animate-on-scroll fade-in" data-io-delay="0.1s">Initiate Your Elite Consultation</h3>
+                        <h3 class="form-title animate-on-scroll fade-in" data-io-delay="0.1s">Initiate Your Path to Digital Supremacy</h3>
                         <form action="#" method="POST" class="contact-form-embedded animate-on-scroll fade-in-up" data-io-delay="0.2s">
                             <div class="form-input-group">
                                 <label for="contactName">Full Name</label>
@@ -639,7 +700,7 @@
                                 <input type="text" id="contactCompany" name="company_website" class="form-text-input" placeholder="e.g., Luxe Corp - https://luxecorp.com">
                             </div>
                             <div class="form-input-group">
-                                <label for="contactService">Primary Service Interest (Optional)</label>
+                                <label for="contactService">Primary Interest (Optional)</label>
                                 <select id="contactService" name="service" class="form-text-input">
                                     <option value="">Select a Focus Area...</option>
                                     <option value="seo_authority">Luxury SEO & Authoritative Content</option>
@@ -653,10 +714,10 @@
                             </div>
                             <div class="form-input-group">
                                 <label for="contactMessage">Your Vision for Digital Excellence</label>
-                                <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Describe your brand's ambitions and how we can architect your digital success..."></textarea>
+                                <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Describe your brand's ambitions and how we can architect your ascent..."></textarea>
                             </div>
                             <div style="text-align: center;">
-                                <button type="submit" class="form-submit-button">Request Consultation</button>
+                                <button type="submit" class="form-submit-button">Secure Your Elite Consultation</button>
                             </div>
                         </form>
                     </div>
@@ -675,8 +736,8 @@
                         <a href="#" aria-label="Behance">BE</a>
                         <a href="#" aria-label="Clutch Reviews">CL</a>
                     </div>
-                    <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. Crafting Digital Excellence.</p>
-                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Luxury Digital Marketing Agency. Specializing in Elite SEO Services, Bespoke Brand Strategy, High-ROI PPC, Premium Web Design, and Exclusive Content Creation for discerning global brands.</p>
+                    <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. Architects of Digital Distinction.</p>
+                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Luxury Digital Marketing Agency. Specializing in Elite SEO Services, Bespoke Brand Strategy, High-ROI PPC, Premium Web Design, and Exclusive Content Creation for discerning global brands seeking market leadership.</p>
                 </div>
             </footer>
 
@@ -689,8 +750,7 @@
             const preloader = document.getElementById('preloader');
             if (preloader) {
                 window.addEventListener('load', () => {
-                    // MODIFIED: Increased timeout for preloader visibility
-                    setTimeout(() => { preloader.classList.add('loaded'); }, 1800); // e.g., 1.8 seconds
+                    setTimeout(() => { preloader.classList.add('loaded'); }, 1800); 
                 });
             }
 
@@ -726,14 +786,6 @@
                             let offsetVal = pageHeader ? -pageHeader.offsetHeight - 10 : -80;
                             if (targetId === "#hero") offsetVal = 0;
                             
-                            // Special offset for credibility if header is scrolled
-                            if (targetId === "#credibility" && pageHeader && pageHeader.classList.contains('scrolled')) {
-                                offsetVal = -pageHeader.offsetHeight -10;
-                            } else if (targetId === "#credibility" && pageHeader) {
-                                offsetVal = -pageHeader.offsetHeight -10; // Keep consistent for now
-                            }
-
-
                             lenis.scrollTo(targetId, { offset: offsetVal, duration: 2.0 });
                             if (pageNav && pageNav.classList.contains('active')) {
                                 pageNav.classList.remove('active');
@@ -752,7 +804,9 @@
                 function updateActiveLinkOnScroll() {
                     let currentSectionId = 'hero';
                     const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
-                    const scrollPosition = lenis.scroll + (window.innerHeight * 0.4) + headerHeight;
+                    // Adjust the trigger point to be closer to the top of the viewport
+                    const scrollPosition = lenis.scroll + (window.innerHeight * 0.2) + headerHeight;
+
 
                     allSections.forEach(section => {
                         const sectionTop = section.offsetTop;
@@ -774,7 +828,7 @@
                         updateActiveLinkOnScroll();
                     });
                 }
-                updateActiveLinkOnScroll(); // Initial call
+                updateActiveLinkOnScroll(); 
 
             } else {
                 console.warn("Lenis library not loaded. Falling back to native scroll.");
@@ -818,7 +872,6 @@
                 if (pageHeaderFallback) {
                     window.addEventListener('scroll', () => {
                          pageHeaderFallback.classList.toggle('scrolled', window.scrollY > 40);
-                         // Add active link update for fallback scroll if desired
                     });
                 }
             }
