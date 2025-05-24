@@ -1,651 +1,1258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GoldenLuxe Media | Luxury Digital Marketing</title>
-<style>
-  /* Reset & Base */
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0; font-family: 'Montserrat', sans-serif;
-    background-color: #000;
-    color: #fff;
-    scroll-behavior: smooth;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin: 0.5em 0;
-  }
-  /* Colors */
-  :root {
-    --gold: #D4AF37;
-    --white: #fff;
-    --black: #000;
-  }
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Luxe Media - Where Ambition Meets Algorithm</title>
+    <meta name="description" content="Premium digital marketing agency transforming ambitious brands into digital powerhouses through strategic excellence and creative mastery.">
+    <meta property="og:title" content="Golden Luxe Media - Where Ambition Meets Algorithm">
+    <meta property="og:description" content="Digital Alchemy for Visionary Brands. We don't create campaigns. We forge empires.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4BC;
+            --gold-dark: #B8941F;
+            --black: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --light-gray: #F8F8F8;
+            --white: #FFFFFF;
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
 
-  /* Nav */
-  nav {
-    position: sticky;
-    top: 0; left: 0; right: 0;
-    background: #000;
-    border-bottom: 1px solid rgba(212,175,55,0.3);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 2rem;
-    z-index: 1000;
-  }
-  nav .logo {
-    font-family: 'Cinzel', serif;
-    font-size: 1.6rem;
-    color: var(--gold);
-    font-weight: 700;
-    cursor: default;
-    user-select: none;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  nav ul li {
-    font-weight: 600;
-    cursor: pointer;
-    position: relative;
-  }
-  nav ul li:hover::after,
-  nav ul li:focus::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0; right: 0;
-    height: 2px;
-    background: var(--gold);
-    border-radius: 2px;
-  }
-  nav ul li a {
-    color: #fff;
-    transition: color 0.3s;
-  }
-  nav ul li:hover a,
-  nav ul li:focus a {
-    color: var(--gold);
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* Hero */
-  #hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background:
-      radial-gradient(circle at center, rgba(212,175,55,0.1), transparent 80%),
-      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-    color: var(--gold);
-    text-align: center;
-    padding: 0 1rem;
-  }
-  #hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    text-shadow: 0 0 6px rgba(212,175,55,0.7);
-  }
-  #hero p {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    color: #fff;
-    min-height: 24px;
-  }
-  #hero .cta-buttons {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #hero .btn-primary,
-  #hero .btn-secondary {
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.9rem 2rem;
-    border-radius: 30px;
-    cursor: pointer;
-    border: 2px solid var(--gold);
-    transition: all 0.3s ease;
-    user-select: none;
-    text-transform: uppercase;
-  }
-  #hero .btn-primary {
-    background-color: var(--gold);
-    color: var(--black);
-  }
-  #hero .btn-primary:hover {
-    background-color: #b59222;
-  }
-  #hero .btn-secondary {
-    background-color: transparent;
-    color: var(--gold);
-  }
-  #hero .btn-secondary:hover {
-    background-color: var(--gold);
-    color: var(--black);
-  }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* Typed effect */
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-  .typed-cursor {
-    font-weight: 600;
-    font-size: 1.3rem;
-    color: var(--gold);
-    animation: blink 1s infinite;
-  }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  /* Section styles */
-  section {
-    max-width: 960px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-  }
-  h2.section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  p.section-hook {
-    color: #bbb;
-    font-style: italic;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+        /* Cursor Trail Effect */
+        .cursor-trail {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
 
-  /* About */
-  #about .values {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  .value-item {
-    flex: 1 1 28%;
-    background: rgba(212,175,55,0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    color: var(--gold);
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 0 10px rgba(212,175,55,0.3);
-  }
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(10, 10, 10, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
 
-  /* Services */
-  #services .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-  .service-card {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid transparent;
-    border-radius: 16px;
-    width: 280px;
-    padding: 2rem 1.5rem;
-    color: var(--gold);
-    font-weight: 600;
-    cursor: pointer;
-    position: relative;
-    transition: border-color 0.3s, transform 0.3s;
-    box-shadow: 0 0 12px rgba(212,175,55,0.1);
-  }
-  .service-card:hover,
-  .service-card:focus {
-    border-color: var(--gold);
-    transform: translateY(-8px);
-    box-shadow: 0 0 18px rgba(212,175,55,0.6);
-    outline: none;
-  }
-  .service-card .title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-  .service-card .details {
-    font-size: 0.95rem;
-    color: #fff;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.4s, max-height 0.4s;
-  }
-  .service-card:hover .details,
-  .service-card:focus .details {
-    opacity: 1;
-    max-height: 150px;
-  }
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 5%;
+        }
 
-  /* Counters */
-  #results .counters {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    text-align: center;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-  }
-  .counter {
-    flex: 1 1 180px;
-    font-weight: 700;
-  }
-  .counter .number {
-    font-size: 3rem;
-    color: var(--gold);
-  }
-  .counter .label {
-    font-size: 1.1rem;
-    color: #ddd;
-  }
-  /* Case studies thumbnails */
-  #results .case-studies {
-    margin-top: 3rem;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .case {
-    background: rgba(212,175,55,0.1);
-    border-radius: 12px;
-    padding: 1rem;
-    width: 280px;
-    box-shadow: 0 0 12px rgba(212,175,55,0.3);
-    color: var(--gold);
-    font-weight: 600;
-    cursor: default;
-  }
-  .case h4 {
-    margin-bottom: 0.5rem;
-  }
-  .case p {
-    font-size: 0.9rem;
-    color: #eee;
-  }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-  /* Branding Showcase */
-  #branding .slider-container {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 14px;
-    box-shadow: 0 0 20px rgba(212,175,55,0.3);
-  }
-  #branding img {
-    width: 100%;
-    display: block;
-    user-select: none;
-  }
-  #branding .caption {
-    background: rgba(0,0,0,0.7);
-    padding: 0.8rem 1rem;
-    font-weight: 600;
-    color: var(--gold);
-    text-align: center;
-    font-size: 1rem;
-  }
-  #branding .slider-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-  #branding button {
-    background: rgba(212,175,55,0.7);
-    border: none;
-    padding: 0.5rem 1rem;
-    color: #000;
-    font-weight: 700;
-    cursor: pointer;
-    pointer-events: auto;
-    border-radius: 50%;
-    user-select: none;
-  }
-  #branding button:hover {
-    background: var(--gold);
-  }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
 
-  /* Testimonials */
-  #testimonials .testimonial-list {
-    max-width: 720px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  .testimonial {
-    background: rgba(255,255,255,0.05);
-    border-left: 5px solid var(--gold);
-    padding: 1rem 1.5rem;
-    font-style: italic;
-    color: #ddd;
-    border-radius: 8px;
-  }
-  .testimonial .author {
-    margin-top: 0.5rem;
-    text-align: right;
-    font-weight: 700;
-    color: var(--gold);
-  }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
 
-  /* CTA Section */
-  #cta {
-    background: var(--gold);
-    color: var(--black);
-    padding: 3rem 1rem;
-    text-align: center;
-    font-weight: 700;
-  }
-  #cta h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  #cta button {
-    background: #000;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--gold);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    user-select: none;
-  }
-  #cta button:hover {
-    background-color: #222;
-  }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
 
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    color: #555;
-    border-top: 1px solid rgba(212,175,55,0.2);
-  }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav ul {
-      gap: 1rem;
-    }
-    #hero h1 {
-      font-size: 2.2rem;
-    }
-    #hero p {
-      font-size: 1.1rem;
-    }
-    #services .cards,
-    #results .counters,
-    #results .case-studies {
-      flex-direction: column;
-      align-items: center;
-    }
-    #about .values {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-</style>
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, var(--black) 70%);
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: slideInUp 1s ease 0.5s forwards;
+        }
+
+        .hero-tagline {
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-weight: 500;
+            opacity: 0;
+            animation: slideInUp 1s ease 0.8s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: slideInUp 1s ease 1.1s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, var(--gold), var(--gold-light));
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: slideInUp 1s ease 1.4s forwards;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Sections */
+        .section {
+            padding: 120px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 48px);
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--gold);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--dark-gray);
+            margin: 0 -5%;
+            padding: 120px 5%;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-visual {
+            position: relative;
+            text-align: center;
+        }
+
+        .glm-watermark {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(212, 175, 55, 0.1);
+            opacity: 0.5;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-category {
+            background: linear-gradient(135deg, var(--dark-gray), rgba(26, 26, 26, 0.8));
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .service-category:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .service-category:hover::before {
+            left: 100%;
+        }
+
+        .service-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            margin: 0 -5%;
+            padding: 120px 5%;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .achievement-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .achievement-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .achievement-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .achievement-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Why Choose Us */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pillar-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(26, 26, 26, 0.5);
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .pillar-item:hover {
+            background: rgba(26, 26, 26, 0.8);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .pillar-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .pillar-item p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--dark-gray);
+            margin: 0 -5%;
+            padding: 120px 5%;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-item {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .testimonial-item.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .testimonial-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 48px;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-author {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--gold);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 5%;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--dark-gray);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--white);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(26, 26, 26, 0.5);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(26, 26, 26, 0.8);
+            transform: translateX(10px);
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--gold), var(--gold-light));
+            color: var(--black);
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow-gold);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--gold);
+            font-weight: 700;
+            opacity: 0;
+            animation: logoReveal 2s ease forwards;
+        }
+
+        @keyframes logoReveal {
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-
-<nav aria-label="Primary Navigation">
-  <div class="logo" tabindex="0">GoldenLuxe Media</div>
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#branding">Branding</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#cta">Contact</a></li>
-  </ul>
-</nav>
-
-<section id="hero" role="banner" aria-label="Hero Section">
-  <h1>GoldenLuxe Media</h1>
-  <p id="typed-text" aria-live="polite" aria-atomic="true"></p>
-  <div class="cta-buttons">
-    <button class="btn-primary" onclick="location.href='#contact-form';" aria-label="Get Started Today">Get Started Today</button>
-    <button class="btn-secondary" onclick="location.href='#services';" aria-label="Learn More About Our Services">Learn More</button>
-  </div>
-</section>
-
-<section id="about" tabindex="0" aria-labelledby="about-title">
-  <h2 id="about-title" class="section-title">About Us</h2>
-  <p class="section-hook">Crafting premium digital experiences with an unmatched touch of luxury.</p>
-  <div class="values" role="list">
-    <div class="value-item" role="listitem">Exquisite Design</div>
-    <div class="value-item" role="listitem">Bespoke Marketing Strategies</div>
-    <div class="value-item" role="listitem">Unrivaled Customer Care</div>
-  </div>
-</section>
-
-<section id="services" tabindex="0" aria-labelledby="services-title">
-  <h2 id="services-title" class="section-title">Our Services</h2>
-  <p class="section-hook">Luxury marketing tailored to elevate your brand.</p>
-  <div class="cards">
-    <article tabindex="0" class="service-card" aria-label="Social Media Marketing Service">
-      <div class="title">Social Media Marketing</div>
-      <div class="details">Strategic campaigns to engage and expand your luxury clientele on all platforms.</div>
-    </article>
-    <article tabindex="0" class="service-card" aria-label="SEO Optimization Service">
-      <div class="title">SEO Optimization</div>
-      <div class="details">Increase your visibility on search engines with tailored SEO strategies for luxury brands.</div>
-    </article>
-    <article tabindex="0" class="service-card" aria-label="Content Creation Service">
-      <div class="title">Content Creation</div>
-      <div class="details">Premium photography, video, and copywriting to reflect your brand’s elegance.</div>
-    </article>
-  </div>
-</section>
-
-<section id="results" tabindex="0" aria-labelledby="results-title">
-  <h2 id="results-title" class="section-title">Our Results</h2>
-  <p class="section-hook">Delivering measurable growth with a golden touch.</p>
-  <div class="counters" role="list" aria-label="Achievements">
-    <div class="counter" role="listitem">
-      <div class="number" id="clients-counter">0</div>
-      <div class="label">Happy Clients</div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">GLM</div>
     </div>
-    <div class="counter" role="listitem">
-      <div class="number" id="projects-counter">0</div>
-      <div class="label">Projects Completed</div>
-    </div>
-    <div class="counter" role="listitem">
-      <div class="number" id="awards-counter">0</div>
-      <div class="label">Awards Won</div>
-    </div>
-  </div>
-  <div class="case-studies" aria-label="Case Studies">
-    <div class="case">
-      <h4>Luxury Fashion Brand</h4>
-      <p>Boosted social engagement by 300% in 6 months.</p>
-    </div>
-    <div class="case">
-      <h4>Exclusive Jewelry Line</h4>
-      <p>Tripled website traffic via SEO and targeted campaigns.</p>
-    </div>
-    <div class="case">
-      <h4>Luxury Travel Service</h4>
-      <p>Generated over 500 qualified leads in 4 months.</p>
-    </div>
-  </div>
-</section>
 
-<section id="branding" tabindex="0" aria-labelledby="branding-title">
-  <h2 id="branding-title" class="section-title">Branding Showcase</h2>
-  <div class="slider-container" aria-live="polite" aria-atomic="true">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Branding Image 1" id="branding-image" />
-    <div class="caption" id="branding-caption">Elegant Logo Design</div>
-    <div class="slider-controls">
-      <button aria-label="Previous Image" id="prev-btn">&#10094;</button>
-      <button aria-label="Next Image" id="next-btn">&#10095;</button>
-    </div>
-  </div>
-</section>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">Golden Luxe Media</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#achievements">Results</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<section id="testimonials" tabindex="0" aria-labelledby="testimonials-title">
-  <h2 id="testimonials-title" class="section-title">Testimonials</h2>
-  <div class="testimonial-list">
-    <blockquote class="testimonial">
-      "GoldenLuxe transformed our digital presence with elegance and precision. Our sales soared!"
-      <footer class="author">— Alexandra M., CEO</footer>
-    </blockquote>
-    <blockquote class="testimonial">
-      "Exceptional service with an eye for luxury detail. Highly recommend their bespoke marketing!"
-      <footer class="author">— Marco T., Brand Manager</footer>
-    </blockquote>
-    <blockquote class="testimonial">
-      "A partner that truly understands the essence of luxury branding and marketing."
-      <footer class="author">— Sophia L., Creative Director</footer>
-    </blockquote>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <h1>Where Ambition Meets Algorithm</h1>
+            <div class="hero-tagline">Digital Alchemy for Visionary Brands</div>
+            <p class="hero-subtitle">Transforming ambitious brands into digital powerhouses through strategic excellence and creative mastery</p>
+            <a href="#contact" class="cta-button">Let's Create Magic</a>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 24px;">↓</div>
+        </div>
+    </section>
 
-<section id="cta" aria-label="Call to Action">
-  <h2>Ready to Elevate Your Brand?</h2>
-  <button onclick="location.href='#contact-form';" aria-label="Contact GoldenLuxe Media">Contact Us Now</button>
-</section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>We Don't Just Market. We Architect Dominance.</h3>
+                <p>Golden Luxe Media isn't just another digital agency. We're digital architects who understand that true luxury lies in results. Every campaign we craft, every brand we elevate, every strategy we deploy is designed with one purpose: to transform your business into an industry leader.</p>
+                <br>
+                <p>We blend data-driven precision with creative artistry, delivering experiences that don't just convert—they captivate, inspire, and build lasting brand legacies.</p>
+            </div>
+            <div class="about-visual">
+                <div class="glm-watermark">GLM</div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" tabindex="0" aria-labelledby="contact-title" style="max-width:600px; margin:3rem auto 5rem auto; padding:0 1rem;">
-  <h2 id="contact-title" class="section-title">Get In Touch</h2>
-  <form id="contact-form" aria-label="Contact Form" action="https://formspree.io/f/mwkajnqe" method="POST" style="display:flex; flex-direction: column; gap:1rem;">
-    <label for="name">Name</label>
-    <input id="name" name="name" type="text" required placeholder="Your full name" />
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required placeholder="you@example.com" />
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="4" required placeholder="Write your message here"></textarea>
-    <button type="submit" style="background: var(--gold); border:none; color:#000; font-weight:700; padding:0.8rem; border-radius:30px; cursor:pointer;">Send Message</button>
-  </form>
-</section>
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <h2 class="section-title">The Arsenal of Excellence</h2>
+        <div class="services-grid">
+            <div class="service-category">
+                <h3>Strategic Foundation</h3>
+                <ul class="service-list">
+                    <li>Brand Architecture & Positioning</li>
+                    <li>Digital Strategy & Consulting</li>
+                    <li>Market Intelligence & Analytics</li>
+                    <li>Competitive Analysis & Insights</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>Performance Engine</h3>
+                <ul class="service-list">
+                    <li>Meta & Google Ads Mastery</li>
+                    <li>Conversion Rate Optimization</li>
+                    <li>Advanced Funnel Engineering</li>
+                    <li>ROI Optimization & Scaling</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>Creative Excellence</h3>
+                <ul class="service-list">
+                    <li>Brand Identity & Rebranding</li>
+                    <li>UI/UX Design Revolution</li>
+                    <li>Website Development & Hosting</li>
+                    <li>Visual Content Creation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  &copy; 2025 GoldenLuxe Media. All Rights Reserved.
-</footer>
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <h2 class="section-title">The Proof of Excellence</h2>
+        <div class="achievements-grid">
+            <div class="achievement-item">
+                <span class="achievement-number" data-target="520">0</span>
+                <span class="achievement-text">₹5.2Cr+ Revenue Generated</span>
+            </div>
+            <div class="achievement-item">
+                <span class="achievement-number" data-target="150">0</span>
+                <span class="achievement-text">Brands Transformed</span>
+            </div>
+            <div class="achievement-item">
+                <span class="achievement-number" data-target="98">0</span>
+                <span class="achievement-text">% Client Retention Rate</span>
+            </div>
+            <div class="achievement-item">
+                <span class="achievement-number" data-target="24">0</span>
+                <span class="achievement-text">/7 Performance Monitoring</span>
+            </div>
+        </div>
+    </section>
 
-<script>
-  // Typed text effect for hero
-  const phrases = [
-    "Luxury Marketing Experts",
-    "Elevate Your Brand With Us",
-    "Crafting Bespoke Digital Experiences",
-    "Your Success, Our Passion"
-  ];
-  let typedIndex = 0;
-  let charIndex = 0;
-  const typedText = document.getElementById('typed-text');
+    <!-- Why Choose Us Section -->
+    <section class="section" id="why-choose">
+        <h2 class="section-title">Four Pillars of Excellence</h2>
+        <div class="why-choose-grid">
+            <div class="pillar-item">
+                <h3>Data-Driven Artistry</h3>
+                <p>We blend creative vision with analytical precision, ensuring every campaign is both beautiful and profitable.</p>
+            </div>
+            <div class="pillar-item">
+                <h3>White-Glove Service</h3>
+                <p>Luxury experience meets performance results. Your success is our obsession, your growth is our masterpiece.</p>
+            </div>
+            <div class="pillar-item">
+                <h3>Future-Proof Strategies</h3>
+                <p>Built for tomorrow's digital landscape. We don't just follow trends—we create them.</p>
+            </div>
+            <div class="pillar-item">
+                <h3>ROI Obsession</h3>
+                <p>Every pixel, every penny optimized for returns. We measure success in your bottom line growth.</p>
+            </div>
+        </div>
+    </section>
 
-  function type() {
-    if(charIndex < phrases[typedIndex].length) {
-      typedText.textContent += phrases[typedIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, 100);
-    } else {
-      setTimeout(erase, 2000);
-    }
-  }
-  function erase() {
-    if(charIndex > 0) {
-      typedText.textContent = phrases[typedIndex].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(erase, 50);
-    } else {
-      typedIndex = (typedIndex + 1) % phrases.length;
-      setTimeout(type, 500);
-    }
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    if(phrases.length) type();
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Visionaries Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item active">
+                <div class="testimonial-quote">Golden Luxe Media transformed our entire digital presence. Our ROAS increased by 340% in just 6 months. They don't just deliver campaigns—they deliver results that matter.</div>
+                <div class="testimonial-author">- Priya Sharma, CEO TechVenture</div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-quote">The rebrand they created generated ₹2.5Cr in revenue within 6 months. Their strategic approach and creative excellence is unmatched in the industry.</div>
+                <div class="testimonial-author">- Rajesh Kumar, Founder LuxeLifestyle</div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-quote">From startup to market leader in 18 months. Golden Luxe Media didn't just build our digital presence—they architected our success story.</div>
+                <div class="testimonial-author">- Anita Desai, Director InnovateCorp</div>
+            </div>
+        </div>
+        <div class="testimonial-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
 
-    // Counters Animation
-    function animateCounter(id, target) {
-      let count = 0;
-      const speed = 30;
-      const step = Math.ceil(target / (2000 / speed));
-      const el = document.getElementById(id);
-      const interval = setInterval(() => {
-        count += step;
-        if(count >= target) {
-          el.textContent = target;
-          clearInterval(interval);
-        } else {
-          el.textContent = count;
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Let's Create Your Success Story</h2>
+        <div class="contact-content">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Investment Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select Budget Range</option>
+                            <option value="50k-1l">₹50K - ₹1L</option>
+                            <option value="1l-5l">₹1L - ₹5L</option>
+                            <option value="5l+">₹5L+</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="services">Services Interested In</label>
+                        <select id="services" name="services">
+                            <option value="">Select Service</option>
+                            <option value="performance-marketing">Performance Marketing</option>
+                            <option value="branding">Branding & Rebranding</option>
+                            <option value="website-development">Website Development</option>
+                            <option value="funnel-strategy">Funnel Strategy</option>
+                            <option value="complete-package">Complete Digital Transformation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select Timeline</option>
+                            <option value="asap">ASAP</option>
+                            <option value="1-month">Within 1 Month</option>
+                            <option value="3-months">Within 3 Months</option>
+                            <option value="planning">Just Planning</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Vision</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Describe your goals, challenges, and what success looks like for your brand..."></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%; text-align: center;">Start Your Transformation</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Ready to Dominate Your Market?</h3>
+                <p>Every empire starts with a conversation. Let's discuss how we can transform your ambitious vision into digital reality.</p>
+                <p style="color: var(--gold); font-weight: 600;">✓ Response within 2 hours guaranteed</p>
+                <p style="color: var(--gold); font-weight: 600;">✓ Free strategy consultation</p>
+                <p style="color: var(--gold); font-weight: 600;">✓ Custom roadmap for your success</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span style="color: var(--gold); font-size: 20px;">📧</span>
+                        <a href="mailto:hello@goldenluxemedia.com">hello@goldenluxemedia.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span style="color: var(--gold); font-size: 20px;">📞</span>
+                        <a href="tel:+911234567890">+91 12345 67890</a>
+                    </div>
+                    <div class="contact-item">
+                        <span style="color: var(--gold); font-size: 20px;">💬</span>
+                        <a href="https://wa.me/911234567890" target="_blank">WhatsApp Consultation</a>
+                    </div>
+                    <div class="contact-item">
+                        <span style="color: var(--gold); font-size: 20px;">📱</span>
+                        <a href="https://instagram.com/goldenluxemedia" target="_blank">@goldenluxemedia</a>
+                    </div>
+                    <div class="contact-item">
+                        <span style="color: var(--gold); font-size: 20px;">💼</span>
+                        <a href="https://linkedin.com/company/goldenluxemedia" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating CTA -->
+    <a href="#contact" class="floating-cta">Book Free Call</a>
+
+    <!-- Cursor Trail Elements -->
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Update active nav link
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Particle animation in hero section
+        function createParticles() {
+            const particleContainer = document.getElementById('heroParticles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particleContainer.appendChild(particle);
+            }
         }
-      }, speed);
-    }
-    animateCounter('clients-counter', 120);
-    animateCounter('projects-counter', 85);
-    animateCounter('awards-counter', 10);
 
-    // Branding slider
-    const images = [
-      {
-        src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-        caption: "Elegant Logo Design"
-      },
-      {
-        src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
-        caption: "Sophisticated Brand Palette"
-      },
-      {
-        src: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80",
-        caption: "Luxury Packaging Concepts"
-      }
-    ];
-    let currentIndex = 0;
-    const brandingImage = document.getElementById('branding-image');
-    const brandingCaption = document.getElementById('branding-caption');
-    document.getElementById('prev-btn').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      brandingImage.src = images[currentIndex].src;
-      brandingCaption.textContent = images[currentIndex].caption;
-    });
-    document.getElementById('next-btn').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      brandingImage.src = images[currentIndex].src;
-      brandingCaption.textContent = images[currentIndex].caption;
-    });
-  });
-</script>
+        // Animated counters for achievements
+        function animateCounters() {
+            const counters = document.querySelectorAll('.achievement-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const increment = target / 100;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                counter.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current);
+                            }
+                        }, 30);
+                        
+                        // Animate the achievement item
+                        counter.closest('.achievement-item').classList.add('animate');
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
 
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Testimonial slider
+        let currentTestimonial = 1;
+        const totalTestimonials = 3;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.testimonial-item');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (n > totalTestimonials) currentTestimonial = 1;
+            if (n < 1) currentTestimonial = totalTestimonials;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentTestimonial - 1].classList.add('active');
+            dots[currentTestimonial - 1].classList.add('active');
+        }
+
+        function currentSlide(n) {
+            currentTestimonial = n;
+            showSlide(currentTestimonial);
+        }
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial++;
+            showSlide(currentTestimonial);
+        }, 5000);
+
+        // Cursor trail effect
+        let mouseX = 0, mouseY = 0;
+        let trailElements = document.querySelectorAll('.cursor-trail');
+        let positions = [];
+
+        // Initialize positions array
+        for (let i = 0; i < trailElements.length; i++) {
+            positions[i] = { x: 0, y: 0 };
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateTrail() {
+            let x = mouseX;
+            let y = mouseY;
+            
+            positions.forEach((pos, index) => {
+                const trail = trailElements[index];
+                
+                pos.x += (x - pos.x) * 0.3;
+                pos.y += (y - pos.y) * 0.3;
+                
+                trail.style.left = pos.x + 'px';
+                trail.style.top = pos.y + 'px';
+                trail.style.opacity = (trailElements.length - index) / trailElements.length;
+                
+                x = pos.x;
+                y = pos.y;
+            });
+            
+            requestAnimationFrame(updateTrail);
+        }
+
+        // Enhanced form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'Sending...';
+            submitButton.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                submitButton.textContent = '✓ Message Sent!';
+                submitButton.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
+                
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.style.background = '';
+                    submitButton.style.opacity = '';
+                    this.reset();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for fade-in animation
+        document.querySelectorAll('.section, .about, .achievements, .testimonials').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Enhanced hover effects for service categories
+        document.querySelectorAll('.service-category').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            animateCounters();
+            updateTrail();
+            
+            // Add smooth reveal animation to elements
+            const revealElements = document.querySelectorAll('.service-category, .pillar-item, .achievement-item');
+            revealElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            });
+            
+            // Intersection observer for reveal animations
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+
+        // Enhanced button interactions
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic background particles that follow mouse
+        document.addEventListener('mousemove', function(e) {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                hero.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(212, 175, 55, 0.15) 0%, var(--black) 70%)`;
+            }
+        });
+    </script>
 </body>
 </html>
