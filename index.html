@@ -1,32 +1,10 @@
-<section class="hero" id="home">
-        <div class="parallax-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="text-gradient">Transform Your Brand Into Digital Gold</h1>
-                    <p>Golden Luxe Media crafts premium digital experiences that elevate your brand above the competition. We specialize in luxury marketing strategies, advanced SEO, and sophisticated brand positioning for discerning businesses.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="cta-button glow-effect">Start Your Growth Journey</a>
-                        <a href="#services" class="btn-secondary">Explore Services</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="floating-card enhanced-card">
-                        <div class="service-icon">📈</div>
-                        <h4>ROI Growth</h4>
-                        <p>Average 300% increase</p>
-                    </div>
-                    <div class="floating-card enhanced-card">
-                        <div class="service-icon">🎯</div>
-                        <h4>Targeted Campaigns</h4>
-                        <p>Precision marketing</p>
-                    </div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Luxe Media | Premium Digital Marketing Agency | SEO & Brand Growth Experts</title>
-    <meta name="description" content="Transform your business with Golden Luxe Media - a luxury digital marketing agency specializing in SEO, social media marketing, and brand growth strategies. Drive results with our premium marketing solutions.">
+    <title>Elevate Digital | Premium Digital Marketing Agency | SEO & Brand Growth Experts</title>
+    <meta name="description" content="Transform your business with Elevate Digital - a luxury digital marketing agency specializing in SEO, social media marketing, and brand growth strategies. Drive results with our premium marketing solutions.">
     <meta name="keywords" content="digital marketing agency, SEO services, social media marketing, brand growth, luxury marketing, premium digital solutions">
     
     <style>
@@ -86,23 +64,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo::before {
-            content: 'G';
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark-bg);
-            font-weight: 800;
-            border: 2px solid var(--primary-gold);
         }
 
         .nav-links {
@@ -298,23 +259,8 @@
             transition: transform 0.3s ease;
         }
 
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
         .service-card:hover::before {
             transform: scaleX(1);
-        }
-
-        .service-card:hover::after {
-            left: 100%;
         }
 
         .service-card:hover {
@@ -502,162 +448,27 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-            
             .nav-links {
                 display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
-            .hero {
-                padding: 20px 0;
-                min-height: 100vh;
             }
             
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 30px;
-                padding-top: 100px;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.2rem;
-                margin-bottom: 15px;
-            }
-            
-            .hero-text p {
-                font-size: 1.1rem;
-                margin-bottom: 25px;
-                padding: 0 10px;
+                gap: 40px;
             }
             
             .hero-buttons {
                 justify-content: center;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
             }
             
-            .cta-button, .btn-secondary {
-                width: 100%;
-                max-width: 280px;
-                text-align: center;
-                padding: 15px 20px;
-            }
-            
-            .hero-visual {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-                margin-top: 20px;
-            }
-            
-            .floating-card {
-                margin: 0;
-                padding: 20px 15px;
-                text-align: center;
-            }
-            
-            .floating-card:nth-child(3) {
-                grid-column: 1 / -1;
-                max-width: 280px;
-                margin: 0 auto;
-            }
-            
-            .services {
-                padding: 60px 0;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .service-card {
-                padding: 30px 20px;
-            }
-            
+            .services-grid,
             .testimonial-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .testimonial-card {
-                padding: 25px 20px;
-            }
-            
-            .stats {
-                padding: 60px 0;
-                margin: 60px 0;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            .stat-item h3 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                margin-bottom: 40px;
-                padding: 0 10px;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title p {
-                font-size: 1rem;
-            }
-            
-            .cta-section {
-                padding: 60px 0;
-            }
-            
-            .cta-content {
-                padding: 0 15px;
-            }
-            
-            .cta-content h2 {
-                font-size: 1.8rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.9rem;
-            }
-            
-            .hero-visual {
-                grid-template-columns: 1fr;
-            }
-            
-            .floating-card:nth-child(3) {
-                grid-column: 1;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .service-card {
-                padding: 25px 15px;
             }
         }
 
@@ -666,147 +477,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Enhanced UI Elements */
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            animation: parallaxMove 20s ease-in-out infinite;
-        }
-
-        @keyframes parallaxMove {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
-
-        .glow-effect {
-            position: relative;
-        }
-
-        .glow-effect::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-primary);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .glow-effect:hover::before {
-            opacity: 0.3;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.05); opacity: 0.6; }
-        }
-
-        .text-gradient {
-            background: linear-gradient(45deg, var(--text-light), var(--primary-gold), var(--text-light));
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-gold);
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(20px);
-            padding: 20px;
-            z-index: 999;
-        }
-
-        .mobile-menu.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .mobile-nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 15px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .mobile-nav-links a:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--primary-gold);
-        }
-
-        .enhanced-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .enhanced-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .enhanced-card:hover::after {
-            left: 100%;
-        }
+        /* Loading animation */
         .page-loader {
             position: fixed;
             top: 0;
@@ -847,7 +518,7 @@
     <nav>
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Golden Luxe Media</div>
+                <div class="logo">Elevate Digital</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -855,22 +526,8 @@
                     <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
                 <a href="#contact" class="cta-button">Get Started</a>
             </div>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <ul class="mobile-nav-links">
-                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
-                <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
-                <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
-                <li><a href="#testimonials" onclick="closeMobileMenu()">Reviews</a></li>
-                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
-            </ul>
         </div>
     </nav>
 
@@ -879,8 +536,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Transform Your Brand Into Digital Gold</h1>
-                    <p>Golden Luxe Media crafts premium digital experiences that elevate your brand above the competition. We specialize in luxury marketing strategies, advanced SEO, and sophisticated brand positioning for discerning businesses.</p>
+                    <h1>Elevate Your Brand to Digital Excellence</h1>
+                    <p>Transform your business with our premium digital marketing strategies. We deliver measurable results through cutting-edge SEO, social media marketing, and brand growth solutions tailored for ambitious companies.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="cta-button">Start Your Growth Journey</a>
                         <a href="#services" class="btn-secondary">Explore Services</a>
@@ -1021,7 +678,7 @@
             <div class="cta-content">
                 <h2>Ready to Elevate Your Digital Presence?</h2>
                 <p>Join the elite brands that trust us to deliver exceptional results. Let's discuss how our premium digital marketing solutions can accelerate your business growth.</p>
-                <a href="mailto:hello@goldenluxemedia.com" class="cta-button">Schedule Strategy Call</a>
+                <a href="mailto:hello@elevatedigital.com" class="cta-button">Schedule Strategy Call</a>
             </div>
         </div>
     </section>
@@ -1031,8 +688,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Golden Luxe Media</h3>
-                    <p>Premium digital marketing agency specializing in luxury brand growth, advanced SEO strategies, and performance-driven marketing solutions for elite businesses.</p>
+                    <h3>Elevate Digital</h3>
+                    <p>Premium digital marketing agency specializing in luxury brand growth, advanced SEO strategies, and performance-driven marketing solutions.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
@@ -1050,13 +707,13 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>hello@goldenluxemedia.com</p>
+                    <p>hello@elevatedigital.com</p>
                     <p>+1 (555) 123-4567</p>
                     <p>New York, NY</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Golden Luxe Media. All rights reserved. Premium Digital Marketing Solutions.</p>
+                <p>&copy; 2025 Elevate Digital. All rights reserved. Premium Digital Marketing Solutions.</p>
             </div>
         </div>
     </footer>
@@ -1147,7 +804,7 @@
             if (button.getAttribute('href') === '#contact') {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
-                    alert('Thank you for your interest! Please contact us at hello@goldenluxemedia.com or call +1 (555) 123-4567 to schedule your strategy consultation.');
+                    alert('Thank you for your interest! Please contact us at hello@elevatedigital.com or call +1 (555) 123-4567 to schedule your strategy consultation.');
                 });
             }
         });
