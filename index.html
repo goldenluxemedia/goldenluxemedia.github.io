@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Luxe Media - Architecting Digital Supremacy & ROI</title>
+    <title>Elevate Digital | Premium Digital Marketing Agency | SEO & Brand Growth Experts</title>
+    <meta name="description" content="Transform your business with Elevate Digital - a luxury digital marketing agency specializing in SEO, social media marketing, and brand growth strategies. Drive results with our premium marketing solutions.">
+    <meta name="keywords" content="digital marketing agency, SEO services, social media marketing, brand growth, luxury marketing, premium digital solutions, web design, content creation">
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Updated Gold Palette from "Elevate Digital" - mapped to GLM names */
+            --color-gold-primary: #D4AF37; /* ED's --primary-gold */
+            --color-gold-highlight: #FFD700; /* ED's --accent-gold */
+            
+            /* Core GLM Palette */
             --color-deep-black: #040405;
-            --color-black: #080809;
-            --color-charcoal: #101011;
-            --color-graphite: #181819;
+            --color-black: #0A0A0A; /* ED's --dark-bg for base */
+            --color-charcoal: #1A1A1A; /* ED's darker gradient end */
+            --color-graphite: #181819; /* GLM Original */
 
-            --color-gold-brilliant: #FAF0D8;
-            --color-gold-highlight: #E8C88C;
-            --color-gold-primary: #B8860B;
-            --color-gold-mid: #A0740A;
-            --color-gold-shadow: #6E5007;
-            --color-gold-antique: #8B734B;
+            --color-card-bg: rgba(255, 255, 255, 0.05); /* ED's --card-bg */
+            --color-card-border: rgba(212, 175, 55, 0.2); /* ED's floating card border */
 
-            --color-text-primary: #F0F0F0;
-            --color-text-secondary: #C0C0C0;
-            --color-text-muted: #909090;
+            --color-text-primary: #FFFFFF; /* ED's --text-light */
+            --color-text-secondary: #B0B0B0; /* ED's --text-gray */
+            --color-text-muted: #909090; /* GLM Original */
 
             --font-display: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
+
+            --gradient-primary: linear-gradient(135deg, var(--color-gold-primary) 0%, var(--color-gold-highlight) 100%); /* ED's gradient */
+            --gradient-dark: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%); /* ED's dark gradient */
+
 
             --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             --transition-interactive: 0.35s ease;
 
             --shadow-depth-1: 0 3px 8px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.2);
             --shadow-depth-2: 0 6px 16px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.25);
-            --shadow-depth-3: 0 10px 25px rgba(0,0,0,0.25), 0 8px 15px rgba(0,0,0,0.3);
-            --shadow-gold-aura: 0 0 30px rgba(184, 134, 11, 0.2), 0 0 50px rgba(184, 134, 11, 0.15);
+            --shadow-gold-aura: 0 0 30px rgba(212, 175, 55, 0.2), 0 0 50px rgba(212, 175, 55, 0.15);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,29 +50,20 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--color-deep-black);
+            background-color: var(--color-black);
             color: var(--color-text-primary);
-            line-height: 1.75;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden; /* Prevent horizontal scroll on body */
+            overflow-x: hidden;
         }
 
-        /* Lenis Wrapper and Content - For structural organization when Lenis scrolls window */
-        #lenis-wrapper {
-            position: relative;
-            width: 100%;
-        }
-        #lenis-content {
-            position: relative;
-            width: 100%;
-            background-color: var(--color-deep-black); /* Base background for scrollable content */
-        }
+        #lenis-wrapper { position: relative; width: 100%; }
+        #lenis-content { position: relative; width: 100%; background-color: var(--color-black); }
 
-        /* --- Preloader --- */
         #preloader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--color-deep-black); z-index: 99999;
+            background: var(--color-black); z-index: 99999;
             display: flex; align-items: center; justify-content: center;
             opacity: 1; visibility: visible;
             transition: opacity 0.8s var(--transition-smooth) 0.3s, visibility 0.8s var(--transition-smooth) 0.3s;
@@ -73,397 +71,422 @@
         #preloader.loaded { opacity: 0; visibility: hidden; }
         .preloader-logo {
             font-family: var(--font-display); font-size: clamp(4rem, 15vw, 6rem); font-weight: 900;
-            background: linear-gradient(135deg, var(--color-gold-highlight) 0%, var(--color-gold-primary) 50%, var(--color-gold-shadow) 100%);
+            background: var(--gradient-primary);
             -webkit-background-clip: text; background-clip: text; color: transparent;
             animation: preloaderShine 2.5s infinite ease-in-out;
         }
-        @keyframes preloaderShine { /* ... (Assuming user has this defined) ... */
+        @keyframes preloaderShine {
             0%, 100% { opacity: 0.7; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.05); }
         }
 
-        /* --- Layout & Typography --- */
-        .container { width: 92%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        h1, h2, h3, h4, h5, h6 { /* ... same heading base styles ... */
+        h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-display);
             color: var(--color-text-primary);
             line-height: 1.3;
             margin-bottom: 1.5rem;
             font-weight: 700;
         }
-        .shiny-gold-heading { /* ... same shiny gold text style ... */
-            background: linear-gradient(120deg, var(--color-gold-highlight) 20%, var(--color-gold-primary) 50%, var(--color-gold-highlight) 80%);
+        .shiny-gold-heading, .section-title h2, .cta-content h2, .footer-section h3 { /* Apply consistent gradient heading */
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: textShimmer 5s infinite linear;
-            background-size: 200% 100%;
         }
-        @keyframes textShimmer { /* ... (Assuming user has this defined) ... */
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
+        /* Retain GLM textShimmer if preferred, or remove if gradient is static */
+        /* @keyframes textShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } } */
 
-        h1 { font-size: clamp(2.6rem, 7vw, 5.5rem); }
-        h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 3.5rem; text-align: center; }
-        h3 { font-size: clamp(1.8rem, 5vw, 3rem); }
-        h4 { font-size: clamp(1.4rem, 4vw, 2.2rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); }
-        p { /* ... same p styles ... */
-            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); /* From ED */ }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; text-align: center; /* From ED */ }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); } /* GLM h3, adjusted */
+        h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); }
+        p {
+            font-size: clamp(1rem, 1.8vw, 1.1rem); /* Adjusted for readability */
             color: var(--color-text-secondary);
             margin-bottom: 1.75rem;
         }
-        section p { /* ... same section p styles ... */
-            max-width: 720px; /* Improved readability for longer paragraphs */
+        section p.section-intro-text, .section-title p, .cta-content p { /* Standardized intro text styling */
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            color: var(--color-text-secondary);
+            font-size: 1.1rem; /* From ED */
+            margin-bottom: 2.5rem;
         }
-        a { /* ... same link styles ... */
-            color: var(--color-gold-highlight);
-            text-decoration: none;
-            transition: color var(--transition-interactive);
-        }
-        a:hover, a:focus { color: var(--color-gold-brilliant); }
+        a { color: var(--color-gold-primary); text-decoration: none; transition: color var(--transition-interactive); }
+        a:hover, a:focus { color: var(--color-gold-highlight); }
 
-        /* --- Header --- */
+        /* --- Header --- (GLM Base, ED Style Inspo) */
         .main-header {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            z-index: 1000;
-            padding: 1.25rem 0;
-            background-color: rgba(5, 5, 5, 0.6);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(184, 134, 11, 0.15);
-            box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1000; padding: 15px 0; /* ED padding */
+            background: rgba(10, 10, 10, 0.9); /* ED backdrop */
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             transition: background-color var(--transition-smooth), padding var(--transition-smooth), box-shadow var(--transition-smooth);
         }
-        .main-header.scrolled { background-color: rgba(8,8,9,0.85); padding: 1rem 0; }
+        .main-header.scrolled { background-color: rgba(10,10,10,0.98); padding: 12px 0; }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo-link { display: flex; align-items: center; gap: 0.8rem; }
-        .logo-svg-icon { width: 50px; height: 50px; /* Assuming internal SVG styles are handled or simple */ }
-        .logo-svg-icon .circle { fill: var(--color-gold-primary); transition: fill var(--transition-interactive); }
-        .logo-svg-icon .letter-g { font-family: var(--font-display); fill: var(--color-deep-black); font-weight: 900; }
-        .logo-link:hover .logo-svg-icon .circle { fill: var(--color-gold-highlight); }
-        .site-title-text { font-family: var(--font-display); font-size: clamp(1.5rem, 2.8vw, 1.8rem); font-weight: 700; color: var(--color-gold-brilliant); }
-        .site-title-text span { color: var(--color-gold-highlight); font-weight: 700; }
-        .main-nav ul { list-style: none; display: flex; }
-        .main-nav li { margin-left: 3.2rem; }
-        .main-nav a {
-            font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase;
-            padding: 0.9rem 0.3rem; position: relative; color: var(--color-text-secondary);
-            font-weight: 500;
+        .site-title-text { /* ED's logo style */
+            font-size: 24px; font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .main-nav a::after {
-            content: ''; position: absolute; bottom: 0.4rem; left: 0; width: 0; height: 2px;
-            background-color: var(--color-gold-primary);
-            transition: width var(--transition-interactive);
+        .main-nav ul { list-style: none; display: flex; gap: 30px; /* ED gap */ }
+        .main-nav li { /* margin-left removed for gap */ }
+        .main-nav a { /* ED nav link style */
+            color: var(--color-text-primary); text-decoration: none;
+            font-weight: 500; transition: all 0.3s ease; position: relative;
+            font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+        }
+        .main-nav a:hover { color: var(--color-gold-primary); }
+        .main-nav a::after { /* ED underline */
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0; height: 2px; background: var(--gradient-primary);
+            transition: width 0.3s ease;
         }
         .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
-        .main-nav a.active { color: var(--color-gold-highlight); }
-        .main-nav a:hover { color: var(--color-gold-highlight); }
+        .main-nav a.active { color: var(--color-gold-primary); }
+        
+        .header-cta-button { /* ED .cta-button */
+            background: var(--gradient-primary); color: var(--color-black);
+            padding: 10px 20px; border-radius: 30px;
+            text-decoration: none; font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none; cursor: pointer; font-size: 0.9rem;
+        }
+        .header-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+        }
 
         .menu-toggle {
-            display: none; /* Controlled by media query */
-            background: none; border: none;
-            color: var(--color-gold-primary) !important; /* Kept !important as per user's potential specific need */
-            font-size: 1.8rem; cursor: pointer;
-            padding: 0.5rem; z-index: 1005;
+            display: none; background: none; border: none;
+            color: var(--color-gold-primary) !important;
+            font-size: 1.8rem; cursor: pointer; padding: 0.5rem; z-index: 1005;
         }
-        button.menu-toggle:hover, button.menu-toggle:focus {
-            color: var(--color-gold-highlight) !important;
-        }
+        button.menu-toggle:hover, button.menu-toggle:focus { color: var(--color-gold-highlight) !important; }
 
-        /* --- Hero Section --- */
-        .hero-section { /* ... hero section styles ... */
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 12rem 0 6rem; position: relative;
-            background: radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.07) 0%, transparent 50%), var(--color-deep-black);
-            overflow: hidden; /* For pseudo-elements if any */
+        /* --- Hero Section --- (ED Structure, GLM Aesthetics) */
+        .hero-section {
+            min-height: 100vh; display: flex; align-items: center; padding: 12rem 0 6rem;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.07) 0%, transparent 60%), var(--color-black); /* ED radial subtle */
+            overflow: hidden;
         }
-        .hero-section::before { /* ... abstract bg pattern ... */
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: /* Add subtle pattern if desired, e.g., very faint geometric lines */
-            pointer-events: none; opacity: 0.03;
+        .hero-content-wrapper { /* Adapted from ED .hero-content */
+            display: grid; grid-template-columns: 1fr; /* Mobile first */
+            gap: 40px; align-items: center; width: 100%;
         }
-        .hero-content-wrapper { /* ... */
-            max-width: 900px; position: relative; z-index: 1;
+        .hero-text-column h1 {
+            line-height: 1.2; margin-bottom: 20px;
+            /* Gradient applied globally to h1 via .shiny-gold-heading if needed, or ED style: */
+            background: linear-gradient(135deg, var(--color-text-primary) 30%, var(--color-gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            text-align: left; /* For two-column layout */
         }
-        .hero-section h1 { /* ... */
-            margin-bottom: 1.5rem; color: var(--color-text-primary);
-            font-weight: 800; line-height: 1.2;
+        .hero-text-column p.subtitle {
+            font-size: 1.2rem; color: var(--color-text-secondary);
+            margin-bottom: 30px; max-width: 500px; text-align: left;
         }
-        .hero-section p.subtitle { /* ... */
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--color-text-secondary);
-            max-width: 750px; margin: 0 auto 3rem; line-height: 1.8;
-        }
-        .hero-cta-button { /* ... */
-            font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
-            padding: 1rem 2.5rem; background-color: var(--color-gold-primary);
-            color: var(--color-deep-black); border-radius: 50px;
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-start; }
+        .hero-cta-button { /* GLM Button Style Base */
+            font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+            padding: 0.9rem 2.2rem; background: var(--gradient-primary); /* ED Gradient */
+            color: var(--color-black); border-radius: 50px;
             text-transform: uppercase; letter-spacing: 1px;
-            display: inline-block; box-shadow: var(--shadow-depth-1), var(--shadow-gold-aura);
-            transition: background-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
-            animation: pulseButton 3s infinite ease-in-out 1s;
+            display: inline-block; box-shadow: var(--shadow-depth-1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .hero-cta-button:hover, .hero-cta-button:focus {
-            background-color: var(--color-gold-highlight);
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: var(--shadow-depth-2), 0 0 40px rgba(232, 200, 140, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); /* ED hover shadow */
         }
-        @keyframes pulseButton { /* ... */
-            0%, 100% { transform: scale(1); opacity: 0.95; }
-            50% { transform: scale(1.02); opacity: 1; }
+        .btn-secondary { /* ED secondary button */
+            background: transparent; color: var(--color-text-primary);
+            padding: calc(0.9rem - 2px) calc(2.2rem - 2px); /* Match primary size considering border */
+            border: 2px solid var(--color-gold-primary);
+            border-radius: 50px; text-decoration: none; font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase; letter-spacing: 1px; font-size: 1rem;
+        }
+        .btn-secondary:hover {
+            background: var(--color-gold-primary); color: var(--color-black);
+            transform: translateY(-3px);
         }
 
-        /* --- General Content Section --- */
+        .hero-visual-column { /* Container for floating cards */
+            position: relative; display: flex; justify-content: center; align-items: center;
+            min-height: 300px; /* Ensure space for cards */
+        }
+        .floating-concept-card { /* ED .floating-card */
+            background: var(--color-card-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--color-card-border);
+            border-radius: 15px; padding: 20px; /* Smaller padding */
+            animation: float 6s ease-in-out infinite;
+            position: absolute; /* Position them manually or with a mini-grid */
+            width: 180px; /* Fixed width for predictability */
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .floating-concept-card .concept-icon { /* ED .service-icon */
+            width: 40px; height: 40px; background: var(--gradient-primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; margin: 0 auto 15px auto; color: var(--color-black);
+        }
+        .floating-concept-card h4 { font-size: 1rem; color: var(--color-text-primary); margin-bottom: 5px; font-family: var(--font-body); font-weight: 600;}
+        .floating-concept-card p { font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0; line-height: 1.4; }
+        
+        /* Manual positioning for 3 floating cards - adjust as needed */
+        .floating-concept-card:nth-child(1) { transform: translate(-60%, -40%); animation-delay: 0s; }
+        .floating-concept-card:nth-child(2) { transform: translate(30%, -10%); animation-delay: 1.5s; z-index: 1; }
+        .floating-concept-card:nth-child(3) { transform: translate(-30%, 60%); animation-delay: 3s; }
+
+
+        @keyframes float { /* ED float animation */
+            0%, 100% { transform: translateY(0px) translate(var(--tx, 0), var(--ty, 0)); } /* Preserve initial translation */
+            50% { transform: translateY(-15px) translate(var(--tx, 0), var(--ty, 0)); }
+        }
+        /* Add these custom properties to each floating card in HTML for individual translation offsets if needed */
+        /* e.g., style="--tx: -60%; --ty: -40%;" */
+
+
+        /* --- General Content Section Styling --- */
         .content-section {
-            padding: 6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
         }
         .content-section:last-of-type { border-bottom: none; }
-        .content-section .section-title-container h2::after { /* ... (Assuming user has this defined) ... */
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title h2::after { /* GLM Title Underline */
             content: ''; display: block; width: 70px; height: 3px;
-            background-color: var(--color-gold-primary);
-            margin: 1.5rem auto 0;
-        }
-        .section-intro-text { /* ... */
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            color: var(--color-text-secondary); text-align: center;
-            margin-bottom: 4.5rem; max-width: 800px;
+            background: var(--color-gold-primary); margin: 1rem auto 0;
         }
 
-        /* --- Scroll Animations --- */
-        .animate-on-scroll { /* Marker class for JS, specific animations below */ }
-        .fade-in {
-            opacity: 0;
-            transition: opacity 0.8s var(--transition-smooth);
-        }
-        .fade-in.is-visible {
-            opacity: 1;
-        }
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
-        }
-        .fade-in-up.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* --- Scroll Animations --- (GLM) */
+        .animate-on-scroll { opacity: 0; transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth); }
+        .fade-in.is-visible { opacity: 1; }
+        .fade-in-up { transform: translateY(40px); }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* --- Why Invest Section --- */
-        .why-invest-section { background-color: var(--color-black); }
-        .why-invest-grid { /* ... */
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+        /* --- Services Section --- (ED Card Style, GLM Grid) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* GLM Flexible Grid */
+            gap: 2.5rem; /* GLM Gap */
         }
-        .usp-card { /* ... Unique Selling Proposition Card styles ... */
-            background-color: var(--color-charcoal); padding: 2.5rem 2rem;
-            border-radius: 12px; border: 1px solid rgba(184,134,11,0.15);
-            box-shadow: var(--shadow-depth-1);
-            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+        .service-card { /* ED service-card styling */
+            background: var(--color-card-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px; /* ED Radius */
+            padding: 30px; /* ED Padding */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
         }
-        .usp-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-depth-2), var(--shadow-gold-aura);
-            border-color: rgba(184,134,11,0.3);
+        .service-card::before { /* ED Top border animation */
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 3px; background: var(--gradient-primary);
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.4s ease;
         }
-        .usp-icon { /* ... */
-            width: 50px; height: 50px; color: var(--color-gold-primary);
-            margin-bottom: 1.5rem;
-        }
-        .usp-card h4 { /* ... */
-            margin-bottom: 1rem; color: var(--color-gold-highlight);
-        }
-        .usp-card p { /* ... */
-            font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 0;
-        }
-
-        /* --- Services Section --- */
-        .services-grid { /* ... Services Section Grid ... */
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        .service-card { /* ... Service Card Styles ... */
-            background-color: var(--color-charcoal); padding: 2rem;
-            border-radius: 10px; text-align: left;
-            border-left: 4px solid var(--color-gold-mid);
-            box-shadow: var(--shadow-depth-1);
-            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
-        }
+        .service-card:hover::before { transform: scaleX(1); }
         .service-card:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: var(--shadow-depth-2), var(--shadow-gold-aura);
-            border-left-color: var(--color-gold-highlight);
+            transform: translateY(-8px);
+            border-color: var(--color-card-border); /* ED hover border */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); /* ED hover shadow */
         }
-        .service-icon-wrapper { /* ... */
-            width: 64px; height: 64px;
-            background-color: rgba(184,134,11,0.08);
+        .service-icon-wrapper { /* GLM icon wrapper, styled like ED .service-icon */
+            width: 50px; height: 50px; background: var(--gradient-primary);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 20px; margin-bottom: 20px; color: var(--color-black); font-weight: bold;
+        }
+        .service-card h3 { /* ED Card Title */
+            font-size: 1.4rem; font-weight: 600; margin-bottom: 10px;
+            color: var(--color-text-primary); font-family: var(--font-display);
+        }
+        .service-card p {
+            color: var(--color-text-secondary); line-height: 1.6; font-size: 0.9rem;
+            margin-bottom: 0; flex-grow: 1;
+        }
+
+        /* --- Stats Section (From ED) --- */
+        .stats-section {
+            padding: 5rem 0;
+            background: rgba(212, 175, 55, 0.03); /* Very subtle gold bg */
+            margin: 4rem 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px; text-align: center;
+        }
+        .stat-item h3 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 700;
+            color: var(--color-gold-primary); margin-bottom: 0.5rem;
+        }
+        .stat-item p {
+            color: var(--color-text-secondary); font-size: 1rem;
+            text-transform: uppercase; letter-spacing: 1px; font-weight: 500;
+        }
+        
+        /* --- Testimonials Section (From ED) --- */
+        .testimonials-section { padding: 6rem 0; }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        .testimonial-card { /* ED style */
+            background: var(--color-card-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px; padding: 30px;
+            transition: all 0.3s ease; display: flex; flex-direction: column;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-card-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .testimonial-text {
+            font-style: italic; margin-bottom: 20px;
+            color: var(--color-text-secondary); line-height: 1.7;
+            font-size: 0.95rem; flex-grow: 1;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 15px; margin-top: auto; }
+        .author-avatar { /* ED style */
+            width: 50px; height: 50px; background: var(--gradient-primary);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.5rem;
+            font-weight: bold; color: var(--color-black); font-size: 1.1rem;
+            font-family: var(--font-display);
         }
-        .service-icon-wrapper svg { /* ... */
-            width: 32px; height: 32px; fill: var(--color-gold-primary);
+        .author-info h4 {
+            color: var(--color-text-primary); margin-bottom: 3px; font-size: 1.1rem;
+            font-family: var(--font-body); font-weight: 600;
         }
-        .service-icon-wrapper svg path[stroke="#333"], .service-icon-wrapper svg circle[stroke="#333"], .service-icon-wrapper svg line[stroke="#333"], .service-icon-wrapper svg rect[stroke="#333"] {
-            stroke: var(--color-gold-primary); /* Adjusting SVG stroke colors */
-        }
-        .service-icon-wrapper svg path[fill="#333"], .service-icon-wrapper svg circle[fill="#333"] {
-            fill: var(--color-gold-primary); /* Adjusting SVG fill colors */
-        }
+        .author-info p { color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 0; }
 
-        .service-card h4 { /* ... */
-            color: var(--color-gold-highlight); margin-bottom: 0.8rem;
+        /* --- CTA Section (From ED) --- */
+        .cta-final-section {
+            padding: 6rem 0; text-align: center;
+            background: var(--gradient-dark); position: relative;
         }
-        .service-card p { /* ... */
-            font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 0;
-        }
+        .cta-content h2 { margin-bottom: 20px; } /* Already has gradient */
+        .cta-content p { font-size: 1.2rem; margin-bottom: 40px; }
+        /* Use .hero-cta-button style for consistency */
 
-        /* --- CTA Final Section --- */
-        .cta-final-section { /* ... CTA Section styles ... */
-            background-color: var(--color-black); text-align: center;
-            padding: 7rem 0;
-            position: relative;
+        /* --- Footer (ED Structure, GLM Aesthetics) --- */
+        .site-footer {
+            background: #000; /* ED Footer BG */
+            padding: 5rem 0 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .cta-final-section::before { /* ... */
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 100%, rgba(184, 134, 11, 0.1) 0%, transparent 60%);
-            pointer-events: none;
+        .footer-content-grid { /* ED .footer-content */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px; margin-bottom: 3rem;
         }
-        .cta-content-area { /* ... */
-            position: relative; z-index: 1; max-width: 800px; margin: 0 auto;
+        .footer-section h3 { /* Gradient applied globally */
+            margin-bottom: 1.5rem; font-size: 1.3rem; font-family: var(--font-display);
         }
-        .cta-subtitle {
-            font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--color-text-secondary);
-            margin-bottom: 3.5rem; line-height: 1.8;
+        .footer-section p, .footer-section a {
+            color: var(--color-text-secondary); text-decoration: none;
+            margin-bottom: 0.8rem; display: block;
+            transition: color 0.3s ease; font-size: 0.9rem;
         }
-        .contact-form-embedded { /* ... */
-            max-width: 650px; margin: 3rem auto 0; text-align: left;
-        }
-        .form-input-group { /* ... */
-            margin-bottom: 1.8rem;
-        }
-        .form-input-group label {
-            display: block; font-size: 0.85rem; color: var(--color-text-muted);
-            margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;
-        }
-        .form-text-input, .form-textarea-input { /* ... */
-            width: 100%; padding: 1rem 1.2rem;
-            background-color: var(--color-graphite); border: 1px solid var(--color-charcoal);
-            color: var(--color-text-primary); border-radius: 6px;
-            font-family: var(--font-body); font-size: 1rem;
-            transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
-        }
-        .form-text-input:focus, .form-textarea-input:focus {
-            outline: none; border-color: var(--color-gold-mid);
-            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
-        }
-        .form-textarea-input { min-height: 120px; resize: vertical; }
-        .form-submit-button { /* ... */
-            font-family: var(--font-body); font-weight: 600; font-size: 1rem;
-            padding: 0.9rem 2.2rem; background-color: var(--color-gold-primary);
-            color: var(--color-deep-black); border: none; border-radius: 50px;
-            text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
-            display: inline-block; box-shadow: var(--shadow-depth-1);
-            transition: background-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
-        }
-        .form-submit-button:hover, .form-submit-button:focus {
-            background-color: var(--color-gold-highlight);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-depth-2);
-        }
-
-        /* --- Site Footer --- */
-        .site-footer { /* ... Footer styles ... */
-            background-color: var(--color-deep-black);
-            padding: 4rem 0 3rem; text-align: center;
-            border-top: 1px solid rgba(184,134,11,0.1);
-        }
-        .footer-logo-icon { /* ... */
-            width: 60px; height: 60px; margin: 0 auto 1.5rem; display: block;
-        }
-        .footer-logo-icon .circle { fill: var(--color-gold-mid); }
-        .footer-logo-icon .letter-g { font-family: var(--font-display); fill: var(--color-deep-black); font-weight: 900; }
-
-        .footer-social-links a { /* ... */
-            display: inline-block; color: var(--color-text-muted);
-            margin: 0 0.8rem; font-size: 0.9rem; text-transform: uppercase;
-            font-weight: 500; border: 1px solid transparent; padding: 0.3rem 0.5rem;
-            border-radius: 4px;
-        }
-        .footer-social-links a:hover {
-            color: var(--color-gold-highlight);
-            border-color: var(--color-gold-primary);
-        }
-        .site-footer p { /* ... */
-            font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;
-        }
-        .footer-seo-text { /* ... */
-            font-size: 0.75rem; color: var(--color-text-muted); opacity: 0.6;
-            max-width: 600px; margin: 1.5rem auto 0; line-height: 1.5;
+        .footer-section a:hover { color: var(--color-gold-primary); }
+        .footer-bottom {
+            text-align: center; padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--color-text-muted); font-size: 0.85rem;
         }
 
         /* --- Responsive --- */
-        @media (max-width: 992px) {
-            .main-nav li { margin-left: 2rem; }
-            .main-nav a { font-size: 0.9rem; }
-            h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
-            h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        @media (min-width: 768px) {
+            .hero-content-wrapper { grid-template-columns: 1.2fr 1fr; gap: 60px; } /* Enable two columns for hero */
+            .hero-text-column { text-align: left; }
+            .hero-buttons { justify-content: flex-start; }
+            .stats-grid { grid-template-columns: repeat(4, 1fr); } /* ED 4 columns for stats */
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 991px) { /* Tablet */
+            .main-nav { gap: 20px; }
+            .main-nav a { font-size: 0.85rem; }
+            .header-cta-button { padding: 8px 16px; font-size: 0.85rem; }
+            .hero-content-wrapper { gap: 30px; }
+            .floating-concept-card { width: 150px; padding: 15px; }
+            .floating-concept-card .concept-icon { width: 35px; height: 35px; font-size: 16px; }
+            .floating-concept-card h4 { font-size: 0.9rem; }
+             /* Manual positioning for 3 floating cards - adjust as needed for tablets */
+            .floating-concept-card:nth-child(1) { transform: translate(-50%, -60%); }
+            .floating-concept-card:nth-child(2) { transform: translate(40%, 0%);  }
+            .floating-concept-card:nth-child(3) { transform: translate(-20%, 70%); }
+
+        }
+
+        @media (max-width: 767px) { /* Mobile */
             .menu-toggle { display: block; }
             .main-nav {
                 display: none; flex-direction: column; width: 100%;
                 position: absolute; top: 100%; left: 0;
                 background-color: rgba(10,10,11,0.98); backdrop-filter: blur(18px);
                 padding: 0.5rem 0; box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-                border-top: 1px solid rgba(184,134,11,0.1);
+                border-top: 1px solid rgba(212, 175, 55, 0.1);
                 animation: mobileNavSlideDown 0.5s var(--transition-smooth) forwards;
             }
-            @keyframes mobileNavSlideDown {
-                from { opacity: 0; transform: translateY(-15px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
+            @keyframes mobileNavSlideDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
             .main-nav.active { display: flex; }
-            .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav li { margin: 0; width: 100%; }
+            .main-nav ul { flex-direction: column; width: 100%; gap: 0; }
+            .main-nav li { width: 100%; }
             .main-nav a {
-                display: block; padding: 1.1rem; font-size: 0.95rem; text-align: center;
-                border-bottom: 1px solid rgba(184,134,11,0.08); width: 100%;
+                display: block; padding: 1.1rem; text-align: center;
+                border-bottom: 1px solid rgba(212,175,55,0.08);
             }
             .main-nav li:last-child a { border-bottom: none; }
-            .main-nav a::before, .main-nav a::after { display:none; /* Remove underline effect for mobile list items */ }
-            .main-nav a:hover { background-color: rgba(184,134,11,0.05); }
+            .main-nav a::after { display:none; }
+            .main-nav a:hover { background-color: rgba(212,175,55,0.05); }
 
-            .hero-section { padding: 10rem 0 4rem; }
-            .content-section { padding: 4rem 0; }
-            .section-intro-text { margin-bottom: 3rem; }
-            .why-invest-grid, .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-content-wrapper { text-align: center; } /* Center hero text on mobile */
+            .hero-text-column h1, .hero-text-column p.subtitle { text-align: center; max-width: 100%; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual-column { min-height: 350px; margin-top: 2rem; } /* More space for cards on mobile */
+            .floating-concept-card { position: relative; transform: none !important; animation: none; margin-bottom: 1rem; width: 80%; max-width: 220px; left: auto; top: auto; display:inline-block;}
+            .hero-visual-column { display: block; text-align: center;} /* Stack cards */
+
+
+            .services-grid, .testimonial-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;}
+            .stat-item h3 {font-size: clamp(2rem, 10vw, 2.8rem);}
+            .footer-content-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-section h3 {text-align: center;}
+        }
+        
+        @media (min-width: 992px) { /* Desktop Grid Refinements (GLM) */
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+            .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+             /* Restore original floating card positions for desktop */
+            .floating-concept-card:nth-child(1) { transform: translate(-60%, -40%); animation: float 6s ease-in-out infinite 0s; }
+            .floating-concept-card:nth-child(2) { transform: translate(30%, -10%); animation: float 6s ease-in-out infinite 1.5s; z-index: 1;}
+            .floating-concept-card:nth-child(3) { transform: translate(-30%, 60%); animation: float 6s ease-in-out infinite 3s; }
         }
 
-        @media (max-width: 480px) {
-            h1 { font-size: clamp(2rem, 8vw, 3rem); }
-            h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-            .hero-section p.subtitle { font-size: 1rem; }
-            .hero-cta-button { padding: 0.9rem 2rem; font-size: 0.95rem; }
-            .main-header .container { padding-left: 15px; padding-right: 15px;} /* Ensure some padding */
-            .container { padding-left: 15px; padding-right: 15px; width: 100%;}
-        }
-
-        /* Scrollbar Styling */
+        /* Scrollbar Styling (GLM) */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--color-deep-black); }
         ::-webkit-scrollbar-thumb {
-            background: var(--color-gold-mid);
-            border-radius: 10px;
+            background: var(--color-gold-primary); border-radius: 10px;
             border: 2px solid var(--color-deep-black);
         }
-        ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-primary); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-highlight); }
     </style>
 </head>
 <body>
-    <div id="preloader"><div class="preloader-logo">G</div></div>
+    <div id="preloader"><div class="preloader-logo">E</div></div> <!-- Changed logo to E for Elevate -->
 
     <div id="lenis-wrapper">
         <div id="lenis-content">
@@ -471,170 +494,207 @@
             <header class="main-header" id="pageHeader">
                 <div class="container">
                     <a href="#hero" class="logo-link">
-                        <svg class="logo-svg-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="circle" cx="50" cy="50" r="44"/>
-                            <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
-                        </svg>
-                        <span class="site-title-text">Golden Luxe <span>Media</span></span>
+                        <span class="site-title-text">Elevate Digital</span>
                     </a>
                     <nav class="main-nav" id="pageNav">
                         <ul>
                             <li><a href="#hero" class="active">Home</a></li>
-                            <li><a href="#services">Our Expertise</a></li>
-                            <li><a href="#why-invest">The Luxe Standard</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#stats">Impact</a></li>
+                            <li><a href="#testimonials">Reviews</a></li>
                             <li><a href="#contact">Connect</a></li>
                         </ul>
                     </nav>
+                    <a href="#contact" class="header-cta-button animate-on-scroll fade-in">Get Started</a>
                     <button class="menu-toggle" id="navToggleBtn" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
                 </div>
             </header>
 
             <main>
                 <section id="hero" class="hero-section">
-                    <div class="hero-content-wrapper animate-on-scroll fade-in-up">
-                        <h1><span class="shiny-gold-heading">Architects of Digital Brilliance.</span><br/>Welcome to Golden Luxe.</h1>
-                        <p class="subtitle">We don't just market; we mesmerize. Golden Luxe Media crafts bespoke digital empires that yield extraordinary ROI, transforming ambitious brands into iconic market leaders through visionary strategy and flawless execution.</p>
-                        <a href="#why-invest" class="hero-cta-button">Discover the Golden Difference</a>
+                    <div class="container">
+                        <div class="hero-content-wrapper">
+                            <div class="hero-text-column animate-on-scroll fade-in-up">
+                                <h1>Elevate Your Brand to Digital Excellence</h1>
+                                <p class="subtitle">Transform your business with our premium digital marketing strategies. We deliver measurable results through cutting-edge SEO, social media, and brand growth solutions tailored for ambitious companies.</p>
+                                <div class="hero-buttons">
+                                    <a href="#contact" class="hero-cta-button">Start Your Growth Journey</a>
+                                    <a href="#services" class="btn-secondary">Explore Services</a>
+                                </div>
+                            </div>
+                            <div class="hero-visual-column animate-on-scroll fade-in" data-io-delay="0.3s">
+                                <!-- Floating concept cards from ED -->
+                                <div class="floating-concept-card" style="--tx: -60%; --ty: -40%;">
+                                    <div class="concept-icon">📈</div>
+                                    <h4>ROI Growth</h4>
+                                    <p>Measurable Impact</p>
+                                </div>
+                                <div class="floating-concept-card" style="--tx: 30%; --ty: -10%;">
+                                    <div class="concept-icon">🎯</div>
+                                    <h4>Targeted Campaigns</h4>
+                                    <p>Precision Marketing</p>
+                                </div>
+                                <div class="floating-concept-card" style="--tx: -30%; --ty: 60%;">
+                                    <div class="concept-icon">🚀</div>
+                                    <h4>Brand Elevation</h4>
+                                    <p>Premium Positioning</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <section id="why-invest" class="content-section why-invest-section">
+                <section id="services" class="content-section services-section">
                     <div class="container">
-                        <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">The Golden Standard: Why Entrust Us With Your Vision?</span></h2>
+                        <div class="section-title animate-on-scroll fade-in">
+                            <h2>Premium Digital Marketing Services</h2>
+                            <p class="section-intro-text">Comprehensive solutions designed to accelerate your business growth and establish market dominance through strategic digital marketing excellence.</p>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">In a saturated digital landscape, "good enough" is invisible. Golden Luxe Media delivers exceptional. We are more than an agency; we are your strategic partners in crafting a dominant, profitable, and unforgettable digital presence.</p>
-                        <div class="why-invest-grid">
-                            <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
-                                <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2v-6zm0 8h2v2h-2v-2z" opacity="0.8"/><path d="M12.003 4.005c-4.411 0-8.001 3.59-8.001 8.001s3.59 8.001 8.001 8.001 8.001-3.59 8.001-8.001c0-2.066-.784-3.943-2.073-5.388l1.413-1.413A9.962 9.962 0 0122.003 12.006c0 5.514-4.487 10.001-10.001 10.001S2.002 17.52 2.002 12.006c0-3.736 2.048-6.973 5.04-8.622l.706 1.86A7.963 7.963 0 004.002 12.006c0 4.411 3.59 8.001 8.001 8.001s8.001-3.59 8.001-8.001a7.96 7.96 0 00-2.81-5.917l1.414-1.414c1.051 1.052 1.73 2.46 1.73 4.037zM16.5 9.328l-5.503 5.503-2.62-2.62-1.414 1.414 4.033 4.033 6.917-6.917L16.5 9.328z"/></svg>
-                                <h4>Elite Expertise, Visionary Strategy</h4>
-                                <p>Our collective genius in digital marketing is your unfair advantage. We blend battle-tested methodologies with innovative foresight to craft strategies that are not just current, but future-proof, ensuring sustained market leadership.</p>
-                            </div>
-                            <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
-                                 <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21.414 10.586l-7-7A1 1 0 0013 4H4a1 1 0 00-1 1v9a1 1 0 00.586.914l7 7a1 1 0 001.414 0l7-7a1 1 0 000-1.414zM13 18.586L6.414 12 13 5.414 19.586 12 13 18.586z"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-                                <h4>Obsessive Focus on Measurable ROI</h4>
-                                <p>Luxury demands results. We are meticulously data-driven, tracking every metric that matters to ensure your investment translates directly into tangible growth, increased conversions, and a formidable return.</p>
-                            </div>
-                            <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
-                                <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 14.343A8 8 0 0112 20a8.001 8.001 0 01-7.938-7H2V9h2.062A7.988 7.988 0 0112 4a8 8 0 015.657 2.343l1.414-1.414A9.962 9.962 0 0012 2C6.486 2 2 6.486 2 12s4.486 10 10 10c3.859 0 7.167-2.191 8.908-5.366L17.657 14.343zM15 9H9v2h4v2H9v2h6V9zm4-5h-2v2h2V4zm0 4h-2v2h2V8zm-2.929 8.485L14.657 18.9a6.003 6.003 0 000-8.485l1.414-1.414a7.962 7.962 0 010 11.314z"/></svg>
-                                <h4>Bespoke Craftsmanship, True Partnership</h4>
-                                <p>Your brand is unique; your strategy will be too. We immerse ourselves in your world, operating as dedicated extensions of your team to deliver tailor-made solutions and unparalleled, transparent service.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="services" class="content-section">
-                    <div class="container">
-                        <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Crafting Digital Dominance: Our Premier Services</span></h2>
-                        </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">From foundational SEO to sophisticated AI integrations, our comprehensive suite of services is engineered to elevate every facet of your digital presence, ensuring cohesive brand messaging and maximized market impact.</p>
                         <div class="services-grid">
-                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
-                                <div class="service-icon-wrapper">
-                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M47.31,41.56,38.24,32.5a17.36,17.36,0,1,0-5.75,5.75l9.07,9.07a4.08,4.08,0,1,0,5.75-5.75ZM25.5,38.5A13.05,13.05,0,1,1,38.55,25.45,13.06,13.06,0,0,1,25.5,38.5Z" fill-rule="evenodd"/><path d="M16,18 H36 M16,24 H42 M16,30 H30" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
-                                </div>
-                                <h4>Google SEO Supremacy & Content Authority</h4>
-                                <p>Dominate search rankings with our elite SEO strategies. We conduct exhaustive keyword research, technical optimization, high-authority link building, and craft compelling, SEO-driven content (articles, blogs, pillar pages) that establishes your brand as the definitive voice in your industry.</p>
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0s">
+                                <div class="service-icon-wrapper">🔍</div>
+                                <h3>Search Engine Optimization</h3>
+                                <p>Dominate search results with advanced SEO. We optimize for maximum visibility, organic traffic growth, and sustainable rankings that drive qualified leads.</p>
                             </div>
-                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
-                                <div class="service-icon-wrapper">
-                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="24" stroke-width="4" fill="none"/><path d="M32 12 L32 24 M32 40 L32 52 M12 32 L24 32 M40 32 L52 32" stroke-width="4" fill="none"/><circle cx="32" cy="32" r="8" /><path d="M28,32a4,4 0 0 1 8,0 M32,28a4,4 0 0 0 0,8" stroke-width="2" stroke="var(--color-gold-brilliant)" fill="none"/></svg>
-                                </div>
-                                <h4>ROI-Driven Performance Marketing (PPC)</h4>
-                                <p>Maximize conversions and ad spend efficiency with precision-engineered PPC campaigns. We leverage Google Ads, Meta, LinkedIn, and emerging platforms, focusing on granular targeting, compelling ad copy, A/B testing, and rigorous conversion tracking for optimal ROI.</p>
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
+                                <div class="service-icon-wrapper">📱</div>
+                                <h3>Social Media Marketing</h3>
+                                <p>Build engaged communities and amplify your brand voice. Our strategic approach creates compelling content that converts followers into loyal customers.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.2s">
-                                <div class="service-icon-wrapper">
-                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M50,12H14a4,4,0,0,0-4,4V48a4,4,0,0,0,4,4H30V58H20a2,2,0,0,0-2,2v2H44V60a2,2,0,0,0-2-2H34V52H50a4,4,0,0,0,4-4V16A4,4,0,0,0,50,12ZM22,38H34a1,1,0,0,1,0,2H22a1,1,0,0,1,0-2Zm0-6H42a1,1,0,0,1,0,2H22a1,1,0,0,1,0-2Zm0-6H42a1,1,0,0,1,0,2H22a1,1,0,0,1,0-2Z"/></svg>
-                                </div>
-                                <h4>Dynamic Social Media & Content Creation</h4>
-                                <p>Ignite your brand across social platforms (Instagram, Facebook, LinkedIn, TikTok). We manage your social presence with strategic finesse, creating thumb-stopping static posts, viral-potential Reels, engaging stories, and comprehensive content calendars that build community and drive action. Full content creation services from ideation to execution.</p>
+                                <div class="service-icon-wrapper">💎</div>
+                                <h3>Premium Brand Strategy</h3>
+                                <p>Craft a distinctive brand identity that resonates. We develop comprehensive strategies that position you as the luxury choice in your market.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
-                                <div class="service-icon-wrapper">
-                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="48" height="30" rx="3" stroke-width="4" fill="none"/><path d="M8 40 L8 48 Q8 54 14 54 L50 54 Q56 54 56 48 L56 40" stroke-width="4" fill="none"/><circle cx="18" cy="18" r="2"/><circle cx="26" cy="18" r="2"/><circle cx="34" cy="18" r="2"/><line x1="20" y1="46" x2="44" y2="46" stroke-width="4" stroke-linecap="round"/></svg>
-                                </div>
-                                <h4>Elite Web Development & Secure Hosting</h4>
-                                <p>Your website: a masterpiece of design and functionality. We develop bespoke, high-performance websites on robust platforms (e.g., WordPress, Shopify, custom builds), ensuring seamless user experience, mobile perfection, and scalability. Paired with our premium, secure hosting solutions for optimal uptime and peace of mind.</p>
+                                <div class="service-icon-wrapper">📊</div>
+                                <h3>Performance Analytics</h3>
+                                <p>Data-driven insights that fuel growth. Our advanced analytics provide actionable intelligence to optimize campaigns and maximize marketing ROI.</p>
                             </div>
-                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
-                                <div class="service-icon-wrapper">
-                                     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M50,14H14a6,6,0,0,0-6,6V40a6,6,0,0,0,6,6H28l6,8,6-8h10a6,6,0,0,0,6-6V20A6,6,0,0,0,50,14ZM24,32a2,2,0,1,1,2-2A2,2,0,0,1,24,32Zm8,0a2,2,0,1,1,2-2A2,2,0,0,1,32,32Zm8,0a2,2,0,1,1,2-2A2,2,0,0,1,40,32Z"/></svg>
-                                </div>
-                                <h4>Conversational AI & Messaging Solutions</h4>
-                                <p>Enhance customer engagement 24/7 and streamline support with intelligent Chatbot integrations. We also leverage WhatsApp Business API and targeted LinkedIn messaging for direct, impactful communication, lead nurturing, and personalized customer service at scale.</p>
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
+                                <div class="service-icon-wrapper">💰</div>
+                                <h3>Paid Advertising (PPC)</h3>
+                                <p>Precision-targeted ad campaigns for immediate results. We manage PPC, social ads, and display advertising for optimal performance and cost efficiency.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
-                                <div class="service-icon-wrapper">
-                                   <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32,8A24,24,0,0,0,14.69,50.31L8,56l5.69-6.69A24,24,0,1,0,32,8Zm11.55,29.55L32,43.1,20.45,37.55,32,19.9Z" fill-rule="evenodd"/><polygon points="32 19.9 20.45 37.55 32 32 43.55 37.55 32 19.9" fill="var(--color-gold-brilliant)" opacity="0.5"/></svg>
-                                </div>
-                                <h4>Strategic Brand Amplification & Analytics</h4>
-                                <p>Beyond individual services, we offer holistic brand strategy consultation, competitor analysis, market positioning, and advanced analytics dashboards to provide a 360-degree view of your digital performance and uncover new growth avenues. We ensure your brand story resonates powerfully across all touchpoints.</p>
+                                <div class="service-icon-wrapper">🌐</div>
+                                <h3>Web Design & Development</h3>
+                                <p>Bespoke websites that convert. We design and develop high-performance, visually stunning websites that elevate your brand and engage users.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="contact" class="cta-final-section">
-                     <div class="container cta-content-area">
-                        <div class="animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Elevate Your Brand to Its Zenith. Partner with Luxe.</span></h2>
-                            <p class="cta-subtitle">The digital landscape awaits its next icon. Is it you? Connect with Golden Luxe Media for a confidential consultation and let us chart your course to unprecedented success and enduring market distinction.</p>
+                <section id="stats" class="content-section stats-section">
+                    <div class="container">
+                         <div class="section-title animate-on-scroll fade-in">
+                            <h2>Our Proven Impact</h2>
+                            <p class="section-intro-text">Numbers that speak volumes. We are committed to delivering tangible results and exceptional value to our esteemed clients.</p>
                         </div>
-                        <form action="#" method="POST" class="contact-form-embedded animate-on-scroll fade-in-up" data-io-delay="0.2s">
-                            <div class="form-input-group">
-                                <label for="contactName">Full Name</label>
-                                <input type="text" id="contactName" name="name" class="form-text-input" required placeholder="e.g., Sterling Archer">
+                        <div class="stats-grid">
+                            <div class="stat-item animate-on-scroll fade-in-up" data-io-delay="0s">
+                                <h3>500+</h3>
+                                <p>Successful Campaigns</p>
                             </div>
-                            <div class="form-input-group">
-                                <label for="contactEmail">Business Email</label>
-                                <input type="email" id="contactEmail" name="email" class="form-text-input" required placeholder="e.g., s.archer@luxecorp.com">
+                            <div class="stat-item animate-on-scroll fade-in-up" data-io-delay="0.1s">
+                                <h3>98%</h3>
+                                <p>Client Satisfaction</p>
                             </div>
-                            <div class="form-input-group">
-                                <label for="contactCompany">Company & Website</label>
-                                <input type="text" id="contactCompany" name="company_website" class="form-text-input" placeholder="e.g., Luxe Corp - https://luxecorp.com">
+                            <div class="stat-item animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                                <h3>3X</h3> <!-- Adjusted from 300% for variety -->
+                                <p>Average ROI Multiple</p>
                             </div>
-                            <div class="form-input-group">
-                                <label for="contactService">Primary Service Interest (Optional)</label>
-                                <select id="contactService" name="service" class="form-text-input">
-                                    <option value="">Select a Focus Area...</option>
-                                    <option value="seo_authority">SEO & Content Authority</option>
-                                    <option value="performance_marketing">Performance Marketing (PPC)</option>
-                                    <option value="social_content">Social Media & Content Creation (Posts, Reels)</option>
-                                    <option value="web_dev_hosting">Web Development & Hosting</option>
-                                    <option value="conversational_ai">Chatbots & WhatsApp/LinkedIn Marketing</option>
-                                    <option value="brand_amplification">Strategic Brand Amplification</option>
-                                    <option value="full_strategy">Comprehensive Digital Strategy</option>
-                                </select>
+                            <div class="stat-item animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <h3>24/7</h3>
+                                <p>Premium Support</p>
                             </div>
-                            <div class="form-input-group">
-                                <label for="contactMessage">Your Vision for Digital Excellence</label>
-                                <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Describe your brand's ambitions and current digital challenges..."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="testimonials" class="content-section testimonials-section">
+                    <div class="container">
+                        <div class="section-title animate-on-scroll fade-in">
+                            <h2>Client Success Stories</h2>
+                            <p class="section-intro-text">Discover how we've transformed businesses across industries with our premium digital marketing solutions and strategic expertise.</p>
+                        </div>
+                        <div class="testimonial-grid">
+                            <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0s">
+                                <p class="testimonial-text">"Elevate Digital transformed our online presence. Organic traffic increased by 400% and lead quality improved dramatically. Their strategic approach is unmatched."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">SJ</div>
+                                    <div class="author-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <p>CEO, TechVision Solutions</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="text-align: center;">
-                                <button type="submit" class="form-submit-button">Request Elite Consultation</button>
+                            <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                                <p class="testimonial-text">"The ROI has been phenomenal. Their premium brand strategy and paid advertising helped us capture the luxury market segment we were targeting."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">MC</div>
+                                    <div class="author-info">
+                                        <h4>Michael Chen</h4>
+                                        <p>Founder, Luxe Lifestyle Co.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </form>
+                            <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <p class="testimonial-text">"Professional, results-driven, and truly understanding of high-end market dynamics. Our revenue grew 250% in just 8 months."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">AR</div>
+                                    <div class="author-info">
+                                        <h4>Amanda Rodriguez</h4>
+                                        <p>Director, Elite Consulting</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="content-section cta-final-section">
+                    <div class="container">
+                        <div class="cta-content animate-on-scroll fade-in">
+                            <h2>Ready to Elevate Your Digital Presence?</h2>
+                            <p>Join the elite brands that trust us to deliver exceptional results. Let's discuss how our premium digital marketing solutions can accelerate your business growth.</p>
+                            <a href="mailto:hello@elevatedigital.com" class="hero-cta-button">Schedule Strategy Call</a>
+                        </div>
                     </div>
                 </section>
             </main>
 
             <footer class="site-footer">
                  <div class="container">
-                    <svg class="footer-logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle class="circle" cx="50" cy="50" r="44"/>
-                        <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
-                    </svg>
-                    <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin: 2rem 0;">
-                        <a href="#" aria-label="LinkedIn">LI</a>
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="Behance">BE</a>
-                        <a href="#" aria-label="Clutch Reviews">CL</a>
+                    <div class="footer-content-grid">
+                        <div class="footer-section animate-on-scroll fade-in-up" data-io-delay="0s">
+                            <h3>Elevate Digital</h3>
+                            <p>Premium digital marketing agency specializing in luxury brand growth, advanced SEO strategies, and performance-driven solutions.</p>
+                        </div>
+                        <div class="footer-section animate-on-scroll fade-in-up" data-io-delay="0.1s">
+                            <h3>Quick Links</h3>
+                            <a href="#hero">Home</a>
+                            <a href="#services">Services</a>
+                            <a href="#testimonials">Testimonials</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                         <div class="footer-section animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                            <h3>Services</h3>
+                            <a href="#services">SEO & Content</a>
+                            <a href="#services">Social Media</a>
+                            <a href="#services">Brand Strategy</a>
+                            <a href="#services">PPC Advertising</a>
+                        </div>
+                        <div class="footer-section animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                            <h3>Contact Us</h3>
+                            <p><a href="mailto:hello@elevatedigital.com">hello@elevatedigital.com</a></p>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            <p>New York, NY | London, UK</p>
+                        </div>
                     </div>
-                    <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. All Rights Reserved. Forging Digital Dynasties.</p>
-                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Elite Digital Marketing Agency specializing in Luxury Brand SEO, High-ROI PPC, Premium Web Design, Bespoke Content Strategy, Social Media Management (Static Posts, Reels), Chatbot Integration, WhatsApp & LinkedIn Marketing. Partner with us for transformative results.</p>
+                    <div class="footer-bottom animate-on-scroll fade-in" data-io-delay="0.4s">
+                        <p>© <span id="currentYear"></span> Elevate Digital. All Rights Reserved. Architecting Digital Supremacy.</p>
+                    </div>
                 </div>
             </footer>
 
@@ -644,59 +704,51 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Preloader (GLM) ---
             const preloader = document.getElementById('preloader');
             if (preloader) {
                 window.addEventListener('load', () => {
-                    // Ensure preloader stays for a minimum time if content loads too fast
-                    setTimeout(() => { preloader.classList.add('loaded'); }, 300);
+                    setTimeout(() => { preloader.classList.add('loaded'); }, 500); // Slightly longer for perceived quality
                 });
             }
 
+            // --- Lenis Smooth Scroll (GLM) ---
             if (typeof Lenis !== 'undefined') {
                 const lenis = new Lenis({
                     duration: 1.6,
                     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                    smoothWheel: true,
-                    wheelMultiplier: 0.9,
-                    smoothTouch: false,
-                    touchMultiplier: 1.8,
+                    smoothWheel: true, wheelMultiplier: 0.9,
+                    smoothTouch: false, touchMultiplier: 1.8,
                 });
-
-                function raf(time) {
-                    lenis.raf(time);
-                    requestAnimationFrame(raf);
-                }
+                function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
                 requestAnimationFrame(raf);
 
                 const pageHeader = document.getElementById('pageHeader');
                 const navToggleBtn = document.getElementById('navToggleBtn');
                 const pageNav = document.getElementById('pageNav');
 
+                // Mobile Nav Toggle (GLM)
                 if (navToggleBtn && pageNav) {
                     navToggleBtn.addEventListener('click', () => {
                         const isActive = pageNav.classList.toggle('active');
                         navToggleBtn.setAttribute('aria-expanded', isActive);
-                        navToggleBtn.innerHTML = isActive ? '✕' : '☰'; // Toggle icon
+                        navToggleBtn.innerHTML = isActive ? '✕' : '☰';
                     });
                 }
 
-                const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
+                // Smooth Scroll to Section & Active Link Logic (GLM)
+                const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button, .btn-secondary, .header-cta-button, .footer-section a[href^="#"]');
                 navLinks.forEach(link => {
                     const targetId = link.getAttribute('href');
-                    // Ensure it's an internal anchor link
                     if (targetId && targetId.startsWith('#') && targetId.length > 1) {
                         link.addEventListener('click', (e) => {
                             e.preventDefault();
-                            let offsetVal = pageHeader ? -pageHeader.offsetHeight - 10 : -80;
-                            if (targetId === "#hero") {
-                                offsetVal = 0; // Scroll to very top for hero
-                            }
-                            lenis.scrollTo(targetId, { offset: offsetVal, duration: 2.0 });
-
-                            // Close mobile nav if open
+                            let offsetVal = pageHeader ? -pageHeader.offsetHeight -10 : -80;
+                            if (targetId === "#hero") offsetVal = 0;
+                            lenis.scrollTo(targetId, { offset: offsetVal, duration: 1.8 });
                             if (pageNav && pageNav.classList.contains('active')) {
                                 pageNav.classList.remove('active');
-                                if (navToggleBtn) {
+                                if(navToggleBtn) {
                                     navToggleBtn.setAttribute('aria-expanded', 'false');
                                     navToggleBtn.innerHTML = '☰';
                                 }
@@ -704,25 +756,21 @@
                         });
                     }
                 });
-
-                const allSections = document.querySelectorAll('main section[id]');
+                
+                const allSections = document.querySelectorAll('main section[id], header section[id], footer section[id]'); // Include all potential sections
                 const mainNavLinks = document.querySelectorAll('.main-nav a');
 
                 function updateActiveLinkOnScroll() {
-                    let currentSectionId = 'hero'; // Default to hero
+                    let currentSectionId = 'hero';
                     const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
-                    // Determine current section based on scroll position
                     allSections.forEach(section => {
                         const sectionTop = section.offsetTop;
-                        // Adjust threshold: section is active when its top part is well into view
-                        if (lenis.scroll >= sectionTop - (window.innerHeight * 0.4) - headerHeight) {
+                        if (lenis.scroll >= sectionTop - (window.innerHeight * 0.5) - headerHeight) { // Adjusted threshold
                             currentSectionId = section.getAttribute('id');
                         }
                     });
-
                     mainNavLinks.forEach(navLink => {
                         navLink.classList.remove('active');
-                        // Check if link's href matches the current section ID
                         if (navLink.getAttribute('href').substring(1) === currentSectionId) {
                             navLink.classList.add('active');
                         }
@@ -731,74 +779,119 @@
                 
                 if (pageHeader) {
                     lenis.on('scroll', (e) => {
-                        pageHeader.classList.toggle('scrolled', e.scroll > 40);
+                        pageHeader.classList.toggle('scrolled', e.scroll > 50);
                         updateActiveLinkOnScroll();
                     });
                 }
-                updateActiveLinkOnScroll(); // Initial check on page load
+                updateActiveLinkOnScroll();
 
-            } else {
-                console.warn("Lenis library not loaded. Falling back to native scroll.");
-                // Fallback for smooth scroll if Lenis fails
+            } else { // Lenis Fallback (Simplified from GLM)
+                console.warn("Lenis library not loaded. Native scroll fallback.");
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
-                        const targetId = this.getAttribute('href');
-                        if (targetId && targetId.startsWith('#') && targetId.length > 1) {
-                            e.preventDefault();
-                            const targetElement = document.querySelector(targetId);
-                            if (targetElement) {
-                                const pageHeaderFallback = document.getElementById('pageHeader');
-                                const offset = pageHeaderFallback ? pageHeaderFallback.offsetHeight : 70;
-                                window.scrollTo({
-                                    top: targetElement.offsetTop - (targetId === '#hero' ? 0 : offset),
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
+                        e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
                     });
                 });
-                // Basic header scroll class without Lenis
-                const pageHeaderFallback = document.getElementById('pageHeader');
+                 const pageHeaderFallback = document.getElementById('pageHeader');
                 if (pageHeaderFallback) {
-                    window.addEventListener('scroll', () => {
-                         pageHeaderFallback.classList.toggle('scrolled', window.scrollY > 40);
-                    });
+                    window.addEventListener('scroll', () => { pageHeaderFallback.classList.toggle('scrolled', window.scrollY > 50); });
                 }
             }
 
-            // Intersection Observer for Animations
+            // --- Intersection Observer for Animations (GLM) ---
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            const observerOptions = {
-                threshold: 0.12, // Element is 12% visible
-                rootMargin: "0px 0px -45px 0px" // Trigger a bit sooner from bottom
-            };
-
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const delay = entry.target.dataset.ioDelay;
                         if (delay) {
-                            // Apply delay using setTimeout
-                            setTimeout(() => {
-                                entry.target.classList.add('is-visible');
-                            }, parseFloat(delay) * 1000);
-                        } else {
-                            entry.target.classList.add('is-visible');
-                        }
-                        obs.unobserve(entry.target); // Animate only once
+                            setTimeout(() => entry.target.classList.add('is-visible'), parseFloat(delay) * 1000);
+                        } else { entry.target.classList.add('is-visible'); }
+                        obs.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
+            animatedElements.forEach(el => observer.observe(el));
 
-            animatedElements.forEach(el => {
-                observer.observe(el);
+            // --- Stats Animation (From ED) ---
+            const animateStats = () => {
+                const stats = document.querySelectorAll('.stat-item h3');
+                const statObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const target = entry.target;
+                            const finalValueText = target.textContent; // e.g., "500+", "3X"
+                            const numericMatch = finalValueText.match(/\d+/); // Get only numbers
+                            if (!numericMatch) return;
+
+                            const numericValue = parseInt(numericMatch[0]);
+                            const suffix = finalValueText.substring(numericMatch[0].length); // Get "X" or "+"
+
+                            let current = 0;
+                            const increment = numericValue / 50 > 1 ? numericValue / 50 : 1; // Ensure increment is at least 1
+                            const duration = 2000; // Total animation time
+                            const stepTime = Math.abs(Math.floor(duration / (numericValue / increment)));
+
+
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= numericValue) {
+                                    target.textContent = numericValue + suffix;
+                                    clearInterval(timer);
+                                } else {
+                                    target.textContent = Math.floor(current) + suffix;
+                                }
+                            }, stepTime < 20 ? 20 : stepTime); // Min step time 20ms
+                            
+                            statObserver.unobserve(target);
+                        }
+                    });
+                }, { threshold: 0.5 }); // Trigger when 50% visible
+                
+                stats.forEach(stat => statObserver.observe(stat));
+            };
+            animateStats();
+
+
+            // --- Floating cards individual translate fix for animation ---
+            // Necessary because 'transform' in @keyframes overrides initial positioning transforms.
+            // We read the initial transform, apply it via CSS variables, then the animation uses it.
+            document.querySelectorAll('.floating-concept-card').forEach(card => {
+                const computedStyle = getComputedStyle(card);
+                const currentTransform = computedStyle.transform;
+
+                if (currentTransform && currentTransform !== 'none') {
+                    // This is a simplified way to get translate values.
+                    // For robust parsing, a regex or matrix decomposition is better.
+                    // Assuming it's like: matrix(1, 0, 0, 1, tx, ty) or translate(tx, ty)
+                    let tx = '0px', ty = '0px';
+                    const matrixMatch = currentTransform.match(/matrix\([^,]+,\s*[^,]+,\s*[^,]+,\s*[^,]+,\s*([^,]+),\s*([^)]+)\)/);
+                    if (matrixMatch) {
+                        tx = matrixMatch[1].trim();
+                        ty = matrixMatch[2].trim();
+                    } else {
+                        const translateMatch = currentTransform.match(/translate\(\s*([^,]+)(?:,\s*([^)]+))?\)/);
+                        if (translateMatch) {
+                            tx = translateMatch[1].trim();
+                            ty = translateMatch[2] ? translateMatch[2].trim() : '0px';
+                        }
+                    }
+                    card.style.setProperty('--tx', tx);
+                    card.style.setProperty('--ty', ty);
+                }
+                 // Start animation by re-applying it, or ensuring it's running
+                card.style.animation = 'none'; // Reset
+                void card.offsetWidth; // Trigger reflow
+                const animDelay = card.style.animationDelay || '0s'; // Get existing delay if any
+                card.style.animation = `float 6s ease-in-out infinite ${animDelay}`;
+
             });
 
-            // Update Current Year in Footer
+
+            // --- Footer Current Year (GLM) ---
             const currentYearSpan = document.getElementById('currentYear');
-            if (currentYearSpan) {
-                currentYearSpan.textContent = new Date().getFullYear();
-            }
+            if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
         });
     </script>
 </body>
