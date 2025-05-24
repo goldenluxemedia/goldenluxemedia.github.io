@@ -3,521 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Luxe Media - Results-Driven Digital Marketing Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Golden Luxe Media - Elite Digital Marketing & Brand Amplification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-black: #080808; /* Even deeper black */
-            --color-dark-grey: #101010;
-            --color-mid-grey: #1a1a1a;
-            /* Gold Palette for Shine */
-            --color-gold-highlight: #F8E3A1;
-            --color-gold-primary: #D4AF37; /* Main gold, less "flat" */
+            --color-deep-black: #050505;
+            --color-black: #0A0A0A;
+            --color-charcoal: #121212;
+            --color-graphite: #1A1A1A;
+
+            /* Refined Gold Palette for Depth & Shine */
+            --color-gold-brilliant: #FFF8E7; /* Brightest highlight for glints */
+            --color-gold-highlight: #F0D7A8; /* Main highlight */
+            --color-gold-primary: #C8A464;   /* Richer, deeper primary gold */
             --color-gold-mid: #B08D57;
-            --color-gold-shadow: #8c6d41;
+            --color-gold-shadow: #7A5F36;    /* Deeper shadow for dimension */
+            --color-gold-antique: #887040;   /* For muted accents */
 
-            --color-text: #e0e0e0; /* Slightly brighter base text */
-            --color-text-muted: #b0b0b0;
-            --font-primary: 'Playfair Display', serif;
-            --font-secondary: 'Montserrat', sans-serif;
-            --transition-speed-fast: 0.25s;
-            --transition-speed-medium: 0.45s;
-            --transition-speed-slow: 0.7s;
-            --border-radius-sm: 5px;
-            --border-radius-md: 10px;
+            --color-text-primary: #EAEAEA;
+            --color-text-secondary: #B8B8B8;
+            --color-text-muted: #888888;
+
+            --font-display: 'Playfair Display', serif; /* For prominent headings */
+            --font-body: 'Inter', sans-serif;          /* For body and UI text */
+
+            --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-interactive: 0.3s ease;
+
+            --shadow-soft-depth:
+                0 2px 5px rgba(0,0,0,0.1),
+                0 5px 15px rgba(0,0,0,0.15),
+                0 10px 30px rgba(0,0,0,0.2);
+            --shadow-lifted:
+                0 4px 8px rgba(0,0,0,0.15),
+                0 10px 25px rgba(0,0,0,0.2),
+                0 15px 40px rgba(0,0,0,0.25);
+            --shadow-gold-glow: 0 0 25px rgba(200, 164, 100, 0.15), 0 0 40px rgba(200, 164, 100, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            font-size: 16px;
-            /* scroll-behavior: smooth; -- Lenis will handle this */
-        }
-
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body {
-            font-family: var(--font-secondary);
-            background-color: var(--color-black);
-            color: var(--color-text);
-            line-height: 1.8; /* Increased for readability */
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: var(--font-body);
+            background-color: var(--color-deep-black);
+            color: var(--color-text-primary);
+            line-height: 1.7;
+            overflow-x: hidden; /* Critical for preventing horizontal scroll issues */
+            min-height: 100vh;
         }
-        /* Wrapper for Lenis smooth scroll */
-        #lenis-wrapper {
-            position: relative; /* Or absolute/fixed depending on your layout */
-        }
+
+        /* Lenis requires direct body children for wrapper/content, or carefully styled full-height wrappers */
+        /* If issues persist, simplify: place Lenis wrapper/content as direct children of body */
+        /* Forcing height 100% on html and body, and wrapper can sometimes help if content is short */
+        /* html, body { height: 100%; } */
 
 
         /* --- Preloader --- */
         #preloader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: var(--color-black); z-index: 9999;
+            background: var(--color-deep-black); z-index: 99999;
             display: flex; align-items: center; justify-content: center;
-            transition: opacity 0.6s ease-in-out 0.2s, visibility 0.6s ease-in-out 0.2s;
+            opacity: 1; visibility: visible;
+            transition: opacity 0.8s var(--transition-smooth) 0.3s, visibility 0.8s var(--transition-smooth) 0.3s;
         }
         #preloader.loaded { opacity: 0; visibility: hidden; }
-        .loader-logo-initial { /* Using the G from logo */
-            font-family: var(--font-primary); font-size: 5rem;
-            color: var(--color-gold-mid);
-            animation: pulseInitial 1.8s infinite ease-in-out;
+        .preloader-logo {
+            font-family: var(--font-display); font-size: 6rem; font-weight: 900;
+            background: linear-gradient(135deg, var(--color-gold-highlight) 0%, var(--color-gold-primary) 50%, var(--color-gold-shadow) 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            animation: preloaderShine 2.5s infinite ease-in-out;
         }
-        @keyframes pulseInitial {
-            0%, 100% { opacity: 0.5; transform: scale(0.95); }
-            50% { opacity: 1; transform: scale(1.05); color: var(--color-gold-highlight); }
-        }
-
-        .container {
-            width: 90%; max-width: 1160px; /* Slightly narrower for premium feel */
-            margin: 0 auto; padding: 0 15px;
+        @keyframes preloaderShine {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.08); text-shadow: 0 0 15px var(--color-gold-mid); }
         }
 
-        /* --- Typography & Shiny Gold Effect --- */
-        h1, h2, h3, h4 {
-            font-family: var(--font-primary);
-            color: var(--color-gold-primary); /* Fallback */
-            margin-bottom: 1.25rem;
-            line-height: 1.25;
-            font-weight: 700;
-        }
-        .shiny-gold-text {
-            background: linear-gradient(120deg,
-                var(--color-gold-highlight) 10%,
-                var(--color-gold-primary) 30%,
-                var(--color-gold-mid) 50%,
-                var(--color-gold-primary) 70%,
-                var(--color-gold-highlight) 90%);
-            background-size: 250% 250%;
-            -webkit-background-clip: text;
-            background-clip: text;
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- Typography & "Shiny Gold" --- */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.2; font-weight: 800; margin-bottom: 1.5rem; }
+        .shiny-gold-heading {
+            display: inline-block; /* Crucial for background-clip */
+            background: linear-gradient(110deg,
+                var(--color-gold-brilliant) 0%,
+                var(--color-gold-highlight) 20%,
+                var(--color-gold-primary) 45%,
+                var(--color-gold-mid) 60%,
+                var(--color-gold-primary) 80%,
+                var(--color-gold-highlight) 100%);
+            background-size: 300% 100%;
+            -webkit-background-clip: text; background-clip: text;
             color: transparent;
-            animation: shinyGoldTextAnimation 10s infinite ease-in-out;
-            display: inline-block; /* Important for background-clip to work well */
+            animation: textShimmer 8s infinite linear;
         }
-        @keyframes shinyGoldTextAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes textShimmer {
+            0% { background-position: 150% 0; }
+            100% { background-position: -150% 0; }
         }
 
-        h1 { font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 800;}
-        h2 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); }
-        h3 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
-        h4 { font-size: clamp(1.4rem, 3vw, 1.8rem); color: var(--color-gold-primary); }
-
-        p { margin-bottom: 1.5rem; font-weight: 300; color: var(--color-text-muted); font-size: 1.05rem; }
-        section p, .main-footer p { color: #c8c8c8; }
-        strong { font-weight: 600; color: var(--color-text); }
-        a {
-            color: var(--color-gold-primary); text-decoration: none;
-            transition: color var(--transition-speed-fast) ease, opacity var(--transition-speed-fast) ease;
-        }
+        h1 { font-size: clamp(3rem, 6vw, 5.2rem); }
+        h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 4rem; text-align: center;}
+        h3 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+        h4 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight);}
+        p { margin-bottom: 1.8rem; color: var(--color-text-secondary); font-size: 1.05rem; }
+        section p { font-size: 1.1rem; line-height: 1.8; }
+        a { color: var(--color-gold-primary); text-decoration: none; transition: color var(--transition-interactive), opacity var(--transition-interactive); }
         a:hover { color: var(--color-gold-highlight); opacity: 0.85; }
-        .text-link {
-            position: relative;
-            padding-bottom: 2px;
-        }
-        .text-link::after {
-            content: ''; position: absolute; left: 0; bottom: 0;
-            width: 0; height: 1px; background-color: var(--color-gold-highlight);
-            transition: width var(--transition-speed-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .text-link:hover::after { width: 100%; }
-
 
         /* --- Header --- */
         .main-header {
-            background-color: rgba(8, 8, 8, 0.65); /* Darker transparent */
-            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            padding: 1rem 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            box-shadow: 0 3px 20px rgba(0,0,0,0.25);
-            transition: background-color var(--transition-speed-medium) ease, padding var(--transition-speed-medium) ease;
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            padding: 1.25rem 0;
+            background-color: rgba(5, 5, 5, 0.7); /* Deep black transparent */
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(176, 141, 87, 0.1); /* Subtle gold line */
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+            transition: background-color var(--transition-smooth), padding var(--transition-smooth), box-shadow var(--transition-smooth);
         }
         .main-header.scrolled {
-            background-color: rgba(16,16,16,0.9); /* Dark grey when scrolled */
-            padding: 0.8rem 0;
+            background-color: rgba(10, 10, 10, 0.85); /* Charcoal transparent when scrolled */
+            padding: 1rem 0;
+            box-shadow: 0 8px 35px rgba(0,0,0,0.4);
         }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-svg { width: 45px; height: 45px; margin-right: 15px; }
-        .logo-svg circle { stroke: var(--color-gold-primary); stroke-width: 5; fill:none; }
-        .logo-svg text { fill: var(--color-gold-primary); }
-        .logo-text {
-            font-family: var(--font-secondary); font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-            font-weight: 600; color: var(--color-gold-highlight); letter-spacing: 2px; text-transform: uppercase;
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-svg-icon { width: 48px; height: 48px; margin-right: 15px; transition: transform var(--transition-smooth); }
+        .logo-svg-icon .circle { stroke: var(--color-gold-primary); stroke-width: 5.5; fill: transparent; transition: stroke var(--transition-interactive); }
+        .logo-svg-icon .letter-g { fill: var(--color-gold-primary); transition: fill var(--transition-interactive); font-family: var(--font-display); font-weight: 900;}
+        .logo-link:hover .logo-svg-icon { transform: scale(1.05) rotate(-5deg); }
+        .logo-link:hover .circle { stroke: var(--color-gold-highlight); }
+        .logo-link:hover .letter-g { fill: var(--color-gold-highlight); }
+        .site-title-text {
+            font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.7rem); font-weight: 800;
+            letter-spacing: 1px; color: var(--color-gold-highlight);
         }
-        .logo-text span { font-weight: 400; opacity: 0.85; color: var(--color-gold-mid); }
+        .site-title-text span { color: var(--color-gold-mid); font-weight: 700; opacity: 0.8; }
 
-        .main-nav ul { list-style: none; display: flex; }
-        .main-nav li { margin-left: 2.8rem; }
+        .main-nav ul { list-style: none; display: flex; align-items: center; }
+        .main-nav li { margin-left: 3rem; }
         .main-nav a {
-            font-weight: 500; font-size: 0.95rem; text-transform: uppercase;
-            letter-spacing: 1.5px; position: relative; padding-bottom: 0.6rem;
-            color: var(--color-text-muted);
+            font-family: var(--font-body); font-weight: 500; font-size: 0.9rem;
+            text-transform: uppercase; letter-spacing: 1.8px; position: relative;
+            padding: 0.8rem 0.2rem; color: var(--color-text-secondary);
         }
+        .main-nav a::before, .main-nav a::after { /* Dual line effect */
+            content: ''; position: absolute; left: 0; width: 100%; height: 1px;
+            background-color: var(--color-gold-mid); transform: scaleX(0);
+            transition: transform var(--transition-smooth);
+        }
+        .main-nav a::before { top: 0; transform-origin: left; }
+        .main-nav a::after { bottom: 0; transform-origin: right; }
+        .main-nav a:hover::before, .main-nav a:hover::after,
+        .main-nav a.active::before, .main-nav a.active::after { transform: scaleX(1); }
         .main-nav a:hover, .main-nav a.active { color: var(--color-gold-highlight); }
-        .main-nav a::after {
-            content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
-            width: 0; height: 2.5px; border-radius: 2px;
-            background: linear-gradient(to right, var(--color-gold-mid), var(--color-gold-highlight));
-            transition: width var(--transition-speed-medium) cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .main-nav a:hover::after, .main-nav a.active::after { width: 70%; }
-        .menu-toggle { display: none; /* ... same as before ... */ color: var(--color-gold-primary); }
+        .menu-toggle { display: none; /* ... */ color: var(--color-gold-primary); font-size: 2rem; }
 
 
         /* --- Hero Section --- */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
-            padding-top: 120px; position: relative; overflow: hidden;
-            background: radial-gradient(ellipse at bottom, var(--color-dark-grey) 0%, var(--color-black) 70%);
+        .hero-section {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 150px 0 80px; text-align: center; position: relative; overflow: hidden;
+            background:
+                radial-gradient(ellipse at 50% 30%, rgba(176, 141, 87, 0.08) 0%, transparent 50%), /* Subtle gold aura */
+                var(--color-deep-black);
         }
-        .hero::before { /* More dynamic background element */
+        .hero-section::before { /* Abstract background pattern for depth */
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B08D57' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5; z-index: 0;
-            animation: subtleBgPan 60s linear infinite;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8A464' fill-opacity='0.025'%3E%3Cpath d='M50 50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.7; z-index: 0; transform: scale(1.5);
+            animation: subtlePanAndFade 90s linear infinite alternate;
         }
-        @keyframes subtleBgPan { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
-
-        .hero-content { max-width: 850px; position: relative; z-index: 1; }
-        .hero h1 .shiny-gold-text { font-size: inherit; /* Ensure it inherits clamp from h1 */ }
-        .hero p {
-            font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: #e0e0e0;
-            margin-bottom: 3rem; font-weight: 400; max-width: 700px; margin-left: auto; margin-right: auto;
+        @keyframes subtlePanAndFade {
+            0% { background-position: 0% 0%; opacity: 0.3; }
+            50% { opacity: 0.7; }
+            100% { background-position: 100% 100%; opacity: 0.3; }
         }
-
-        /* --- Buttons --- */
-        .btn {
-            display: inline-block; padding: 1rem 3rem;
-            background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-mid));
-            color: var(--color-black); font-family: var(--font-secondary); font-weight: 600;
-            font-size: 1rem; text-transform: uppercase; letter-spacing: 1.8px; border: none;
-            border-radius: 50px; transition: all var(--transition-speed-medium) ease;
-            box-shadow: 0 8px 25px rgba(176, 141, 87, 0.28);
-            position: relative; overflow: hidden; z-index: 1;
+        .hero-content-wrapper { position: relative; z-index: 1; max-width: 900px; }
+        .hero-section h1 { margin-bottom: 2rem; }
+        .hero-section p.subtitle {
+            font-size: clamp(1.15rem, 2.5vw, 1.5rem); color: var(--color-text-primary);
+            margin: 0 auto 3.5rem; max-width: 750px; font-weight: 400;
         }
-        .btn::before { /* Enhanced shine/hover overlay */
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, var(--color-gold-highlight), var(--color-gold-primary));
-            opacity: 0; transition: opacity var(--transition-speed-medium) ease; z-index: -1;
+        .hero-cta-button {
+            font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+            letter-spacing: 1.5px; padding: 1.2rem 3.5rem;
+            background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary) 60%, var(--color-gold-mid));
+            color: var(--color-deep-black); border-radius: 50px; border: none;
+            box-shadow: 0 0 0 0 rgba(200, 164, 100, 0.7); /* For pulse */
+            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+            animation: pulseButton 2.5s infinite ease-out;
         }
-        .btn:hover::before { opacity: 1; }
-        .btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.38); color: #000; /* Ensure text remains black */
+        @keyframes pulseButton {
+            0% { box-shadow: 0 0 0 0 rgba(200, 164, 100, 0.4), var(--shadow-lifted); }
+            70% { box-shadow: 0 0 0 15px rgba(200, 164, 100, 0), var(--shadow-lifted); }
+            100% { box-shadow: 0 0 0 0 rgba(200, 164, 100, 0), var(--shadow-lifted); }
         }
-        .btn-outline { /* ... same as before, but check color contrast ... */
-            border: 2px solid var(--color-gold-mid); color: var(--color-gold-primary);
+        .hero-cta-button:hover {
+            transform: translateY(-6px) scale(1.03);
+            background: linear-gradient(145deg, var(--color-gold-brilliant), var(--color-gold-highlight) 60%, var(--color-gold-primary));
+            animation-play-state: paused; /* Pause pulse on hover */
+             box-shadow: 0 15px 35px rgba(200, 164, 100, 0.3), var(--shadow-lifted);
         }
-        .btn-outline:hover { background: var(--color-gold-mid); color: var(--color-black); }
-
-        /* --- Sections Common Styling --- */
-        .section {
-            padding: 120px 0; /* More padding */
-            overflow: hidden;
-            position: relative; /* For pseudo-elements if needed */
-        }
-        .section:nth-of-type(odd) { background-color: var(--color-dark-grey); }
-        .section-title { text-align: center; margin-bottom: 5rem; }
-        .section-title.shiny-gold-text { display: block; /* For block-level shiny text */ }
-        .section-title::after { /* Refined underline */
-            content: ''; display: block; width: 80px; height: 3.5px;
-            background: linear-gradient(to right, var(--color-gold-shadow), var(--color-gold-highlight), var(--color-gold-shadow));
-            margin: 1rem auto 0; border-radius: var(--border-radius-sm);
-            opacity: 0.8;
-        }
-        /* Intersection Observer animated elements (same logic, refined transitions) */
-        .io-fade-in, .io-fade-in-up, .io-fade-in-left, .io-fade-in-right {
-            opacity: 0;
-            transition: opacity 0.9s cubic-bezier(0.165, 0.84, 0.44, 1),
-                        transform 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .io-fade-in.is-visible { opacity: 1; }
-        .io-fade-in-up { transform: translateY(50px); }
-        .io-fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
-        /* ... (left/right similar) ... */
-
-        /* --- Features Section (Services) --- */
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem; /* Increased gap */
-        }
-        .feature-card {
-            background-color: var(--color-mid-grey); /* Slightly lighter card */
-            padding: 2.8rem 2.2rem; border-radius: var(--border-radius-md);
-            border-top: 4px solid var(--color-gold-mid); /* Top border */
-            transition: transform var(--transition-speed-medium) ease,
-                        box-shadow var(--transition-speed-medium) ease,
-                        border-color var(--transition-speed-medium) ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.3), 0 0 25px rgba(176, 141, 87, 0.15);
-            border-top-color: var(--color-gold-highlight);
-        }
-        .feature-card .icon-svg {
-            width: 50px; height: 50px; margin-bottom: 1.8rem;
-            fill: var(--color-gold-primary);
-            transition: fill var(--transition-speed-medium) ease, transform var(--transition-speed-medium) ease;
-        }
-        .feature-card:hover .icon-svg {
-            fill: var(--color-gold-highlight); transform: scale(1.1) rotate(-5deg);
-        }
-        .feature-card h4 { margin-bottom: 1rem; font-size: 1.7rem; color: var(--color-text); }
-        .feature-card h4 .shiny-gold-text { font-size: inherit; } /* For card titles */
-        .feature-card p { font-size: 1rem; color: var(--color-text-muted); line-height: 1.7; }
 
 
-        /* --- New Section: "The Golden Luxe Advantage" --- */
-        .advantage-section { background-color: var(--color-black); /* Distinct bg */}
-        .advantage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+        /* --- General Section Styling with Depth --- */
+        .content-section {
+            padding: 100px 0; position: relative; overflow: hidden; /* For ::before/::after */
         }
-        .advantage-item {
-            text-align: center; padding: 2rem 1.5rem;
-            border: 1px solid rgba(176, 141, 87, 0.15);
-            border-radius: var(--border-radius-md);
-            transition: background-color var(--transition-speed-medium), border-color var(--transition-speed-medium);
+        .content-section:nth-of-type(even) { background-color: var(--color-charcoal); }
+        .content-section:nth-of-type(odd) { background-color: var(--color-black); }
+        .content-section .section-title-container { margin-bottom: 4rem; text-align: center; }
+        .content-section .section-title-container h2::after { /* Decorative underline for section titles */
+            content: ''; display: block; width: 100px; height: 4px; margin: 1.5rem auto 0;
+            background: linear-gradient(90deg, var(--color-gold-shadow), var(--color-gold-highlight) 50%, var(--color-gold-shadow) 100%);
+            border-radius: 3px; opacity: 0.7;
         }
-        .advantage-item:hover {
-            background-color: rgba(176, 141, 87, 0.05);
+        .section-intro-text {
+            text-align: center; max-width: 800px; margin: -2.5rem auto 4.5rem;
+            color: var(--color-text-secondary); font-size: 1.15rem;
+        }
+        /* Animation classes (same JS logic) */
+        .animate-on-scroll { opacity: 0; transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth); }
+        .fade-in-up { transform: translateY(60px); }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+        .fade-in { opacity: 0; }
+        .fade-in.is-visible { opacity: 1; }
+
+
+        /* --- Services Section --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3.5rem; }
+        .service-card {
+            background-color: var(--color-graphite);
+            padding: 3rem 2.5rem; border-radius: 12px;
+            border: 1px solid rgba(176, 141, 87, 0.1);
+            box-shadow: var(--shadow-soft-depth);
+            position: relative; overflow: hidden; /* For hover effects */
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+        }
+        .service-card::before { /* Inner subtle glow on hover */
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(200,164,100,0.1) 0%, transparent 70%);
+            opacity: 0; transform: scale(0.8);
+            transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+        }
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-lifted), var(--shadow-gold-glow);
             border-color: rgba(176, 141, 87, 0.3);
         }
-        .advantage-item .icon-adv-svg {
-            width: 44px; height: 44px; margin-bottom: 1.2rem; fill: var(--color-gold-mid);
+        .service-card:hover::before { opacity: 1; transform: scale(1); }
+        .service-icon-wrapper {
+            width: 70px; height: 70px; margin-bottom: 2rem;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--color-gold-mid), var(--color-gold-shadow));
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: background var(--transition-smooth), transform var(--transition-interactive);
         }
-        .advantage-item h4 { font-size: 1.5rem; color: var(--color-gold-primary); margin-bottom: 0.7rem; }
-        .advantage-item p { font-size: 0.95rem; }
+        .service-card:hover .service-icon-wrapper {
+            background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary));
+            transform: scale(1.1);
+        }
+        .service-icon-wrapper svg { width: 36px; height: 36px; fill: var(--color-deep-black); /* Icon color */ }
+        .service-card h4 { margin-bottom: 1rem; color: var(--color-text-primary); }
+        .service-card p { font-size: 1rem; line-height: 1.7; color: var(--color-text-secondary); }
+
+
+        /* --- "Our Advantage" Section --- */
+        .advantage-section-bg { background-color: var(--color-black); /* Darker than charcoal */ }
+        .advantage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+        .advantage-item-card {
+            text-align: center; padding: 2.5rem 2rem;
+            background-color: var(--color-graphite);
+            border-radius: 10px;
+            border: 1px solid transparent; /* Prepare for gradient border */
+            position: relative;
+            box-shadow: var(--shadow-soft-depth);
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+        .advantage-item-card::before { /* Gradient border effect on hover */
+            content: ""; position: absolute; inset: -1px; /* Control border thickness */
+            border-radius: इन्हेरिट; /* Match parent's border-radius */
+            background: linear-gradient(160deg, var(--color-gold-shadow), var(--color-gold-highlight), var(--color-gold-mid));
+            z-index: -1; opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+        .advantage-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lifted), var(--shadow-gold-glow);
+        }
+        .advantage-item-card:hover::before { opacity: 1; }
+        .advantage-icon-svg { width: 48px; height: 48px; margin-bottom: 1.5rem; fill: var(--color-gold-primary); transition: fill var(--transition-interactive), transform var(--transition-interactive); }
+        .advantage-item-card:hover .advantage-icon-svg { fill: var(--color-gold-highlight); transform: scale(1.1); }
+        .advantage-item-card h4 { font-size: 1.6rem; margin-bottom: 0.8rem; color: var(--color-text-primary); }
+
 
         /* --- CTA Section --- */
-        .cta-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Cg fill='%23B08D57' fill-opacity='0.06'%3E%3Ccircle cx='50' cy='50' r='50'/%3E%3Ccircle cx='0' cy='100' r='40'/%3E%3Ccircle cx='100' cy='0' r='30'/%3E%3C/g%3E%3C/svg%3E") center center;
-            background-size: auto, cover; /* For SVG pattern and color overlay */
-            text-align: center; color: #fff; padding: 100px 0;
+        .cta-final-section {
+            padding: 120px 0; text-align: center;
+            background: linear-gradient(to bottom, var(--color-charcoal) 0%, var(--color-deep-black) 100%);
+            position: relative;
         }
-        .cta-section h2, .cta-section p { color: #fff; }
-        .cta-section h2.shiny-gold-text { text-shadow: 0 2px 15px rgba(0,0,0,0.3); }
-        .cta-section p { max-width: 700px; margin: 0 auto 3rem auto; font-size: 1.15rem; opacity: 0.9; }
-
-        /* --- Contact Form --- */
-        .contact-form { max-width: 750px; margin: 0 auto; text-align: left; }
-        .form-group { margin-bottom: 1.8rem; }
-        .form-group label {
-            display: block; margin-bottom: 0.6rem; color: var(--color-gold-primary);
-            font-weight: 500; font-size: 1rem;
+        .cta-final-section::before { /* Large, faint gold circle for depth */
+            content: ''; position: absolute;
+            bottom: -50%; left: 50%; transform: translateX(-50%);
+            width: 150%; padding-bottom: 150%; /* Aspect ratio for circle */
+            background: radial-gradient(circle, rgba(176,141,55,0.05) 0%, transparent 60%);
+            border-radius: 50%; z-index: 0; pointer-events: none;
         }
-        .form-control {
-            width: 100%; padding: 1.1rem; background: var(--color-mid-grey);
-            border: 1px solid #282828; color: var(--color-text);
-            border-radius: var(--border-radius-sm);
-            transition: border-color var(--transition-speed-medium) ease, box-shadow var(--transition-speed-medium) ease;
-            font-family: var(--font-secondary); font-size: 1rem;
+        .cta-content-area { position: relative; z-index: 1; }
+        .cta-final-section h2 { margin-bottom: 2rem; color: var(--color-text-primary); }
+        .cta-final-section p.cta-subtitle {
+            max-width: 750px; margin: 0 auto 3rem; color: var(--color-text-secondary); font-size: 1.2rem;
         }
-        .form-control:focus {
+        .contact-form-embedded {
+            max-width: 700px; margin: 3rem auto 0; text-align: left;
+            padding: 3rem; background-color: rgba(5,5,5,0.5); /* Darker, more integrated */
+            border-radius: 12px; box-shadow: var(--shadow-lifted);
+            border: 1px solid rgba(176,141,87,0.15);
+        }
+        .form-input-group { margin-bottom: 2rem; }
+        .form-input-group label { display: block; margin-bottom: 0.75rem; color: var(--color-gold-highlight); font-weight: 500; font-size: 0.95rem; }
+        .form-text-input, .form-textarea-input {
+            width: 100%; padding: 1.2rem 1.3rem;
+            background: var(--color-graphite); border: 1px solid #2f2f2f;
+            color: var(--color-text-primary); border-radius: 8px;
+            font-family: var(--font-body); font-size: 1rem;
+            transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+        }
+        .form-text-input:focus, .form-textarea-input:focus {
             outline: none; border-color: var(--color-gold-mid);
-            box-shadow: 0 0 0 4px rgba(176, 141, 87, 0.2);
+            box-shadow: 0 0 15px rgba(176, 141, 87, 0.2), 0 0 0 1px var(--color-gold-mid);
         }
-        textarea.form-control { resize: vertical; min-height: 130px; }
+        .form-textarea-input { resize: vertical; min-height: 140px; }
+        .form-submit-button {
+            display: block; width: 100%; padding: 1.2rem;
+            font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: 1px;
+            background: linear-gradient(145deg, var(--color-gold-primary), var(--color-gold-mid));
+            color: var(--color-deep-black); border: none; border-radius: 8px; cursor: pointer;
+            box-shadow: var(--shadow-soft-depth);
+            transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+        }
+        .form-submit-button:hover {
+            background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary));
+            transform: translateY(-3px); box-shadow: var(--shadow-lifted);
+        }
 
         /* --- Footer --- */
-        .main-footer {
-            background-color: #000; color: #777; text-align: center;
-            padding: 5rem 0 2.5rem; font-size: 0.95rem;
+        .site-footer {
+            background-color: #000000; color: var(--color-text-muted); text-align: center;
+            padding: 6rem 0 3rem; border-top: 1px solid rgba(176,141,87,0.08);
+            position: relative;
         }
-        .footer-logo-svg { /* ... same as before ... */ fill: #444; }
-        .main-footer:hover .footer-logo-svg { fill: var(--color-gold-shadow); }
-        .social-links a { color: #777; margin: 0 1.2rem; font-size: 1.5rem; }
-        .social-links a:hover { color: var(--color-gold-primary); transform: translateY(-4px); }
+        .footer-logo-icon { width: 55px; height: 55px; margin-bottom: 1.5rem; }
+        .footer-logo-icon .circle { stroke: var(--color-gold-antique); stroke-width: 5; fill:none; }
+        .footer-logo-icon .letter-g { fill: var(--color-gold-antique); font-family: var(--font-display); font-weight: 800; }
+        .footer-social-links a { color: var(--color-text-muted); margin: 0 1.3rem; font-size: 1.6rem; transition: color var(--transition-interactive), transform var(--transition-interactive); }
+        .footer-social-links a:hover { color: var(--color-gold-primary); transform: translateY(-4px) scale(1.1); }
+        .site-footer p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .footer-seo-text { font-size: 0.8rem; opacity: 0.6; margin-top: 1rem; }
 
-        /* --- Responsive (Simplified, expand as needed) --- */
+        /* --- Responsive Adjustments --- */
         @media (max-width: 992px) {
-            .main-nav li { margin-left: 1.8rem; }
+            .main-nav li { margin-left: 2rem; }
+            h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+            h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
         }
         @media (max-width: 768px) {
-            /* Mobile nav styles from previous example, adjust as needed */
             .main-nav {
                 display: none; flex-direction: column; width: 100%;
                 position: absolute; top: 100%; left: 0;
-                background-color: rgba(10,10,10,0.99);
-                backdrop-filter: blur(10px);
-                padding: 1rem 0;
-                animation: slideDownNav 0.3s ease-out forwards;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                background-color: rgba(10,10,10,0.99); backdrop-filter: blur(15px);
+                padding: 1rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                border-top: 1px solid rgba(176,141,87,0.1);
+                animation: mobileNavSlideDown 0.5s var(--transition-smooth) forwards;
             }
-            @keyframes slideDownNav {
-                from { opacity: 0; transform: translateY(-20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
+            @keyframes mobileNavSlideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
             .main-nav.active { display: flex; }
             .main-nav ul { flex-direction: column; width: 100%; }
             .main-nav li { margin: 0; text-align: center; }
-            .main-nav a { display: block; padding: 1.2rem; border-bottom: 1px solid rgba(176, 141, 87, 0.1); }
+            .main-nav a { display: block; padding: 1.3rem; border-bottom: 1px solid rgba(176,141,87,0.08); width: 100%; }
             .main-nav li:last-child a { border-bottom: none; }
-            .main-nav a::after { display: none; }
-            .main-nav a:hover { background-color: rgba(176, 141, 87, 0.05); }
-            .menu-toggle { display: block; color: var(--color-gold-primary); }
+            .main-nav a::before, .main-nav a::after { display:none; } /* Remove desktop hover for mobile */
+            .main-nav a:hover { background-color: rgba(176,141,87,0.05); }
+            .menu-toggle { display: block; background: none; border: none; cursor: pointer; }
 
-            .hero { padding-top: 100px; min-height: auto; padding-bottom: 80px;}
-            .section { padding: 80px 0; }
-            .section-title { margin-bottom: 3.5rem; }
-            .features-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-section { padding: 120px 0 60px; }
+            .content-section { padding: 80px 0; }
+            .services-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .service-card { padding: 2.5rem 2rem; }
+            .contact-form-embedded { padding: 2rem; }
         }
 
-        /* Scrollbar Styling - More refined */
-        ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: var(--color-black); }
+        /* Lenis scrollbar style (optional) */
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        .lenis.lenis-scrolling iframe { pointer-events: none; }
+        ::-webkit-scrollbar { width: 10px; background-color: var(--color-deep-black); }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--color-gold-mid), var(--color-gold-shadow));
-            border-radius: 10px; border: 3px solid var(--color-black);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--color-gold-primary), var(--color-gold-mid));
+            background: linear-gradient(var(--color-gold-mid), var(--color-gold-shadow));
+            border-radius: 10px; border: 2px solid var(--color-deep-black);
         }
     </style>
 </head>
 <body>
-    <div id="preloader"><div class="loader-logo-initial">G</div></div>
+    <div id="preloader"><div class="preloader-logo">G</div></div>
 
-    <div id="lenis-wrapper"> <!-- Lenis requires a wrapper -->
-    <div id="lenis-content"> <!-- And a content element -->
+    <!-- Lenis Wrapper & Content -->
+    <div id="lenis-wrapper" style="position: relative; width: 100%;">
+    <div id="lenis-content" style="position: relative; width: 100%; overflow: visible;">
 
-    <header class="main-header" id="mainHeader">
+    <header class="main-header" id="pageHeader">
         <div class="container">
-            <a href="#hero" class="logo-container">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="42"/>
-                    <text x="50" y="68" font-family="var(--font-primary), serif" font-size="55" font-weight="bold" text-anchor="middle">G</text>
+            <a href="#hero" class="logo-link">
+                <svg class="logo-svg-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="circle" cx="50" cy="50" r="44"/>
+                    <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
                 </svg>
-                <span class="logo-text">Golden Luxe <span>Media</span></span>
+                <span class="site-title-text">Golden Luxe <span>Media</span></span>
             </a>
-            <nav class="main-nav" id="mainNav">
+            <nav class="main-nav" id="pageNav">
                 <ul>
                     <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#advantage">Our Advantage</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services">Digital Services</a></li>
+                    <li><a href="#advantage">Our Edge</a></li>
+                    <li><a href="#contact">Connect</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <button class="menu-toggle" id="navToggleBtn" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content io-fade-in-up">
-                <h1><span class="shiny-gold-text">Ignite Your Digital ROI</span></h1>
-                <p>Golden Luxe Media architects data-driven digital marketing strategies that deliver measurable results and sustainable brand growth. From advanced SEO mastery and compelling content creation to high-converting PPC campaigns and transformative web experiences, we elevate your online presence to its peak potential.</p>
-                <a href="#services" class="btn">Discover Our Expertise</a>
+        <section id="hero" class="hero-section">
+            <div class="hero-content-wrapper animate-on-scroll fade-in-up">
+                <h1><span class="shiny-gold-heading">Transform Your Digital Presence into Pure Gold</span></h1>
+                <p class="subtitle">Golden Luxe Media is your alchemist in the digital realm, forging unparalleled brand experiences and measurable ROI through elite SEO, captivating content, precision PPC, and transformative web design.</p>
+                <a href="#services" class="hero-cta-button">Unlock Your Brand's Potential</a>
             </div>
         </section>
 
-        <section id="services" class="section">
+        <section id="services" class="content-section">
             <div class="container">
-                <h2 class="section-title io-fade-in"><span class="shiny-gold-text">Our Premier Digital Solutions</span></h2>
-                <p class="io-fade-in" style="text-align:center; max-width: 750px; margin-left:auto; margin-right:auto; margin-top: -3rem; margin-bottom: 4rem;">We offer a comprehensive suite of digital marketing services designed to boost your visibility, engagement, and conversions. Each strategy is tailored to your unique business goals, ensuring maximum impact.</p>
-                <div class="features-grid">
-                    <div class="feature-card io-fade-in-up" data-io-delay="0.0s">
-                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19.47 13.12a7.53 7.53 0 00-9.47-9.47A7.53 7.53 0 004.88 13.12c0 4.12 3.38 7.5 7.5 7.5s7.5-3.38 7.5-7.5zm-12.5 0a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0zm15.03 6.91l-3.53-3.53a7.48 7.48 0 001.09-3.38c0-4.41-3.59-8-8-8S4 5.21 4 9.62a7.48 7.48 0 001.09 3.38L1.56 16.53a1 1 0 000 1.41l1.06 1.06a1 1 0 001.41 0l3.53-3.53a7.48 7.48 0 003.38 1.09c4.41 0 8-3.59 8-8a7.48 7.48 0 00-1.09-3.38l3.53 3.53a1 1 0 001.41 0l1.06-1.06a1 1 0 000-1.41z"/></svg> <!-- Magnifying glass for SEO -->
-                        <h4><span class="shiny-gold-text">Strategic SEO & Content Marketing</span></h4>
-                        <p>Dominate search engine rankings and captivate your target audience. We implement cutting-edge SEO techniques, in-depth keyword research, technical optimization, and create high-value, authoritative content that not only ranks but also converts leads into loyal customers.</p>
+                <div class="section-title-container animate-on-scroll fade-in">
+                    <h2><span class="shiny-gold-heading">Our Spectrum of Luxe Digital Services</span></h2>
+                </div>
+                <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">We craft bespoke digital marketing strategies that resonate with high-value audiences, drive engagement, and accelerate your growth trajectory. Explore how our core services can elevate your brand.</p>
+                <div class="services-grid">
+                    <!-- Service Card 1: SEO -->
+                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                        <div class="service-icon-wrapper">
+                            <!-- Apt SEO Icon: Magnifying glass with upward trend/graph -->
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M47.31,41.56,38.24,32.5a17.36,17.36,0,1,0-5.75,5.75l9.07,9.07a4.08,4.08,0,1,0,5.75-5.75ZM25.5,38.5A13.05,13.05,0,1,1,38.55,25.45,13.06,13.06,0,0,1,25.5,38.5Z"/><path d="M12.5,40.5v-13a1,1,0,0,1,2,0v11.59l5.71-5.71a1,1,0,0,1,1.41,1.41l-7,7a1,1,0,0,1-.7.29A1,1,0,0,1,12.5,40.5Z"/></svg>
+                        </div>
+                        <h4>Advanced SEO & Authority Building</h4>
+                        <p>Achieve sustained organic visibility and dominate your niche. Our SEO alchemy combines deep technical audits, strategic keyword mastery, high-impact link acquisition, and authoritative content ecosystems that Google and your audience will love.</p>
                     </div>
-                    <div class="feature-card io-fade-in-up" data-io-delay="0.15s">
-                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg> <!-- Target/Ads Icon -->
-                        <h4><span class="shiny-gold-text">Performance Marketing (PPC & Social Ads)</span></h4>
-                        <p>Maximize your return on investment with meticulously planned and executed Pay-Per-Click (PPC) campaigns on Google Ads, Bing, and impactful social media advertising. We focus on conversion optimization, ad spend efficiency, and transparent performance reporting.</p>
+                    <!-- Service Card 2: PPC -->
+                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                        <div class="service-icon-wrapper">
+                            <!-- Apt PPC Icon: Target with a click/currency symbol -->
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="21.5" stroke-width="4" stroke="#333" fill="none"/><circle cx="32" cy="32" r="13.5" stroke-width="4" stroke="#333" fill="none"/><circle cx="32" cy="32" r="5.5" fill="#333"/><path d="M47.5,41.5l-8-12h-15l-8,12a1,1,0,0,0,.8,1.5h22.4A1,1,0,0,0,47.5,41.5Z"/><path d="M34.5,26.5a2.5,2.5,0,0,0-5,0v0a2.5,2.5,0,1,0,5,0Z"/></svg>
+                        </div>
+                        <h4>Precision Performance Marketing</h4>
+                        <p>Maximize your ROI with hyper-targeted PPC campaigns across Google, Meta, LinkedIn, and beyond. We engineer high-conversion ad creatives, optimize bidding strategies relentlessly, and provide transparent reporting on every dollar spent.</p>
                     </div>
-                    <div class="feature-card io-fade-in-up" data-io-delay="0.3s">
-                         <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.5 2H3.5A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM12 4a8 8 0 018 8h-2.03a6 6 0 00-5.97-5.97V4zm0 16a8 8 0 01-8-8h2.03A6 6 0 0010 17.97V20zm0-10a2 2 0 100 4 2 2 0 000-4zm8-2.03V4a8 8 0 01-8 8v2.03A6 6 0 0020 12zM4 12a8 8 0 018-8v2.03A6 6 0 006.03 10H4z"/></svg> <!-- Web/CRO icon -->
-                        <h4><span class="shiny-gold-text">Luxury Web Design & CRO</span></h4>
-                        <p>Your website is your digital flagship. We design and develop visually stunning, intuitive, and high-performing websites optimized for Conversion Rate Optimization (CRO). We ensure a seamless user experience that guides visitors towards desired actions, turning traffic into tangible business outcomes.</p>
+                    <!-- Service Card 3: Web Design & CRO -->
+                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                        <div class="service-icon-wrapper">
+                            <!-- Apt Web Design Icon: Stylized browser window or responsive screens -->
+                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="7.5" y="12.5" width="49" height="34" rx="3" stroke-width="4" stroke="#333" fill="none"/><line x1="7.5" y1="22.5" x2="56.5" y2="22.5" stroke-width="4" stroke="#333"/><circle cx="15.5" cy="17.5" r="1.5" fill="#333"/><circle cx="21.5" cy="17.5" r="1.5" fill="#333"/><path d="M28.5,32.5l6,6,6-6"/><line x1="34.5" y1="38.5" x2="34.5" y2="28.5" stroke-width="2" stroke="#333" fill="none"/></svg>
+                        </div>
+                        <h4>Luxury Web Experiences & CRO</h4>
+                        <p>Your digital flagship, meticulously crafted. We design and develop visually stunning, intuitive websites that embody your brand's essence. Coupled with rigorous Conversion Rate Optimization (CRO), we turn visitors into devoted clientele.</p>
                     </div>
-                     <div class="feature-card io-fade-in-up" data-io-delay="0.45s">
-                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> <!-- Social Media Icon -->
-                        <h4><span class="shiny-gold-text">Social Media & Brand Engagement</span></h4>
-                        <p>Build a thriving, engaged online community and amplify your brand's unique voice. We develop data-informed social media strategies, manage your platforms with creative flair, and foster meaningful customer interactions that build loyalty and drive advocacy.</p>
+                     <!-- Service Card 4: Content & Social -->
+                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.45s">
+                        <div class="service-icon-wrapper">
+                            <!-- Apt Content/Social Icon: Quill pen with speech bubbles or network -->
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M22.5,49.5l-10-10L35.08,17.08a4.08,4.08,0,0,1,5.76,0l1.16,1.16a4.08,4.08,0,0,1,0,5.76Z"/><path d="M42.5,23.5l-19,19"/><path d="M18.5,38.5l-6,6a2,2,0,0,0,0,2.83l2.17,2.17a2,2,0,0,0,2.83,0l6-6"/><path d="M49.5,30.5a8,8,0,0,0-16,0c0,4.42,8,12,8,12S49.5,34.92,49.5,30.5Z"/><circle cx="41.5" cy="30.5" r="3"/></svg>
+                        </div>
+                        <h4>Compelling Content & Social Alchemy</h4>
+                        <p>Forge deep connections and establish thought leadership. We create magnetic content strategies—from captivating articles and video to engaging social media narratives—that amplify your brand voice and cultivate a loyal community.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="advantage" class="section advantage-section">
+        <section id="advantage" class="content-section advantage-section-bg">
             <div class="container">
-                <h2 class="section-title io-fade-in"><span class="shiny-gold-text">The Golden Luxe Advantage</span></h2>
-                <p class="io-fade-in" style="text-align:center; max-width: 800px; margin-left:auto; margin-right:auto; margin-top: -3rem; margin-bottom: 4rem;">Choosing Golden Luxe Media means partnering with a team dedicated to your success. We differentiate ourselves through:</p>
+                <div class="section-title-container animate-on-scroll fade-in">
+                    <h2><span class="shiny-gold-heading">The Golden Luxe Edge</span></h2>
+                </div>
+                <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">We don't just execute campaigns; we architect digital legacies. Our commitment to excellence, transparency, and bespoke solutions sets us apart, delivering not just results, but transformative growth.</p>
                 <div class="advantage-grid">
-                    <div class="advantage-item io-fade-in-up" data-io-delay="0.0s">
-                        <svg class="icon-adv-svg" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-13h2v2h-2zm0 4h2v6h-2z"/></svg> <!-- Strategy/Target Icon -->
-                        <h4>Bespoke Strategies</h4>
-                        <p>No cookie-cutter solutions. We delve deep into your brand, audience, and objectives to craft truly customized digital marketing roadmaps.</p>
+                    <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                        <!-- Apt Icon: Unique Key or Blueprint -->
+                        <svg class="advantage-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.59 2.6C12.21 2.22 11.79 2 11.33 2H8.5C7.67 2 7 2.67 7 3.5V6H4.5C3.67 6 3 6.67 3 7.5V10H2V12H3V14H2V16H3V18H2V20H3V20.5C3 21.33 3.67 22 4.5 22H7V19.5C7 18.67 7.67 18 8.5 18H11V15.5C11 14.67 11.67 14 12.5 14H15V11.5C15 10.67 15.67 10 16.5 10H19V7.5C19 6.67 18.33 6 17.5 6H15V3.5C15 3.04 14.78 2.62 14.41 2.24L12.59 2.6ZM9 4H11.3L13 5.7V6H9V4ZM13 16H8.5C8.22 16 8 16.22 8 16.5V19H13V16ZM17 12H12.5C12.22 12 12 12.22 12 12.5V15H17V12Z"/></svg>
+                        <h4>Bespoke Strategic Architecture</h4>
+                        <p>Your vision, meticulously translated into a unique digital roadmap. We craft hyper-customized strategies, never resorting to one-size-fits-all.</p>
                     </div>
-                    <div class="advantage-item io-fade-in-up" data-io-delay="0.15s">
-                        <svg class="icon-adv-svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5zm4-2h6v-2H9v2zm0-4h6V7H9v6z"/></svg> <!-- Data/Analytics Icon -->
-                        <h4>Data-Driven Insights</h4>
-                        <p>Every decision is backed by data. We leverage advanced analytics and meticulous tracking to optimize campaigns and maximize your ROI.</p>
+                    <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                        <!-- Apt Icon: Abstract data visualization or insightful eye -->
+                        <svg class="advantage-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"/></svg>
+                        <h4>Insight-Driven Performance</h4>
+                        <p>Data is our compass. We harness sophisticated analytics to unearth actionable insights, continuously refining for peak campaign performance.</p>
                     </div>
-                    <div class="advantage-item io-fade-in-up" data-io-delay="0.3s">
-                         <svg class="icon-adv-svg" viewBox="0 0 24 24"><path d="M16.563 13.937L12.5 10.75V3h-1v8.25l4.813 3.208 1.25-1.521zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8 8-3.589-8-8-8z"/></svg> <!-- Transparency/Clock Icon -->
-                        <h4>Transparent Collaboration</h4>
-                        <p>We believe in open communication. You'll receive regular, clear reports and insights, ensuring you're always informed and involved.</p>
-                    </div>
-                     <div class="advantage-item io-fade-in-up" data-io-delay="0.45s">
-                        <svg class="icon-adv-svg" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14H1v2h22v-2h-2zM5 19V5h14v14H5zm4-8h6v2H9v-2zm0-4h6v2H9V7z"/></svg> <!-- Results/Graph Icon -->
-                        <h4>Unwavering Focus on Results</h4>
-                        <p>Your success is our ultimate metric. We're relentlessly focused on achieving your business objectives and delivering tangible, impactful outcomes.</p>
+                    <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                        <!-- Apt Icon: Interlocking gears or clear crystal -->
+                         <svg class="advantage-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.99 8.85L18.14 5l-3.85 3.85a7.973 7.973 0 00-4.29-1.19V2h-2v5.66a7.973 7.973 0 00-4.29 1.19L2.01 5 5.86 8.85a7.973 7.973 0 00-1.19 4.29H2v2h2.67a7.973 7.973 0 001.19 4.29L2.01 19l3.85-3.85a7.973 7.973 0 004.29 1.19V22h2v-5.66a7.973 7.973 0 004.29-1.19l3.85 3.85-3.85-3.85a7.973 7.973 0 001.19-4.29H22v-2h-2.67a7.973 7.973 0 00-1.19-4.29zm-9.99 7.7a4 4 0 110-8 4 4 0 010 8z"/></svg>
+                        <h4>Radical Transparency & Partnership</h4>
+                        <p>We operate as an extension of your team, fostering open communication with clear, consistent reporting and collaborative strategy sessions.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section cta-section">
-            <div class="container io-fade-in">
-                <h2 class="shiny-gold-text">Ready to Elevate Your Brand's Digital Future?</h2>
-                <p>Let's discuss how Golden Luxe Media can unlock your brand's full potential. Schedule a complimentary consultation with our digital strategists today and take the first step towards unparalleled online success and market leadership.</p>
-                <a href="#" class="btn" onclick="document.getElementById('name').focus(); return false;">Request Your Free Consultation</a>
-                 <form action="#" method="POST" class="contact-form io-fade-in-up" style="margin-top: 4rem; background: rgba(0,0,0,0.3); padding: 2.5rem; border-radius: var(--border-radius-md);">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required placeholder="e.g., John Doe">
+        <section id="contact" class="cta-final-section">
+            <div class="container cta-content-area">
+                <div class="animate-on-scroll fade-in">
+                    <h2><span class="shiny-gold-heading">Ready to Forge Your Digital Triumph?</span></h2>
+                    <p class="cta-subtitle">Connect with Golden Luxe Media. Let's architect a future where your brand not only competes but commands its digital domain. Your journey to market leadership begins with a conversation.</p>
+                </div>
+                <form action="#" method="POST" class="contact-form-embedded animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                    <div class="form-input-group">
+                        <label for="contactName">Your Name</label>
+                        <input type="text" id="contactName" name="name" class="form-text-input" required placeholder="e.g., Alex Chen">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Business Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required placeholder="e.g., name@company.com">
+                    <div class="form-input-group">
+                        <label for="contactEmail">Business Email</label>
+                        <input type="email" id="contactEmail" name="email" class="form-text-input" required placeholder="e.g., alex.chen@example.com">
                     </div>
-                    <div class="form-group">
-                        <label for="company_website">Company Website (Optional)</label>
-                        <input type="url" id="company_website" name="company_website" class="form-control" placeholder="e.g., https://www.yourcompany.com">
+                    <div class="form-input-group">
+                        <label for="contactCompany">Company Website (Optional)</label>
+                        <input type="url" id="contactCompany" name="company_website" class="form-text-input" placeholder="e.g., https://yourbrand.com">
                     </div>
-                    <div class="form-group">
-                        <label for="message">Your Digital Marketing Goals</label>
-                        <textarea id="message" name="message" rows="5" class="form-control" required placeholder="Tell us about your challenges and aspirations..."></textarea>
+                    <div class="form-input-group">
+                        <label for="contactMessage">How Can We Elevate Your Brand?</label>
+                        <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Share your digital aspirations or challenges..."></textarea>
                     </div>
                     <div style="text-align: center;">
-                        <button type="submit" class="btn">Send My Inquiry</button>
+                        <button type="submit" class="form-submit-button">Initiate Consultation</button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
+    <footer class="site-footer">
         <div class="container">
-             <svg class="footer-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="42"/><text x="50" y="68" font-family="var(--font-primary), serif" font-size="55" font-weight="bold" text-anchor="middle">G</text></svg>
-            <div class="social-links io-fade-in" style="margin-bottom: 1.5rem;">
-                <a href="#" aria-label="Instagram">IG</a> <a href="#" aria-label="LinkedIn">LI</a> <a href="#" aria-label="Twitter">TW</a>
+            <svg class="footer-logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle" cx="50" cy="50" r="44"/>
+                <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
+            </svg>
+            <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin: 2rem 0;">
+                <a href="#" aria-label="LinkedIn Profile">LI</a>
+                <a href="#" aria-label="Instagram Page">IG</a>
+                <a href="#" aria-label="Behance Portfolio">BE</a>
             </div>
-            <p class="io-fade-in">© <span id="currentYear"></span> Golden Luxe Media. All Rights Reserved. Driving Digital Transformation.</p>
-            <p class="io-fade-in" style="font-size: 0.85rem; opacity: 0.65;">Luxury Digital Marketing Agency | SEO, PPC, Content & Web Solutions</p>
+            <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. All Rights Reserved. Masterminding Digital Excellence.</p>
+            <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Premier Digital Marketing Agency: SEO, PPC, Luxury Web Design, Content Strategy & Brand Elevation Solutions.</p>
         </div>
     </footer>
 
@@ -526,108 +573,148 @@
 
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script>
-        // Lenis Smooth Scroll
-        const lenis = new Lenis({
-            wrapper: document.querySelector('#lenis-wrapper'),
-            content: document.querySelector('#lenis-content'),
-            duration: 1.3, // Higher for smoother
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-            infinite: false,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // --- Preloader ---
-        window.addEventListener('load', () => {
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Preloader ---
             const preloader = document.getElementById('preloader');
-            if (preloader) setTimeout(() => preloader.classList.add('loaded'), 300); // Small delay
-        });
-
-        // --- Mobile Menu & Header Scroll (same as before) ---
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            const isExpanded = mainNav.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-            menuToggle.innerHTML = isExpanded ? '✕' : '☰';
-        });
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Lenis smooth scroll to anchor
-                const targetId = link.getAttribute('href');
-                if (targetId && targetId.startsWith('#')) {
-                    e.preventDefault();
-                    lenis.scrollTo(targetId, { offset: -80 }); // Adjust offset for fixed header
-                }
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    menuToggle.innerHTML = '☰';
-                }
-            });
-        });
-
-        const header = document.getElementById('mainHeader');
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.main-nav a');
-
-        function updateActiveLinkOnScroll() {
-            let current = 'hero';
-            const headerHeight = header.offsetHeight;
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (lenis.scroll >= sectionTop - headerHeight - 80) { // Use lenis.scroll
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        lenis.on('scroll', (e) => { // Use Lenis scroll event
-            if (e.scroll > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            if (preloader) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => { // Ensure a minimum display time for preloader
+                        preloader.classList.add('loaded');
+                    }, 500); // Adjust as needed
+                });
             }
-            updateActiveLinkOnScroll();
-        });
-        updateActiveLinkOnScroll(); // Initial check
 
-        // --- Intersection Observer (same logic, refined for Lenis context if needed) ---
-        const io_elements = document.querySelectorAll('.io-fade-in, .io-fade-in-up, .io-fade-in-left, .io-fade-in-right');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const delay = entry.target.dataset.ioDelay;
-                    if (delay) {
-                        setTimeout(() => entry.target.classList.add('is-visible'), parseFloat(delay) * 1000);
-                    } else {
-                        entry.target.classList.add('is-visible');
-                    }
-                    observer.unobserve(entry.target);
+            // --- Lenis Smooth Scroll ---
+            // Ensure wrapper and content elements exist and have appropriate display for Lenis
+            const lenisWrapper = document.getElementById('lenis-wrapper');
+            const lenisContent = document.getElementById('lenis-content');
+
+            if (lenisWrapper && lenisContent) {
+                const lenis = new Lenis({
+                    wrapper: lenisWrapper,
+                    content: lenisContent,
+                    duration: 1.5, // Adjusted for a slightly more luxurious feel
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    orientation: 'vertical',
+                    gestureOrientation: 'vertical',
+                    smoothWheel: true,
+                    wheelMultiplier: 1,
+                    smoothTouch: false, // Often better for touch to be native
+                    touchMultiplier: 2,
+                    infinite: false,
+                });
+
+                function raf(time) {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
                 }
-            });
-        }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }); // Adjust rootMargin slightly
-        io_elements.forEach(el => observer.observe(el));
+                requestAnimationFrame(raf);
 
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+                // --- Mobile Menu ---
+                const navToggleBtn = document.getElementById('navToggleBtn');
+                const pageNav = document.getElementById('pageNav');
+                if (navToggleBtn && pageNav) {
+                    navToggleBtn.addEventListener('click', () => {
+                        pageNav.classList.toggle('active');
+                        const isExpanded = pageNav.classList.contains('active');
+                        navToggleBtn.setAttribute('aria-expanded', isExpanded);
+                        navToggleBtn.innerHTML = isExpanded ? '✕' : '☰'; // Cross/Hamburger
+                    });
+                }
 
+                // --- Navigation Link Handling (Smooth Scroll & Active State) ---
+                const pageHeader = document.getElementById('pageHeader');
+                const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button'); // Include other scroll links
+
+                navLinks.forEach(link => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            let offset = pageHeader ? -pageHeader.offsetHeight -10 : -80; // Dynamic offset
+                             if (targetId === "#hero") offset = 0; // No offset for hero typically
+                            lenis.scrollTo(targetId, { offset: offset });
+
+                            if (pageNav && pageNav.classList.contains('active')) { // Close mobile nav
+                                pageNav.classList.remove('active');
+                                navToggleBtn.setAttribute('aria-expanded', 'false');
+                                navToggleBtn.innerHTML = '☰';
+                            }
+                        });
+                    }
+                });
+
+
+                // --- Header Scroll & Active Link ---
+                const allSections = document.querySelectorAll('main section[id]'); // More specific selector
+                const mainNavLinks = document.querySelectorAll('.main-nav a'); // Only for nav bar active state
+
+                function updateActiveLinkOnScroll() {
+                    let currentSectionId = 'hero'; // Default
+                    const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
+
+                    allSections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        if (lenis.scroll >= sectionTop - headerHeight - (window.innerHeight / 3) ) { // Trigger when 1/3 of section is visible
+                            currentSectionId = section.getAttribute('id');
+                        }
+                    });
+
+                    mainNavLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                        if (navLink.getAttribute('href').substring(1) === currentSectionId) {
+                            navLink.classList.add('active');
+                        }
+                    });
+                }
+
+                if (pageHeader) {
+                    lenis.on('scroll', (e) => {
+                        if (e.scroll > 50) {
+                            pageHeader.classList.add('scrolled');
+                        } else {
+                            pageHeader.classList.remove('scrolled');
+                        }
+                        updateActiveLinkOnScroll();
+                    });
+                }
+                updateActiveLinkOnScroll(); // Initial check
+
+            } else {
+                console.error("Lenis wrapper or content element not found. Smooth scroll disabled.");
+            }
+
+
+            // --- Intersection Observer for Animations ---
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const observerOptions = {
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: "0px 0px -50px 0px" // Start animating a bit before fully in view
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.dataset.ioDelay;
+                        if (delay) {
+                            setTimeout(() => {
+                                entry.target.classList.add('is-visible');
+                            }, parseFloat(delay) * 1000);
+                        } else {
+                            entry.target.classList.add('is-visible');
+                        }
+                        obs.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- Current Year for Footer ---
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+        });
     </script>
 </body>
 </html>
