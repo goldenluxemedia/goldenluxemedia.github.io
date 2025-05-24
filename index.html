@@ -3,811 +3,678 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevate Digital | Premium Digital Marketing Agency | SEO & Brand Growth Experts</title>
-    <meta name="description" content="Transform your business with Elevate Digital - a luxury digital marketing agency specializing in SEO, social media marketing, and brand growth strategies. Drive results with our premium marketing solutions.">
-    <meta name="keywords" content="digital marketing agency, SEO services, social media marketing, brand growth, luxury marketing, premium digital solutions">
-    
+    <title>Golden Luxe Media - Premier Digital Experiences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --color-black: #0a0a0a;
+            --color-dark-grey: #121212; /* Slightly lighter than black for depth */
+            --color-gold: #B08D57;
+            --color-gold-light: #D4AF37;
+            --color-gold-darker: #8c6d41; /* For subtle shadows or accents */
+            --color-text: #f0f0f0;
+            --color-text-muted: #a0a0a0;
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Montserrat', sans-serif;
+            --transition-speed-fast: 0.2s;
+            --transition-speed-medium: 0.4s;
+            --transition-speed-slow: 0.6s;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-gold: #D4AF37;
-            --accent-gold: #FFD700;
-            --dark-bg: #0A0A0A;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text-light: #FFFFFF;
-            --text-gray: #B0B0B0;
-            --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
-            --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; /* Base font size */
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
+            font-family: var(--font-secondary);
+            background-color: var(--color-black);
+            color: var(--color-text);
+            line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-gold);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: var(--dark-bg);
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            padding-top: 80px;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-light) 0%, var(--primary-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-light);
-            padding: 12px 24px;
-            border: 2px solid var(--primary-gold);
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-            transform: translateY(-2px);
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .floating-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 20px;
-            animation: float 6s ease-in-out infinite;
-            position: relative;
-        }
-
-        .floating-card:nth-child(1) { animation-delay: 0s; }
-        .floating-card:nth-child(2) { animation-delay: 2s; }
-        .floating-card:nth-child(3) { animation-delay: 4s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 15px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background: rgba(212, 175, 55, 0.05);
-            margin: 100px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 10px;
-        }
-
-        .stat-item p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--dark-bg);
-        }
-
-        .author-info h4 {
-            color: var(--text-light);
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            text-align: center;
-            background: var(--gradient-dark);
-            position: relative;
-        }
-
-        .cta-content h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 60px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            color: var(--primary-gold);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .footer-section p, .footer-section a {
-            color: var(--text-gray);
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-gold);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-gray);
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 40px;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .services-grid,
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        .page-loader {
+        /* --- Preloader --- */
+        #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--dark-bg);
+            background-color: var(--color-black);
+            z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
         }
 
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(212, 175, 55, 0.3);
-            border-top: 3px solid var(--primary-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        #preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .loader-gold-bar { /* Simple elegant loader */
+            width: 100px;
+            height: 3px;
+            background-color: var(--color-gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .loader-gold-bar::before {
+            content: '';
+            position: absolute;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+            background-color: var(--color-gold-light);
+            animation: loading-bar-shine 1.5s infinite linear;
+        }
+
+        @keyframes loading-bar-shine {
+            0% { left: -50%; }
+            50% { left: 100%; }
+            100% { left: 100%; } /* Hold at end slightly before repeating */
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-primary);
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); } /* Responsive font size */
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+
+
+        p {
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+            color: var(--color-text-muted);
+        }
+        section p { color: #ccc; } /* Slightly brighter for section text */
+
+        a {
+            color: var(--color-gold-light);
+            text-decoration: none;
+            transition: color var(--transition-speed-fast) ease;
+        }
+        a:hover { color: var(--color-text); }
+
+        /* --- Header --- */
+        .main-header {
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1.25rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            transition: background-color var(--transition-speed-medium) ease, padding var(--transition-speed-medium) ease;
+        }
+        .main-header.scrolled {
+            background-color: var(--color-dark-grey);
+            padding: 1rem 0;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-svg {
+            width: 40px; /* Adjust size as needed */
+            height: 40px;
+            margin-right: 12px;
+            fill: var(--color-gold); /* Gold color for the 'G' and circle */
+        }
+        .logo-text {
+            font-family: var(--font-secondary);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 500;
+            color: var(--color-gold-light);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .logo-text span { /* For "Luxe Media" part if you want to style differently */
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+
+        .main-nav ul { list-style: none; display: flex; }
+        .main-nav li { margin-left: 2.5rem; }
+        .main-nav a {
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--color-text-muted);
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--color-gold-light); }
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--color-gold);
+            transition: width var(--transition-speed-medium) ease-in-out;
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 60%; }
+
+        .menu-toggle {
+            display: none; background: none; border: none;
+            color: var(--color-gold); font-size: 1.8rem; cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px; /* Header height */
+            position: relative;
+            overflow: hidden;
+            /* Consider a very subtle, dark, high-quality background image here */
+            /* background-image: url('path/to/your/luxurious-subtle-bg.jpg'); */
+            /* background-size: cover; background-position: center; */
+        }
+        .hero::before { /* Subtle animated gold dust or geometric overlay */
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(176, 141, 87, 0.05) 0%, transparent 35%),
+                radial-gradient(circle at 85% 75%, rgba(176, 141, 87, 0.04) 0%, transparent 30%);
+            z-index: 0;
+            animation: subtleShine 25s infinite alternate ease-in-out;
+        }
+        @keyframes subtleShine {
+            0% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+            100% { opacity: 1; transform: scale(1.03) rotate(3deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative; /* To be above ::before */
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            color: var(--color-gold-light);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #ddd; /* Brighter for hero subtitle */
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.8rem;
+            background: linear-gradient(145deg, var(--color-gold-light), var(--color-gold));
+            color: var(--color-black);
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            border-radius: 50px;
+            transition: all var(--transition-speed-medium) ease;
+            box-shadow: 0 6px 20px rgba(176, 141, 87, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before { /* Shine effect */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: left var(--transition-speed-slow) ease;
+        }
+        .btn:hover::before { left: 150%; }
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+            background: linear-gradient(145deg, var(--color-gold), var(--color-gold-darker));
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            box-shadow: 0 6px 20px rgba(176, 141, 87, 0.25);
+        }
+
+        /* --- Sections Common Styling --- */
+        .section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 4.5rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 70px; height: 3px;
+            background: linear-gradient(to right, var(--color-gold-darker), var(--color-gold-light));
+            margin: 0.75rem auto 0;
+            border-radius: var(--border-radius-sm);
+        }
+        /* Intersection Observer animated elements */
+        .io-fade-in, .io-fade-in-up, .io-fade-in-left, .io-fade-in-right {
+            opacity: 0;
+            transition: opacity 0.8s var(--transition-speed-medium) cubic-bezier(0.165, 0.84, 0.44, 1),
+                        transform 0.8s var(--transition-speed-medium) cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .io-fade-in.is-visible { opacity: 1; }
+        .io-fade-in-up { transform: translateY(40px); }
+        .io-fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+        .io-fade-in-left { transform: translateX(-40px); }
+        .io-fade-in-left.is-visible { opacity: 1; transform: translateX(0); }
+        .io-fade-in-right { transform: translateX(40px); }
+        .io-fade-in-right.is-visible { opacity: 1; transform: translateX(0); }
+
+
+        /* --- Features Section --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .feature-card {
+            background-color: var(--color-dark-grey);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius-md);
+            border-left: 5px solid var(--color-gold);
+            transition: transform var(--transition-speed-medium) ease,
+                        box-shadow var(--transition-speed-medium) ease,
+                        border-color var(--transition-speed-medium) ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25), 0 0 30px rgba(176, 141, 87, 0.1);
+            border-left-color: var(--color-gold-light);
+        }
+        .feature-card .icon-svg {
+            width: 48px; height: 48px;
+            margin-bottom: 1.5rem;
+            fill: var(--color-gold-light);
+            transition: fill var(--transition-speed-fast) ease, transform var(--transition-speed-medium) ease;
+        }
+        .feature-card:hover .icon-svg {
+            fill: var(--color-text);
+            transform: rotateY(15deg) scale(1.1);
+        }
+        .feature-card h4 { margin-bottom: 0.8rem; font-size: 1.6rem; color: var(--color-gold-light); }
+        .feature-card p { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8; }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            background-color: var(--color-dark-grey); /* Or a subtle gradient/texture */
+            text-align: center;
+        }
+        .cta-section h2 { margin-bottom: 1.5rem; }
+        .cta-section p { max-width: 650px; margin: 0 auto 2.5rem auto; }
+
+        /* --- Contact Form --- */
+        .contact-form { max-width: 700px; margin: 0 auto; text-align: left; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label {
+            display: block; margin-bottom: 0.5rem;
+            color: var(--color-gold-light); font-weight: 500; font-size: 0.9rem;
+        }
+        .form-control {
+            width: 100%; padding: 1rem;
+            background: #1f1f1f; /* Slightly lighter for input fields */
+            border: 1px solid #333;
+            color: var(--color-text);
+            border-radius: var(--border-radius-sm);
+            transition: border-color var(--transition-speed-fast) ease, box-shadow var(--transition-speed-fast) ease;
+            font-family: var(--font-secondary); font-size: 1rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.25);
+        }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: #000;
+            color: #888;
+            text-align: center;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+        }
+        .main-footer p { margin-bottom: 0.5rem; color: #888; }
+        .footer-logo-svg {
+            width: 50px; height: 50px;
+            fill: #555; /* Muted gold for footer */
+            margin-bottom: 1rem;
+            transition: fill var(--transition-speed-fast);
+        }
+        .main-footer:hover .footer-logo-svg { fill: var(--color-gold-darker); }
+        .social-links a {
+            color: #888; margin: 0 1rem; font-size: 1.4rem;
+            transition: color var(--transition-speed-fast) ease, transform var(--transition-speed-fast) ease;
+        }
+        .social-links a:hover { color: var(--color-gold); transform: translateY(-3px); }
+
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .main-nav li { margin-left: 1.5rem; }
+            .features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none; flex-direction: column; width: 100%;
+                position: absolute; top: 100%; left: 0;
+                background-color: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 1rem 0;
+                animation: slideDownNav 0.3s ease-out forwards;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+            @keyframes slideDownNav {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .main-nav.active { display: flex; }
+            .main-nav ul { flex-direction: column; width: 100%; }
+            .main-nav li { margin: 0; text-align: center; }
+            .main-nav a { display: block; padding: 1.2rem; border-bottom: 1px solid rgba(176, 141, 87, 0.1); }
+            .main-nav li:last-child a { border-bottom: none; }
+            .main-nav a::after { display: none; }
+            .main-nav a:hover { background-color: rgba(176, 141, 87, 0.05); }
+            .menu-toggle { display: block; }
+            .hero { padding-top: 80px; min-height: 80vh;}
+            .section { padding: 80px 0; }
+            .section-title { margin-bottom: 3rem; }
+        }
+        @media (max-width: 480px) {
+            .container { width: 95%; padding: 0 15px; }
+            .btn { padding: 0.8rem 2rem; font-size: 0.85rem;}
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--color-black); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--color-gold-darker), var(--color-gold));
+            border-radius: 10px; border: 2px solid var(--color-black);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(var(--color-gold), var(--color-gold-light));
         }
     </style>
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader"></div>
+
+    <div id="preloader">
+        <div class="loader-gold-bar"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav>
+    <header class="main-header" id="mainHeader">
         <div class="container">
-            <div class="nav-container">
-                <div class="logo">Elevate Digital</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
+            <a href="#hero" class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="6" fill="none"/>
+                    <text x="50" y="68" font-family="var(--font-primary), serif" font-size="55" font-weight="bold" text-anchor="middle" fill="currentColor">G</text>
+                </svg>
+                <span class="logo-text">Golden <span>Luxe Media</span></span>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#features">Services</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰ <!-- Hamburger Icon -->
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Elevate Your Brand to Digital Excellence</h1>
-                    <p>Transform your business with our premium digital marketing strategies. We deliver measurable results through cutting-edge SEO, social media marketing, and brand growth solutions tailored for ambitious companies.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="cta-button">Start Your Growth Journey</a>
-                        <a href="#services" class="btn-secondary">Explore Services</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="floating-card">
-                        <div class="service-icon">📈</div>
-                        <h4>ROI Growth</h4>
-                        <p>Average 300% increase</p>
-                    </div>
-                    <div class="floating-card">
-                        <div class="service-icon">🎯</div>
-                        <h4>Targeted Campaigns</h4>
-                        <p>Precision marketing</p>
-                    </div>
-                    <div class="floating-card">
-                        <div class="service-icon">🚀</div>
-                        <h4>Brand Elevation</h4>
-                        <p>Premium positioning</p>
-                    </div>
-                </div>
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content io-fade-in-up">
+                <h1>Elevating Brands with Golden Touch</h1>
+                <p>Golden Luxe Media crafts bespoke digital experiences that resonate, captivate, and convert. Discover true media artistry.</p>
+                <a href="#features" class="btn">Explore Our Craft</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Premium Digital Marketing Services</h2>
-                <p>Comprehensive solutions designed to accelerate your business growth and establish market dominance through strategic digital marketing excellence.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>Search Engine Optimization</h3>
-                    <p>Dominate search results with our advanced SEO strategies. We optimize your online presence for maximum visibility, organic traffic growth, and sustainable search rankings that drive qualified leads.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Build engaged communities and amplify your brand voice across all social platforms. Our strategic approach creates compelling content that converts followers into loyal customers.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💎</div>
-                    <h3>Premium Brand Strategy</h3>
-                    <p>Craft a distinctive brand identity that resonates with your target audience. We develop comprehensive brand strategies that position you as the luxury choice in your market.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Performance Analytics</h3>
-                    <p>Data-driven insights that fuel growth decisions. Our advanced analytics provide actionable intelligence to optimize campaigns and maximize your marketing ROI continuously.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💰</div>
-                    <h3>Paid Advertising</h3>
-                    <p>Precision-targeted ad campaigns that deliver immediate results. We manage your PPC, social ads, and display advertising to ensure optimal performance and cost efficiency.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✉️</div>
-                    <h3>Email Marketing</h3>
-                    <p>Nurture leads and retain customers with personalized email campaigns. Our strategic approach increases engagement, drives conversions, and builds lasting customer relationships.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Successful Campaigns</p>
-                </div>
-                <div class="stat-item">
-                    <h3>98%</h3>
-                    <p>Client Satisfaction</p>
-                </div>
-                <div class="stat-item">
-                    <h3>300%</h3>
-                    <p>Average ROI Increase</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Premium Support</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client Success Stories</h2>
-                <p>Discover how we've transformed businesses across industries with our premium digital marketing solutions and strategic expertise.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Elevate Digital transformed our online presence completely. Our organic traffic increased by 400% and lead quality improved dramatically. Their strategic approach to SEO and content marketing is unmatched."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SJ</div>
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, TechVision Solutions</p>
-                        </div>
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title io-fade-in">Our Signature Services</h2>
+                <div class="features-grid">
+                    <div class="feature-card io-fade-in-up" data-io-delay="0.1s">
+                        <!-- Diamond Icon -->
+                        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.793l-1.793 1.793-5.207 5.207.707.707L12 3.207l6.293 6.293.707-.707-5.207-5.207L12 1.793zM3.793 9.5L12 17.707 20.207 9.5l-1.414-1.414L12 14.879 5.207 8.086 3.793 9.5zM12 22.207l1.793-1.793 5.207-5.207-.707-.707L12 20.793l-6.293-6.293-.707.707 5.207 5.207L12 22.207z"/></svg>
+                        <h4>Strategic Branding</h4>
+                        <p>Crafting compelling brand identities that shine in the digital landscape and leave a lasting impression.</p>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The ROI on our digital marketing investment has been phenomenal. Their premium approach to brand strategy and paid advertising helped us capture the luxury market segment we were targeting."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MC</div>
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Founder, Luxury Lifestyle Co.</p>
-                        </div>
+                    <div class="feature-card io-fade-in-up" data-io-delay="0.2s">
+                        <!-- Film/Play Icon for Media Production -->
+                        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 4v16l13-8L7 4zm-2-2a2 2 0 00-2 2v16a2 2 0 002 2h.5a1.5 1.5 0 001.5-1.5V5.5A1.5 1.5 0 007.5 4H7a2 2 0 00-2-2zM19 12l-2.79 1.86L19 15.72V12z"/></svg>
+                        <h4>Luxe Media Production</h4>
+                        <p>High-end video, photography, and content creation that tells your story with elegance and impact.</p>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Professional, results-driven, and truly understanding of high-end market dynamics. They positioned our brand perfectly and our revenue grew 250% in just 8 months."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AR</div>
-                        <div class="author-info">
-                            <h4>Amanda Rodriguez</h4>
-                            <p>Marketing Director, Elite Consulting</p>
-                        </div>
+                    <div class="feature-card io-fade-in-up" data-io-delay="0.3s">
+                        <!-- Digital/Cursor Icon for Digital Marketing -->
+                        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.89 3.707L11.063 2.25 3 7.5V16.5l8.063 5.25L14 20.25l6.937-4.5V7.5L13.89 3.707zM12 4.311L13.11 5.018l5.828 3.807L13.11 12.632 12 11.925l-5.827 3.807L12 4.311zM4.5 8.536l6.437 4.193v5.662L4.5 14.868V8.536zm15 0v6.332l-6.437 3.523v-5.662L19.5 8.536z"/></svg>
+                        <h4>Digital Presence Amplification</h4>
+                        <p>Elevating your online footprint through targeted strategies and sophisticated digital marketing.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Elevate Your Digital Presence?</h2>
-                <p>Join the elite brands that trust us to deliver exceptional results. Let's discuss how our premium digital marketing solutions can accelerate your business growth.</p>
-                <a href="mailto:hello@elevatedigital.com" class="cta-button">Schedule Strategy Call</a>
+        <section id="about" class="section cta-section">
+            <div class="container io-fade-in">
+                <h2>Where Vision Meets Luxurious Execution</h2>
+                <p>Golden Luxe Media is more than a service; it's a partnership in crafting unparalleled digital narratives. We blend artistic vision with strategic precision to forge brands that command attention and inspire action.</p>
+                <a href="#contact" class="btn btn-outline">Begin Your Transformation</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title io-fade-in">Connect with Golden Luxe</h2>
+                <form action="#" method="POST" class="contact-form io-fade-in-up">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service of Interest (Optional)</label>
+                        <select id="service" name="service" class="form-control">
+                            <option value="">-- Select a Service --</option>
+                            <option value="branding">Strategic Branding</option>
+                            <option value="media_production">Luxe Media Production</option>
+                            <option value="digital_marketing">Digital Presence Amplification</option>
+                            <option value="consultation">General Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Vision</label>
+                        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn">Send Inquiry</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Elevate Digital</h3>
-                    <p>Premium digital marketing agency specializing in luxury brand growth, advanced SEO strategies, and performance-driven marketing solutions.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <a href="#services">Search Engine Optimization</a>
-                    <a href="#services">Social Media Marketing</a>
-                    <a href="#services">Premium Brand Strategy</a>
-                    <a href="#services">Performance Analytics</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="#about">About Us</a>
-                    <a href="#testimonials">Client Reviews</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>hello@elevatedigital.com</p>
-                    <p>+1 (555) 123-4567</p>
-                    <p>New York, NY</p>
-                </div>
+            <svg class="footer-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="6" fill="none"/>
+                <text x="50" y="68" font-family="var(--font-primary), serif" font-size="55" font-weight="bold" text-anchor="middle" fill="currentColor">G</text>
+            </svg>
+            <div class="social-links io-fade-in" style="margin-bottom: 1.5rem;">
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="LinkedIn">LI</a>
+                <a href="#" aria-label="Behance">BE</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Elevate Digital. All rights reserved. Premium Digital Marketing Solutions.</p>
-            </div>
+            <p class="io-fade-in">© <span id="currentYear"></span> Golden Luxe Media. All Rights Reserved.</p>
+            <p class="io-fade-in" style="font-size: 0.8rem; opacity: 0.7;">Crafting Digital Excellence.</p>
         </div>
     </footer>
 
     <script>
-        // Page loader
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('pageLoader');
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }, 1000);
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('loaded');
+            }
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const isExpanded = mainNav.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            menuToggle.innerHTML = isExpanded ? '✕' : '☰';
+        });
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.innerHTML = '☰';
                 }
             });
         });
 
-        // Navigation background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(10, 10, 10, 0.98)';
+        // Header Scroll Effect & Active Nav Link
+        const header = document.getElementById('mainHeader');
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        function updateActiveLink() {
+            let current = 'hero'; // Default to hero
+            const headerHeight = header.offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - headerHeight - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
             } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.classList.remove('scrolled');
             }
+            updateActiveLink();
         });
+        updateActiveLink(); // Initial check
 
-        // Animate stats on scroll
-        const animateStats = () => {
-            const stats = document.querySelectorAll('.stat-item h3');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const finalValue = target.textContent;
-                        const numericValue = parseInt(finalValue.replace(/\D/g, ''));
-                        const suffix = finalValue.replace(/[0-9]/g, '');
-                        
-                        let current = 0;
-                        const increment = numericValue / 50;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= numericValue) {
-                                target.textContent = finalValue;
-                                clearInterval(timer);
-                            } else {
-                                target.textContent = Math.floor(current) + suffix;
-                            }
-                        }, 40);
-                        
-                        observer.unobserve(target);
+        // Intersection Observer for Animations
+        const io_elements = document.querySelectorAll('.io-fade-in, .io-fade-in-up, .io-fade-in-left, .io-fade-in-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Apply delay if specified
+                    const delay = entry.target.dataset.ioDelay;
+                    if (delay) {
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, parseFloat(delay) * 1000);
+                    } else {
+                        entry.target.classList.add('is-visible');
                     }
-                });
+                    observer.unobserve(entry.target); // Optional: stop observing once visible
+                }
             });
-            
-            stats.forEach(stat => observer.observe(stat));
-        };
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
 
-        // Initialize animations
-        animateStats();
+        io_elements.forEach(el => observer.observe(el));
 
-        // Add hover effects to service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Form handling (placeholder)
-        document.querySelectorAll('.cta-button').forEach(button => {
-            if (button.getAttribute('href') === '#contact') {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your interest! Please contact us at hello@elevatedigital.com or call +1 (555) 123-4567 to schedule your strategy consultation.');
-                });
-            }
-        });
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>
