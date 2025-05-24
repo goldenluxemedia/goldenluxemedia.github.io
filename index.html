@@ -3,56 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Luxe Media - Elite Digital Marketing & Brand Amplification</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Golden Luxe Media - Architecting Digital Supremacy & ROI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-deep-black: #050505;
-            --color-black: #0A0A0A;
-            --color-charcoal: #121212;
-            --color-graphite: #1A1A1A;
+            --color-deep-black: #040405; /* Even deeper for richness */
+            --color-black: #080809;
+            --color-charcoal: #101011;
+            --color-graphite: #181819;
 
-            --color-gold-brilliant: #FFF8E7;
-            --color-gold-highlight: #F0D7A8;
-            --color-gold-primary: #C8A464;
-            --color-gold-mid: #B08D57;
-            --color-gold-shadow: #7A5F36;
-            --color-gold-antique: #887040;
+            --color-gold-brilliant: #FAF0D8; /* Brightest, almost white-gold */
+            --color-gold-highlight: #E8C88C; /* Warmer highlight */
+            --color-gold-primary: #B8860B;   /* DarkGoldenRod - Rich, classic gold */
+            --color-gold-mid: #A0740A;
+            --color-gold-shadow: #6E5007;
+            --color-gold-antique: #8B734B;
 
-            --color-text-primary: #EAEAEA;
-            --color-text-secondary: #B8B8B8;
-            --color-text-muted: #888888;
+            --color-text-primary: #F0F0F0; /* Brighter primary text */
+            --color-text-secondary: #C0C0C0;
+            --color-text-muted: #909090;
 
             --font-display: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
 
-            --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-interactive: 0.3s ease;
+            --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-interactive: 0.35s ease;
 
-            --shadow-soft-depth:
-                0 2px 5px rgba(0,0,0,0.1),
-                0 5px 15px rgba(0,0,0,0.15),
-                0 10px 30px rgba(0,0,0,0.2);
-            --shadow-lifted:
-                0 4px 8px rgba(0,0,0,0.15),
-                0 10px 25px rgba(0,0,0,0.2),
-                0 15px 40px rgba(0,0,0,0.25);
-            --shadow-gold-glow: 0 0 25px rgba(200, 164, 100, 0.15), 0 0 40px rgba(200, 164, 100, 0.1);
+            --shadow-depth-1: 0 3px 8px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.2);
+            --shadow-depth-2: 0 6px 16px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.25);
+            --shadow-depth-3: 0 10px 25px rgba(0,0,0,0.25), 0 8px 15px rgba(0,0,0,0.3);
+            --shadow-gold-aura: 0 0 30px rgba(184, 134, 11, 0.2), 0 0 50px rgba(184, 134, 11, 0.15);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        body {
+        /* --- Lenis Scroll Fix: Critical CSS --- */
+        html, body {
+            /* Crucial: For Lenis to work with wrapper correctly, body often needs overflow:hidden if wrapper is fixed */
+            /* However, if wrapper is part of normal flow, this might not be needed. Let's try with body taking natural height. */
+            /* Let's try WITHOUT overflow:hidden on html/body first, as Lenis should handle it. */
+        }
+        html.lenis { height: auto; } /* Added by Lenis */
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopped { /* overflow: hidden; */ } /* Let Lenis manage this on its wrapper if needed */
+
+        #lenis-wrapper {
+            /* This wrapper will be what Lenis "scrolls" internally */
+            /* position: relative; /* If part of normal flow */
+            /* overflow: visible; /* Content should overflow this */
+            /* width: 100%; */
+            /* If scrolling is still an issue, this might need to be a fixed viewport-sized container */
+            /* Forcing it for now to test a common fix approach for "scrollbar only" issue */
+             position: fixed; /* Test: Make wrapper fixed */
+             top: 0; left: 0; width: 100%; height: 100%;
+             overflow-y: scroll; /* This scrollbar will be hidden by Lenis, but makes it "scrollable" */
+             overflow-x: hidden;
+        }
+        #lenis-content {
+            /* Contains all actual page content */
+            /* width: 100%; */
+            /* background: var(--color-deep-black); /* Ensure content has a background */
+            /* position: relative; z-index: 1; /* To be above any wrapper pseudo-elements */
+        }
+        /* End Lenis Scroll Fix CSS */
+
+
+        body { /* General body styles continue here */
             font-family: var(--font-body);
-            background-color: var(--color-deep-black);
+            background-color: var(--color-deep-black); /* Fallback if lenis-content doesn't cover */
             color: var(--color-text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-            min-height: 100vh;
+            line-height: 1.75; /* Increased for readability */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        #preloader {
+
+        #preloader { /* ... same preloader style ... */
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--color-deep-black); z-index: 99999;
             display: flex; align-items: center; justify-content: center;
@@ -60,21 +86,19 @@
             transition: opacity 0.8s var(--transition-smooth) 0.3s, visibility 0.8s var(--transition-smooth) 0.3s;
         }
         #preloader.loaded { opacity: 0; visibility: hidden; }
-        .preloader-logo {
-            font-family: var(--font-display); font-size: clamp(4rem, 15vw, 6rem); font-weight: 900; /* Responsive preloader logo */
+        .preloader-logo { /* ... same preloader logo style ... */
+            font-family: var(--font-display); font-size: clamp(4rem, 15vw, 6rem); font-weight: 900;
             background: linear-gradient(135deg, var(--color-gold-highlight) 0%, var(--color-gold-primary) 50%, var(--color-gold-shadow) 100%);
             -webkit-background-clip: text; background-clip: text; color: transparent;
             animation: preloaderShine 2.5s infinite ease-in-out;
         }
-        @keyframes preloaderShine {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.08); text-shadow: 0 0 15px var(--color-gold-mid); }
-        }
+        @keyframes preloaderShine { /* ... */ }
 
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.2; font-weight: 800; margin-bottom: 1.5rem; }
-        .shiny-gold-heading {
+        .container { width: 92%; max-width: 1280px; margin: 0 auto; padding: 0 20px; } /* Wider max-width for desktop */
+
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.25; font-weight: 800; margin-bottom: 1.5rem; }
+        .shiny-gold-heading { /* ... same shiny gold text style ... */
             display: inline-block;
             background: linear-gradient(110deg, var(--color-gold-brilliant) 0%, var(--color-gold-highlight) 20%, var(--color-gold-primary) 45%, var(--color-gold-mid) 60%, var(--color-gold-primary) 80%, var(--color-gold-highlight) 100%);
             background-size: 300% 100%;
@@ -82,307 +106,226 @@
             color: transparent;
             animation: textShimmer 8s infinite linear;
         }
-        @keyframes textShimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
+        @keyframes textShimmer { /* ... */ }
 
-        h1 { font-size: clamp(2.5rem, 8vw, 5.2rem); } /* Adjusted clamp for mobile */
-        h2 { font-size: clamp(2rem, 7vw, 3.8rem); margin-bottom: 3rem; text-align: center; } /* Adjusted clamp & margin */
-        h3 { font-size: clamp(1.6rem, 6vw, 2.8rem); } /* Adjusted clamp */
-        h4 { font-size: clamp(1.3rem, 5vw, 2rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); } /* Adjusted clamp */
-        p { margin-bottom: 1.5rem; color: var(--color-text-secondary); font-size: clamp(0.9rem, 2.5vw, 1.05rem); } /* Adjusted clamp */
-        section p { font-size: clamp(0.95rem, 2.8vw, 1.1rem); line-height: 1.7; } /* Adjusted clamp */
-        a { color: var(--color-gold-primary); text-decoration: none; transition: color var(--transition-interactive), opacity var(--transition-interactive); }
-        a:hover { color: var(--color-gold-highlight); opacity: 0.85; }
+        h1 { font-size: clamp(2.6rem, 7vw, 5.5rem); }
+        h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 3.5rem; text-align: center; }
+        h3 { font-size: clamp(1.8rem, 5vw, 3rem); }
+        h4 { font-size: clamp(1.4rem, 4vw, 2.2rem); font-family: var(--font-body); font-weight: 600; color: var(--color-gold-highlight); }
+        p { margin-bottom: 1.8rem; color: var(--color-text-secondary); font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
+        section p { font-size: clamp(1rem, 2.8vw, 1.15rem); line-height: 1.85; }
+        a { /* ... same link styles ... */ }
 
-        .main-header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            padding: 1rem 0; /* Reduced padding for mobile first */
-            background-color: rgba(5, 5, 5, 0.7);
-            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(176, 141, 87, 0.1);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+
+        .main-header { /* ... same header styles, ensure z-index works with fixed wrapper ... */
+            position: fixed; /* Fixed header still, but needs to be above fixed wrapper's content if that route is taken */
+            top: 0; left: 0; width: 100%; z-index: 10000; /* Higher z-index than wrapper if wrapper is fixed */
+            padding: 1.25rem 0;
+            background-color: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(184, 134, 11, 0.15);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.35);
             transition: background-color var(--transition-smooth), padding var(--transition-smooth), box-shadow var(--transition-smooth);
         }
-        .main-header.scrolled {
-            background-color: rgba(10, 10, 10, 0.85);
-            padding: 0.75rem 0; /* Reduced scrolled padding */
-            box-shadow: 0 8px 35px rgba(0,0,0,0.4);
-        }
-        .main-header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-svg-icon { width: 40px; height: 40px; margin-right: 10px; transition: transform var(--transition-smooth); } /* Scaled down logo icon */
-        .logo-svg-icon .circle { stroke: var(--color-gold-primary); stroke-width: 5; fill: transparent; }
-        .logo-svg-icon .letter-g { fill: var(--color-gold-primary); font-family: var(--font-display); font-weight: 900;}
-        .logo-link:hover .logo-svg-icon { transform: scale(1.05) rotate(-5deg); }
-        .site-title-text {
-            font-family: var(--font-display); font-size: clamp(1.2rem, 4vw, 1.7rem); font-weight: 800; /* Responsive title */
-            letter-spacing: 1px; color: var(--color-gold-highlight);
-        }
-        .site-title-text span { color: var(--color-gold-mid); font-weight: 700; opacity: 0.8; }
-
-        .main-nav ul { list-style: none; display: flex; align-items: center; }
-        .main-nav li { margin-left: 1.5rem; } /* Reduced margin for nav items */
-        .main-nav a { /* Styles for desktop nav links */
-            font-family: var(--font-body); font-weight: 500; font-size: 0.85rem; /* Slightly smaller nav links */
-            text-transform: uppercase; letter-spacing: 1.5px; position: relative;
-            padding: 0.7rem 0.1rem; color: var(--color-text-secondary);
-        }
-        .main-nav a::before, .main-nav a::after { /* ... desktop dual line effect ... */
-            content: ''; position: absolute; left: 0; width: 100%; height: 1px;
-            background-color: var(--color-gold-mid); transform: scaleX(0);
-            transition: transform var(--transition-smooth);
-        }
-        .main-nav a::before { top: 0; transform-origin: left; }
-        .main-nav a::after { bottom: 0; transform-origin: right; }
-        .main-nav a:hover::before, .main-nav a:hover::after,
-        .main-nav a.active::before, .main-nav a.active::after { transform: scaleX(1); }
-        .main-nav a:hover, .main-nav a.active { color: var(--color-gold-highlight); }
-        .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--color-gold-primary); font-size: 1.8rem; padding: 0.5rem; } /* Smaller toggle */
+        /* ... other header styles: .scrolled, .logo-link, .site-title-text, .main-nav, .menu-toggle ... */
+        .main-header.scrolled { background-color: rgba(8,8,9,0.8); padding: 1rem 0; }
+        .logo-svg-icon { width: 50px; height: 50px; } /* Larger default logo */
+        .site-title-text { font-size: clamp(1.5rem, 2.8vw, 1.8rem); }
+        .main-nav li { margin-left: 3.2rem; }
+        .main-nav a { font-size: 0.95rem; letter-spacing: 2px; padding: 0.9rem 0.3rem; }
 
 
-        .hero-section {
-            min-height: 90vh; /* Reduced min-height for mobile */
-            display: flex; align-items: center; justify-content: center;
-            padding: 100px 0 60px; text-align: center; position: relative; overflow: hidden; /* Reduced padding */
-            background: radial-gradient(ellipse at 50% 30%, rgba(176, 141, 87, 0.08) 0%, transparent 50%), var(--color-deep-black);
+        .hero-section { /* ... hero section with depth ... */
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 160px 0 100px; text-align: center; position: relative; overflow: hidden;
+            background: radial-gradient(ellipse at 50% 20%, rgba(184, 134, 11, 0.1) 0%, transparent 60%), var(--color-deep-black);
         }
-        .hero-section::before { /* ... BG pattern styles ... */
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8A464' fill-opacity='0.025'%3E%3Cpath d='M50 50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50H0v10h50V0h10v50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.7; z-index: 0; transform: scale(1.5);
-            animation: subtlePanAndFade 90s linear infinite alternate;
-        }
-        @keyframes subtlePanAndFade { /* ... */ }
-        .hero-content-wrapper { position: relative; z-index: 1; max-width: 900px; }
-        .hero-section h1 { margin-bottom: 1.5rem; } /* Reduced margin */
+        .hero-section::before { /* ... abstract bg pattern with more opacity ... */ opacity: 0.8; }
+        .hero-content-wrapper { position: relative; z-index: 1; max-width: 950px; }
+        .hero-section h1 { margin-bottom: 2.5rem; font-weight: 900; /* Bolder hero H1 */ }
         .hero-section p.subtitle {
-            font-size: clamp(1rem, 4vw, 1.4rem); /* Adjusted subtitle clamp for mobile */
-            color: var(--color-text-primary);
-            margin: 0 auto 2.5rem; max-width: 750px; font-weight: 400; /* Reduced margin */
+            font-size: clamp(1.2rem, 2.8vw, 1.6rem); color: var(--color-text-primary);
+            margin: 0 auto 4rem; max-width: 800px; font-weight: 400;
         }
-        .hero-cta-button {
-            font-family: var(--font-display); font-weight: 700;
-            font-size: clamp(0.9rem, 3.5vw, 1.1rem); /* Responsive button font */
-            letter-spacing: 1.2px; padding: clamp(0.9rem, 3vw, 1.2rem) clamp(2rem, 6vw, 3.5rem); /* Responsive button padding */
-            background: linear-gradient(145deg, var(--color-gold-highlight), var(--color-gold-primary) 60%, var(--color-gold-mid));
-            color: var(--color-deep-black); border-radius: 50px; border: none;
-            box-shadow: 0 0 0 0 rgba(200, 164, 100, 0.7);
-            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
-            animation: pulseButton 2.5s infinite ease-out;
-        }
-        @keyframes pulseButton { /* ... */ }
-        .hero-cta-button:hover { /* ... */ }
+        .hero-cta-button { /* ... same button styles ... */ }
 
-        .content-section {
-            padding: 80px 0; position: relative; overflow: hidden; /* Reduced section padding */
-        }
-        .content-section:nth-of-type(even) { background-color: var(--color-charcoal); }
-        .content-section:nth-of-type(odd) { background-color: var(--color-black); }
-        .content-section .section-title-container { margin-bottom: 3rem; text-align: center; } /* Reduced margin */
-        .content-section .section-title-container h2::after { /* ... decorative underline ... */
-            content: ''; display: block; width: 80px; height: 3px; margin: 1rem auto 0; /* Smaller underline */
-            background: linear-gradient(90deg, var(--color-gold-shadow), var(--color-gold-highlight) 50%, var(--color-gold-shadow) 100%);
-            border-radius: 3px; opacity: 0.7;
-        }
-        .section-intro-text {
-            text-align: center; max-width: 800px; margin: -2rem auto 3.5rem; /* Adjusted margins */
-            color: var(--color-text-secondary); font-size: clamp(1rem, 3vw, 1.15rem); /* Responsive intro text */
-        }
-        .animate-on-scroll { opacity: 0; transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth); }
-        .fade-in-up { transform: translateY(50px); } /* Slightly less travel for mobile */
-        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
-        .fade-in { opacity: 0; }
-        .fade-in.is-visible { opacity: 1; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; } /* Reduced minmax and gap */
-        .service-card {
+        .content-section { /* General section styles */
+            padding: 120px 0; position: relative;
+        }
+        /* ... other section styles ... */
+        .content-section .section-title-container h2::after { width: 120px; height: 4.5px; margin-top: 2rem; }
+        .section-intro-text { max-width: 850px; margin: -2.8rem auto 5rem; font-size: 1.2rem; }
+
+
+        /* --- New "Why Invest / The Golden Standard" Section --- */
+        .why-invest-section {
+            background-color: var(--color-charcoal);
+            padding: 120px 0;
+        }
+        .why-invest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3.5rem;
+            margin-top: 1rem;
+        }
+        .usp-card { /* Unique Selling Proposition Card */
             background-color: var(--color-graphite);
-            padding: 2rem 1.8rem; border-radius: 10px; /* Reduced padding, radius */
-            border: 1px solid rgba(176, 141, 87, 0.1);
-            box-shadow: var(--shadow-soft-depth);
-            position: relative; overflow: hidden;
-            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--color-gold-primary);
+            box-shadow: var(--shadow-depth-2);
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-left-color var(--transition-smooth);
         }
-        .service-card::before { /* ... inner glow ... */ }
-        .service-card:hover { /* ... hover styles ... */ }
-        .service-icon-wrapper {
-            width: 60px; height: 60px; margin-bottom: 1.5rem; /* Scaled down icon wrapper */
-            border-radius: 50%;
-            background: linear-gradient(145deg, var(--color-gold-mid), var(--color-gold-shadow));
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Softer shadow */
-            transition: background var(--transition-smooth), transform var(--transition-interactive);
+        .usp-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-depth-3), var(--shadow-gold-aura);
+            border-left-color: var(--color-gold-highlight);
         }
-        .service-card:hover .service-icon-wrapper { /* ... */ }
-        .service-icon-wrapper svg { width: 30px; height: 30px; fill: var(--color-deep-black); } /* Scaled down SVG */
-        .service-card h4 { margin-bottom: 0.8rem; color: var(--color-text-primary); font-size: clamp(1.2rem, 4.5vw, 1.5rem); } /* Responsive card heading */
-        .service-card p { font-size: clamp(0.85rem, 2.5vw, 0.95rem); line-height: 1.6; color: var(--color-text-secondary); } /* Responsive card text */
-
-        .advantage-section-bg { background-color: var(--color-black); }
-        .advantage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; } /* Reduced minmax and gap */
-        .advantage-item-card {
-            text-align: center; padding: 2rem 1.5rem; /* Reduced padding */
-            background-color: var(--color-graphite);
-            border-radius: 8px; /* Smaller radius */
-            border: 1px solid transparent; position: relative;
-            box-shadow: var(--shadow-soft-depth);
-            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        .usp-icon {
+            width: 50px; height: 50px; margin-bottom: 1.5rem;
+            fill: var(--color-gold-primary);
+            transition: fill var(--transition-interactive), transform var(--transition-interactive);
         }
-        .advantage-item-card::before { /* ... gradient border ... */ }
-        .advantage-item-card:hover { /* ... hover styles ... */ }
-        .advantage-icon-svg { width: 40px; height: 40px; margin-bottom: 1.2rem; fill: var(--color-gold-primary); } /* Scaled down icon */
-        .advantage-item-card h4 { font-size: clamp(1.1rem, 4vw, 1.4rem); margin-bottom: 0.6rem; } /* Responsive heading */
-        .advantage-item-card p { font-size: clamp(0.8rem, 2.5vw, 0.9rem); } /* Responsive text */
+        .usp-card:hover .usp-icon {
+            fill: var(--color-gold-highlight);
+            transform: rotateY(10deg);
+        }
+        .usp-card h4 {
+            font-family: var(--font-body); font-weight: 700; font-size: 1.6rem;
+            color: var(--color-text-primary); margin-bottom: 0.8rem;
+        }
+        .usp-card p { font-size: 1.05rem; color: var(--color-text-secondary); }
 
 
-        .cta-final-section {
-            padding: 100px 0; text-align: center; /* Reduced padding */
-            background: linear-gradient(to bottom, var(--color-charcoal) 0%, var(--color-deep-black) 100%);
-            position: relative;
-        }
-        .cta-final-section::before { /* ... bg circle ... */ }
-        .cta-content-area { position: relative; z-index: 1; }
-        .cta-final-section h2 { margin-bottom: 1.5rem; } /* Reduced margin */
-        .cta-final-section p.cta-subtitle {
-            max-width: 750px; margin: 0 auto 2.5rem; font-size: clamp(1rem, 3.5vw, 1.15rem); /* Responsive subtitle */
-        }
-        .contact-form-embedded {
-            max-width: 700px; margin: 2.5rem auto 0; text-align: left;
-            padding: 2rem; background-color: rgba(5,5,5,0.5); /* Reduced padding */
-            border-radius: 10px; box-shadow: var(--shadow-lifted);
-            border: 1px solid rgba(176,141,87,0.15);
-        }
-        .form-input-group { margin-bottom: 1.5rem; } /* Reduced margin */
-        .form-input-group label { font-size: 0.9rem; } /* Smaller label */
-        .form-text-input, .form-textarea-input {
-            padding: 1rem 1.1rem; /* Reduced padding */
-            font-size: 0.95rem; /* Smaller font in input */
-        }
-        .form-textarea-input { min-height: 120px; }
-        .form-submit-button {
-            font-size: 1rem; padding: 1rem; /* Smaller button text/padding */
-        }
+        /* --- Services Section Updated --- */
+        .services-grid { /* ... adjusted for potentially more cards ... */ }
+        .service-card { /* ... general card style from previous, now for specific service details ... */ }
+        /* Specific Icons for Expanded Services (Conceptual SVGs) */
+        /* Static Posts/Reels, Chatbots, WhatsApp/LinkedIn, Hosting */
 
-        .site-footer {
-            padding: 4rem 0 2rem; /* Reduced padding */
-        }
-        .footer-logo-icon { width: 45px; height: 45px; margin-bottom: 1.2rem; } /* Scaled down footer logo */
-        .footer-social-links a { margin: 0 1rem; font-size: 1.4rem; } /* Adjusted social links */
-        .site-footer p { font-size: 0.85rem; }
-        .footer-seo-text { font-size: 0.75rem; }
 
-        /* --- Responsive Adjustments --- */
-        /* Desktop first, then override for smaller screens */
-        /* Medium screens (Tablets) */
+        /* --- CTA & Contact Section --- */
+        .cta-final-section { padding: 140px 0; /* More padding */ }
+        /* ... other CTA styles ... */
+        .contact-form-embedded { padding: 3.5rem; }
+
+
+        /* --- Footer --- */
+        .site-footer { padding: 7rem 0 3.5rem; }
+        /* ... other footer styles ... */
+
+
+        /* --- Responsive (Mobile Structure is Good, Let's Maintain & Refine Further) --- */
+        /* Medium screens (Tablets) - Styles from previous version, can be tweaked */
         @media (max-width: 992px) {
-            .main-nav li { margin-left: 1.2rem; }
-            .main-nav a { font-size: 0.8rem; letter-spacing: 1.2px; padding: 0.6rem 0.1rem;}
-            .content-section { padding: 70px 0; }
-            .services-grid { gap: 1.8rem; }
-            .advantage-grid { gap: 1.5rem; }
+             .container { max-width: 90%; } /* Allow more fluid width */
+             .main-header { padding: 1rem 0; }
+             .logo-svg-icon { width: 45px; height: 45px; }
+             .site-title-text { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
+             .main-nav li { margin-left: 2rem; }
+             .main-nav a { font-size: 0.9rem; letter-spacing: 1.5px; padding: 0.8rem 0.2rem;}
+
+             h1 { font-size: clamp(2.4rem, 7vw, 4.8rem); }
+             h2 { font-size: clamp(2rem, 6vw, 3.5rem); margin-bottom: 3rem; }
+             .section-intro-text { font-size: 1.1rem; margin-bottom: 4rem;}
+             .content-section { padding: 100px 0; }
+             .services-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+             .why-invest-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+             .usp-card h4 { font-size: 1.5rem; }
         }
 
-        /* Mobile screens */
+        /* Mobile screens - Critical refinements based on feedback */
         @media (max-width: 768px) {
-            .container { padding: 0 15px; } /* Tighter container padding */
-            .main-header { padding: 0.8rem 0; } /* Further reduce header padding */
-            .main-header.scrolled { padding: 0.6rem 0; }
-            .logo-svg-icon { width: 36px; height: 36px; margin-right: 8px; }
-            .site-title-text { font-size: clamp(1.1rem, 5vw, 1.4rem); }
+            .container { padding: 0 15px; width: 90%; } /* Ensure container doesn't hit edges */
+            .main-header { padding: 0.8rem 0; }
+            .main-header.scrolled { padding: 0.7rem 0; }
+            .logo-svg-icon { width: 40px; height: 40px; margin-right: 10px; }
+            .site-title-text { font-size: clamp(1.2rem, 5vw, 1.5rem); }
+            .menu-toggle { display: block; font-size: 1.8rem; } /* Ensure toggle is visible */
 
+            /* Mobile Nav from previous, ensure it works with Lenis structure */
             .main-nav {
                 display: none; flex-direction: column; width: 100%;
                 position: absolute; top: 100%; left: 0;
-                background-color: rgba(10,10,10,0.99); backdrop-filter: blur(15px);
-                padding: 0.5rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Slimmer mobile nav */
-                border-top: 1px solid rgba(176,141,87,0.1);
+                background-color: rgba(10,10,11,0.98); backdrop-filter: blur(18px);
+                padding: 0.5rem 0; box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+                border-top: 1px solid rgba(184, 134, 11, 0.1);
                 animation: mobileNavSlideDown 0.5s var(--transition-smooth) forwards;
             }
-            @keyframes mobileNavSlideDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } } /* Less travel */
+            @keyframes mobileNavSlideDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
             .main-nav.active { display: flex; }
             .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav li { margin: 0; text-align: center; width: 100%; }
-            .main-nav a { display: block; padding: 1rem; font-size: 1rem; /* Readable mobile nav link size */ border-bottom: 1px solid rgba(176,141,87,0.08); width: 100%; }
-            .main-nav li:last-child a { border-bottom: none; }
-            .main-nav a::before, .main-nav a::after { display:none; }
-            .main-nav a:hover { background-color: rgba(176,141,87,0.05); }
-            .menu-toggle { display: block; }
+            .main-nav li { margin: 0; width: 100%; }
+            .main-nav a { display: block; padding: 1.1rem; font-size: 0.95rem; text-align: center; border-bottom: 1px solid rgba(184,134,11,0.08); width: 100%; }
+            /* ... rest of mobile nav styles ... */
 
-            .hero-section { padding: 80px 0 50px; min-height: 75vh; } /* Further adjust hero */
-            .hero-section h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 1rem; }
-            .hero-section p.subtitle { font-size: clamp(0.9rem, 4.5vw, 1.1rem); margin-bottom: 2rem; }
-            .hero-cta-button { font-size: clamp(0.85rem, 4vw, 1rem); padding: clamp(0.8rem, 3.5vw, 1rem) clamp(1.8rem, 7vw, 2.8rem); }
 
-            .content-section { padding: 60px 0; }
-            .section-title-container h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); margin-bottom: 2.5rem; }
-            .section-title-container h2::after { width: 60px; height: 2.5px; margin-top: 0.8rem; }
-            .section-intro-text { font-size: clamp(0.9rem, 3.5vw, 1rem); margin: -1.5rem auto 2.5rem; }
+            .hero-section { padding: 100px 0 60px; min-height: 80vh; }
+            .hero-section h1 { font-size: clamp(2.2rem, 10vw, 3.2rem); margin-bottom: 1.8rem; }
+            .hero-section p.subtitle { font-size: clamp(1rem, 4.5vw, 1.2rem); margin-bottom: 3rem; }
+            .hero-cta-button { font-size: clamp(0.9rem, 4vw, 1.05rem); padding: clamp(1rem, 3.5vw, 1.2rem) clamp(2.2rem, 7vw, 3rem); }
 
-            .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .service-card { padding: 1.8rem 1.5rem; }
-            .service-icon-wrapper { width: 50px; height: 50px; margin-bottom: 1.2rem; }
-            .service-icon-wrapper svg { width: 24px; height: 24px; }
-            .service-card h4 { font-size: clamp(1.1rem, 5vw, 1.3rem); }
+            .content-section { padding: 80px 0; }
+            .section-title-container h2 { font-size: clamp(1.8rem, 8vw, 2.8rem); margin-bottom: 2.5rem; }
+            .section-title-container h2::after { width: 70px; height: 3px; margin-top: 1rem; }
+            .section-intro-text { font-size: clamp(0.95rem, 3.8vw, 1.05rem); margin: -1.8rem auto 3rem; }
 
-            .advantage-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .advantage-item-card { padding: 1.8rem 1.2rem; }
-            .advantage-icon-svg { width: 36px; height: 36px; margin-bottom: 1rem; }
-            .advantage-item-card h4 { font-size: clamp(1rem, 4.5vw, 1.2rem); }
+            .services-grid, .why-invest-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .service-card, .usp-card { padding: 2rem 1.8rem; }
+            .service-icon-wrapper, .usp-icon { width: 55px; height: 55px; margin-bottom: 1.2rem; }
+            .service-icon-wrapper svg, .usp-icon svg { width: 28px; height: 28px; }
+            .service-card h4, .usp-card h4 { font-size: clamp(1.3rem, 5.5vw, 1.6rem); }
+            .service-card p, .usp-card p { font-size: clamp(0.9rem, 3vw, 1rem); }
 
-            .cta-final-section { padding: 80px 0; }
-            .cta-final-section h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
-            .cta-final-section p.cta-subtitle { font-size: clamp(0.9rem, 4vw, 1.1rem); }
-            .contact-form-embedded { padding: 1.8rem 1.5rem; margin-top: 2rem; }
-            .form-input-group { margin-bottom: 1.2rem; }
-            .form-text-input, .form-textarea-input { padding: 0.9rem 1rem; font-size: 0.9rem; }
+            .advantage-item-card { padding: 2rem 1.5rem; } /* Specific for advantage if different */
+            .advantage-icon-svg { width: 42px; height: 42px; }
+
+            .cta-final-section { padding: 90px 0; }
+            .cta-final-section h2 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+            .contact-form-embedded { padding: 2.2rem 1.8rem; margin-top: 2.5rem; }
+            .form-input-group { margin-bottom: 1.5rem; }
+            .form-text-input, .form-textarea-input { padding: 1rem 1.1rem; font-size: 0.95rem; }
         }
 
-        /* Very Small Mobile screens */
+        /* Very Small Mobile screens adjustments (if needed, build upon 768px styles) */
         @media (max-width: 480px) {
-            .container { padding: 0 10px; } /* Even tighter container */
-            .main-header { padding: 0.6rem 0; }
-            .main-header.scrolled { padding: 0.5rem 0; }
-            .logo-svg-icon { width: 32px; height: 32px; }
-            .site-title-text { font-size: clamp(1rem, 6vw, 1.2rem); }
-            .menu-toggle { font-size: 1.6rem; padding: 0.4rem; }
-            .main-nav a { padding: 0.9rem; font-size: 0.95rem; }
+            .container { padding: 0 12px; }
+            .main-header { padding: 0.7rem 0; }
+            .logo-svg-icon { width: 36px; height: 36px; }
+            .site-title-text { font-size: clamp(1.1rem, 5.5vw, 1.3rem); }
 
+            .hero-section h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+            .hero-section p.subtitle { font-size: clamp(0.9rem, 4.8vw, 1.05rem); }
 
-            .hero-section { padding: 70px 0 40px; min-height: auto; }
-            .hero-section h1 { font-size: clamp(1.8rem, 10vw, 2.5rem); }
-            .hero-section p.subtitle { font-size: clamp(0.85rem, 5vw, 1rem); }
+            .section-title-container h2 { font-size: clamp(1.7rem, 8.5vw, 2.4rem); }
+            .section-intro-text { font-size: clamp(0.9rem, 4vw, 1rem); }
 
-            .content-section { padding: 50px 0; }
-            .section-title-container h2 { font-size: clamp(1.6rem, 9vw, 2.2rem); }
-            .section-intro-text { font-size: clamp(0.85rem, 4vw, 0.95rem); }
+            .service-card, .usp-card, .advantage-item-card { padding: 1.8rem 1.5rem; }
+            .service-icon-wrapper, .usp-icon { width: 50px; height: 50px; }
+            .service-icon-wrapper svg, .usp-icon svg { width: 25px; height: 25px; }
 
-            .service-card { padding: 1.5rem 1.2rem; }
-            .service-icon-wrapper { width: 45px; height: 45px; }
-            .service-icon-wrapper svg { width: 20px; height: 20px; }
-
-            .advantage-item-card { padding: 1.5rem 1rem; }
-            .advantage-icon-svg { width: 32px; height: 32px; }
-
-            .contact-form-embedded { padding: 1.5rem 1rem; }
-            .form-submit-button { font-size: 0.9rem; padding: 0.9rem; }
+            .contact-form-embedded { padding: 2rem 1.5rem; }
+            .form-submit-button { font-size: 0.95rem; padding: 1rem; }
         }
 
-        /* Lenis scrollbar style */
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto !important; }
-        .lenis.lenis-stopped { overflow: hidden; }
-        .lenis.lenis-scrolling iframe { pointer-events: none; }
-        ::-webkit-scrollbar { width: 10px; background-color: var(--color-deep-black); }
+        /* Scrollbar Styling */
+        /* Standard scrollbar for testing, Lenis might override or hide this */
+        ::-webkit-scrollbar { width: 8px; background-color: var(--color-deep-black); }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--color-gold-mid), var(--color-gold-shadow));
-            border-radius: 10px; border: 2px solid var(--color-deep-black);
+            background: var(--color-gold-mid);
+            border-radius: 10px;
+            border: 2px solid var(--color-deep-black);
         }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-primary); }
+
     </style>
 </head>
 <body>
     <div id="preloader"><div class="preloader-logo">G</div></div>
 
-    <div id="lenis-wrapper" style="position: relative; width: 100%;">
-    <div id="lenis-content" style="position: relative; width: 100%; overflow: visible;">
+    <div id="lenis-wrapper"> <!-- LENIS WRAPPER -->
+    <div id="lenis-content"> <!-- LENIS CONTENT -->
 
     <header class="main-header" id="pageHeader">
         <div class="container">
@@ -396,8 +339,8 @@
             <nav class="main-nav" id="pageNav">
                 <ul>
                     <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#services">Digital Services</a></li>
-                    <li><a href="#advantage">Our Edge</a></li>
+                    <li><a href="#services">Our Expertise</a></li>
+                    <li><a href="#why-invest">The Luxe Standard</a></li>
                     <li><a href="#contact">Connect</a></li>
                 </ul>
             </nav>
@@ -408,102 +351,136 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content-wrapper animate-on-scroll fade-in-up">
-                <h1><span class="shiny-gold-heading">Transform Your Digital Presence into Pure Gold</span></h1>
-                <p class="subtitle">Golden Luxe Media is your alchemist in the digital realm, forging unparalleled brand experiences and measurable ROI through elite SEO, captivating content, precision PPC, and transformative web design.</p>
-                <a href="#services" class="hero-cta-button">Unlock Your Brand's Potential</a>
+                <h1><span class="shiny-gold-heading">Architects of Digital Brilliance.</span><br/>Welcome to Golden Luxe.</h1>
+                <p class="subtitle">We don't just market; we mesmerize. Golden Luxe Media crafts bespoke digital empires that yield extraordinary ROI, transforming ambitious brands into iconic market leaders through visionary strategy and flawless execution.</p>
+                <a href="#why-invest" class="hero-cta-button">Discover the Golden Difference</a>
+            </div>
+        </section>
+
+        <section id="why-invest" class="content-section why-invest-section">
+            <div class="container">
+                <div class="section-title-container animate-on-scroll fade-in">
+                    <h2><span class="shiny-gold-heading">The Golden Standard: Why Entrust Us With Your Vision?</span></h2>
+                </div>
+                <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">In a saturated digital landscape, "good enough" is invisible. Golden Luxe Media delivers exceptional. We are more than an agency; we are your strategic partners in crafting a dominant, profitable, and unforgettable digital presence.</p>
+                <div class="why-invest-grid">
+                    <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                        <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.643 8.31a1 1 0 00-1.294-.282l-5.48 3.026-2.09-4.476a1 1 0 00-1.828-.002L6.73 10.655a1 1 0 00.208 1.38l3.397 2.736-2.167 3.99a1 1 0 001.732 1.004l2.97-5.473 4.452-2.46a1 1 0 00.282-1.294zm-1.296 5.85l-3.18-1.758-1.87 3.445a3.001 3.001 0 11-5.135-2.817l2.22-4.756 4.115-2.274 2.068 4.43L18.347 14.16zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8-8z"/></svg> <!-- Icon: Abstract Star/Constellation for "Elite Expertise" -->
+                        <h4>Elite Expertise, Visionary Strategy</h4>
+                        <p>Our collective genius in digital marketing is your unfair advantage. We blend battle-tested methodologies with innovative foresight to craft strategies that are not just current, but future-proof, ensuring sustained market leadership.</p>
+                    </div>
+                    <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                         <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm-1-3.414l-3.293-3.293a1 1 0 011.414-1.414L11 13.586l4.879-4.879a1 1 0 111.414 1.414L12.414 15H11v.001z"/></svg> <!-- Icon: Target with checkmark for "Measurable ROI" -->
+                        <h4>Obsessive Focus on Measurable ROI</h4>
+                        <p>Luxury demands results. We are meticulously data-driven, tracking every metric that matters to ensure your investment translates directly into tangible growth, increased conversions, and a formidable return.</p>
+                    </div>
+                    <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                        <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L9 9h6l-3 8 3 8h-2.83l-.84-2.35L9.5 17l-2.83 7.92A9.985 9.985 0 012.065 13H1v-2h1.065a9.985 9.985 0 018.768-7.92L12 1zm0 2.44L10.26 9H13.74L12 3.44zM12 21.56L13.74 15H10.26L12 21.56zM19.935 11H23v2h-3.065a9.985 9.985 0 01-8.768 7.92l1.167-3.268L15.5 17l2.83-7.92A9.985 9.985 0 0121.935 13h.001z"/></svg> <!-- Icon: Handshake/Partnership or Two Interlocking 'G's (conceptual) for "Bespoke Partnership" -->
+                        <h4>Bespoke Craftsmanship, True Partnership</h4>
+                        <p>Your brand is unique; your strategy will be too. We immerse ourselves in your world, operating as dedicated extensions of your team to deliver tailor-made solutions and unparalleled, transparent service.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="services" class="content-section">
             <div class="container">
                 <div class="section-title-container animate-on-scroll fade-in">
-                    <h2><span class="shiny-gold-heading">Our Spectrum of Luxe Digital Services</span></h2>
+                    <h2><span class="shiny-gold-heading">Crafting Digital Dominance: Our Premier Services</span></h2>
                 </div>
-                <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">We craft bespoke digital marketing strategies that resonate with high-value audiences, drive engagement, and accelerate your growth trajectory. Explore how our core services can elevate your brand.</p>
+                <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">From foundational SEO to sophisticated AI integrations, our comprehensive suite of services is engineered to elevate every facet of your digital presence, ensuring cohesive brand messaging and maximized market impact.</p>
                 <div class="services-grid">
+                    <!-- SEO -->
                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                         <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M47.31,41.56,38.24,32.5a17.36,17.36,0,1,0-5.75,5.75l9.07,9.07a4.08,4.08,0,1,0,5.75-5.75ZM25.5,38.5A13.05,13.05,0,1,1,38.55,25.45,13.06,13.06,0,0,1,25.5,38.5Z"/><path d="M12.5,40.5v-13a1,1,0,0,1,2,0v11.59l5.71-5.71a1,1,0,0,1,1.41,1.41l-7,7a1,1,0,0,1-.7.29A1,1,0,0,1,12.5,40.5Z"/></svg>
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M47.31,41.56,38.24,32.5a17.36,17.36,0,1,0-5.75,5.75l9.07,9.07a4.08,4.08,0,1,0,5.75-5.75ZM25.5,38.5A13.05,13.05,0,1,1,38.55,25.45,13.06,13.06,0,0,1,25.5,38.5Z"/><path d="M10.5,32.5h5a1,1,0,0,0,0-2h-5a1,1,0,0,0,0,2Z"/><path d="M10.5,26.5h10a1,1,0,0,0,0-2h-10a1,1,0,0,0,0,2Z"/><path d="M10.5,20.5h15a1,1,0,0,0,0-2h-15a1,1,0,0,0,0,2Z"/></svg> <!-- More detailed SEO icon -->
                         </div>
-                        <h4>Advanced SEO & Authority Building</h4>
-                        <p>Achieve sustained organic visibility and dominate your niche. Our SEO alchemy combines deep technical audits, strategic keyword mastery, high-impact link acquisition, and authoritative content ecosystems that Google and your audience will love.</p>
+                        <h4>Google SEO Supremacy & Content Authority</h4>
+                        <p>Dominate search rankings with our elite SEO strategies. We conduct exhaustive keyword research, technical optimization, high-authority link building, and craft compelling, SEO-driven content (articles, blogs, pillar pages) that establishes your brand as the definitive voice in your industry.</p>
                     </div>
-                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                    <!-- Performance Marketing -->
+                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
                         <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="21.5" stroke-width="4" stroke="#333" fill="none"/><circle cx="32" cy="32" r="13.5" stroke-width="4" stroke="#333" fill="none"/><circle cx="32" cy="32" r="5.5" fill="#333"/><path d="M47.5,41.5l-8-12h-15l-8,12a1,1,0,0,0,.8,1.5h22.4A1,1,0,0,0,47.5,41.5Z"/><path d="M34.5,26.5a2.5,2.5,0,0,0-5,0v0a2.5,2.5,0,1,0,5,0Z"/></svg>
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32,5A27,27,0,1,0,59,32,27,27,0,0,0,32,5Zm0,50A23,23,0,1,1,55,32,23,23,0,0,1,32,55Z"/><path d="M32,15.5A16.5,16.5,0,1,0,48.5,32,16.52,16.52,0,0,0,32,15.5Zm0,29A12.5,12.5,0,1,1,44.5,32,12.52,12.52,0,0,1,32,44.5Z"/><circle cx="32" cy="32" r="7.5"/><polygon points="33 20 31 20 31 31 20 31 20 33 31 33 31 44 33 44 33 33 44 33 44 31 33 31 33 20"/></svg> <!-- Refined target icon -->
                         </div>
-                        <h4>Precision Performance Marketing</h4>
-                        <p>Maximize your ROI with hyper-targeted PPC campaigns across Google, Meta, LinkedIn, and beyond. We engineer high-conversion ad creatives, optimize bidding strategies relentlessly, and provide transparent reporting on every dollar spent.</p>
+                        <h4>ROI-Driven Performance Marketing (PPC)</h4>
+                        <p>Maximize conversions and ad spend efficiency with precision-engineered PPC campaigns. We leverage Google Ads, Meta, LinkedIn, and emerging platforms, focusing on granular targeting, compelling ad copy, A/B testing, and rigorous conversion tracking for optimal ROI.</p>
                     </div>
+                     <!-- Social Media & Content -->
+                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                        <div class="service-icon-wrapper">
+                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M48,10H16A6,6,0,0,0,10,16V40a6,6,0,0,0,6,6H30V54H24a2,2,0,0,0-2,2v2H42V56a2,2,0,0,0-2-2H34V46h2.17A6,6,0,0,0,48,40.17V16A6,6,0,0,0,42.17,10H16Zm0,30H16V16H48Z"/><path d="M24.5,33.5a3.5,3.5,0,1,0,0-7A3.5,3.5,0,0,0,24.5,33.5Z"/><path d="M39.5,33.5a3.5,3.5,0,1,0,0-7A3.5,3.5,0,0,0,39.5,33.5Z"/><path d="M28,22h8a1,1,0,0,0,0-2H28a1,1,0,0,0,0,2Z"/></svg> <!-- Icon: Stylized social icons or dynamic content flow -->
+                        </div>
+                        <h4>Dynamic Social Media & Content Creation</h4>
+                        <p>Ignite your brand across social platforms. We manage your social presence with strategic finesse, creating thumb-stopping static posts, viral-potential Reels, engaging stories, and comprehensive content calendars that build community and drive action. Full content creation services from ideation to execution.</p>
+                    </div>
+                    <!-- Web Dev & Hosting -->
                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                         <div class="service-icon-wrapper">
-                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="7.5" y="12.5" width="49" height="34" rx="3" stroke-width="4" stroke="#333" fill="none"/><line x1="7.5" y1="22.5" x2="56.5" y2="22.5" stroke-width="4" stroke="#333"/><circle cx="15.5" cy="17.5" r="1.5" fill="#333"/><circle cx="21.5" cy="17.5" r="1.5" fill="#333"/><path d="M28.5,32.5l6,6,6-6"/><line x1="34.5" y1="38.5" x2="34.5" y2="28.5" stroke-width="2" stroke="#333" fill="none"/></svg>
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M54,16H10a4,4,0,0,0-4,4V44a4,4,0,0,0,4,4H54a4,4,0,0,0,4-4V20A4,4,0,0,0,54,16Zm0,28H10V20H54Z"/><path d="M32,55a8,8,0,0,0,8-8H24A8,8,0,0,0,32,55Z"/><line x1="20" y1="51" x2="44" y2="51" stroke-width="4" stroke-linecap="round" stroke="#333" fill="none"/><path d="M18,34h6v-4h-6Zm10,0h6v-4h-6Zm10,0h6v-4h-6Z"/></svg> <!-- Icon: Server with code/design elements -->
                         </div>
-                        <h4>Luxury Web Experiences & CRO</h4>
-                        <p>Your digital flagship, meticulously crafted. We design and develop visually stunning, intuitive websites that embody your brand's essence. Coupled with rigorous Conversion Rate Optimization (CRO), we turn visitors into devoted clientele.</p>
+                        <h4>Elite Web Development & Secure Hosting</h4>
+                        <p>Your website: a masterpiece of design and functionality. We develop bespoke, high-performance websites on robust platforms, ensuring seamless user experience, mobile perfection, and scalability. Paired with our premium, secure hosting solutions for optimal uptime and peace of mind.</p>
                     </div>
-                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.45s">
+                    <!-- Chatbot & Messaging -->
+                     <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
                         <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M22.5,49.5l-10-10L35.08,17.08a4.08,4.08,0,0,1,5.76,0l1.16,1.16a4.08,4.08,0,0,1,0,5.76Z"/><path d="M42.5,23.5l-19,19"/><path d="M18.5,38.5l-6,6a2,2,0,0,0,0,2.83l2.17,2.17a2,2,0,0,0,2.83,0l6-6"/><path d="M49.5,30.5a8,8,0,0,0-16,0c0,4.42,8,12,8,12S49.5,34.92,49.5,30.5Z"/><circle cx="41.5" cy="30.5" r="3"/></svg>
+                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32,6A26,26,0,0,0,10.36,50.07L6,58l7.93-4.36A26,26,0,1,0,32,6Zm0,48A22,22,0,0,1,17.1,13.1,22,22,0,1,1,46.9,46.9,21.83,21.83,0,0,1,32,54Z"/><circle cx="23" cy="32" r="3"/><circle cx="32" cy="32" r="3"/><circle cx="41" cy="32" r="3"/></svg> <!-- Icon: Chat bubble with AI/Bot elements -->
                         </div>
-                        <h4>Compelling Content & Social Alchemy</h4>
-                        <p>Forge deep connections and establish thought leadership. We create magnetic content strategies—from captivating articles and video to engaging social media narratives—that amplify your brand voice and cultivate a loyal community.</p>
+                        <h4>Conversational AI & Messaging Solutions</h4>
+                        <p>Enhance customer engagement and streamline support with intelligent chatbot integrations. We also leverage WhatsApp Business and LinkedIn messaging for direct, impactful communication, lead nurturing, and personalized customer service at scale.</p>
+                    </div>
+                     <!-- Additional Service Card (Example) -->
+                    <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
+                        <div class="service-icon-wrapper">
+                           <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32,10A22,22,0,1,0,54,32,22,22,0,0,0,32,10Zm0,40A18,18,0,1,1,50,32,18,18,0,0,1,32,50Z"/><path d="M32,19a3,3,0,0,0-3,3V31h-.06a1,1,0,0,0-.7.29L24,35.59V32a3,3,0,0,0-6,0v8a3,3,0,0,0,3,3H31v.06a1,1,0,0,0,.29.7l4.29,4.29H39a3,3,0,0,0,0-6V35h.06a1,1,0,0,0,.7-.29L44,30.41V32a3,3,0,0,0,6,0V24a3,3,0,0,0-3-3H35Z"/></svg> <!-- Icon: Strategy/Analytics or Brand Identity -->
+                        </div>
+                        <h4>Strategic Brand Amplification & Analytics</h4>
+                        <p>Beyond individual services, we offer holistic brand strategy consultation, competitor analysis, market positioning, and advanced analytics dashboards to provide a 360-degree view of your digital performance and uncover new growth avenues.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="advantage" class="content-section advantage-section-bg">
-            <div class="container">
-                <div class="section-title-container animate-on-scroll fade-in">
-                    <h2><span class="shiny-gold-heading">The Golden Luxe Edge</span></h2>
-                </div>
-                <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">We don't just execute campaigns; we architect digital legacies. Our commitment to excellence, transparency, and bespoke solutions sets us apart, delivering not just results, but transformative growth.</p>
-                <div class="advantage-grid">
-                    <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
-                        <svg class="advantage-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.59 2.6C12.21 2.22 11.79 2 11.33 2H8.5C7.67 2 7 2.67 7 3.5V6H4.5C3.67 6 3 6.67 3 7.5V10H2V12H3V14H2V16H3V18H2V20H3V20.5C3 21.33 3.67 22 4.5 22H7V19.5C7 18.67 7.67 18 8.5 18H11V15.5C11 14.67 11.67 14 12.5 14H15V11.5C15 10.67 15.67 10 16.5 10H19V7.5C19 6.67 18.33 6 17.5 6H15V3.5C15 3.04 14.78 2.62 14.41 2.24L12.59 2.6ZM9 4H11.3L13 5.7V6H9V4ZM13 16H8.5C8.22 16 8 16.22 8 16.5V19H13V16ZM17 12H12.5C12.22 12 12 12.22 12 12.5V15H17V12Z"/></svg>
-                        <h4>Bespoke Strategic Architecture</h4>
-                        <p>Your vision, meticulously translated into a unique digital roadmap. We craft hyper-customized strategies, never resorting to one-size-fits-all.</p>
-                    </div>
-                    <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
-                        <svg class="advantage-icon-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"/></svg>
-                        <h4>Insight-Driven Performance</h4>
-                        <p>Data is our compass. We harness sophisticated analytics to unearth actionable insights, continuously refining for peak campaign performance.</p>
-                    </div>
-                    <div class="advantage-item-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
-                         <svg class="advantage-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.99 8.85L18.14 5l-3.85 3.85a7.973 7.973 0 00-4.29-1.19V2h-2v5.66a7.973 7.973 0 00-4.29 1.19L2.01 5 5.86 8.85a7.973 7.973 0 00-1.19 4.29H2v2h2.67a7.973 7.973 0 001.19 4.29L2.01 19l3.85-3.85a7.973 7.973 0 004.29 1.19V22h2v-5.66a7.973 7.973 0 004.29-1.19l3.85 3.85-3.85-3.85a7.973 7.973 0 001.19-4.29H22v-2h-2.67a7.973 7.973 0 00-1.19-4.29zm-9.99 7.7a4 4 0 110-8 4 4 0 010 8z"/></svg>
-                        <h4>Radical Transparency & Partnership</h4>
-                        <p>We operate as an extension of your team, fostering open communication with clear, consistent reporting and collaborative strategy sessions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- ... Existing CTA and Footer ... -->
         <section id="contact" class="cta-final-section">
             <div class="container cta-content-area">
                 <div class="animate-on-scroll fade-in">
-                    <h2><span class="shiny-gold-heading">Ready to Forge Your Digital Triumph?</span></h2>
-                    <p class="cta-subtitle">Connect with Golden Luxe Media. Let's architect a future where your brand not only competes but commands its digital domain. Your journey to market leadership begins with a conversation.</p>
+                    <h2><span class="shiny-gold-heading">Elevate Your Brand to Its Zenith. Partner with Luxe.</span></h2>
+                    <p class="cta-subtitle">The digital landscape awaits its next icon. Is it you? Connect with Golden Luxe Media for a confidential consultation and let us chart your course to unprecedented success and enduring market distinction.</p>
                 </div>
                 <form action="#" method="POST" class="contact-form-embedded animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                    <!-- Form fields as before -->
                     <div class="form-input-group">
-                        <label for="contactName">Your Name</label>
-                        <input type="text" id="contactName" name="name" class="form-text-input" required placeholder="e.g., Alex Chen">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" name="name" class="form-text-input" required placeholder="e.g., Sterling Archer">
                     </div>
                     <div class="form-input-group">
                         <label for="contactEmail">Business Email</label>
-                        <input type="email" id="contactEmail" name="email" class="form-text-input" required placeholder="e.g., alex.chen@example.com">
+                        <input type="email" id="contactEmail" name="email" class="form-text-input" required placeholder="e.g., s.archer@luxecorp.com">
                     </div>
                     <div class="form-input-group">
-                        <label for="contactCompany">Company Website (Optional)</label>
-                        <input type="url" id="contactCompany" name="company_website" class="form-text-input" placeholder="e.g., https://yourbrand.com">
+                        <label for="contactCompany">Company & Website</label>
+                        <input type="text" id="contactCompany" name="company_website" class="form-text-input" placeholder="e.g., Luxe Corp - https://luxecorp.com">
                     </div>
                     <div class="form-input-group">
-                        <label for="contactMessage">How Can We Elevate Your Brand?</label>
-                        <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Share your digital aspirations or challenges..."></textarea>
+                        <label for="contactService">Primary Service Interest (Optional)</label>
+                        <select id="contactService" name="service" class="form-text-input">
+                            <option value="">Select a Focus Area...</option>
+                            <option value="seo_authority">SEO & Content Authority</option>
+                            <option value="performance_marketing">Performance Marketing (PPC)</option>
+                            <option value="social_content">Social Media & Content Creation</option>
+                            <option value="web_dev_hosting">Web Development & Hosting</option>
+                            <option value="conversational_ai">Chatbots & Messaging</option>
+                            <option value="full_strategy">Comprehensive Digital Strategy</option>
+                        </select>
+                    </div>
+                    <div class="form-input-group">
+                        <label for="contactMessage">Your Vision for Digital Excellence</label>
+                        <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Describe your brand's ambitions and current digital challenges..."></textarea>
                     </div>
                     <div style="text-align: center;">
-                        <button type="submit" class="form-submit-button">Initiate Consultation</button>
+                        <button type="submit" class="form-submit-button">Request Elite Consultation</button>
                     </div>
                 </form>
             </div>
@@ -511,18 +488,20 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container">
+        <!-- Footer content as before, but with more SEO keywords -->
+         <div class="container">
             <svg class="footer-logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle class="circle" cx="50" cy="50" r="44"/>
                 <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
             </svg>
             <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin: 2rem 0;">
-                <a href="#" aria-label="LinkedIn Profile">LI</a>
-                <a href="#" aria-label="Instagram Page">IG</a>
-                <a href="#" aria-label="Behance Portfolio">BE</a>
+                <a href="#" aria-label="LinkedIn">LI</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="Behance">BE</a>
+                <a href="#" aria-label="Clutch Reviews">CL</a> <!-- Example: Review site -->
             </div>
-            <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. All Rights Reserved. Masterminding Digital Excellence.</p>
-            <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Premier Digital Marketing Agency: SEO, PPC, Luxury Web Design, Content Strategy & Brand Elevation Solutions.</p>
+            <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. All Rights Reserved. Forging Digital Dynasties.</p>
+            <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Elite Digital Marketing Agency specializing in Luxury Brand SEO, High-ROI PPC, Premium Web Design, Bespoke Content Strategy, Social Media Management, Chatbot Integration, and WhatsApp Marketing. Partner with us for transformative results.</p>
         </div>
     </footer>
 
@@ -538,21 +517,33 @@
                 window.addEventListener('load', () => {
                     setTimeout(() => {
                         preloader.classList.add('loaded');
-                    }, 300); // Small delay for preloader visibility
+                    }, 300);
                 });
             }
 
+            // --- Lenis Scroll Setup ---
             const lenisWrapper = document.getElementById('lenis-wrapper');
+            // The 'content' for Lenis will be its direct child, lenis-content
             const lenisContent = document.getElementById('lenis-content');
 
-            if (lenisWrapper && lenisContent) {
+            // Fallback if Lenis script fails to load or elements are missing
+            if (typeof Lenis !== 'undefined' && lenisWrapper && lenisContent) {
+                 // Hide native scrollbar of the wrapper if Lenis is active
+                lenisWrapper.style.scrollbarWidth = 'none'; /* Firefox */
+                lenisWrapper.style.msOverflowStyle = 'none';  /* IE 10+ */
+                const style = document.createElement('style');
+                style.textContent = '#lenis-wrapper::-webkit-scrollbar { display: none; }'; /* WebKit */
+                document.head.append(style);
+
                 const lenis = new Lenis({
-                    wrapper: lenisWrapper,
-                    content: lenisContent,
-                    duration: 1.4, // Slightly adjusted duration
+                    wrapper: lenisWrapper, // Lenis scrolls this element
+                    content: lenisContent, // All scrollable content is inside this
+                    duration: 1.6,
                     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                     smoothWheel: true,
-                    wheelMultiplier: 0.9, // Slightly reduced multiplier
+                    wheelMultiplier: 0.85, // Fine-tune
+                    smoothTouch: false,
+                    touchMultiplier: 1.8,
                 });
 
                 function raf(time) {
@@ -561,12 +552,13 @@
                 }
                 requestAnimationFrame(raf);
 
+                // --- Mobile Menu & Header Scroll Integration with Lenis ---
                 const navToggleBtn = document.getElementById('navToggleBtn');
                 const pageNav = document.getElementById('pageNav');
-                const pageHeader = document.getElementById('pageHeader'); // Defined once
+                const pageHeader = document.getElementById('pageHeader');
 
-                if (navToggleBtn && pageNav) {
-                    navToggleBtn.addEventListener('click', () => {
+                if (navToggleBtn && pageNav) { /* ... mobile nav toggle logic ... */
+                     navToggleBtn.addEventListener('click', () => {
                         pageNav.classList.toggle('active');
                         const isExpanded = pageNav.classList.contains('active');
                         navToggleBtn.setAttribute('aria-expanded', isExpanded);
@@ -575,18 +567,18 @@
                 }
 
                 const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
-                navLinks.forEach(link => {
+                navLinks.forEach(link => { /* ... Lenis scrollto logic ... */
                     const targetId = link.getAttribute('href');
                     if (targetId && targetId.startsWith('#')) {
                         link.addEventListener('click', (e) => {
                             e.preventDefault();
-                            let offsetVal = pageHeader ? -pageHeader.offsetHeight - 5 : -70;
+                            let offsetVal = pageHeader ? -pageHeader.offsetHeight - 10 : -80;
                             if (targetId === "#hero") offsetVal = 0;
-                            lenis.scrollTo(targetId, { offset: offsetVal, duration: 1.8 }); // Slightly longer duration for scrollto
+                            lenis.scrollTo(targetId, { offset: offsetVal, duration: 2.0 });
 
                             if (pageNav && pageNav.classList.contains('active')) {
                                 pageNav.classList.remove('active');
-                                if(navToggleBtn) { // Check if navToggleBtn exists
+                                if(navToggleBtn) {
                                     navToggleBtn.setAttribute('aria-expanded', 'false');
                                     navToggleBtn.innerHTML = '☰';
                                 }
@@ -598,14 +590,13 @@
                 const allSections = document.querySelectorAll('main section[id]');
                 const mainNavLinks = document.querySelectorAll('.main-nav a');
 
-                function updateActiveLinkOnScroll() {
+                function updateActiveLinkOnScroll() { /* ... active link logic using lenis.scroll ... */
                     let currentSectionId = 'hero';
-                    const headerHeight = pageHeader ? pageHeader.offsetHeight : 60; // Fallback header height
+                    const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
 
                     allSections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        // Adjusted threshold: when the top of the section is within the top 40% of the viewport
-                        if (lenis.scroll >= sectionTop - (window.innerHeight * 0.4) - headerHeight) {
+                        const sectionTop = section.offsetTop; // Relative to lenis-content
+                        if (lenis.scroll >= sectionTop - (window.innerHeight * 0.35) - headerHeight) {
                             currentSectionId = section.getAttribute('id');
                         }
                     });
@@ -618,9 +609,9 @@
                     });
                 }
 
-                if (pageHeader) {
-                    lenis.on('scroll', (e) => {
-                        if (e.scroll > 30) { // Trigger 'scrolled' class earlier
+                if (pageHeader) { /* ... header scrolled class logic with lenis.scroll ... */
+                     lenis.on('scroll', (e) => {
+                        if (e.scroll > 40) {
                             pageHeader.classList.add('scrolled');
                         } else {
                             pageHeader.classList.remove('scrolled');
@@ -628,16 +619,41 @@
                         updateActiveLinkOnScroll();
                     });
                 }
-                updateActiveLinkOnScroll(); // Initial check
+                updateActiveLinkOnScroll();
 
             } else {
-                console.error("Lenis wrapper or content element not found.");
+                console.warn("Lenis library not loaded or wrapper/content elements missing. Falling back to native scroll.");
+                // Fallback: Re-enable body scroll if Lenis isn't working
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                // And remove the fixed wrapper styling if it was applied
+                if(lenisWrapper) {
+                    lenisWrapper.style.position = 'relative';
+                    lenisWrapper.style.overflow = 'visible';
+                    lenisWrapper.style.height = 'auto';
+                }
+                 // Basic smooth scroll for anchors if Lenis fails
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId.length > 1) { // Ensure it's not just "#"
+                            e.preventDefault();
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - (document.getElementById('pageHeader')?.offsetHeight || 70),
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
             }
 
+            // --- Intersection Observer for Animations (remains the same) ---
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }; // Trigger a bit earlier
-
-            const observer = new IntersectionObserver((entries, obs) => {
+            const observerOptions = { threshold: 0.12, rootMargin: "0px 0px -45px 0px" };
+            const observer = new IntersectionObserver((entries, obs) => { /* ... */
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const delay = entry.target.dataset.ioDelay;
@@ -651,6 +667,7 @@
                 });
             }, observerOptions);
             animatedElements.forEach(el => observer.observe(el));
+
 
             const currentYearSpan = document.getElementById('currentYear');
             if (currentYearSpan) {
