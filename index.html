@@ -92,43 +92,24 @@
         a{color:var(--color-gold-highlight);text-decoration:none;transition:color var(--transition-interactive)}
         a:focus,a:hover{color:var(--color-gold-brilliant)}
         
-        .main-header{
-            position:fixed;top:0;left:0;width:100%;z-index:1000;
-            padding:1.25rem 0; /* Default padding */
-            background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-            border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);
-            transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)
-        }
-        .main-header.scrolled{
-            padding:1rem 0; /* Reduced padding on scroll */
-            background-color:rgba(37,38,43,.85);box-shadow:0 8px 30px rgba(0,0,0,.4)
-        }
+        .main-header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.25rem 0;background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)}
+        .main-header.scrolled{padding:1rem 0;background-color:rgba(37,38,43,.85);box-shadow:0 8px 30px rgba(0,0,0,.4)}
         .main-header .container{display:flex;justify-content:space-between;align-items:center}
-        .logo-link{display:flex;align-items:center;gap:.8rem; text-decoration: none;} /* Ensure no underline from browser defaults */
-        .logo-svg-icon{width:50px;height:50px; flex-shrink: 0;} /* Prevent shrinking */
+        .logo-link{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+        .logo-svg-icon{width:50px;height:50px;flex-shrink:0}
         .logo-svg-icon .circle{fill:var(--color-gold-primary);transition:fill var(--transition-interactive)}
         .logo-svg-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
         .logo-link:hover .logo-svg-icon .circle{fill:var(--color-gold-highlight)}
-        .site-title-text{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;color:var(--color-gold-brilliant); white-space: nowrap;} /* Prevent title from wrapping */
+        .site-title-text{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;color:var(--color-gold-brilliant);white-space:nowrap}
         .site-title-text span{color:var(--color-gold-highlight);font-weight:700}
-        
-        .main-nav{ margin-left: auto; /* Pushes nav to the right if space allows */ }
-        .main-nav ul{list-style:none;display:flex; padding-left: 0;} /* Reset padding */
-        .main-nav li{margin-left:2.5rem} /* Adjusted margin */
+        .main-nav{margin-left:auto}
+        .main-nav ul{list-style:none;display:flex;padding-left:0}
+        .main-nav li{margin-left:2.5rem}
         .main-nav a{font-size:.9rem;letter-spacing:1.5px;text-transform:uppercase;padding:.9rem .3rem;position:relative;color:var(--color-text-secondary);font-weight:500}
-        .main-nav a::after{
-            content:'';position:absolute;bottom:0.6rem; /* Adjusted bottom for underline */
-            left:50%; transform: translateX(-50%); /* Center the underline */
-            width:0;height:2px;background-color:var(--color-gold-primary);
-            transition:width var(--transition-interactive);
-        }
-        .main-nav a.active::after,
-        .main-nav a:hover::after{
-            width:calc(100% - 0.6rem); /* Underline width relative to padding */
-        }
+        .main-nav a::after{content:'';position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);width:0;height:2px;background-color:var(--color-gold-primary);transition:width var(--transition-interactive)}
+        .main-nav a.active::after,.main-nav a:hover::after{width:calc(100% - .6rem)}
         .main-nav a.active{color:var(--color-gold-highlight)}
         .main-nav a:hover{color:var(--color-gold-highlight)}
-        
         .menu-toggle{display:none;background:none;border:none;color:var(--color-gold-primary)!important;font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005}
         button.menu-toggle:focus,button.menu-toggle:hover{color:var(--color-gold-highlight)!important}
         
@@ -136,32 +117,10 @@
         .hero-content-wrapper{max-width:850px;position:relative;z-index:1;margin:0 auto;display:flex;flex-direction:column;align-items:center}
         .hero-section h1{margin-bottom:.8rem;color:var(--color-text-primary);font-weight:800;line-height:1.25}
         .hero-section p.subtitle{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);max-width:720px;margin:1.5rem auto 2.5rem;line-height:1.75}
-        
-        .hero-services-showcase{
-            display:flex;flex-wrap:wrap;justify-content:center;
-            gap: 0.8rem 1rem; /* Gap between chips */
-            margin-bottom:3rem; /* Space between chips and CTA button */
-            max-width:800px; /* Increased max-width to encourage 4 per row */
-            width: 100%;
-        }
-        .service-chip{
-            background-color:var(--color-background-secondary);color:var(--color-text-secondary);
-            padding:.6rem 1.1rem; /* Slightly more padding */
-            border-radius:25px; /* More rounded */
-            font-size:clamp(.8rem, 1.9vw, .95rem); /* Slightly larger font */
-            font-weight:500;
-            display:inline-flex;align-items:center;gap:.6rem; /* Increased gap */
-            border:1px solid rgba(184,134,11,.25); /* Slightly more visible border */
-            box-shadow:0 3px 7px rgba(0,0,0,.25); /* Enhanced shadow */
-            animation:floatAnimation 4s ease-in-out infinite;
-            transition:transform .3s ease,box-shadow .3s ease,color .3s ease, background-color .3s ease;
-            flex-basis: calc(25% - 1rem); /* Aim for 4 per row, accounting for gap */
-            min-width: 160px; /* Minimum width to prevent excessive squishing */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            justify-content: center; /* Center content within chip */
-        }
-        .service-chip:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 6px 12px rgba(0,0,0,.35),var(--shadow-subtle-glow);color:var(--color-gold-highlight); background-color: var(--color-background-tertiary);}
-        .service-chip .chip-icon{font-size:clamp(1rem, 2.1vw, 1.2rem);line-height:1}
+        .hero-services-showcase{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1rem;margin-bottom:3rem;max-width:800px;width:100%}
+        .service-chip{background-color:var(--color-background-secondary);color:var(--color-text-secondary);padding:.6rem 1.1rem;border-radius:25px;font-size:clamp(.8rem,1.9vw,.95rem);font-weight:500;display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(184,134,11,.25);box-shadow:0 3px 7px rgba(0,0,0,.25);animation:floatAnimation 4s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease,color .3s ease,background-color .3s ease;flex-basis:calc(25% - 1rem);min-width:160px;box-sizing:border-box;justify-content:center}
+        .service-chip:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 6px 12px rgba(0,0,0,.35),var(--shadow-subtle-glow);color:var(--color-gold-highlight);background-color:var(--color-background-tertiary)}
+        .service-chip .chip-icon{font-size:clamp(1rem,2.1vw,1.2rem);line-height:1}
         .service-chip:nth-child(2){animation-delay:.2s}
         .service-chip:nth-child(3){animation-delay:.4s}
         .service-chip:nth-child(4){animation-delay:.6s}
@@ -169,13 +128,10 @@
         .service-chip:nth-child(6){animation-delay:.3s}
         .service-chip:nth-child(7){animation-delay:.5s}
         .service-chip:nth-child(8){animation-delay:.7s}
-        @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-7px)}} /* Increased float height */
-
-        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s;}
-        /* margin-bottom removed from CTA, as chips are now above */
+        @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-7px)}}
+        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s}
         .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
         @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
-        
         .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .content-section:last-of-type{border-bottom:none}
         .content-section .section-title-container h2::after{content:'';display:block;width:70px;height:3px;background-color:var(--color-gold-primary);margin:1.2rem auto 0}
@@ -241,38 +197,9 @@
         .site-footer p{font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem}
         .footer-seo-text{font-size:.7rem;color:var(--color-text-muted);opacity:.6;max-width:550px;margin:1.2rem auto 0;line-height:1.45}
         
-        @media (max-width:991px){
-            .main-header .container { flex-wrap: wrap; } /* Allow wrapping for smaller screens */
-            .logo-link { margin-right: auto; } /* Pushes nav toggle to the right */
-            .main-nav li{margin-left:1.5rem}
-            .main-nav a{font-size:.85rem;letter-spacing:1.5px}
-            .pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}
-            .recognition-logos span{margin:.5rem;padding:.5rem 1rem}
-            .hero-services-showcase { max-width: 600px; }
-            .service-chip { flex-basis: calc(33.333% - 1rem); min-width: 140px;} /* 3 per row */
-        }
-        @media (max-width:767px){
-            .menu-toggle{display:block}
-            .main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}
-            @keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
-            .main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}
-            .hero-section{min-height:auto; padding: 10rem 0 4rem;}
-            .hero-services-showcase{gap:.6rem .8rem; max-width: 100%; margin-bottom: 2rem;}
-            .service-chip{padding:.4rem .8rem; flex-basis: calc(50% - 0.8rem); min-width: 120px;} /* 2 per row */
-            .content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}
-            .form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}
-        }
-        @media (max-width:480px){
-            h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}
-            h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section p.subtitle{font-size:.9rem}
-            .hero-cta-button{padding:.8rem 2rem;font-size:.9rem; margin-bottom: 2.5rem;}
-            .main-header .container{padding-left:15px;padding-right:15px}
-            .container{padding-left:15px;padding-right:15px;width:100%}
-            .project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}
-            .project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}
-            .golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}
-            .service-chip { flex-basis: calc(50% - 0.6rem); font-size: 0.7rem; padding: 0.3rem 0.6rem; } /* Adjust for very small screens */
-        }
+        @media (max-width:991px){.main-header .container{flex-wrap:wrap}.logo-link{margin-right:auto}.main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}.pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}.recognition-logos span{margin:.5rem;padding:.5rem 1rem}.hero-services-showcase{max-width:600px}.service-chip{flex-basis:calc(33.333% - 1rem);min-width:140px}}
+        @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}.hero-section{min-height:auto;padding:10rem 0 4rem}.hero-services-showcase{gap:.6rem .8rem;max-width:100%;margin-bottom:2rem}.service-chip{padding:.4rem .8rem;flex-basis:calc(50% - .8rem);min-width:120px}.content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
+        @media (max-width:480px){h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section p.subtitle{font-size:.9rem}.hero-cta-button{padding:.8rem 2rem;font-size:.9rem;margin-bottom:2.5rem}.main-header .container{padding-left:15px;padding-right:15px}.container{padding-left:15px;padding-right:15px;width:100%}.project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}.project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}.golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}.service-chip{flex-basis:calc(50% - .6rem);font-size:.7rem;padding:.3rem .6rem}}
         @media (min-width:992px){.pillars-grid,.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:repeat(3,1fr)}.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}}
         @media (min-width:1200px){.projects-grid,.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
         @media (min-width:1440px){.container{max-width:1360px}.hero-content-wrapper{max-width:900px}.section-intro-text{max-width:800px}}
@@ -321,7 +248,7 @@
                         </h1>
                         <p class="subtitle">Golden Luxe Media crafts digital empires for select brands. We deliver visionary strategies, finely-tuned luxury experiences, and clear ROI to build your lasting legacy.</p>
                         
-                        <div class="hero-services-showcase"> <!-- Moved Above CTA -->
+                        <div class="hero-services-showcase">
                             <span class="service-chip"><span class="chip-icon">🔍</span> SEO Mastery</span>
                             <span class="service-chip"><span class="chip-icon">📈</span> Digital Marketing</span>
                             <span class="service-chip"><span class="chip-icon">🎨</span> UI/UX Design</span>
@@ -430,7 +357,7 @@
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">Real Impact: Client Success Stories</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to building digital legacies is shown in our clients' success. While we maintain strict confidentiality, the results speak for themselves. (Full case studies available by request.)</p>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to building digital legacies is shown in our clients' success. While we maintain strict confidentiality, these examples highlight the results we achieve.</p> <!-- Adjusted -->
                         
                         <div class="testimonial-grid">
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
@@ -467,7 +394,7 @@
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">Case Studies: Demonstrating Success</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">See how we've helped elite brands achieve significant growth and market leadership. Each project highlights our custom strategies and commitment to results. (Full details shared upon request).</p>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">See how we've helped elite brands achieve significant growth and market leadership. These highlights showcase our custom strategies and commitment to impactful results.</p> <!-- Adjusted -->
                         <div class="projects-grid">
                             <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="project-card-icon">⭐</div>
