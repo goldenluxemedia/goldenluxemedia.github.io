@@ -17,7 +17,7 @@
 
     <title>Luxury Digital Marketing & SEO | Golden Luxe Media</title>
     <meta name="description" content="Elevate your elite brand with Golden Luxe Media. We deliver high-ROI SEO, luxury web design & transformative digital marketing for an unparalleled online presence.">
-    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, luxury branding, client success, client testimonials, digital marketing credibility, marketing psychology, luxury brand SEO, high-end web design, digital marketing for luxury brands, UI/UX design, app development, digital marketing for luxury fashion, SEO for high-end jewelers, HNW lead generation, increase online sales luxury goods, luxury digital marketing NYC">
+    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, performance marketing, luxury branding, client success, client testimonials, digital marketing credibility, marketing psychology, luxury brand SEO, high-end web design, digital marketing for luxury brands, UI/UX design, app development, cloud services, process optimization, digital marketing for luxury fashion, SEO for high-end jewelers, HNW lead generation, increase online sales luxury goods, luxury digital marketing NYC">
 
     <!-- FAVICON LINKS START - PATHS POINT TO 'favicons' FOLDER -->
     <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
@@ -35,7 +35,7 @@
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-600.woff2" crossorigin>
     
     <style>
-        /* DARK GRAYSCALE THEME & REFINED CSS (as per previous iteration) */
+        /* DARK GRAYSCALE THEME & REFINED CSS */
         :root{
             --color-background-primary: #1A1A1D; 
             --color-background-secondary: #25262B; 
@@ -110,23 +110,68 @@
         .main-nav a:hover{color:var(--color-gold-highlight)}
         .menu-toggle{display:none;background:none;border:none;color:var(--color-gold-primary)!important;font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005}
         button.menu-toggle:focus,button.menu-toggle:hover{color:var(--color-gold-highlight)!important}
-        .hero-section{min-height:95vh;padding:10rem 0 5rem;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:linear-gradient(rgba(26,26,29,.7),rgba(26,26,29,.9)),radial-gradient(circle at 50% 0%,rgba(184,134,11,.07) 0%,transparent 50%),var(--color-background-primary);overflow:hidden}
+        
+        .hero-section{
+            min-height: 97vh; /* Adjusted min-height */
+            padding: 12rem 0 6rem; /* Increased top and bottom padding */
+            display:flex;align-items:center;justify-content:center;text-align:center;
+            position:relative;
+            background:linear-gradient(rgba(26,26,29,.7),rgba(26,26,29,.9)),radial-gradient(circle at 50% 0%,rgba(184,134,11,.07) 0%,transparent 50%),var(--color-background-primary);
+            overflow:hidden;
+        }
         .hero-content-wrapper{max-width:850px;position:relative;z-index:1;margin:0 auto;display:flex;flex-direction:column;align-items:center}
         .hero-section h1{margin-bottom:.8rem;color:var(--color-text-primary);font-weight:800;line-height:1.25}
-        .hero-section p.subtitle{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);max-width:720px;margin:1.5rem auto 2.2rem;line-height:1.75}
-        .hero-services-showcase{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1rem;margin-top:2.5rem;margin-bottom:2.5rem;max-width:700px}
-        .service-chip{background-color:var(--color-background-secondary);color:var(--color-text-secondary);padding:.5rem 1rem;border-radius:20px;font-size:clamp(.75rem,1.8vw,.9rem);font-weight:500;display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(184,134,11,.2);box-shadow:0 2px 5px rgba(0,0,0,.2);animation:floatAnimation 4s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease,color .3s ease}
+        .hero-section p.subtitle{
+            font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);
+            max-width:720px;margin:1.5rem auto 2.5rem;line-height:1.75 /* Slightly more margin before CTA */
+        }
+        
+        .hero-cta-button{
+            font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;
+            background-color:var(--color-gold-primary);color:var(--color-background-primary);
+            border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;
+            box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);
+            transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);
+            animation:pulseButton 3s infinite ease-in-out 1s;
+            margin-bottom: 3rem; /* Space between CTA and service chips */
+        }
+        .hero-cta-button:focus,.hero-cta-button:hover{
+            background-color:var(--color-gold-highlight);
+            transform:translateY(-3px) scale(1.03);
+            box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35); 
+        }
+        @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
+
+        .hero-services-showcase{
+            display:flex;flex-wrap:wrap;justify-content:center;
+            gap:.8rem 1rem; 
+            max-width:750px; /* Slightly wider to accommodate more chips per line if possible */
+            width: 100%; /* Ensure it takes available width within hero-content-wrapper */
+        }
+        .service-chip{
+            background-color:var(--color-background-secondary);color:var(--color-text-secondary);
+            padding:.5rem 1rem;border-radius:20px;
+            font-size:clamp(.75rem,1.8vw,.9rem);font-weight:500;
+            display:inline-flex;align-items:center;gap:.5rem;
+            border:1px solid rgba(184,134,11,.2);box-shadow:0 2px 5px rgba(0,0,0,.2);
+            animation:floatAnimation 4s ease-in-out infinite;
+            transition:transform .3s ease,box-shadow .3s ease,color .3s ease;
+            flex-grow: 0; /* Prevent chips from growing too much */
+            flex-shrink: 0; /* Prevent chips from shrinking too much */
+        }
         .service-chip:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 4px 10px rgba(0,0,0,.3),var(--shadow-subtle-glow);color:var(--color-gold-highlight)}
         .service-chip .chip-icon{font-size:clamp(.9rem,2vw,1.1rem);line-height:1}
+        /* Staggered animation delays for 8 service chips */
         .service-chip:nth-child(2){animation-delay:.2s}
         .service-chip:nth-child(3){animation-delay:.4s}
-        .service-chip:nth-child(4){animation-delay:.1s}
-        .service-chip:nth-child(5){animation-delay:.3s}
-        .service-chip:nth-child(6){animation-delay:.5s}
+        .service-chip:nth-child(4){animation-delay:.6s} 
+        .service-chip:nth-child(5){animation-delay:.1s}
+        .service-chip:nth-child(6){animation-delay:.3s}
+        .service-chip:nth-child(7){animation-delay:.5s}
+        .service-chip:nth-child(8){animation-delay:.7s}
+
         @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-6px)}}
-        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s;margin-top:0}
-        .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
-        @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
+
         .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .content-section:last-of-type{border-bottom:none}
         .content-section .section-title-container h2::after{content:'';display:block;width:70px;height:3px;background-color:var(--color-gold-primary);margin:1.2rem auto 0}
@@ -142,7 +187,6 @@
         .usp-icon-wrapper{width:50px;height:50px;background-color:rgba(184,134,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)}
         .usp-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0;flex-grow:1}
         .golden-pillars-section{text-align:center;margin-top:3rem}
-        /* .golden-pillars-section h3 has been updated to reflect its new purpose */
         .pillars-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
         .pillar-card{text-align:center;padding:1.5rem}
         .pillar-icon{font-size:2.2rem;color:var(--color-gold-primary);margin-bottom:1rem;display:block}
@@ -161,7 +205,6 @@
         .testimonial-quote{font-style:italic;color:var(--color-text-primary);margin-bottom:1rem;flex-grow:1;font-size:.95rem}
         .testimonial-attribution{font-size:.8rem;color:var(--color-gold-highlight);font-weight:600;text-align:right}
         .recognition-strip{text-align:center;padding-top:2.5rem;border-top:1px solid rgba(184,134,11,.15)}
-        /* .recognition-strip h3 - text updated inline */
         .recognition-logos span{display:inline-block;margin:.7rem 1.2rem;padding:.6rem 1.2rem;font-family:var(--font-body);font-size:.85rem;color:var(--color-gold-highlight);font-weight:500;border:1.5px solid var(--color-gold-mid);border-radius:6px;background-color:transparent;box-shadow:none;transition:color var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive)}
         .recognition-logos span:hover{color:var(--color-gold-brilliant);border-color:var(--color-gold-highlight);background-color:rgba(184,134,11,.08);transform:translateY(-2px);box-shadow:0 3px 8px rgba(184,134,11,.15)}
         .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:3rem}
@@ -196,8 +239,8 @@
         .site-footer p{font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem}
         .footer-seo-text{font-size:.7rem;color:var(--color-text-muted);opacity:.6;max-width:550px;margin:1.2rem auto 0;line-height:1.45}
         @media (max-width:991px){.main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}.pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}.recognition-logos span{margin:.5rem;padding:.5rem 1rem}}
-        @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}.hero-section{min-height:80vh;padding:8rem 0 4rem}.hero-services-showcase{gap:.6rem .8rem;margin-top:2rem;margin-bottom:2rem}.service-chip{padding:.4rem .8rem}.content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
-        @media (max-width:480px){h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section{min-height:auto; padding-bottom: 3rem; /* Ensure CTA is not cut off with chips */}.hero-section p.subtitle{font-size:.9rem}.hero-cta-button{padding:.8rem 2rem;font-size:.9rem}.main-header .container{padding-left:15px;padding-right:15px}.container{padding-left:15px;padding-right:15px;width:100%}.project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}.project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}.golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}}
+        @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}.hero-section{min-height:auto; padding: 10rem 0 4rem;}.hero-services-showcase{gap:.6rem .8rem;}.service-chip{padding:.4rem .8rem}.content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
+        @media (max-width:480px){h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section p.subtitle{font-size:.9rem}.hero-cta-button{padding:.8rem 2rem;font-size:.9rem; margin-bottom: 2rem;}.main-header .container{padding-left:15px;padding-right:15px}.container{padding-left:15px;padding-right:15px;width:100%}.project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}.project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}.golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}}
         @media (min-width:992px){.pillars-grid,.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:repeat(3,1fr)}.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}}
         @media (min-width:1200px){.projects-grid,.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
         @media (min-width:1440px){.container{max-width:1360px}.hero-content-wrapper{max-width:900px}.section-intro-text{max-width:800px}}
@@ -226,8 +269,8 @@
                         <ul>
                             <li><a href="#hero" class="active">Home</a></li>
                             <li><a href="#services">Expertise</a></li>
-                            <li><a href="#why-invest">Our Approach</a></li> <!-- Renamed for clarity -->
-                            <li><a href="#client-success">Success Stories</a></li>  <!-- Renamed for impact -->
+                            <li><a href="#why-invest">Our Approach</a></li>
+                            <li><a href="#client-success">Success Stories</a></li> 
                             <li><a href="#projects">Case Studies</a></li> 
                             <li><a href="#contact">Connect</a></li>
                         </ul>
@@ -246,23 +289,24 @@
                         </h1>
                         <p class="subtitle">At Golden Luxe Media, we architect digital empires for discerning brands. We deliver visionary strategies, bespoke luxury experiences, and undeniable ROI to solidify your legacy.</p>
                         
+                        <a href="#why-invest" class="hero-cta-button">Discover Our Approach</a>
+
                         <div class="hero-services-showcase">
                             <span class="service-chip"><span class="chip-icon">🔍</span> SEO Mastery</span>
                             <span class="service-chip"><span class="chip-icon">📈</span> Digital Marketing</span>
                             <span class="service-chip"><span class="chip-icon">🎨</span> UI/UX Design</span>
                             <span class="service-chip"><span class="chip-icon">💻</span> Web Development</span>
                             <span class="service-chip"><span class="chip-icon">📱</span> App Development</span>
-                            <span class="service-chip"><span class="chip-icon">💰</span> PPC Excellence</span>
+                            <span class="service-chip"><span class="chip-icon">🎯</span> Performance Marketing</span> <!-- Updated text -->
+                            <span class="service-chip"><span class="chip-icon">☁️</span> Cloud Services</span> <!-- New -->
+                            <span class="service-chip"><span class="chip-icon">⚙️</span> Process Optimization</span> <!-- New -->
                         </div>
-
-                        <a href="#why-invest" class="hero-cta-button">Discover Our Approach</a>
                     </div>
                 </section>
 
-                <section id="why-invest" class="content-section why-invest-section"> <!-- ID remains for linking -->
+                <section id="why-invest" class="content-section why-invest-section"> 
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                             <!-- "The Golden Luxe Standard" could be the H2 -->
                             <h2><span class="shiny-gold-heading">The Golden Luxe Standard: What We Deliver</span></h2>
                         </div>
                         <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Mediocrity is the antithesis of luxury. We are the architects of your digital distinction, dedicated to transforming your brand's potential into palpable market dominance and enduring profitability through our core deliverables.</p>
@@ -285,7 +329,6 @@
                         </div>
 
                         <div class="golden-pillars-section animate-on-scroll fade-in" data-io-delay="0.4s">
-                            <!-- This H3 now clearly defines the "how" -->
                             <h3>Our Golden Promise: The Principles That Guide Us</h3>
                             <div class="pillars-grid">
                                 <div class="pillar-card">
@@ -349,7 +392,7 @@
                     </div>
                 </section>
 
-                <section id="client-success" class="content-section client-success-section"> <!-- ID remains -->
+                <section id="client-success" class="content-section client-success-section"> 
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">Proven Impact: Verifiable Client Success</span></h2>
@@ -381,7 +424,6 @@
                                 <span>HBR Principles (Strategic Frameworks)</span>
                                 <span>Luxury Institute Findings (Market Parallels)</span>
                                 <span>Google Best Practices (Quality Benchmark)</span> 
-                                <!-- If a Premier Partner: <span>Google Premier Partner (Badge Here)</span> -->
                             </div>
                         </div>
                     </div>
@@ -468,8 +510,8 @@
                         <a href="#hero">Home</a>
                         <a href="#services">Expertise</a>
                         <a href="#projects">Case Studies</a>
-                        <a href="#">Our Story</a> <!-- Placeholder for About Us -->
-                        <a href="#">Insights</a> <!-- Placeholder for Blog -->
+                        <a href="#">Our Story</a> 
+                        <a href="#">Insights</a> 
                         <a href="#contact">Connect</a>
                     </nav>
                     <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin-bottom: 1.5rem;">
@@ -523,7 +565,6 @@
                     const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button, .footer-nav-links a');
                     navLinks.forEach(link => {
                         const targetId = link.getAttribute('href');
-                        // Check if it's an internal anchor link
                         if (targetId && targetId.startsWith('#') && targetId.length > 1 && document.querySelector(targetId)) {
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
@@ -540,11 +581,6 @@
                                     }
                                 }
                             });
-                        }
-                        // If it's a placeholder link like "#" or links to non-existent sections, don't prevent default.
-                        // Or, if it's a link like "/our-story" for a future page.
-                        else if (targetId === "#" || (targetId && targetId.startsWith('/') && targetId.length > 1)) {
-                           // Allow default behavior for external-like links or simple "#"
                         }
                     });
 
@@ -596,7 +632,6 @@
                 }
 
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                     // Check if it's an internal anchor link to an existing element
                     if (anchor.getAttribute('href').length > 1 && document.querySelector(anchor.getAttribute('href'))) {
                         anchor.addEventListener('click', function (e) {
                             e.preventDefault();
@@ -670,7 +705,7 @@
             animatedElements.forEach(el => observer.observe(el));
 
             const currentYearSpan = document.getElementById('currentYear');
-            if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); } // Corrected Year
+            if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
 
             const contactForm = document.querySelector('.contact-form-embedded');
             if (contactForm) {
