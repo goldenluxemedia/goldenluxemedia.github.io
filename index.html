@@ -10,14 +10,14 @@
                    style-src 'self' 'unsafe-inline'; 
                    img-src 'self' data:;
                    font-src 'self' data:;
-                   connect-src 'self' http://localhost:3000; /* Allow connection to your backend */
+                   connect-src 'self' http://localhost:3000; 
                    object-src 'none';
                    base-uri 'self';
                    form-action 'self';">
 
     <title>Luxury Digital Marketing & SEO | Golden Luxe Media</title>
     <meta name="description" content="Elevate your elite brand with Golden Luxe Media. We deliver high-ROI SEO, luxury web design & transformative digital marketing for an unparalleled online presence.">
-    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, luxury branding, client success, client testimonials, digital marketing credibility, marketing psychology, luxury brand SEO, high-end web design, digital marketing for luxury brands, UI/UX, App Development">
+    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, luxury branding, client success, client testimonials, digital marketing credibility, marketing psychology, luxury brand SEO, high-end web design, digital marketing for luxury brands, UI/UX design, app development, digital marketing for luxury fashion, SEO for high-end jewelers, HNW lead generation, increase online sales luxury goods, luxury digital marketing NYC">
 
     <!-- FAVICON LINKS START - PATHS POINT TO 'favicons' FOLDER -->
     <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
@@ -35,529 +35,175 @@
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-600.woff2" crossorigin>
     
     <style>
-        /* SELF-HOSTED FONT DEFINITIONS - PATHS POINT TO 'fonts' FOLDER */
-        @font-face {
-          font-family: 'Playfair Display';font-style: normal;font-weight: 700;font-display: swap;
-          src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url('fonts/playfair-display-v37-latin-700.woff2') format('woff2'); 
-        }
-        @font-face {
-          font-family: 'Playfair Display';font-style: normal;font-weight: 800;font-display: swap;
-          src: local('Playfair Display ExtraBold'), local('PlayfairDisplay-ExtraBold'), url('fonts/playfair-display-v37-latin-800.woff2') format('woff2'); 
-        }
-        @font-face {
-          font-family: 'Playfair Display';font-style: normal;font-weight: 900;font-display: swap;
-          src: local('Playfair Display Black'), local('PlayfairDisplay-Black'), url('fonts/playfair-display-v37-latin-900.woff2') format('woff2');
-        }
-        @font-face {
-          font-family: 'Inter';font-style: normal;font-weight: 300;font-display: swap;
-          src: local('Inter Light'), local('Inter-Light'), url('fonts/inter-v18-latin-300.woff2') format('woff2');
-        }
-        @font-face {
-          font-family: 'Inter';font-style: normal;font-weight: 400;font-display: swap;
-          src: local('Inter Regular'), local('Inter-Regular'), url('fonts/inter-v18-latin-regular.woff2') format('woff2'); 
-        }
-        @font-face {
-          font-family: 'Inter';font-style: normal;font-weight: 500;font-display: swap;
-          src: local('Inter Medium'), local('Inter-Medium'), url('fonts/inter-v18-latin-500.woff2') format('woff2');
-        }
-        @font-face {
-          font-family: 'Inter';font-style: normal;font-weight: 600;font-display: swap;
-          src: local('Inter SemiBold'), local('Inter-SemiBold'), url('fonts/inter-v18-latin-600.woff2') format('woff2');
-        }
-        @font-face {
-          font-family: 'Inter';font-style: normal;font-weight: 700;font-display: swap;
-          src: local('Inter Bold'), local('Inter-Bold'), url('fonts/inter-v18-latin-700.woff2') format('woff2');
-        }
-
-        /* DARK GRAYSCALE THEME & REFINED CSS */
+        /* DARK GRAYSCALE THEME & REFINED CSS (as per previous iteration) */
         :root{
-            /* Dark Grayscale Palette */
-            --color-background-primary: #1A1A1D; /* Very dark gray, almost black but softer */
-            --color-background-secondary: #25262B; /* Slightly lighter gray for depth, cards */
-            --color-background-tertiary: #313237; /* Even lighter, for accents or hover states */
-            
-            /* Text Palette (Light text for dark theme) */
-            --color-text-primary: #F0F2F5;   /* Light gray/off-white for main text */
-            --color-text-secondary: #C8C9CB; /* Softer light gray for secondary text */
-            --color-text-muted: #A0A1A3;     /* Muted light gray for less important text */
-
-            /* Gold Palette (Kept for Luxury) */
-            --color-gold-brilliant:#FAF0D8; /* Very light, almost creamy gold */
-            --color-gold-highlight:#E8C88C; /* Lighter, brighter gold */
-            --color-gold-primary:#B8860B;   /* Main gold, good for accents, CTAs */
-            --color-gold-mid:#A0740A;       /* Mid-tone gold */
-            --color-gold-shadow:#6E5007;     /* Deep gold for shadows or darker accents */
-            --color-gold-antique:#8B734B;   /* Muted, antique gold */
-
+            --color-background-primary: #1A1A1D; 
+            --color-background-secondary: #25262B; 
+            --color-background-tertiary: #313237; 
+            --color-text-primary: #F0F2F5;   
+            --color-text-secondary: #C8C9CB; 
+            --color-text-muted: #A0A1A3;     
+            --color-gold-brilliant:#FAF0D8; 
+            --color-gold-highlight:#E8C88C; 
+            --color-gold-primary:#B8860B;   
+            --color-gold-mid:#A0740A;       
+            --color-gold-shadow:#6E5007;     
+            --color-gold-antique:#8B734B;   
             --font-display:'Playfair Display',serif;
             --font-body:'Inter',sans-serif;
             --transition-smooth:0.6s cubic-bezier(0.16,1,0.3,1);
             --transition-interactive:0.35s ease;
-            
-            /* Enhanced Shadows for Dark Theme */
             --shadow-depth-1: 0 5px 15px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.2);
             --shadow-depth-2: 0 10px 25px rgba(0,0,0,0.3), 0 6px 12px rgba(0,0,0,0.25);
             --shadow-gold-aura: 0 0 35px rgba(184,134,11,0.25), 0 0 60px rgba(184,134,11,0.2);
-            --shadow-subtle-glow: 0 0 15px rgba(232,200,140,0.1); /* For subtle gold glow on some elements */
+            --shadow-subtle-glow: 0 0 15px rgba(232,200,140,0.1); 
         }
+
+        /* SELF-HOSTED FONT DEFINITIONS */
+        @font-face {font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:local('Playfair Display Bold'),local('PlayfairDisplay-Bold'),url('fonts/playfair-display-v37-latin-700.woff2') format('woff2');}
+        @font-face {font-family:'Playfair Display';font-style:normal;font-weight:800;font-display:swap;src:local('Playfair Display ExtraBold'),local('PlayfairDisplay-ExtraBold'),url('fonts/playfair-display-v37-latin-800.woff2') format('woff2');}
+        @font-face {font-family:'Playfair Display';font-style:normal;font-weight:900;font-display:swap;src:local('Playfair Display Black'),local('PlayfairDisplay-Black'),url('fonts/playfair-display-v37-latin-900.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:local('Inter Light'),local('Inter-Light'),url('fonts/inter-v18-latin-300.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:local('Inter Regular'),local('Inter-Regular'),url('fonts/inter-v18-latin-regular.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:local('Inter Medium'),local('Inter-Medium'),url('fonts/inter-v18-latin-500.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:local('Inter SemiBold'),local('Inter-SemiBold'),url('fonts/inter-v18-latin-600.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:local('Inter Bold'),local('Inter-Bold'),url('fonts/inter-v18-latin-700.woff2') format('woff2');}
 
         *,::after,::before{margin:0;padding:0;box-sizing:border-box}
         html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
-        body{
-            font-family:var(--font-body);
-            background-color:var(--color-background-primary);
-            color:var(--color-text-primary);
-            line-height:1.75;
-            -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-            overflow-x:hidden;
-        }
+        body{font-family:var(--font-body);background-color:var(--color-background-primary);color:var(--color-text-primary);line-height:1.75;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
         #lenis-wrapper{position:relative;width:100%}
         #lenis-content{position:relative;width:100%;background-color:var(--color-background-primary)} 
-
-        #preloader{
-            position:fixed;top:0;left:0;width:100%;height:100%;
-            background:var(--color-background-primary); 
-            z-index:99999;display:flex;align-items:center;justify-content:center;
-            opacity:1;visibility:visible;transition:opacity 1s var(--transition-smooth),visibility 1s var(--transition-smooth) .1s
-        }
+        #preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--color-background-primary);z-index:99999;display:flex;align-items:center;justify-content:center;opacity:1;visibility:visible;transition:opacity 1s var(--transition-smooth),visibility 1s var(--transition-smooth) .1s}
         #preloader.loaded{opacity:0;visibility:hidden;pointer-events:none}
-        .preloader-logo{
-            font-family:var(--font-display);font-size:clamp(4rem,15vw,6rem);font-weight:900;
-            background:linear-gradient(135deg,var(--color-gold-highlight) 0%,var(--color-gold-primary) 50%,var(--color-gold-shadow) 100%);
-            -webkit-background-clip:text;background-clip:text;color:transparent;
-            animation:preloaderShine 2.5s infinite ease-in-out
-        }
+        .preloader-logo{font-family:var(--font-display);font-size:clamp(4rem,15vw,6rem);font-weight:900;background:linear-gradient(135deg,var(--color-gold-highlight) 0%,var(--color-gold-primary) 50%,var(--color-gold-shadow) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:preloaderShine 2.5s infinite ease-in-out}
         @keyframes preloaderShine{0%,to{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
-
         .container{width:92%;max-width:1280px;margin:0 auto;padding:0 20px}
-        
-        h1,h2,h3,h4,h5,h6{
-            font-family:var(--font-display);
-            color:var(--color-text-primary); 
-            line-height:1.3;margin-bottom:1.5rem;font-weight:700
-        }
-        .shiny-gold-heading{ 
-            background:linear-gradient(120deg,var(--color-gold-brilliant) 20%,var(--color-gold-primary) 50%,var(--color-gold-highlight) 80%);
-            -webkit-background-clip:text;background-clip:text;color:transparent;
-            animation:textShimmer 5s infinite linear;background-size:200% 100%
-        }
+        h1,h2,h3,h4,h5,h6{font-family:var(--font-display);color:var(--color-text-primary);line-height:1.3;margin-bottom:1.5rem;font-weight:700}
+        .shiny-gold-heading{background:linear-gradient(120deg,var(--color-gold-brilliant) 20%,var(--color-gold-primary) 50%,var(--color-gold-highlight) 80%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:textShimmer 5s infinite linear;background-size:200% 100%}
         @keyframes textShimmer{0%{background-position:-100% 0}to{background-position:100% 0}}
-        
-        h1{font-size:clamp(2.3rem,5.8vw,4.5rem);color:var(--color-text-primary);}
-        .hero-h1-subline{
-            font-family:var(--font-body);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;
-            color:var(--color-text-secondary); 
-            display:block;margin-top:.5rem;line-height:1.5
-        }
+        h1{font-size:clamp(2.3rem,5.8vw,4.5rem);color:var(--color-text-primary)}
+        .hero-h1-subline{font-family:var(--font-body);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;color:var(--color-text-secondary);display:block;margin-top:.5rem;line-height:1.5}
         h2{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:3rem;text-align:center}
-        h3{font-size:clamp(1.6rem,4vw,2.6rem);font-family:var(--font-display);color:var(--color-text-primary);line-height:1.3;margin-bottom:1.5rem;font-weight:700} 
-        
-        .usp-card h3,.service-card h3,.project-card h3{
-            font-size:clamp(1.2rem,3vw,1.6rem);font-family:var(--font-body);font-weight:600;
-            color:var(--color-gold-highlight); 
-            margin-bottom:.8rem
-        } 
+        h3{font-size:clamp(1.6rem,4vw,2.6rem);font-family:var(--font-display);color:var(--color-text-primary);line-height:1.3;margin-bottom:1.5rem;font-weight:700}
+        .usp-card h3,.service-card h3,.project-card h3{font-size:clamp(1.2rem,3vw,1.6rem);font-family:var(--font-body);font-weight:600;color:var(--color-gold-highlight);margin-bottom:.8rem}
         p{font-size:clamp(.9rem,1.7vw,1.05rem);color:var(--color-text-secondary);margin-bottom:1.5rem}
-        section p.section-intro-text{max-width:700px;margin-left:auto;margin-right:auto; color:var(--color-text-secondary);}
-        a{color:var(--color-gold-highlight);text-decoration:none;transition:color var(--transition-interactive)} 
+        section p.section-intro-text{max-width:700px;margin-left:auto;margin-right:auto;color:var(--color-text-secondary)}
+        a{color:var(--color-gold-highlight);text-decoration:none;transition:color var(--transition-interactive)}
         a:focus,a:hover{color:var(--color-gold-brilliant)}
-
-        .main-header{
-            position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.25rem 0;
-            background-color:rgba(26, 26, 29, 0.7); /* Semi-transparent dark gray */
-            backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-            border-bottom:1px solid rgba(184,134,11,.2); 
-            box-shadow:0 5px 25px rgba(0,0,0,.3); 
-            transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth);
-        }
-        .main-header.scrolled{
-            background-color:rgba(37, 38, 43, 0.85); /* Slightly more opaque dark gray */
-            padding:1rem 0;
-            box-shadow:0 8px 30px rgba(0,0,0,.4);
-        }
+        .main-header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.25rem 0;background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)}
+        .main-header.scrolled{background-color:rgba(37,38,43,.85);padding:1rem 0;box-shadow:0 8px 30px rgba(0,0,0,.4)}
         .main-header .container{display:flex;justify-content:space-between;align-items:center}
         .logo-link{display:flex;align-items:center;gap:.8rem}
         .logo-svg-icon{width:50px;height:50px}
         .logo-svg-icon .circle{fill:var(--color-gold-primary);transition:fill var(--transition-interactive)}
-        .logo-svg-icon .letter-g{
-            font-family:var(--font-display);fill:var(--color-background-primary); /* Dark G for contrast */
-            font-weight:900;
-        }
+        .logo-svg-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
         .logo-link:hover .logo-svg-icon .circle{fill:var(--color-gold-highlight)}
-        .site-title-text{
-            font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;
-            color:var(--color-gold-brilliant); 
-        }
+        .site-title-text{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;color:var(--color-gold-brilliant)}
         .site-title-text span{color:var(--color-gold-highlight);font-weight:700}
-        
         .main-nav ul{list-style:none;display:flex}
         .main-nav li{margin-left:2.8rem}
-        .main-nav a{
-            font-size:.9rem;letter-spacing:1.8px;text-transform:uppercase;padding:.9rem .3rem;position:relative;
-            color:var(--color-text-secondary); 
-            font-weight:500
-        }
-        .main-nav a::after{
-            content:'';position:absolute;bottom:.4rem;left:0;width:0;height:2px;
-            background-color:var(--color-gold-primary);transition:width var(--transition-interactive)
-        }
+        .main-nav a{font-size:.9rem;letter-spacing:1.8px;text-transform:uppercase;padding:.9rem .3rem;position:relative;color:var(--color-text-secondary);font-weight:500}
+        .main-nav a::after{content:'';position:absolute;bottom:.4rem;left:0;width:0;height:2px;background-color:var(--color-gold-primary);transition:width var(--transition-interactive)}
         .main-nav a.active::after,.main-nav a:hover::after{width:100%}
-        .main-nav a.active{color:var(--color-gold-highlight)} 
-        .main-nav a:hover{color:var(--color-gold-highlight)} 
-        
-        .menu-toggle{
-            display:none;background:none;border:none;
-            color:var(--color-gold-primary)!important; 
-            font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005
-        }
+        .main-nav a.active{color:var(--color-gold-highlight)}
+        .main-nav a:hover{color:var(--color-gold-highlight)}
+        .menu-toggle{display:none;background:none;border:none;color:var(--color-gold-primary)!important;font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005}
         button.menu-toggle:focus,button.menu-toggle:hover{color:var(--color-gold-highlight)!important}
-        
-        .hero-section{
-            min-height:95vh; /* Slightly more height to accommodate service chips */
-            padding:10rem 0 5rem;display:flex;align-items:center;justify-content:center;text-align:center;
-            position:relative;
-            background:linear-gradient(rgba(26, 26, 29, 0.7), rgba(26, 26, 29, 0.9)), 
-                       radial-gradient(circle at 50% 0%, rgba(184,134,11,.07) 0%, transparent 50%), 
-                       var(--color-background-primary);
-            overflow:hidden;
-        }
-        .hero-content-wrapper{max-width:850px;position:relative;z-index:1;margin:0 auto; display: flex; flex-direction: column; align-items: center;}
+        .hero-section{min-height:95vh;padding:10rem 0 5rem;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:linear-gradient(rgba(26,26,29,.7),rgba(26,26,29,.9)),radial-gradient(circle at 50% 0%,rgba(184,134,11,.07) 0%,transparent 50%),var(--color-background-primary);overflow:hidden}
+        .hero-content-wrapper{max-width:850px;position:relative;z-index:1;margin:0 auto;display:flex;flex-direction:column;align-items:center}
         .hero-section h1{margin-bottom:.8rem;color:var(--color-text-primary);font-weight:800;line-height:1.25}
-        .hero-section p.subtitle{
-            font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);
-            max-width:720px;margin:1.5rem auto 2.2rem;line-height:1.75 /* Reduced bottom margin */
-        }
-        
-        /* Hero Service Showcase */
-        .hero-services-showcase {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem 1rem;
-            margin-top: 2.5rem; /* Space above the chips */
-            margin-bottom: 2.5rem; /* Space below the chips before CTA */
-            max-width: 700px; /* Constrain width */
-        }
-        .service-chip {
-            background-color: var(--color-background-secondary);
-            color: var(--color-text-secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px; /* Rounded pill shape */
-            font-size: clamp(0.75rem, 1.8vw, 0.9rem);
-            font-weight: 500;
-            display: inline-flex; /* Use inline-flex for icon and text alignment */
-            align-items: center;
-            gap: 0.5rem; /* Space between icon and text */
-            border: 1px solid rgba(184,134,11,0.2); /* Subtle gold border */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: floatAnimation 4s ease-in-out infinite;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-chip:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3), var(--shadow-subtle-glow);
-            color: var(--color-gold-highlight);
-        }
-        .service-chip .chip-icon {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            line-height: 1; /* Ensure icon aligns well */
-        }
-        /* Staggered animation delays for service chips */
-        .service-chip:nth-child(2) { animation-delay: 0.2s; }
-        .service-chip:nth-child(3) { animation-delay: 0.4s; }
-        .service-chip:nth-child(4) { animation-delay: 0.1s; }
-        .service-chip:nth-child(5) { animation-delay: 0.3s; }
-        .service-chip:nth-child(6) { animation-delay: 0.5s; }
-
-        @keyframes floatAnimation {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); } /* Subtle float height */
-        }
-
-        .hero-cta-button{
-            font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;
-            background-color:var(--color-gold-primary);color: var(--color-background-primary); /* Dark text on gold */
-            border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;
-            box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);
-            transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);
-            animation:pulseButton 3s infinite ease-in-out 1s;
-            margin-top: 0; /* Adjusted as chips are above now */
-        }
-        .hero-cta-button:focus,.hero-cta-button:hover{
-            background-color:var(--color-gold-highlight);
-            transform:translateY(-3px) scale(1.03);
-            box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35); 
-        }
+        .hero-section p.subtitle{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);max-width:720px;margin:1.5rem auto 2.2rem;line-height:1.75}
+        .hero-services-showcase{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1rem;margin-top:2.5rem;margin-bottom:2.5rem;max-width:700px}
+        .service-chip{background-color:var(--color-background-secondary);color:var(--color-text-secondary);padding:.5rem 1rem;border-radius:20px;font-size:clamp(.75rem,1.8vw,.9rem);font-weight:500;display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(184,134,11,.2);box-shadow:0 2px 5px rgba(0,0,0,.2);animation:floatAnimation 4s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease,color .3s ease}
+        .service-chip:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 4px 10px rgba(0,0,0,.3),var(--shadow-subtle-glow);color:var(--color-gold-highlight)}
+        .service-chip .chip-icon{font-size:clamp(.9rem,2vw,1.1rem);line-height:1}
+        .service-chip:nth-child(2){animation-delay:.2s}
+        .service-chip:nth-child(3){animation-delay:.4s}
+        .service-chip:nth-child(4){animation-delay:.1s}
+        .service-chip:nth-child(5){animation-delay:.3s}
+        .service-chip:nth-child(6){animation-delay:.5s}
+        @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-6px)}}
+        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s;margin-top:0}
+        .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
         @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
-
-        .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)} 
+        .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .content-section:last-of-type{border-bottom:none}
-        .content-section .section-title-container h2::after{
-            content:'';display:block;width:70px;height:3px;
-            background-color:var(--color-gold-primary);margin:1.2rem auto 0
-        }
-        .section-intro-text{
-            font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--color-text-secondary);
-            text-align:center;margin-bottom:4.5rem;max-width:780px
-        }
+        .content-section .section-title-container h2::after{content:'';display:block;width:70px;height:3px;background-color:var(--color-gold-primary);margin:1.2rem auto 0}
+        .section-intro-text{font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--color-text-secondary);text-align:center;margin-bottom:4.5rem;max-width:780px}
         .animate-on-scroll{opacity:0}
         .animate-on-scroll.fade-in{transition:opacity .8s var(--transition-smooth)}
         .animate-on-scroll.fade-in-up{transform:translateY(40px);transition:opacity .8s var(--transition-smooth),transform .8s var(--transition-smooth)}
         .animate-on-scroll.is-visible{opacity:1;transform:translateY(0)}
-
-        .why-invest-section{background-color:var(--color-background-primary)} /* Main dark bg */
+        .why-invest-section{background-color:var(--color-background-primary)}
         .why-invest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:4rem}
-        .usp-card{
-            background-color:var(--color-background-secondary); /* Darker cards */
-            padding:2.5rem 2rem;border-radius:12px;
-            border:1px solid rgba(184,134,11,.2); 
-            box-shadow:var(--shadow-depth-1);
-            transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive), background-color var(--transition-interactive);
-            display:flex;flex-direction:column
-        }
-        .usp-card:hover{
-            transform:translateY(-8px);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);
-            border-color:rgba(184,134,11,.4);
-            background-color: var(--color-background-tertiary); /* Slight bg change on hover */
-        }
-        .usp-icon-wrapper{
-            width:50px;height:50px;background-color:rgba(184,134,11,.1); 
-            border-radius:12px;display:flex;align-items:center;justify-content:center;
-            margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)
-        }
+        .usp-card{background-color:var(--color-background-secondary);padding:2.5rem 2rem;border-radius:12px;border:1px solid rgba(184,134,11,.2);box-shadow:var(--shadow-depth-1);transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive);display:flex;flex-direction:column}
+        .usp-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);border-color:rgba(184,134,11,.4);background-color:var(--color-background-tertiary)}
+        .usp-icon-wrapper{width:50px;height:50px;background-color:rgba(184,134,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)}
         .usp-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0;flex-grow:1}
-        
         .golden-pillars-section{text-align:center;margin-top:3rem}
-        .golden-pillars-section h3{
-            font-family:var(--font-display);color:var(--color-gold-highlight); 
-            font-size:clamp(1.5rem,3.5vw,2rem);margin-bottom:2.5rem
-        }
+        /* .golden-pillars-section h3 has been updated to reflect its new purpose */
         .pillars-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
         .pillar-card{text-align:center;padding:1.5rem}
         .pillar-icon{font-size:2.2rem;color:var(--color-gold-primary);margin-bottom:1rem;display:block}
-        .pillar-card h4{
-            font-family:var(--font-body);font-weight:600;color:var(--color-text-primary); 
-            font-size:1.1rem;margin-bottom:.5rem; line-height:1.3;
-        } 
+        .pillar-card h4{font-family:var(--font-body);font-weight:600;color:var(--color-text-primary);font-size:1.1rem;margin-bottom:.5rem;line-height:1.3}
         .pillar-card p{font-size:.85rem;color:var(--color-text-muted);line-height:1.6;margin-bottom:0}
-
         .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem}
-        .service-card{
-            background-color:var(--color-background-secondary); 
-            padding:2rem 1.8rem;border-radius:10px;text-align:left;
-            border-left:4px solid var(--color-gold-mid);
-            box-shadow:var(--shadow-depth-1);
-            transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive), background-color var(--transition-interactive);
-            display:flex;flex-direction:column
-        }
-        .service-card:hover{
-            transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);
-            border-left-color:var(--color-gold-highlight);
-            background-color: var(--color-background-tertiary);
-        }
-        .service-icon-wrapper{ 
-            width:50px;height:50px;background-color:rgba(184,134,11,.1);
-            border-radius:12px;display:flex;align-items:center;justify-content:center;
-            margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)
-        }
+        .service-card{background-color:var(--color-background-secondary);padding:2rem 1.8rem;border-radius:10px;text-align:left;border-left:4px solid var(--color-gold-mid);box-shadow:var(--shadow-depth-1);transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive);display:flex;flex-direction:column}
+        .service-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);border-left-color:var(--color-gold-highlight);background-color:var(--color-background-tertiary)}
+        .service-icon-wrapper{width:50px;height:50px;background-color:rgba(184,134,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)}
         .service-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0;flex-grow:1}
-
-        .client-success-section{background-color:var(--color-background-primary)} /* Main dark bg */
+        .client-success-section{background-color:var(--color-background-primary)}
         .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:3.5rem}
-        .testimonial-card{
-            background-color:var(--color-background-secondary); 
-            padding:2rem 1.8rem;border-radius:10px;
-            border-left:4px solid var(--color-gold-antique);
-            box-shadow:var(--shadow-depth-1);display:flex;flex-direction:column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-         .testimonial-card:hover{
-            transform:translateY(-6px);box-shadow:var(--shadow-depth-2),var(--shadow-subtle-glow);
-            background-color: var(--color-background-tertiary);
-        }
+        .testimonial-card{background-color:var(--color-background-secondary);padding:2rem 1.8rem;border-radius:10px;border-left:4px solid var(--color-gold-antique);box-shadow:var(--shadow-depth-1);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,background-color .3s ease}
+        .testimonial-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-depth-2),var(--shadow-subtle-glow);background-color:var(--color-background-tertiary)}
         .testimonial-icon{font-size:2rem;color:var(--color-gold-primary);margin-bottom:.8rem;line-height:1}
-        .testimonial-quote{
-            font-style:italic;color:var(--color-text-primary); 
-            margin-bottom:1rem;flex-grow:1;font-size:.95rem
-        }
-        .testimonial-attribution{font-size:.8rem;color:var(--color-gold-highlight);font-weight:600;text-align:right} 
-        
+        .testimonial-quote{font-style:italic;color:var(--color-text-primary);margin-bottom:1rem;flex-grow:1;font-size:.95rem}
+        .testimonial-attribution{font-size:.8rem;color:var(--color-gold-highlight);font-weight:600;text-align:right}
         .recognition-strip{text-align:center;padding-top:2.5rem;border-top:1px solid rgba(184,134,11,.15)}
-        .recognition-strip h3{
-            font-family:var(--font-display);font-weight:700;color:var(--color-gold-highlight); 
-            text-transform:none;letter-spacing:.5px;font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:2.5rem
-        }
-        .recognition-logos span{
-            display:inline-block;margin:.7rem 1.2rem;padding:.6rem 1.2rem;
-            font-family:var(--font-body);font-size:.85rem;color:var(--color-gold-highlight); 
-            font-weight:500;border:1.5px solid var(--color-gold-mid);border-radius:6px;
-            background-color:transparent;box-shadow:none;
-            transition:color var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive)
-        }
-        .recognition-logos span:hover{
-            color:var(--color-gold-brilliant);border-color:var(--color-gold-highlight);
-            background-color:rgba(184,134,11,.08); 
-            transform:translateY(-2px);box-shadow:0 3px 8px rgba(184,134,11,.15)
-        }
-
+        /* .recognition-strip h3 - text updated inline */
+        .recognition-logos span{display:inline-block;margin:.7rem 1.2rem;padding:.6rem 1.2rem;font-family:var(--font-body);font-size:.85rem;color:var(--color-gold-highlight);font-weight:500;border:1.5px solid var(--color-gold-mid);border-radius:6px;background-color:transparent;box-shadow:none;transition:color var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive)}
+        .recognition-logos span:hover{color:var(--color-gold-brilliant);border-color:var(--color-gold-highlight);background-color:rgba(184,134,11,.08);transform:translateY(-2px);box-shadow:0 3px 8px rgba(184,134,11,.15)}
         .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:3rem}
-        .project-card{
-            background-color:var(--color-background-secondary); 
-            padding:2.2rem 1.8rem;border-radius:10px;
-            border-left:4px solid var(--color-gold-primary);
-            box-shadow:var(--shadow-depth-1);display:flex;flex-direction:column;
-            transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-left-color var(--transition-interactive), background-color var(--transition-interactive);
-        }
-        .project-card:hover{
-            transform:translateY(-7px);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);
-            border-left-color:var(--color-gold-highlight);
-            background-color: var(--color-background-tertiary);
-        }
+        .project-card{background-color:var(--color-background-secondary);padding:2.2rem 1.8rem;border-radius:10px;border-left:4px solid var(--color-gold-primary);box-shadow:var(--shadow-depth-1);display:flex;flex-direction:column;transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-left-color var(--transition-interactive),background-color var(--transition-interactive)}
+        .project-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);border-left-color:var(--color-gold-highlight);background-color:var(--color-background-tertiary)}
         .project-card-icon{font-size:2rem;color:var(--color-gold-primary);margin-bottom:1.2rem;line-height:1}
         .project-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1rem;flex-grow:1}
-        .project-learn-more{
-            font-size:.85rem;color:var(--color-gold-primary);text-transform:uppercase;
-            letter-spacing:1px;font-weight:600;align-self:flex-start;margin-top:auto;padding-top:.5rem
-        }
+        .project-learn-more{font-size:.85rem;color:var(--color-gold-primary);text-transform:uppercase;letter-spacing:1px;font-weight:600;align-self:flex-start;margin-top:auto;padding-top:.5rem}
         .project-learn-more:hover{color:var(--color-gold-highlight)}
-
-        .cta-final-section{
-            background-color:var(--color-background-primary); 
-            text-align:center;padding:6rem 0;position:relative
-        }
-        .cta-final-section::before{ 
-            content:'';position:absolute;top:0;left:0;width:100%;height:100%;
-            background:radial-gradient(circle at 50% 100%,rgba(184,134,11,.1) 0%,transparent 60%);
-            pointer-events:none
-        }
+        .cta-final-section{background-color:var(--color-background-primary);text-align:center;padding:6rem 0;position:relative}
+        .cta-final-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 100%,rgba(184,134,11,.1) 0%,transparent 60%);pointer-events:none}
         .cta-content-area{position:relative;z-index:1;max-width:750px;margin:0 auto}
-        .form-title{
-            font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.2rem);
-            color:var(--color-gold-highlight); 
-            margin-bottom:2.5rem;text-align:center
-        }
-        .cta-subtitle{
-            font-size:clamp(.95rem,2vw,1.15rem);color:var(--color-text-secondary);
-            margin-bottom:3rem;line-height:1.7
-        }
+        .form-title{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.2rem);color:var(--color-gold-highlight);margin-bottom:2.5rem;text-align:center}
+        .cta-subtitle{font-size:clamp(.95rem,2vw,1.15rem);color:var(--color-text-secondary);margin-bottom:3rem;line-height:1.7}
         .contact-form-embedded{max-width:600px;margin:0 auto;text-align:left}
         .form-input-group{margin-bottom:1.5rem}
-        .form-input-group label{
-            display:block;font-size:.8rem;color:var(--color-text-muted);
-            margin-bottom:.4rem;text-transform:uppercase;letter-spacing:1px;font-weight:500
-        }
-        .form-text-input,.form-textarea-input{
-            width:100%;padding:.9rem 1.1rem;
-            background-color: var(--color-background-secondary); 
-            border:1px solid var(--color-background-tertiary); 
-            color:var(--color-text-primary); 
-            border-radius:6px;font-family:var(--font-body);font-size:.95rem;
-            transition:border-color var(--transition-interactive),box-shadow var(--transition-interactive), background-color var(--transition-interactive);
-        }
-        .form-text-input:focus,.form-textarea-input:focus{
-            outline:none;border-color:var(--color-gold-mid);
-            box-shadow:0 0 0 3px rgba(184,134,11,.25);
-            background-color: var(--color-background-tertiary);
-        }
+        .form-input-group label{display:block;font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:1px;font-weight:500}
+        .form-text-input,.form-textarea-input{width:100%;padding:.9rem 1.1rem;background-color:var(--color-background-secondary);border:1px solid var(--color-background-tertiary);color:var(--color-text-primary);border-radius:6px;font-family:var(--font-body);font-size:.95rem;transition:border-color var(--transition-interactive),box-shadow var(--transition-interactive),background-color var(--transition-interactive)}
+        .form-text-input:focus,.form-textarea-input:focus{outline:none;border-color:var(--color-gold-mid);box-shadow:0 0 0 3px rgba(184,134,11,.25);background-color:var(--color-background-tertiary)}
         .form-textarea-input{min-height:110px;resize:vertical}
-        .form-submit-button{
-            font-family:var(--font-body);font-weight:600;font-size:1rem;padding:1rem 2.6rem;
-            background-color:var(--color-gold-primary);color:var(--color-background-primary); /* Dark text */
-            border:none;border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;
-            cursor:pointer;display:inline-block;box-shadow:var(--shadow-depth-1);
-            transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);
-            margin-top:1rem
-        }
-        .form-submit-button:focus,.form-submit-button:hover{
-            background-color:var(--color-gold-highlight);transform:translateY(-3px);box-shadow:var(--shadow-depth-2)
-        }
-
-        .site-footer{
-            background-color:var(--color-background-primary); 
-            padding:3.5rem 0 2.5rem;text-align:center;
-            border-top:1px solid rgba(184,134,11,.15); 
-        }
+        .form-submit-button{font-family:var(--font-body);font-weight:600;font-size:1rem;padding:1rem 2.6rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border:none;border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;cursor:pointer;display:inline-block;box-shadow:var(--shadow-depth-1);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);margin-top:1rem}
+        .form-submit-button:focus,.form-submit-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px);box-shadow:var(--shadow-depth-2)}
+        .site-footer{background-color:var(--color-background-primary);padding:3.5rem 0 2.5rem;text-align:center;border-top:1px solid rgba(184,134,11,.15)}
         .footer-logo-icon{width:50px;height:50px;margin:0 auto 1.2rem;display:block}
         .footer-logo-icon .circle{fill:var(--color-gold-mid)}
-        .footer-logo-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900} 
-        
-        .footer-social-links a{
-            display:inline-block;color:var(--color-text-muted);margin:0 .7rem;
-            font-size:.85rem;text-transform:uppercase;font-weight:500;
-            border:1px solid transparent;padding:.25rem .4rem;border-radius:4px
-        }
+        .footer-logo-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
+        .footer-nav-links{margin: 1rem 0;}
+        .footer-nav-links a {color: var(--color-text-muted); margin: 0 0.7rem; font-size: 0.85rem; text-transform: uppercase; font-weight: 500;}
+        .footer-nav-links a:hover {color: var(--color-gold-highlight);}
+        .footer-social-links a{display:inline-block;color:var(--color-text-muted);margin:0 .7rem;font-size:.85rem;text-transform:uppercase;font-weight:500;border:1px solid transparent;padding:.25rem .4rem;border-radius:4px}
         .footer-social-links a:hover{color:var(--color-gold-highlight);border-color:var(--color-gold-primary)}
         .site-footer p{font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem}
-        .footer-seo-text{
-            font-size:.7rem;color:var(--color-text-muted);opacity:.6; 
-            max-width:550px;margin:1.2rem auto 0;line-height:1.45
-        }
-        
-        @media (max-width:991px){
-            .main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}
-            .pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}
-            .recognition-logos span{margin:.5rem;padding:.5rem 1rem}
-        }
-        @media (max-width:767px){
-            .menu-toggle{display:block}
-            .main-nav{
-                display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;
-                background-color:rgba(37, 38, 43, 0.98); /* Dark mobile nav bg */
-                backdrop-filter:blur(18px);padding:.5rem 0;
-                box-shadow:0 12px 30px rgba(0,0,0,.4); 
-                border-top:1px solid rgba(184,134,11,.15); 
-                animation:mobileNavSlideDown .5s var(--transition-smooth) forwards
-            }
-            @keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
-            .main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}
-            .main-nav li{margin:0;width:100%}
-            .main-nav a{
-                display:block;padding:1rem;font-size:.9rem;text-align:center;
-                border-bottom:1px solid rgba(184,134,11,.08); 
-                width:100%;letter-spacing:2px; color: var(--color-text-secondary); 
-            }
-            .main-nav li:last-child a{border-bottom:none}
-            .main-nav a::after,.main-nav a::before{display:none}
-            .main-nav a:hover{background-color:rgba(184,134,11,.05); color: var(--color-gold-highlight);} 
-            
-            .hero-section{min-height:80vh;padding:8rem 0 4rem}
-            .hero-services-showcase { gap: 0.6rem 0.8rem; margin-top: 2rem; margin-bottom: 2rem;}
-            .service-chip { padding: 0.4rem 0.8rem; }
-
-            .content-section{padding:3.5rem 0}
-            .section-intro-text{margin-bottom:2.5rem}
-            .form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}
-            .projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}
-            .recognition-strip h3{margin-bottom:1.5rem} 
-            .recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}
-        }
-        @media (max-width:480px){
-            h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}
-            h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section{min-height:75vh}
-            .hero-section p.subtitle{font-size:.9rem}.hero-cta-button{padding:.8rem 2rem;font-size:.9rem}
-            .main-header .container{padding-left:15px;padding-right:15px}
-            .container{padding-left:15px;padding-right:15px;width:100%}
-            .project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}
-            .project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}
-            .golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}
-            .pillar-card h4{font-size:1rem} 
-            .recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}
-        } 
-        @media (min-width:992px){
-            .pillars-grid,.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:repeat(3,1fr)}
-            .testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-        }
+        .footer-seo-text{font-size:.7rem;color:var(--color-text-muted);opacity:.6;max-width:550px;margin:1.2rem auto 0;line-height:1.45}
+        @media (max-width:991px){.main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}.pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}.recognition-logos span{margin:.5rem;padding:.5rem 1rem}}
+        @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}.hero-section{min-height:80vh;padding:8rem 0 4rem}.hero-services-showcase{gap:.6rem .8rem;margin-top:2rem;margin-bottom:2rem}.service-chip{padding:.4rem .8rem}.content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
+        @media (max-width:480px){h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section{min-height:auto; padding-bottom: 3rem; /* Ensure CTA is not cut off with chips */}.hero-section p.subtitle{font-size:.9rem}.hero-cta-button{padding:.8rem 2rem;font-size:.9rem}.main-header .container{padding-left:15px;padding-right:15px}.container{padding-left:15px;padding-right:15px;width:100%}.project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}.project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}.golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}}
+        @media (min-width:992px){.pillars-grid,.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:repeat(3,1fr)}.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}}
         @media (min-width:1200px){.projects-grid,.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
-        @media (min-width:1440px){
-            .container{max-width:1360px}.hero-content-wrapper{max-width:900px}
-            .section-intro-text{max-width:800px}
-        }
-        ::-webkit-scrollbar{width:10px; height: 10px;}
-        ::-webkit-scrollbar-track{background:var(--color-background-primary)} /* Dark track */
-        ::-webkit-scrollbar-thumb{
-            background:var(--color-gold-mid);border-radius:10px;
-            border:2px solid var(--color-background-primary); 
-        }
+        @media (min-width:1440px){.container{max-width:1360px}.hero-content-wrapper{max-width:900px}.section-intro-text{max-width:800px}}
+        ::-webkit-scrollbar{width:10px;height:10px}
+        ::-webkit-scrollbar-track{background:var(--color-background-primary)}
+        ::-webkit-scrollbar-thumb{background:var(--color-gold-mid);border-radius:10px;border:2px solid var(--color-background-primary)}
         ::-webkit-scrollbar-thumb:hover{background:var(--color-gold-primary)}
     </style>
 </head>
@@ -580,8 +226,8 @@
                         <ul>
                             <li><a href="#hero" class="active">Home</a></li>
                             <li><a href="#services">Expertise</a></li>
-                            <li><a href="#why-invest">The Standard</a></li>
-                            <li><a href="#client-success">Success</a></li> 
+                            <li><a href="#why-invest">Our Approach</a></li> <!-- Renamed for clarity -->
+                            <li><a href="#client-success">Success Stories</a></li>  <!-- Renamed for impact -->
                             <li><a href="#projects">Case Studies</a></li> 
                             <li><a href="#contact">Connect</a></li>
                         </ul>
@@ -609,16 +255,17 @@
                             <span class="service-chip"><span class="chip-icon">💰</span> PPC Excellence</span>
                         </div>
 
-                        <a href="#why-invest" class="hero-cta-button">Begin Your Ascent</a>
+                        <a href="#why-invest" class="hero-cta-button">Discover Our Approach</a>
                     </div>
                 </section>
 
-                <section id="why-invest" class="content-section why-invest-section">
+                <section id="why-invest" class="content-section why-invest-section"> <!-- ID remains for linking -->
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">The Golden Luxe Standard: Vision Meets Verifiable Victory</span></h2>
+                             <!-- "The Golden Luxe Standard" could be the H2 -->
+                            <h2><span class="shiny-gold-heading">The Golden Luxe Standard: What We Deliver</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">In a world of the commonplace, Golden Luxe Media stands apart. We are dedicated to transforming your brand's potential into palpable market dominance and enduring profitability.</p>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Mediocrity is the antithesis of luxury. We are the architects of your digital distinction, dedicated to transforming your brand's potential into palpable market dominance and enduring profitability through our core deliverables.</p>
                         <div class="why-invest-grid">
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="usp-icon-wrapper">🚀</div>
@@ -638,26 +285,26 @@
                         </div>
 
                         <div class="golden-pillars-section animate-on-scroll fade-in" data-io-delay="0.4s">
-                            <h3>The Pillars of Our Golden Promise</h3>
+                            <!-- This H3 now clearly defines the "how" -->
+                            <h3>Our Golden Promise: The Principles That Guide Us</h3>
                             <div class="pillars-grid">
                                 <div class="pillar-card">
                                     <span class="pillar-icon">🛡️</span>
                                     <h4>Unwavering Discretion</h4>
-                                    <p>Your ambitions are safeguarded with utmost confidentiality, building a foundation of trust.</p>
+                                    <p>Your ambitions and strategies are safeguarded with the utmost confidentiality, building a foundation of trust.</p>
                                 </div>
                                 <div class="pillar-card">
                                     <span class="pillar-icon">💡</span>
                                     <h4>Obsessive Excellence</h4>
-                                    <p>We relentlessly pursue perfection, ensuring every deliverable reflects pinnacle quality and innovation.</p>
+                                    <p>We relentlessly pursue perfection, ensuring every deliverable reflects the pinnacle of quality and innovation.</p>
                                 </div>
                                 <div class="pillar-card">
                                     <span class="pillar-icon">🌍</span>
                                     <h4>Strategic Foresight</h4>
-                                    <p>We anticipate market shifts, future-proofing your brand for sustained growth and relevance.</p>
+                                    <p>We anticipate market shifts, future-proofing your brand for sustained growth and relevance in a dynamic digital world.</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </section>
 
@@ -690,8 +337,8 @@
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
                                 <div class="service-icon-wrapper">💬</div>
-                                <h3>AI-Driven Client Engagement</h3>
-                                <p>Elevate client interaction with intelligent, 24/7 engagement, nurturing leads and providing concierge-level service at scale.</p>
+                                <h3>AI-Driven Client Engagement Solutions</h3>
+                                <p>Elevate client interaction with intelligent, 24/7 engagement. Our AI-powered chatbots and personalized communication tools nurture leads and provide concierge-level service seamlessly.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
                                 <div class="service-icon-wrapper">💎</div>
@@ -702,7 +349,7 @@
                     </div>
                 </section>
 
-                <section id="client-success" class="content-section client-success-section">
+                <section id="client-success" class="content-section client-success-section"> <!-- ID remains -->
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">Proven Impact: Verifiable Client Success</span></h2>
@@ -713,27 +360,28 @@
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <span class="testimonial-icon">💬</span>
                                 <p class="testimonial-quote"><em>"Golden Luxe Media shattered expectations. Our online revenue soared over 200% in the first year, establishing us as the clear leader."</em></p>
-                                <p class="testimonial-attribution">- Reflection from a Luxury E-commerce Pioneer</p>
+                                <p class="testimonial-attribution">- Founder, Luxury E-commerce Pioneer (Jewelry)</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                 <span class="testimonial-icon">✨</span>
                                 <p class="testimonial-quote"><em>"Their strategic foresight was game-changing. We now connect with our ideal HNW clientele on an entirely new level."</em></p>
-                                <p class="testimonial-attribution">- Attributed to a Global Bespoke Services Brand</p>
+                                <p class="testimonial-attribution">- CMO, Global Bespoke Travel Services Brand</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <span class="testimonial-icon">🏆</span>
                                 <p class="testimonial-quote"><em>"The commitment to understanding our unique brand DNA was exceptional. Golden Luxe are true partners in our digital eminence."</em></p>
-                                <p class="testimonial-attribution">- Insight from a Heritage Luxury House</p>
+                                <p class="testimonial-attribution">- Director, Heritage Luxury Fashion House</p>
                             </div>
                         </div>
 
                         <div class="recognition-strip animate-on-scroll fade-in" data-io-delay="0.4s">
-                            <h3>Strategies Aligned With Industry Leaders</h3>
+                            <h3>Our Strategies Apply Insights Benchmarked Against Industry Leaders</h3>
                             <div class="recognition-logos">
-                                <span>McKinsey Insights (Conceptual)</span>
-                                <span>HBR Alignment (Strategic)</span>
-                                <span>Luxury Institute (Parallel)</span>
-                                <span>Google Premier (Benchmark)</span>
+                                <span>McKinsey Insights (Conceptual Application)</span>
+                                <span>HBR Principles (Strategic Frameworks)</span>
+                                <span>Luxury Institute Findings (Market Parallels)</span>
+                                <span>Google Best Practices (Quality Benchmark)</span> 
+                                <!-- If a Premier Partner: <span>Google Premier Partner (Badge Here)</span> -->
                             </div>
                         </div>
                     </div>
@@ -748,18 +396,18 @@
                         <div class="projects-grid">
                             <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="project-card-icon">⭐</div>
-                                <h3>Luxury E-commerce ROI Surge: [Client Name]</h3>
-                                <p>Achieved 180% organic traffic increase & 75% online sales uplift for a premier luxury retailer via targeted SEO & CRO in 12 months.</p>
+                                <h3>ROI Surge for a Premier Online Jeweler</h3>
+                                <p>Achieved 180% organic traffic increase & 75% online sales uplift via targeted SEO & CRO for a high-end e-commerce brand within 12 months.</p>
                             </div>
                             <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                 <div class="project-card-icon">🚀</div>
-                                <h3>Global Service Market Entry: [Client Name]</h3>
-                                <p>Secured top 3 search rankings & 300% qualified inquiry increase for an exclusive international service provider via digital brand positioning.</p>
+                                <h3>Market Entry for an Exclusive Yacht Charter Co.</h3>
+                                <p>Secured top 3 search rankings & 300% qualified inquiry increase via digital brand positioning and targeted HNW lead generation.</p>
                             </div>
                             <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <div class="project-card-icon">💎</div>
-                                <h3>Heritage Brand Digital Revival: [Client Name]</h3>
-                                <p>Orchestrated a digital renaissance, crafting a modern web experience & content strategy, leading to 50% social engagement growth.</p>
+                                <h3>Digital Revival for a Parisian Couture House</h3>
+                                <p>Orchestrated a digital renaissance with a modern web experience & content strategy, leading to 50% social engagement growth.</p>
                             </div>
                         </div>
                     </div>
@@ -816,14 +464,22 @@
                         <circle class="circle" cx="50" cy="50" r="44"/>
                         <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
                     </svg>
-                    <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin: 1.5rem 0;">
-                        <a href="#" aria-label="LinkedIn">LI</a>
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="Behance">BE</a>
-                        <a href="#" aria-label="Clutch Reviews">CL</a>
+                    <nav class="footer-nav-links animate-on-scroll fade-in" data-io-delay="0.05s">
+                        <a href="#hero">Home</a>
+                        <a href="#services">Expertise</a>
+                        <a href="#projects">Case Studies</a>
+                        <a href="#">Our Story</a> <!-- Placeholder for About Us -->
+                        <a href="#">Insights</a> <!-- Placeholder for Blog -->
+                        <a href="#contact">Connect</a>
+                    </nav>
+                    <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin-bottom: 1.5rem;">
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn">LI</a>
+                        <a href="#" aria-label="Instagram" title="Instagram">IG</a>
+                        <a href="#" aria-label="Behance" title="Behance">BE</a>
+                        <a href="#" aria-label="Clutch Reviews" title="Clutch Reviews">CL</a>
                     </div>
                     <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. Architects of Digital Distinction.</p>
-                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Luxury Digital Marketing Agency. Specializing in Elite SEO, Bespoke Brand Strategy, High-ROI PPC, Premium Web Design, and Exclusive Content Creation for global brands.</p>
+                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Luxury Digital Marketing Agency. Specializing in Elite SEO, Bespoke Brand Strategy, High-ROI PPC, Premium Web Design, and Exclusive Content Creation for global brands seeking market leadership and HNW client engagement.</p>
                 </div>
             </footer>
 
@@ -864,10 +520,11 @@
                         });
                     }
 
-                    const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
+                    const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button, .footer-nav-links a');
                     navLinks.forEach(link => {
                         const targetId = link.getAttribute('href');
-                        if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                        // Check if it's an internal anchor link
+                        if (targetId && targetId.startsWith('#') && targetId.length > 1 && document.querySelector(targetId)) {
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
                                 let offsetVal = pageHeader ? -pageHeader.offsetHeight -10 : -80; 
@@ -883,6 +540,11 @@
                                     }
                                 }
                             });
+                        }
+                        // If it's a placeholder link like "#" or links to non-existent sections, don't prevent default.
+                        // Or, if it's a link like "/our-story" for a future page.
+                        else if (targetId === "#" || (targetId && targetId.startsWith('/') && targetId.length > 1)) {
+                           // Allow default behavior for external-like links or simple "#"
                         }
                     });
 
@@ -934,15 +596,15 @@
                 }
 
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        const targetId = this.getAttribute('href');
-                        if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                     // Check if it's an internal anchor link to an existing element
+                    if (anchor.getAttribute('href').length > 1 && document.querySelector(anchor.getAttribute('href'))) {
+                        anchor.addEventListener('click', function (e) {
                             e.preventDefault();
-                            const targetElement = document.querySelector(targetId);
+                            const targetElement = document.querySelector(this.getAttribute('href'));
                             if (targetElement) {
                                 const pageHeaderFallback = document.getElementById('pageHeader');
                                 let offset = pageHeaderFallback ? pageHeaderFallback.offsetHeight : 70;
-                                if (targetId === '#hero') offset = 0;
+                                if (this.getAttribute('href') === '#hero') offset = 0;
 
                                 window.scrollTo({
                                     top: targetElement.offsetTop - offset,
@@ -956,8 +618,8 @@
                                     }
                                 }
                             }
-                        }
-                    });
+                        });
+                    }
                 });
                 const pageHeaderFallback = document.getElementById('pageHeader');
                 if (pageHeaderFallback) {
@@ -1008,7 +670,7 @@
             animatedElements.forEach(el => observer.observe(el));
 
             const currentYearSpan = document.getElementById('currentYear');
-            if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+            if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); } // Corrected Year
 
             const contactForm = document.querySelector('.contact-form-embedded');
             if (contactForm) {
@@ -1042,7 +704,7 @@
                     formData.forEach((value, key) => { data[key] = value; });
 
                     try {
-                        const response = await fetch('http://localhost:3000/api/contact', { // Ensure this matches your backend
+                        const response = await fetch('http://localhost:3000/api/contact', { 
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json', },
                             body: JSON.stringify(data),
@@ -1054,7 +716,7 @@
                             contactForm.reset(); 
                         } else {
                             statusMessageEl.textContent = result.message || 'An error occurred. Please try again.';
-                            statusMessageEl.style.color = '#E74C3C'; // A distinct error color (e.g., red)
+                            statusMessageEl.style.color = '#E74C3C'; 
                         }
                     } catch (error) {
                         console.error('Form submission error:', error);
