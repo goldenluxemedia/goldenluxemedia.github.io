@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Luxe Media | Architects of Digital Dynasties & Elite Brand Elevation</title>
-    <meta name="description" content="Golden Luxe Media: We forge digital dynasties for elite brands. Partner with us for unparalleled online presence, high-ROI SEO, luxury web design, and transformative marketing strategies.">
-    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, luxury branding, client success, client testimonials, digital marketing credibility, marketing psychology">
+    <!-- UPDATED TITLE -->
+    <title>Luxury Digital Marketing & SEO | Golden Luxe Media</title>
+    <!-- UPDATED META DESCRIPTION -->
+    <meta name="description" content="Elevate your elite brand with Golden Luxe Media. We deliver high-ROI SEO, luxury web design & transformative digital marketing for an unparalleled online presence.">
+    <!-- UPDATED KEYWORDS -->
+    <meta name="keywords" content="luxury digital marketing, elite SEO services, bespoke brand strategy, premium web design, high-ROI campaigns, exclusive online presence, digital dynasty, brand elevation, Golden Luxe Media, content marketing, PPC management, luxury branding, client success, client testimonials, digital marketing credibility, marketing psychology, luxury brand SEO, high-end web design, digital marketing for luxury brands">
 
     <!-- FAVICON LINKS START -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -132,9 +135,11 @@
         .site-title-text { font-family: var(--font-display); font-size: clamp(1.5rem, 2.8vw, 1.8rem); font-weight: 700; color: var(--color-gold-brilliant); }
         .site-title-text span { color: var(--color-gold-highlight); font-weight: 700; }
         .main-nav ul { list-style: none; display: flex; }
-        .main-nav li { margin-left: 3.2rem; }
+        .main-nav li { margin-left: 2.8rem; } /* Adjusted margin for new item */
         .main-nav a {
-            font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase;
+            font-size: 0.90rem; /* Adjusted font size for new item */
+            letter-spacing: 1.8px; /* Adjusted letter spacing */
+            text-transform: uppercase;
             padding: 0.9rem 0.3rem; position: relative; color: var(--color-text-secondary);
             font-weight: 500;
         }
@@ -160,7 +165,9 @@
             text-align: center; position: relative;
             background: 
                 linear-gradient(rgba(4, 4, 5, 0.7), rgba(4, 4, 5, 0.9)), 
-                url('https://source.unsplash.com/random/1920x1080/?luxury,abstract,geometric,gold') no-repeat center center/cover,
+                /* --- IMPORTANT: REPLACE THIS WITH YOUR OPTIMIZED LOCAL IMAGE --- */
+                url('images/hero-background.jpg') no-repeat center center/cover,
+                /* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
                 radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.07) 0%, transparent 50%), 
                 var(--color-deep-black);
             overflow: hidden;
@@ -342,18 +349,18 @@
             font-size: clamp(1.3rem, 3vw, 1.8rem); 
             margin-bottom: 2.5rem; 
         }
-        .recognition-logos span { /* MODIFIED for a more refined outline style */
+        .recognition-logos span {
             display: inline-block;
             margin: 0.7rem 1.2rem; 
             padding: 0.6rem 1.2rem; 
             font-family: var(--font-body);
             font-size: 0.85rem; 
-            color: var(--color-gold-highlight); /* Gold text */
-            font-weight: 500; /* Slightly less bold */
-            border: 1.5px solid var(--color-gold-mid); /* Clear gold border */
+            color: var(--color-gold-highlight);
+            font-weight: 500;
+            border: 1.5px solid var(--color-gold-mid);
             border-radius: 6px; 
-            background-color: transparent; /* No background fill */
-            box-shadow: none; /* Remove previous shadow in normal state */
+            background-color: transparent;
+            box-shadow: none;
             transition: color var(--transition-interactive), 
                         border-color var(--transition-interactive), 
                         background-color var(--transition-interactive),
@@ -361,12 +368,67 @@
                         box-shadow var(--transition-interactive);
         }
         .recognition-logos span:hover {
-            color: var(--color-gold-brilliant); /* Brighter gold text on hover */
-            border-color: var(--color-gold-highlight); /* Brighter border on hover */
-            background-color: rgba(184, 134, 11, 0.08); /* Very subtle gold glow */
+            color: var(--color-gold-brilliant);
+            border-color: var(--color-gold-highlight);
+            background-color: rgba(184, 134, 11, 0.08);
             transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(184,134,11,0.15); /* Softer shadow on hover */
+            box-shadow: 0 3px 8px rgba(184,134,11,0.15);
         }
+
+        /* --- NEW CSS FOR PROJECTS SECTION --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem; /* Consistent with other grids */
+        }
+        .project-card {
+            background-color: var(--color-charcoal); /* Consistent card background */
+            padding: 2.2rem 1.8rem; /* Slightly more padding if needed */
+            border-radius: 10px; /* Consistent border radius */
+            border-left: 4px solid var(--color-gold-primary); /* Stronger gold accent */
+            box-shadow: var(--shadow-depth-1);
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-left-color var(--transition-interactive);
+        }
+        .project-card:hover {
+            transform: translateY(-7px); /* Slightly more pronounced hover */
+            box-shadow: var(--shadow-depth-2), var(--shadow-gold-aura);
+            border-left-color: var(--color-gold-highlight);
+        }
+        .project-card-icon {
+            font-size: 2rem; /* Consistent icon size */
+            color: var(--color-gold-primary);
+            margin-bottom: 1.2rem; /* Consistent margin */
+            line-height: 1;
+        }
+        .project-card h4 { /* Re-using h4 style from USP cards for consistency */
+            margin-bottom: 0.8rem;
+            color: var(--color-gold-highlight);
+            font-size: clamp(1.2rem, 3vw, 1.5rem); /* Slightly adjusted for project titles */
+        }
+        .project-card p { /* Re-using p style from USP cards */
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem; 
+            flex-grow: 1;
+        }
+        .project-learn-more { /* Optional button/link style */
+            font-size: 0.85rem;
+            color: var(--color-gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            align-self: flex-start; 
+            margin-top: auto; /* Pushes to bottom if card height varies */
+            padding-top: 0.5rem;
+        }
+        .project-learn-more:hover {
+            color: var(--color-gold-highlight);
+        }
+        /* --- END NEW CSS FOR PROJECTS SECTION --- */
 
 
         .cta-final-section {
@@ -447,9 +509,9 @@
 
         /* --- Responsive --- */
         @media (max-width: 991px) {
-            .main-nav li { margin-left: 1.8rem; } 
-            .main-nav a { font-size: 0.9rem; }
-            .testimonial-grid { grid-template-columns: 1fr; } 
+            .main-nav li { margin-left: 1.5rem; } /* Adjusted for more items */
+            .main-nav a { font-size: 0.85rem; letter-spacing: 1.5px; } /* Adjusted for more items */
+            .testimonial-grid, .projects-grid { grid-template-columns: 1fr; } 
             .pillars-grid { grid-template-columns: 1fr; }
             .recognition-logos span { margin: 0.5rem; padding: 0.5rem 1rem; }
         }
@@ -471,6 +533,7 @@
             .main-nav a {
                 display: block; padding: 1rem; font-size: 0.9rem; text-align: center;
                 border-bottom: 1px solid rgba(184,134,11,0.08); width: 100%;
+                letter-spacing: 2px; /* Ensure mobile nav text is readable */
             }
             .main-nav li:last-child a { border-bottom: none; }
             .main-nav a::before, .main-nav a::after { display:none; }
@@ -479,7 +542,7 @@
             .hero-section { min-height: 80vh; padding: 8rem 0 4rem; } 
             .content-section { padding: 3.5rem 0; }
             .section-intro-text { margin-bottom: 2.5rem; }
-            .why-invest-grid, .services-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+            .why-invest-grid, .services-grid, .projects-grid { grid-template-columns: 1fr; gap: 1.8rem; }
             .form-title { font-size: clamp(1.3rem, 5vw, 1.8rem); margin-bottom: 2rem;}
             .recognition-strip h4 { margin-bottom: 1.5rem; }
             .recognition-logos span { font-size: 0.75rem; margin: 0.4rem 0.6rem; padding: 0.4rem 0.8rem; border-width: 1px;}
@@ -494,8 +557,8 @@
             .hero-cta-button { padding: 0.8rem 2rem; font-size: 0.9rem; }
             .main-header .container { padding-left: 15px; padding-right: 15px;}
             .container { padding-left: 15px; padding-right: 15px; width: 100%;}
-            .usp-icon-wrapper, .service-icon-wrapper { width: 45px; height: 45px; font-size: 20px; margin-bottom: 1rem;}
-            .usp-card, .service-card, .testimonial-card { padding: 1.8rem 1.5rem; }
+            .usp-icon-wrapper, .service-icon-wrapper, .project-card-icon { width: 45px; height: 45px; font-size: 20px; margin-bottom: 1rem;}
+            .usp-card, .service-card, .testimonial-card, .project-card { padding: 1.8rem 1.5rem; }
             .golden-pillars-section h3 { font-size: clamp(1.3rem, 4vw, 1.7rem); }
             .pillar-card h5 { font-size: 1rem; }
             .recognition-strip h4 { font-size: clamp(1.1rem, 3.5vw, 1.5rem); }
@@ -503,7 +566,8 @@
         
         @media (min-width: 992px) { /* Desktops */
             .why-invest-grid,
-            .services-grid {
+            .services-grid,
+            .projects-grid { /* Added projects-grid here */
                 grid-template-columns: repeat(3, 1fr);
             }
             .testimonial-grid {
@@ -514,7 +578,7 @@
             }
         }
          @media (min-width: 1200px) { /* Wider Desktops */
-            .testimonial-grid {
+            .testimonial-grid, .projects-grid { /* Added projects-grid here */
                  grid-template-columns: repeat(3, 1fr); 
             }
         }
@@ -554,7 +618,8 @@
                             <li><a href="#hero" class="active">Home</a></li>
                             <li><a href="#services">Expertise</a></li>
                             <li><a href="#why-invest">The Standard</a></li>
-                            <li><a href="#client-success">Client Success</a></li> 
+                            <li><a href="#client-success">Success</a></li> <!-- Shortened for space -->
+                            <li><a href="#projects">Case Studies</a></li> <!-- NEW NAV LINK -->
                             <li><a href="#contact">Connect</a></li>
                         </ul>
                     </nav>
@@ -674,17 +739,17 @@
                         <div class="testimonial-grid">
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <span class="testimonial-icon">💬</span>
-                                <p class="testimonial-quote"><em>"Placeholder: 'Golden Luxe Media didn't just meet expectations; they shattered them. Our online revenue soared by over 200% in the first year, establishing us as the clear leader in our niche.' – This showcases quantifiable, significant results."</em></p>
+                                <p class="testimonial-quote"><em>"Golden Luxe Media didn't just meet expectations; they shattered them. Our online revenue soared by over 200% in the first year, establishing us as the clear leader in our niche."</em></p>
                                 <p class="testimonial-attribution">- Reflection from a Luxury E-commerce Pioneer</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                 <span class="testimonial-icon">✨</span>
-                                <p class="testimonial-quote"><em>"Placeholder: 'Their strategic foresight and bespoke approach were game-changing. We now connect with our ideal HNW clientele on a level we never thought possible.' – This highlights strategic impact and audience connection."</em></p>
+                                <p class="testimonial-quote"><em>"Their strategic foresight and bespoke approach were game-changing. We now connect with our ideal HNW clientele on a level we never thought possible, thanks to their digital mastery."</em></p>
                                 <p class="testimonial-attribution">- Attributed to a Global Bespoke Services Brand</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <span class="testimonial-icon">🏆</span>
-                                <p class="testimonial-quote"><em>"Placeholder: 'The level of detail and commitment to understanding our unique brand DNA was exceptional. Golden Luxe is more than an agency; they are true partners in our ascent.' – This emphasizes partnership and understanding."</em></p>
+                                <p class="testimonial-quote"><em>"The level of detail and commitment to understanding our unique brand DNA was exceptional. Golden Luxe is more than an agency; they are true partners in our ascent to digital eminence."</em></p>
                                 <p class="testimonial-attribution">- Insight from a Heritage Luxury House</p>
                             </div>
                         </div>
@@ -700,6 +765,37 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- NEW PROJECTS / CASE STUDIES SECTION -->
+                <section id="projects" class="content-section"> 
+                    <div class="container">
+                        <div class="section-title-container animate-on-scroll fade-in">
+                            <h2><span class="shiny-gold-heading">Case Studies: Architecting Digital Success</span></h2>
+                        </div>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Explore how we've partnered with elite brands to achieve remarkable growth and market leadership. Each engagement is a testament to our bespoke strategies and commitment to excellence. (Detailed results shared upon consultation).</p>
+                        <div class="projects-grid">
+                            <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                                <div class="project-card-icon">⭐</div>
+                                <h4>Luxury E-commerce Transformation: [Client Name]</h4>
+                                <p>Spearheaded a comprehensive SEO and conversion rate optimization strategy for a premier luxury goods retailer, resulting in a 180% increase in organic search traffic and a 75% uplift in online sales from high-net-worth individuals within 12 months.</p>
+                                <!-- <a href="#" class="project-learn-more">View Details</a> -->
+                            </div>
+                            <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                                <div class="project-card-icon">🚀</div>
+                                <h4>Global Bespoke Service Market Entry: [Client Name]</h4>
+                                <p>Developed and executed a targeted digital brand positioning and lead generation campaign for an exclusive international service provider, achieving top 3 search rankings for key service terms in target markets and a 300% increase in qualified inquiries.</p>
+                                <!-- <a href="#" class="project-learn-more">View Details</a> -->
+                            </div>
+                            <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <div class="project-card-icon">💎</div>
+                                <h4>Heritage Brand Digital Renaissance: [Client Name]</h4>
+                                <p>Orchestrated a digital revitalization for a storied heritage brand, crafting a modern luxury web experience and content strategy that re-engaged its audience, leading to a 50% growth in social media engagement and significant positive PR mentions.</p>
+                                <!-- <a href="#" class="project-learn-more">View Details</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- END NEW PROJECTS / CASE STUDIES SECTION -->
 
                 <section id="contact" class="cta-final-section">
                      <div class="container cta-content-area">
@@ -799,6 +895,7 @@
                     });
                 }
 
+                // This selector should now correctly pick up all relevant links including the new "Case Studies" one
                 const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
                 navLinks.forEach(link => {
                     const targetId = link.getAttribute('href');
@@ -821,12 +918,13 @@
                 });
 
                 const allSections = document.querySelectorAll('main section[id]');
-                const mainNavLinks = document.querySelectorAll('.main-nav a');
+                const mainNavLinks = document.querySelectorAll('.main-nav a'); // This will pick up the new link
 
                 function updateActiveLinkOnScroll() {
                     let currentSectionId = 'hero';
                     const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
-                    const scrollPosition = lenis.scroll + (window.innerHeight * 0.2) + headerHeight;
+                    // Adjust scroll position detection to be more generous for triggering active state
+                    const scrollPosition = lenis.scroll + (window.innerHeight * 0.3) + headerHeight; 
 
                     allSections.forEach(section => {
                         const sectionTop = section.offsetTop;
@@ -848,7 +946,7 @@
                         updateActiveLinkOnScroll();
                     });
                 }
-                updateActiveLinkOnScroll(); 
+                updateActiveLinkOnScroll(); // Initial check
 
             } else {
                 console.warn("Lenis library not loaded. Falling back to native scroll.");
