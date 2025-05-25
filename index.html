@@ -395,13 +395,17 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- PRELOADER START ---
             const preloader = document.getElementById('preloader');
             if (preloader) {
                 window.addEventListener('load', () => {
-                    setTimeout(() => { preloader.classList.add('loaded'); }, 1200); 
+                    setTimeout(() => { preloader.classList.add('loaded'); }, 1200);
                 });
             }
+            // --- PRELOADER END ---
 
+
+            // --- LENIS SCROLLING & NAVIGATION LOGIC START ---
             function initializeLenis() {
                 if (typeof Lenis !== 'undefined') {
                     const lenis = new Lenis({
@@ -434,7 +438,7 @@
                                 e.preventDefault();
                                 let offsetVal = pageHeader ? -pageHeader.offsetHeight - 10 : -80;
                                 if (targetId === "#hero") offsetVal = 0;
-                                
+
                                 lenis.scrollTo(targetId, { offset: offsetVal, duration: 2.0 });
                                 if (pageNav && pageNav.classList.contains('active')) {
                                     pageNav.classList.remove('active');
@@ -453,7 +457,7 @@
                     function updateActiveLinkOnScroll() {
                         let currentSectionId = 'hero';
                         const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
-                        const scrollPosition = lenis.scroll + (window.innerHeight * 0.3) + headerHeight; 
+                        const scrollPosition = lenis.scroll + (window.innerHeight * 0.3) + headerHeight;
 
                         allSections.forEach(section => {
                             const sectionTop = section.offsetTop;
@@ -468,14 +472,14 @@
                             }
                         });
                     }
-                    
+
                     if (pageHeader) {
                         lenis.on('scroll', (e) => {
                             pageHeader.classList.toggle('scrolled', e.scroll > 40);
                             updateActiveLinkOnScroll();
                         });
                     }
-                    updateActiveLinkOnScroll(); 
+                    updateActiveLinkOnScroll();
 
                 } else {
                     console.warn("Lenis library not fully available at DOMContentLoaded. Smooth scroll may be delayed or use fallback.");
@@ -504,7 +508,7 @@
                                 const pageHeaderFallback = document.getElementById('pageHeader');
                                 let offset = pageHeaderFallback ? pageHeaderFallback.offsetHeight : 70;
                                 if (targetId === '#hero') offset = 0;
-                                
+
                                 window.scrollTo({
                                     top: targetElement.offsetTop - offset,
                                     behavior: 'smooth'
@@ -528,15 +532,24 @@
                 }
             }
 
-            if (document.readyState === 'loading') { 
-                document.addEventListener('DOMContentLoaded', initializeLenis);
-            } else { 
+            // Initialize Lenis or fallback scroll based on document ready state
+            if (document.readyState === 'loading') {
+                // This event listener for DOMContentLoaded is already the main wrapper,
+                // so calling initializeLenis directly here is fine.
+                // However, to be super safe or if this code was outside, you'd use:
+                // document.addEventListener('DOMContentLoaded', initializeLenis);
+                initializeLenis();
+            } else {
+                // The DOM is already loaded
                 initializeLenis();
             }
+            // --- LENIS SCROLLING & NAVIGATION LOGIC END ---
 
+
+            // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS START ---
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }; 
-            
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
             animatedElements.forEach(el => {
                 if (el.classList.contains('fade-in-up')) {
                     el.style.opacity = '0';
@@ -553,7 +566,7 @@
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.willChange = 'transform, opacity'; 
+                        entry.target.style.willChange = 'transform, opacity';
                         const delay = entry.target.dataset.ioDelay;
                         const applyVisibility = () => {
                             entry.target.style.opacity = '1';
@@ -572,9 +585,89 @@
                 });
             }, observerOptions);
             animatedElements.forEach(el => observer.observe(el));
+            // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS END ---
 
+
+            // --- FOOTER CURRENT YEAR START ---
             const currentYearSpan = document.getElementById('currentYear');
             if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+            // --- FOOTER CURRENT YEAR END ---
+
+
+            // --- CONTACT FORM SUBMISSION HANDLING START ---
+            const contactForm = document.querySelector('.contact-form-embedded');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Prevent default HTML form submission
+
+                    const submitButton = contactForm.querySelector('.form-submit-button');
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+
+                    // Create a status message element if it doesn't exist, or get existing one
+                    let statusMessageEl = contactForm.querySelector('.form-status-message');
+                    if (!statusMessageEl) {
+                        statusMessageEl = document.createElement('p');
+                        statusMessageEl.className = 'form-status-message';
+                        // Style the status message
+                        statusMessageEl.style.textAlign = 'center';
+                        statusMessageEl.style.marginTop = '1rem';
+                        statusMessageEl.style.fontSize = '0.9rem';
+                        statusMessageEl.style.fontWeight = '500';
+                        // Insert it after the div containing the submit button
+                        const buttonContainer = submitButton.closest('div'); // Assuming button is wrapped in a div for centering
+                        if (buttonContainer && buttonContainer.parentNode) {
+                            buttonContainer.parentNode.insertBefore(statusMessageEl, buttonContainer.nextSibling);
+                        } else { // Fallback if button is not wrapped or not found in a div
+                            contactForm.insertBefore(statusMessageEl, submitButton.nextSibling);
+                        }
+                    }
+                    statusMessageEl.textContent = ''; // Clear previous message
+                    statusMessageEl.style.color = 'var(--color-text-secondary)'; // Default color
+
+                    const formData = new FormData(contactForm);
+                    const data = {};
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+
+                    try {
+                        // Ensure this URL matches your backend server (port 3000 by default)
+                        const response = await fetch('http://localhost:3000/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.success) {
+                            statusMessageEl.textContent = result.message || 'Message sent successfully!';
+                            statusMessageEl.style.color = 'var(--color-gold-highlight)'; // Success color
+                            contactForm.reset(); // Clear the form fields
+                        } else {
+                            statusMessageEl.textContent = result.message || 'An error occurred. Please try again.';
+                            statusMessageEl.style.color = '#E74C3C'; // A distinct error color (e.g., red)
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        statusMessageEl.textContent = 'A network error occurred. Please check your connection and try again.';
+                        statusMessageEl.style.color = '#E74C3C'; // Error color
+                    } finally {
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                        // Optionally hide the status message after a few seconds
+                        setTimeout(() => {
+                            if (statusMessageEl) statusMessageEl.textContent = '';
+                        }, 7000); // Hide after 7 seconds
+                    }
+                });
+            }
+            // --- CONTACT FORM SUBMISSION HANDLING END ---
+
         });
     </script>
 </body>
