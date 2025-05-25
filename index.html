@@ -15,9 +15,9 @@
                    base-uri 'self';
                    form-action 'self';">
 
-    <title>Premier Digital Marketing & SEO | Golden Luxe Media</title> <!-- Adjusted Title -->
-    <meta name="description" content="Partner with Golden Luxe Media to elevate your distinguished brand. We deliver high-return SEO, custom luxury web design & transformative digital marketing."> <!-- Adjusted Description -->
-    <meta name="keywords" content="premier digital marketing, elite SEO services, custom brand strategy, luxury web design, high-ROI marketing, exclusive online presence, digital growth, brand elevation, Golden Luxe Media, strategic content marketing, performance marketing, luxury branding solutions, client success stories, digital marketing experts, luxury market insights, luxury brand SEO, high-end web development, digital strategies for luxury brands, UI/UX excellence, app development, cloud solutions, business process optimization, digital marketing for fashion, SEO for jewelers, HNW client engagement"> <!-- Adjusted Keywords -->
+    <title>Premier Digital Marketing & SEO | Golden Luxe Media</title>
+    <meta name="description" content="Partner with Golden Luxe Media to elevate your distinguished brand. We deliver high-return SEO, custom luxury web design & transformative digital marketing.">
+    <meta name="keywords" content="premier digital marketing, elite SEO services, custom brand strategy, luxury web design, high-ROI marketing, exclusive online presence, digital growth, brand elevation, Golden Luxe Media, strategic content marketing, performance marketing, luxury branding solutions, client success stories, digital marketing experts, luxury market insights, luxury brand SEO, high-end web development, digital strategies for luxury brands, UI/UX excellence, app development, cloud solutions, business process optimization, digital marketing for fashion, SEO for jewelers, HNW client engagement">
 
     <!-- FAVICON LINKS START - PATHS POINT TO 'favicons' FOLDER -->
     <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
@@ -35,7 +35,7 @@
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-600.woff2" crossorigin>
     
     <style>
-        /* DARK GRAYSCALE THEME & REFINED CSS (styles largely remain from previous good version) */
+        /* DARK GRAYSCALE THEME & REFINED CSS */
         :root{
             --color-background-primary: #1A1A1D; 
             --color-background-secondary: #25262B; 
@@ -91,23 +91,44 @@
         section p.section-intro-text{max-width:700px;margin-left:auto;margin-right:auto;color:var(--color-text-secondary)}
         a{color:var(--color-gold-highlight);text-decoration:none;transition:color var(--transition-interactive)}
         a:focus,a:hover{color:var(--color-gold-brilliant)}
-        .main-header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.25rem 0;background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)}
-        .main-header.scrolled{background-color:rgba(37,38,43,.85);padding:1rem 0;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+        
+        .main-header{
+            position:fixed;top:0;left:0;width:100%;z-index:1000;
+            padding:1.25rem 0; /* Default padding */
+            background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+            border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);
+            transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)
+        }
+        .main-header.scrolled{
+            padding:1rem 0; /* Reduced padding on scroll */
+            background-color:rgba(37,38,43,.85);box-shadow:0 8px 30px rgba(0,0,0,.4)
+        }
         .main-header .container{display:flex;justify-content:space-between;align-items:center}
-        .logo-link{display:flex;align-items:center;gap:.8rem}
-        .logo-svg-icon{width:50px;height:50px}
+        .logo-link{display:flex;align-items:center;gap:.8rem; text-decoration: none;} /* Ensure no underline from browser defaults */
+        .logo-svg-icon{width:50px;height:50px; flex-shrink: 0;} /* Prevent shrinking */
         .logo-svg-icon .circle{fill:var(--color-gold-primary);transition:fill var(--transition-interactive)}
         .logo-svg-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
         .logo-link:hover .logo-svg-icon .circle{fill:var(--color-gold-highlight)}
-        .site-title-text{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;color:var(--color-gold-brilliant)}
+        .site-title-text{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;color:var(--color-gold-brilliant); white-space: nowrap;} /* Prevent title from wrapping */
         .site-title-text span{color:var(--color-gold-highlight);font-weight:700}
-        .main-nav ul{list-style:none;display:flex}
-        .main-nav li{margin-left:2.8rem}
-        .main-nav a{font-size:.9rem;letter-spacing:1.8px;text-transform:uppercase;padding:.9rem .3rem;position:relative;color:var(--color-text-secondary);font-weight:500}
-        .main-nav a::after{content:'';position:absolute;bottom:.4rem;left:0;width:0;height:2px;background-color:var(--color-gold-primary);transition:width var(--transition-interactive)}
-        .main-nav a.active::after,.main-nav a:hover::after{width:100%}
+        
+        .main-nav{ margin-left: auto; /* Pushes nav to the right if space allows */ }
+        .main-nav ul{list-style:none;display:flex; padding-left: 0;} /* Reset padding */
+        .main-nav li{margin-left:2.5rem} /* Adjusted margin */
+        .main-nav a{font-size:.9rem;letter-spacing:1.5px;text-transform:uppercase;padding:.9rem .3rem;position:relative;color:var(--color-text-secondary);font-weight:500}
+        .main-nav a::after{
+            content:'';position:absolute;bottom:0.6rem; /* Adjusted bottom for underline */
+            left:50%; transform: translateX(-50%); /* Center the underline */
+            width:0;height:2px;background-color:var(--color-gold-primary);
+            transition:width var(--transition-interactive);
+        }
+        .main-nav a.active::after,
+        .main-nav a:hover::after{
+            width:calc(100% - 0.6rem); /* Underline width relative to padding */
+        }
         .main-nav a.active{color:var(--color-gold-highlight)}
         .main-nav a:hover{color:var(--color-gold-highlight)}
+        
         .menu-toggle{display:none;background:none;border:none;color:var(--color-gold-primary)!important;font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005}
         button.menu-toggle:focus,button.menu-toggle:hover{color:var(--color-gold-highlight)!important}
         
@@ -115,13 +136,32 @@
         .hero-content-wrapper{max-width:850px;position:relative;z-index:1;margin:0 auto;display:flex;flex-direction:column;align-items:center}
         .hero-section h1{margin-bottom:.8rem;color:var(--color-text-primary);font-weight:800;line-height:1.25}
         .hero-section p.subtitle{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);max-width:720px;margin:1.5rem auto 2.5rem;line-height:1.75}
-        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s;margin-bottom:3rem}
-        .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
-        @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
-        .hero-services-showcase{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1rem;max-width:750px;width:100%}
-        .service-chip{background-color:var(--color-background-secondary);color:var(--color-text-secondary);padding:.5rem 1rem;border-radius:20px;font-size:clamp(.75rem,1.8vw,.9rem);font-weight:500;display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(184,134,11,.2);box-shadow:0 2px 5px rgba(0,0,0,.2);animation:floatAnimation 4s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease,color .3s ease;flex-grow:0;flex-shrink:0}
-        .service-chip:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 4px 10px rgba(0,0,0,.3),var(--shadow-subtle-glow);color:var(--color-gold-highlight)}
-        .service-chip .chip-icon{font-size:clamp(.9rem,2vw,1.1rem);line-height:1}
+        
+        .hero-services-showcase{
+            display:flex;flex-wrap:wrap;justify-content:center;
+            gap: 0.8rem 1rem; /* Gap between chips */
+            margin-bottom:3rem; /* Space between chips and CTA button */
+            max-width:800px; /* Increased max-width to encourage 4 per row */
+            width: 100%;
+        }
+        .service-chip{
+            background-color:var(--color-background-secondary);color:var(--color-text-secondary);
+            padding:.6rem 1.1rem; /* Slightly more padding */
+            border-radius:25px; /* More rounded */
+            font-size:clamp(.8rem, 1.9vw, .95rem); /* Slightly larger font */
+            font-weight:500;
+            display:inline-flex;align-items:center;gap:.6rem; /* Increased gap */
+            border:1px solid rgba(184,134,11,.25); /* Slightly more visible border */
+            box-shadow:0 3px 7px rgba(0,0,0,.25); /* Enhanced shadow */
+            animation:floatAnimation 4s ease-in-out infinite;
+            transition:transform .3s ease,box-shadow .3s ease,color .3s ease, background-color .3s ease;
+            flex-basis: calc(25% - 1rem); /* Aim for 4 per row, accounting for gap */
+            min-width: 160px; /* Minimum width to prevent excessive squishing */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            justify-content: center; /* Center content within chip */
+        }
+        .service-chip:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 6px 12px rgba(0,0,0,.35),var(--shadow-subtle-glow);color:var(--color-gold-highlight); background-color: var(--color-background-tertiary);}
+        .service-chip .chip-icon{font-size:clamp(1rem, 2.1vw, 1.2rem);line-height:1}
         .service-chip:nth-child(2){animation-delay:.2s}
         .service-chip:nth-child(3){animation-delay:.4s}
         .service-chip:nth-child(4){animation-delay:.6s}
@@ -129,7 +169,13 @@
         .service-chip:nth-child(6){animation-delay:.3s}
         .service-chip:nth-child(7){animation-delay:.5s}
         .service-chip:nth-child(8){animation-delay:.7s}
-        @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-6px)}}
+        @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-7px)}} /* Increased float height */
+
+        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s;}
+        /* margin-bottom removed from CTA, as chips are now above */
+        .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
+        @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
+        
         .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .content-section:last-of-type{border-bottom:none}
         .content-section .section-title-container h2::after{content:'';display:block;width:70px;height:3px;background-color:var(--color-gold-primary);margin:1.2rem auto 0}
@@ -190,15 +236,43 @@
         .footer-logo-icon{width:50px;height:50px;margin:0 auto 1.2rem;display:block}
         .footer-logo-icon .circle{fill:var(--color-gold-mid)}
         .footer-logo-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
-        /* .footer-nav-links removed as requested */
         .footer-social-links a{display:inline-block;color:var(--color-text-muted);margin:0 .7rem;font-size:.85rem;text-transform:uppercase;font-weight:500;border:1px solid transparent;padding:.25rem .4rem;border-radius:4px}
         .footer-social-links a:hover{color:var(--color-gold-highlight);border-color:var(--color-gold-primary)}
         .site-footer p{font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem}
         .footer-seo-text{font-size:.7rem;color:var(--color-text-muted);opacity:.6;max-width:550px;margin:1.2rem auto 0;line-height:1.45}
         
-        @media (max-width:991px){.main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}.pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}.recognition-logos span{margin:.5rem;padding:.5rem 1rem}}
-        @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}.hero-section{min-height:auto; padding: 10rem 0 4rem;}.hero-services-showcase{gap:.6rem .8rem;}.service-chip{padding:.4rem .8rem}.content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
-        @media (max-width:480px){h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section p.subtitle{font-size:.9rem}.hero-cta-button{padding:.8rem 2rem;font-size:.9rem; margin-bottom: 2rem;}.main-header .container{padding-left:15px;padding-right:15px}.container{padding-left:15px;padding-right:15px;width:100%}.project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}.project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}.golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}}
+        @media (max-width:991px){
+            .main-header .container { flex-wrap: wrap; } /* Allow wrapping for smaller screens */
+            .logo-link { margin-right: auto; } /* Pushes nav toggle to the right */
+            .main-nav li{margin-left:1.5rem}
+            .main-nav a{font-size:.85rem;letter-spacing:1.5px}
+            .pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}
+            .recognition-logos span{margin:.5rem;padding:.5rem 1rem}
+            .hero-services-showcase { max-width: 600px; }
+            .service-chip { flex-basis: calc(33.333% - 1rem); min-width: 140px;} /* 3 per row */
+        }
+        @media (max-width:767px){
+            .menu-toggle{display:block}
+            .main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}
+            @keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+            .main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}
+            .hero-section{min-height:auto; padding: 10rem 0 4rem;}
+            .hero-services-showcase{gap:.6rem .8rem; max-width: 100%; margin-bottom: 2rem;}
+            .service-chip{padding:.4rem .8rem; flex-basis: calc(50% - 0.8rem); min-width: 120px;} /* 2 per row */
+            .content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}
+            .form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}
+        }
+        @media (max-width:480px){
+            h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}
+            h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section p.subtitle{font-size:.9rem}
+            .hero-cta-button{padding:.8rem 2rem;font-size:.9rem; margin-bottom: 2.5rem;}
+            .main-header .container{padding-left:15px;padding-right:15px}
+            .container{padding-left:15px;padding-right:15px;width:100%}
+            .project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}
+            .project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}
+            .golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}
+            .service-chip { flex-basis: calc(50% - 0.6rem); font-size: 0.7rem; padding: 0.3rem 0.6rem; } /* Adjust for very small screens */
+        }
         @media (min-width:992px){.pillars-grid,.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:repeat(3,1fr)}.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}}
         @media (min-width:1200px){.projects-grid,.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
         @media (min-width:1440px){.container{max-width:1360px}.hero-content-wrapper{max-width:900px}.section-intro-text{max-width:800px}}
@@ -226,9 +300,9 @@
                     <nav class="main-nav" id="pageNav">
                         <ul>
                             <li><a href="#hero" class="active">Home</a></li>
-                            <li><a href="#services">Our Expertise</a></li> <!-- Simplified -->
+                            <li><a href="#services">Our Expertise</a></li>
                             <li><a href="#why-invest">Our Approach</a></li>
-                            <li><a href="#client-success">Client Success</a></li> <!-- Simplified -->
+                            <li><a href="#client-success">Client Success</a></li> 
                             <li><a href="#projects">Case Studies</a></li> 
                             <li><a href="#contact">Connect</a></li>
                         </ul>
@@ -243,13 +317,11 @@
                         <h1>
                             <span class="shiny-gold-heading">Forge Your Digital Dynasty.</span>
                             <br/>
-                            <span class="hero-h1-subline">Achieve Unrivaled Brand Distinction.</span> <!-- Changed -->
+                            <span class="hero-h1-subline">Achieve Unrivaled Brand Distinction.</span>
                         </h1>
-                        <p class="subtitle">Golden Luxe Media crafts digital empires for select brands. We deliver visionary strategies, finely-tuned luxury experiences, and clear ROI to build your lasting legacy.</p> <!-- Simplified -->
+                        <p class="subtitle">Golden Luxe Media crafts digital empires for select brands. We deliver visionary strategies, finely-tuned luxury experiences, and clear ROI to build your lasting legacy.</p>
                         
-                        <a href="#why-invest" class="hero-cta-button">Explore Our Method</a> <!-- Changed CTA text -->
-
-                        <div class="hero-services-showcase">
+                        <div class="hero-services-showcase"> <!-- Moved Above CTA -->
                             <span class="service-chip"><span class="chip-icon">🔍</span> SEO Mastery</span>
                             <span class="service-chip"><span class="chip-icon">📈</span> Digital Marketing</span>
                             <span class="service-chip"><span class="chip-icon">🎨</span> UI/UX Design</span>
@@ -259,6 +331,9 @@
                             <span class="service-chip"><span class="chip-icon">☁️</span> Cloud Services</span> 
                             <span class="service-chip"><span class="chip-icon">⚙️</span> Process Optimization</span> 
                         </div>
+                        
+                        <a href="#why-invest" class="hero-cta-button">Explore Our Method</a>
+
                     </div>
                 </section>
 
@@ -267,22 +342,22 @@
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">The Golden Luxe Standard: What We Deliver</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">True luxury stands apart. We are architects of your digital distinction, focused on turning your brand's potential into clear market leadership and sustainable profit.</p> <!-- Changed -->
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">True luxury stands apart. We are architects of your digital distinction, focused on turning your brand's potential into clear market leadership and sustainable profit.</p>
                         <div class="why-invest-grid">
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="usp-icon-wrapper">🚀</div>
                                 <h3>Visionary Strategy for Market Leadership</h3>
-                                <p>We design digital roadmaps that seize current opportunities and secure your brand's iconic status for the future. Experience strategy that leads.</p> <!-- Simplified -->
+                                <p>We design digital roadmaps that seize current opportunities and secure your brand's iconic status for the future. Experience strategy that leads.</p>
                             </div>
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                  <div class="usp-icon-wrapper">📈</div>
-                                 <h3>Data-Driven ROI: Luxury That Performs</h3> <!-- Simplified -->
-                                <p>Our sharp focus on data ensures every part of your digital presence is fine-tuned for top results, turning investment into measurable growth.</p> <!-- Simplified -->
+                                 <h3>Data-Driven ROI: Luxury That Performs</h3>
+                                <p>Our sharp focus on data ensures every part of your digital presence is fine-tuned for top results, turning investment into measurable growth.</p>
                             </div>
                             <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <div class="usp-icon-wrapper">🎯</div>
-                                <h3>Custom Craftsmanship, Dedicated Partnership</h3> <!-- Simplified -->
-                                <p>Your brand's unique story is our guide. Expect careful attention to detail, clear communication, and a collaborative path to digital excellence.</p> <!-- Simplified -->
+                                <h3>Custom Craftsmanship, Dedicated Partnership</h3>
+                                <p>Your brand's unique story is our guide. Expect careful attention to detail, clear communication, and a collaborative path to digital excellence.</p>
                             </div>
                         </div>
 
@@ -291,12 +366,12 @@
                             <div class="pillars-grid">
                                 <div class="pillar-card">
                                     <span class="pillar-icon">🛡️</span>
-                                    <h4>Absolute Discretion</h4> <!-- Simplified -->
+                                    <h4>Absolute Discretion</h4>
                                     <p>Your plans and strategies are protected with complete confidentiality, building a strong foundation of trust.</p>
                                 </div>
                                 <div class="pillar-card">
                                     <span class="pillar-icon">💡</span>
-                                    <h4>Commitment to Excellence</h4> <!-- Simplified -->
+                                    <h4>Commitment to Excellence</h4>
                                     <p>We constantly strive for perfection, making sure everything we deliver reflects the highest quality and innovation.</p>
                                 </div>
                                 <div class="pillar-card">
@@ -312,39 +387,39 @@
                 <section id="services" class="content-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Our Premier Expertise: Driving Digital Growth</span></h2> <!-- Simplified -->
+                            <h2><span class="shiny-gold-heading">Our Premier Expertise: Driving Digital Growth</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our complete range of luxury digital marketing services is designed to boost every aspect of your brand, ensuring strong, unified market impact.</p> <!-- Simplified -->
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our complete range of luxury digital marketing services is designed to boost every aspect of your brand, ensuring strong, unified market impact.</p>
                         <div class="services-grid">
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="service-icon-wrapper">🔍</div>
-                                <h3>Premier SEO & Authority Content</h3> <!-- Simplified -->
-                                <p>Dominate search results. We position your brand as the leading authority with smart keyword strategies and engaging, high-value content.</p> <!-- Simplified -->
+                                <h3>Premier SEO & Authority Content</h3>
+                                <p>Dominate search results. We position your brand as the leading authority with smart keyword strategies and engaging, high-value content.</p>
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
-                                <div class="service-icon-wrapper">🎯</div> <!-- Changed icon to match Performance Marketing -->
-                                <h3>High-Impact Performance Marketing</h3> <!-- Changed -->
-                                <p>Turn ad spend into significant returns. Our targeted campaigns capture the right audience and convert them into loyal customers, maximizing your ROI.</p> <!-- Simplified, explains ROI -->
+                                <div class="service-icon-wrapper">🎯</div>
+                                <h3>High-Impact Performance Marketing</h3>
+                                <p>Turn ad spend into significant returns. Our targeted campaigns capture the right audience and convert them into loyal customers, maximizing your ROI.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.2s">
                                 <div class="service-icon-wrapper">📱</div>
-                                <h3>Luxury Social Media & Community Building</h3> <!-- Simplified -->
-                                <p>Create desire on exclusive social platforms. We build a captivating social presence with engaging content that grows an active community and drives results.</p> <!-- Simplified -->
+                                <h3>Luxury Social Media & Community Building</h3>
+                                <p>Create desire on exclusive social platforms. We build a captivating social presence with engaging content that grows an active community and drives results.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <div class="service-icon-wrapper">🌐</div>
-                                <h3>Custom Luxury Web Design & Development</h3> <!-- "Bespoke" removed, "Development" added for clarity -->
-                                <p>Your website, a stunning digital flagship. We create immersive, high-performing online experiences—beautifully designed and perfectly functional.</p> <!-- Simplified -->
+                                <h3>Custom Luxury Web Design & Development</h3>
+                                <p>Your website, a stunning digital flagship. We create immersive, high-performing online experiences—beautifully designed and perfectly functional.</p>
                             </div>
                              <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
                                 <div class="service-icon-wrapper">💬</div>
-                                <h3>AI-Powered Client Engagement</h3> <!-- Simplified -->
-                                <p>Enhance client interactions with smart, 24/7 support. Our AI tools offer personalized communication, nurturing leads and providing top-tier service.</p> <!-- Simplified -->
+                                <h3>AI-Powered Client Engagement</h3>
+                                <p>Enhance client interactions with smart, 24/7 support. Our AI tools offer personalized communication, nurturing leads and providing top-tier service.</p>
                             </div>
                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
                                 <div class="service-icon-wrapper">💎</div>
-                                <h3>End-to-End Brand Scaling</h3> <!-- Changed -->
-                                <p>True digital success needs a unified approach. We offer full brand strategy, sharp market analysis, and advanced analytics for total market leadership.</p> <!-- Simplified -->
+                                <h3>End-to-End Brand Scaling</h3>
+                                <p>True digital success needs a unified approach. We offer full brand strategy, sharp market analysis, and advanced analytics for total market leadership.</p>
                             </div>
                         </div>
                     </div>
@@ -353,30 +428,30 @@
                 <section id="client-success" class="content-section client-success-section"> 
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Real Impact: Client Success Stories</span></h2> <!-- Simplified -->
+                            <h2><span class="shiny-gold-heading">Real Impact: Client Success Stories</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to building digital legacies is shown in our clients' success. While we maintain strict confidentiality, the results speak for themselves. (Full case studies available by request.)</p> <!-- Simplified -->
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to building digital legacies is shown in our clients' success. While we maintain strict confidentiality, the results speak for themselves. (Full case studies available by request.)</p>
                         
                         <div class="testimonial-grid">
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <span class="testimonial-icon">💬</span>
-                                <p class="testimonial-quote"><em>"Golden Luxe Media didn't just meet expectations; they far surpassed them. Our online revenue grew by over 200% in the first year, making us the clear leader."</em></p> <!-- Slightly simplified -->
+                                <p class="testimonial-quote"><em>"Golden Luxe Media didn't just meet expectations; they far surpassed them. Our online revenue grew by over 200% in the first year, making us the clear leader."</em></p>
                                 <p class="testimonial-attribution">- Founder, Luxury E-commerce Pioneer (Jewelry)</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
                                 <span class="testimonial-icon">✨</span>
-                                <p class="testimonial-quote"><em>"Their strategic thinking was a game-changer. We now connect with our ideal high-net-worth clients in ways we hadn't imagined."</em></p> <!-- Simplified -->
+                                <p class="testimonial-quote"><em>"Their strategic thinking was a game-changer. We now connect with our ideal high-net-worth clients in ways we hadn't imagined."</em></p>
                                 <p class="testimonial-attribution">- CMO, Global Bespoke Travel Services Brand</p>
                             </div>
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
                                 <span class="testimonial-icon">🏆</span>
-                                <p class="testimonial-quote"><em>"Their dedication to understanding our unique brand was exceptional. Golden Luxe are true partners in achieving our digital goals."</em></p> <!-- Simplified -->
+                                <p class="testimonial-quote"><em>"Their dedication to understanding our unique brand was exceptional. Golden Luxe are true partners in achieving our digital goals."</em></p>
                                 <p class="testimonial-attribution">- Director, Heritage Luxury Fashion House</p>
                             </div>
                         </div>
 
                         <div class="recognition-strip animate-on-scroll fade-in" data-io-delay="0.4s">
-                            <h3>Strategies Informed by Industry-Leading Insights</h3> <!-- Simplified -->
+                            <h3>Strategies Informed by Industry-Leading Insights</h3>
                             <div class="recognition-logos">
                                 <span>McKinsey Insights (Conceptual Application)</span>
                                 <span>HBR Principles (Strategic Frameworks)</span>
@@ -390,9 +465,9 @@
                 <section id="projects" class="content-section"> 
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Case Studies: Demonstrating Success</span></h2> <!-- Simplified -->
+                            <h2><span class="shiny-gold-heading">Case Studies: Demonstrating Success</span></h2>
                         </div>
-                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">See how we've helped elite brands achieve significant growth and market leadership. Each project highlights our custom strategies and commitment to results. (Full details shared upon request).</p> <!-- Simplified -->
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">See how we've helped elite brands achieve significant growth and market leadership. Each project highlights our custom strategies and commitment to results. (Full details shared upon request).</p>
                         <div class="projects-grid">
                             <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <div class="project-card-icon">⭐</div>
@@ -416,10 +491,10 @@
                 <section id="contact" class="cta-final-section">
                      <div class="container cta-content-area">
                         <div class="animate-on-scroll fade-in">
-                            <h2><span class="shiny-gold-heading">Your Digital Dynasty Awaits. Let's Build It.</span></h2> <!-- Slightly modified -->
-                            <p class="cta-subtitle">The highest level of digital distinction is achievable. If your brand is ready for transformative growth and market leadership, connect with Golden Luxe Media for a confidential, strategic consultation.</p> <!-- Simplified -->
+                            <h2><span class="shiny-gold-heading">Your Digital Dynasty Awaits. Let's Build It.</span></h2>
+                            <p class="cta-subtitle">The highest level of digital distinction is achievable. If your brand is ready for transformative growth and market leadership, connect with Golden Luxe Media for a confidential, strategic consultation.</p>
                         </div>
-                        <h3 class="form-title animate-on-scroll fade-in" data-io-delay="0.1s">Begin Your Journey to Digital Supremacy</h3> <!-- Simplified -->
+                        <h3 class="form-title animate-on-scroll fade-in" data-io-delay="0.1s">Begin Your Journey to Digital Supremacy</h3>
                         <form action="#" method="POST" class="contact-form-embedded animate-on-scroll fade-in-up" data-io-delay="0.2s">
                             <div class="form-input-group">
                                 <label for="contactName">Full Name</label>
@@ -447,11 +522,11 @@
                                 </select>
                             </div>
                             <div class="form-input-group">
-                                <label for="contactMessage">Your Vision for Digital Growth</label> <!-- Simplified -->
-                                <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Tell us about your brand's goals..."></textarea> <!-- Simplified -->
+                                <label for="contactMessage">Your Vision for Digital Growth</label>
+                                <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Tell us about your brand's goals..."></textarea>
                             </div>
                             <div style="text-align: center;">
-                                <button type="submit" class="form-submit-button">Request Your Premier Consultation</button> <!-- Changed CTA text -->
+                                <button type="submit" class="form-submit-button">Request Your Premier Consultation</button>
                             </div>
                         </form>
                     </div>
@@ -464,7 +539,6 @@
                         <circle class="circle" cx="50" cy="50" r="44"/>
                         <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
                     </svg>
-                    <!-- Removed .footer-nav-links as per request -->
                     <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin: 1.5rem 0;">
                         <a href="#" aria-label="LinkedIn" title="LinkedIn">LI</a>
                         <a href="#" aria-label="Instagram" title="Instagram">IG</a>
@@ -472,7 +546,7 @@
                         <a href="#" aria-label="Clutch Reviews" title="Clutch Reviews">CL</a>
                     </div>
                     <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. Architects of Digital Distinction.</p>
-                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Digital Marketing for luxury brands. Expert SEO, Custom Web Design, High-ROI Performance Marketing, and Strategic Content for market leadership & HNW client engagement.</p> <!-- Simplified -->
+                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Digital Marketing for luxury brands. Expert SEO, Custom Web Design, High-ROI Performance Marketing, and Strategic Content for market leadership & HNW client engagement.</p>
                 </div>
             </footer>
 
@@ -513,7 +587,7 @@
                         });
                     }
 
-                    const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button'); // Footer links removed from this selector
+                    const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
                     navLinks.forEach(link => {
                         const targetId = link.getAttribute('href');
                         if (targetId && targetId.startsWith('#') && targetId.length > 1 && document.querySelector(targetId)) {
