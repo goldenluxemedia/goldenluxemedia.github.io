@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                   script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; 
-                   style-src 'self' 'unsafe-inline'; 
+
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+                   style-src 'self' 'unsafe-inline';
                    img-src 'self' data:;
                    font-src 'self' data:;
-                   connect-src 'self' http://localhost:3000; 
+                   connect-src 'self';
                    object-src 'none';
                    base-uri 'self';
                    form-action 'self';">
@@ -29,26 +29,26 @@
     <!-- FAVICON LINKS END -->
 
     <!-- PRELOAD CRITICAL ASSETS -->
-    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-v37-latin-800.woff2" crossorigin> 
-    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-v37-latin-700.woff2" crossorigin> 
+    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-v37-latin-800.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-v37-latin-700.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-600.woff2" crossorigin>
-    
+
     <style>
         /* DARK GRAYSCALE THEME & REFINED CSS */
         :root{
-            --color-background-primary: #1A1A1D; 
-            --color-background-secondary: #25262B; 
-            --color-background-tertiary: #313237; 
-            --color-text-primary: #F0F2F5;   
-            --color-text-secondary: #C8C9CB; 
-            --color-text-muted: #A0A1A3;     
-            --color-gold-brilliant:#FAF0D8; 
-            --color-gold-highlight:#E8C88C; 
-            --color-gold-primary:#B8860B;   
-            --color-gold-mid:#A0740A;       
-            --color-gold-shadow:#6E5007;     
-            --color-gold-antique:#8B734B;   
+            --color-background-primary: #1A1A1D;
+            --color-background-secondary: #25262B;
+            --color-background-tertiary: #313237;
+            --color-text-primary: #F0F2F5;
+            --color-text-secondary: #C8C9CB;
+            --color-text-muted: #A0A1A3;
+            --color-gold-brilliant:#FAF0D8;
+            --color-gold-highlight:#E8C88C;
+            --color-gold-primary:#B8860B;
+            --color-gold-mid:#A0740A;
+            --color-gold-shadow:#6E5007;
+            --color-gold-antique:#8B734B;
             --font-display:'Playfair Display',serif;
             --font-body:'Inter',sans-serif;
             --transition-smooth:0.6s cubic-bezier(0.16,1,0.3,1);
@@ -56,7 +56,7 @@
             --shadow-depth-1: 0 5px 15px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.2);
             --shadow-depth-2: 0 10px 25px rgba(0,0,0,0.3), 0 6px 12px rgba(0,0,0,0.25);
             --shadow-gold-aura: 0 0 35px rgba(184,134,11,0.25), 0 0 60px rgba(184,134,11,0.2);
-            --shadow-subtle-glow: 0 0 15px rgba(232,200,140,0.1); 
+            --shadow-subtle-glow: 0 0 15px rgba(232,200,140,0.1);
         }
 
         /* SELF-HOSTED FONT DEFINITIONS */
@@ -73,7 +73,7 @@
         html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
         body{font-family:var(--font-body);background-color:var(--color-background-primary);color:var(--color-text-primary);line-height:1.75;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
         #lenis-wrapper{position:relative;width:100%}
-        #lenis-content{position:relative;width:100%;background-color:var(--color-background-primary)} 
+        #lenis-content{position:relative;width:100%;background-color:var(--color-background-primary)}
         #preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--color-background-primary);z-index:99999;display:flex;align-items:center;justify-content:center;opacity:1;visibility:visible;transition:opacity 1s var(--transition-smooth),visibility 1s var(--transition-smooth) .1s}
         #preloader.loaded{opacity:0;visibility:hidden;pointer-events:none}
         .preloader-logo{font-family:var(--font-display);font-size:clamp(4rem,15vw,6rem);font-weight:900;background:linear-gradient(135deg,var(--color-gold-highlight) 0%,var(--color-gold-primary) 50%,var(--color-gold-shadow) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:preloaderShine 2.5s infinite ease-in-out}
@@ -91,7 +91,7 @@
         section p.section-intro-text{max-width:700px;margin-left:auto;margin-right:auto;color:var(--color-text-secondary)}
         a{color:var(--color-gold-highlight);text-decoration:none;transition:color var(--transition-interactive)}
         a:focus,a:hover{color:var(--color-gold-brilliant)}
-        
+
         .main-header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.25rem 0;background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)}
         .main-header.scrolled{padding:1rem 0;background-color:rgba(37,38,43,.85);box-shadow:0 8px 30px rgba(0,0,0,.4)}
         .main-header .container{display:flex;justify-content:space-between;align-items:center}
@@ -112,7 +112,7 @@
         .main-nav a:hover{color:var(--color-gold-highlight)}
         .menu-toggle{display:none;background:none;border:none;color:var(--color-gold-primary)!important;font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005}
         button.menu-toggle:focus,button.menu-toggle:hover{color:var(--color-gold-highlight)!important}
-        
+
         .hero-section{
             min-height: 95vh; /* Adjusted for content visibility */
             padding: 7rem 0 5rem; /* MODIFIED: Reduced top padding from 9rem, adjusted bottom */
@@ -137,10 +137,10 @@
         }
         .hero-section h1{margin-bottom:.8rem;color:var(--color-text-primary);font-weight:800;line-height:1.25}
         .hero-section p.subtitle{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);max-width:720px;margin:1.5rem auto 2.5rem;line-height:1.75}
-        
+
         .hero-services-showcase{
             display:flex;flex-wrap:wrap;justify-content:center;
-            gap:.8rem 1rem; 
+            gap:.8rem 1rem;
             margin-bottom:3rem; /* Space before CTA */
             max-width:800px;
             width: 100%;
@@ -160,7 +160,7 @@
         .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s}
         .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
         @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
-        
+
         .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .content-section:last-of-type{border-bottom:none}
         .content-section .section-title-container h2::after{content:'';display:block;width:70px;height:3px;background-color:var(--color-gold-primary);margin:1.2rem auto 0}
@@ -216,7 +216,7 @@
         .form-textarea-input{min-height:110px;resize:vertical}
         .form-submit-button{font-family:var(--font-body);font-weight:600;font-size:1rem;padding:1rem 2.6rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border:none;border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;cursor:pointer;display:inline-block;box-shadow:var(--shadow-depth-1);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);margin-top:1rem}
         .form-submit-button:focus,.form-submit-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px);box-shadow:var(--shadow-depth-2)}
-        
+
         .site-footer{background-color:var(--color-background-primary);padding:3.5rem 0 2.5rem;text-align:center;border-top:1px solid rgba(184,134,11,.15)}
         .footer-logo-icon{width:50px;height:50px;margin:0 auto 1.2rem;display:block}
         .footer-logo-icon .circle{fill:var(--color-gold-mid)}
@@ -225,13 +225,13 @@
         .footer-social-links a:hover{color:var(--color-gold-highlight);border-color:var(--color-gold-primary)}
         .site-footer p{font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem}
         .footer-seo-text{font-size:.7rem;color:var(--color-text-muted);opacity:.6;max-width:550px;margin:1.2rem auto 0;line-height:1.45}
-        
+
         @media (max-width:991px){.main-header .container{flex-wrap:wrap}.logo-link{margin-right:auto}.main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}.pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}.recognition-logos span{margin:.5rem;padding:.5rem 1rem}.hero-services-showcase{max-width:600px}.service-chip{flex-basis:calc(33.333% - 1rem);min-width:140px}}
         @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}
-        
+
         /* MODIFICATION: Increased top padding for mobile hero section for more space */
         .hero-section{min-height:auto; padding: 7rem 0 4rem;} /* Was 6rem 0 4rem */
-        
+
         .hero-services-showcase{gap:.6rem .8rem;max-width:100%;margin-bottom:2.5rem} /* Adjusted margin for mobile */
         .service-chip{padding:.4rem .8rem;flex-basis:calc(50% - .8rem);min-width:120px}
         .content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
@@ -267,8 +267,8 @@
                             <li><a href="#hero" class="active">Home</a></li>
                             <li><a href="#services">Our Expertise</a></li>
                             <li><a href="#why-invest">Our Approach</a></li>
-                            <li><a href="#client-success">Client Success</a></li> 
-                            <li><a href="#projects">Case Studies</a></li> 
+                            <li><a href="#client-success">Client Success</a></li>
+                            <li><a href="#projects">Case Studies</a></li>
                             <li><a href="#contact">Connect</a></li>
                         </ul>
                     </nav>
@@ -285,7 +285,7 @@
                             <span class="hero-h1-subline">Achieve Unrivaled Brand Distinction.</span>
                         </h1>
                         <p class="subtitle">Golden Luxe Media crafts digital empires for select brands. We deliver visionary strategies, finely-tuned luxury experiences, and clear ROI to build your lasting legacy.</p>
-                        
+
                         <div class="hero-services-showcase"> <!-- Moved Above CTA -->
                             <span class="service-chip"><span class="chip-icon">🔍</span> SEO Mastery</span>
                             <span class="service-chip"><span class="chip-icon">📈</span> Digital Marketing</span>
@@ -293,16 +293,16 @@
                             <span class="service-chip"><span class="chip-icon">⚜️</span> Branding</span> <!-- Changed -->
                             <span class="service-chip"><span class="chip-icon">💻</span> Web Development</span>
                             <span class="service-chip"><span class="chip-icon">📱</span> App Development</span>
-                            <span class="service-chip"><span class="chip-icon">🎯</span> Performance Marketing</span> 
-                            <span class="service-chip"><span class="chip-icon">☁️</span> Cloud Services</span> 
+                            <span class="service-chip"><span class="chip-icon">🎯</span> Performance Marketing</span>
+                            <span class="service-chip"><span class="chip-icon">☁️</span> Cloud Services</span>
                         </div>
-                        
+
                         <a href="#why-invest" class="hero-cta-button">Explore Our Method</a>
 
                     </div>
                 </section>
 
-                <section id="why-invest" class="content-section why-invest-section"> 
+                <section id="why-invest" class="content-section why-invest-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">The Golden Luxe Standard: What We Deliver</span></h2>
@@ -390,13 +390,13 @@
                     </div>
                 </section>
 
-                <section id="client-success" class="content-section client-success-section"> 
+                <section id="client-success" class="content-section client-success-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">Real Impact: Client Success Stories</span></h2>
                         </div>
                         <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to building digital legacies is shown in our clients' success. While we maintain strict confidentiality, these examples highlight the results we achieve.</p>
-                        
+
                         <div class="testimonial-grid">
                             <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
                                 <span class="testimonial-icon">💬</span>
@@ -421,13 +421,13 @@
                                 <span>McKinsey Insights (Conceptual Application)</span>
                                 <span>HBR Principles (Strategic Frameworks)</span>
                                 <span>Luxury Institute Findings (Market Parallels)</span>
-                                <span>Google Best Practices (Quality Benchmark)</span> 
+                                <span>Google Best Practices (Quality Benchmark)</span>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="projects" class="content-section"> 
+                <section id="projects" class="content-section">
                     <div class="container">
                         <div class="section-title-container animate-on-scroll fade-in">
                             <h2><span class="shiny-gold-heading">Case Studies: Demonstrating Success</span></h2>
@@ -558,11 +558,11 @@
                         if (targetId && targetId.startsWith('#') && targetId.length > 1 && document.querySelector(targetId)) {
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
-                                let offsetVal = pageHeader ? -pageHeader.offsetHeight -10 : -80; 
-                                if (targetId === "#hero") offsetVal = 0; 
+                                let offsetVal = pageHeader ? -pageHeader.offsetHeight -10 : -80;
+                                if (targetId === "#hero") offsetVal = 0;
 
                                 lenis.scrollTo(targetId, { offset: offsetVal, duration: 2.0, easing: (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t) });
-                                
+
                                 if (pageNav && pageNav.classList.contains('active')) {
                                     pageNav.classList.remove('active');
                                     if (navToggleBtn) {
@@ -578,7 +578,7 @@
                     const mainNavLinks = document.querySelectorAll('.main-nav a');
 
                     function updateActiveLinkOnScroll() {
-                        let currentSectionId = 'hero'; 
+                        let currentSectionId = 'hero';
                         const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
                         const scrollPosition = lenis.scroll + (window.innerHeight * 0.4) + headerHeight;
 
@@ -595,14 +595,14 @@
                             }
                         });
                     }
-                    
+
                     if (pageHeader) {
                         lenis.on('scroll', (e) => {
-                            pageHeader.classList.toggle('scrolled', e.scroll > 50); 
+                            pageHeader.classList.toggle('scrolled', e.scroll > 50);
                             updateActiveLinkOnScroll();
                         });
                     }
-                    updateActiveLinkOnScroll(); 
+                    updateActiveLinkOnScroll();
 
                 } else {
                     console.warn("Lenis library not fully available. Using fallback scroll.");
@@ -653,14 +653,14 @@
                     });
                 }
             }
-            
+
             initializeLenis();
 
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
 
             animatedElements.forEach(el => {
-                el.style.opacity = '0'; 
+                el.style.opacity = '0';
                 if (el.classList.contains('fade-in-up')) {
                     el.style.transform = 'translateY(40px)';
                 }
@@ -699,11 +699,11 @@
 
             const contactForm = document.querySelector('.contact-form-embedded');
             if (contactForm) {
-                contactForm.addEventListener('submit', async (event) => {
-                    event.preventDefault(); 
+                contactForm.addEventListener('submit', (event) => { // Removed async
+                    event.preventDefault();
                     const submitButton = contactForm.querySelector('.form-submit-button');
                     const originalButtonText = submitButton.textContent;
-                    submitButton.textContent = 'Sending...';
+                    submitButton.textContent = 'Preparing Email...';
                     submitButton.disabled = true;
 
                     let statusMessageEl = contactForm.querySelector('.form-status-message');
@@ -714,46 +714,67 @@
                         statusMessageEl.style.marginTop = '1rem';
                         statusMessageEl.style.fontSize = '0.9rem';
                         statusMessageEl.style.fontWeight = '500';
-                        const buttonContainer = submitButton.closest('div'); 
+                        const buttonContainer = submitButton.closest('div');
                         if (buttonContainer && buttonContainer.parentNode) {
                             buttonContainer.parentNode.insertBefore(statusMessageEl, buttonContainer.nextSibling);
-                        } else { 
+                        } else {
                             contactForm.insertBefore(statusMessageEl, submitButton.nextSibling);
                         }
                     }
-                    statusMessageEl.textContent = ''; 
-                    statusMessageEl.style.color = 'var(--color-text-secondary)'; 
+                    statusMessageEl.textContent = '';
+                    statusMessageEl.style.color = 'var(--color-text-secondary)';
 
                     const formData = new FormData(contactForm);
-                    const data = {};
-                    formData.forEach((value, key) => { data[key] = value; });
+                    const name = formData.get('name') || 'N/A';
+                    const email = formData.get('email') || 'N/A';
+                    const company_website = formData.get('company_website') || 'N/A';
+                    const service = formData.get('service') || 'N/A'; // Will be empty string if not selected, or "N/A" if not present
+                    const message = formData.get('message') || 'No message provided.';
 
+                    const emailTo = 'assistant.of.keren.glm@zohomail.in';
+                    const emailSubject = `Contact Form Submission from ${name} (${company_website !== 'N/A' ? company_website.split(' - ')[0] : email})`;
+
+                    const emailBody = `
+New Contact Form Submission:
+
+Name: ${name}
+Business Email: ${email}
+Company & Website: ${company_website}
+Primary Interest: ${service || 'Not specified'}
+
+Message:
+${message}
+
+----------------------------------
+This email was generated from the contact form on Golden Luxe Media website.
+                    `;
+
+                    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody.trim())}`;
+
+                    // Attempt to open mail client
+                    // Note: Mailto links have length limitations (around 2000 characters for GET, which this emulates).
+                    // Very long messages might be truncated or fail to open in some email clients/browsers.
                     try {
-                        const response = await fetch('http://localhost:3000/api/contact', { 
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json', },
-                            body: JSON.stringify(data),
-                        });
-                        const result = await response.json();
-                        if (response.ok && result.success) {
-                            statusMessageEl.textContent = result.message || 'Message sent successfully!';
-                            statusMessageEl.style.color = 'var(--color-gold-highlight)'; 
-                            contactForm.reset(); 
-                        } else {
-                            statusMessageEl.textContent = result.message || 'An error occurred. Please try again.';
-                            statusMessageEl.style.color = '#E74C3C'; 
-                        }
-                    } catch (error) {
-                        console.error('Form submission error:', error);
-                        statusMessageEl.textContent = 'A network error occurred. Please check connection.';
-                        statusMessageEl.style.color = '#E74C3C'; 
-                    } finally {
+                        window.location.href = mailtoLink;
+                        statusMessageEl.textContent = 'Your email client should open. Please complete and send the email. If it doesn\'t open, please copy the details manually.';
+                        statusMessageEl.style.color = 'var(--color-gold-highlight)';
+                        contactForm.reset(); // Reset form fields
+                    } catch (e) {
+                        console.error("Error opening mailto link:", e);
+                        statusMessageEl.textContent = 'Could not open email client. Please copy details or try again.';
+                        statusMessageEl.style.color = '#E74C3C';
+                    }
+
+
+                    // Restore button state after a short delay
+                    setTimeout(() => {
                         submitButton.textContent = originalButtonText;
                         submitButton.disabled = false;
+                        // Clear status message after a longer delay
                         setTimeout(() => {
                             if (statusMessageEl) statusMessageEl.textContent = '';
-                        }, 7000); 
-                    }
+                        }, 7000);
+                    }, 1500); // Delay to allow mail client to open
                 });
             }
         });
