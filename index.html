@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+                   style-src 'self' 'unsafe-inline';
+                   img-src 'self' data:;
+                   font-src 'self' data:;
+                   connect-src 'self';
+                   object-src 'none';
+                   base-uri 'self';
+                   form-action 'self';">
+
+    <title>Premier Digital Marketing & SEO | Golden Luxe Media</title>
+    <meta name="description" content="Partner with Golden Luxe Media to elevate your distinguished brand. We deliver high-return SEO, custom luxury web design & transformative digital marketing.">
+    <meta name="keywords" content="premier digital marketing, elite SEO services, custom brand strategy, luxury web design, high-ROI marketing, exclusive online presence, digital growth, brand elevation, Golden Luxe Media, strategic content marketing, performance marketing, luxury branding solutions, client success stories, digital marketing experts, luxury market insights, luxury brand SEO, high-end web development, digital strategies for luxury brands, UI/UX excellence, app development, cloud solutions, branding services, digital marketing for fashion, SEO for jewelers, HNW client engagement"> <!-- Added Branding -->
+
+    <!-- FAVICON LINKS START - PATHS POINT TO 'favicons' FOLDER -->
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Golden Luxe Media" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <!-- FAVICON LINKS END -->
+
+    <!-- PRELOAD CRITICAL ASSETS -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-v37-latin-800.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-v37-latin-700.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-v18-latin-600.woff2" crossorigin>
+
+    <style>
+        /* DARK GRAYSCALE THEME & REFINED CSS */
+        :root{
+            --color-background-primary: #1A1A1D;
+            --color-background-secondary: #25262B;
+            --color-background-tertiary: #313237;
+            --color-text-primary: #F0F2F5;
+            --color-text-secondary: #C8C9CB;
+            --color-text-muted: #A0A1A3;
+            --color-gold-brilliant:#FAF0D8;
+            --color-gold-highlight:#E8C88C;
+            --color-gold-primary:#B8860B;
+            --color-gold-mid:#A0740A;
+            --color-gold-shadow:#6E5007;
+            --color-gold-antique:#8B734B;
+            --font-display:'Playfair Display',serif;
+            --font-body:'Inter',sans-serif;
+            --transition-smooth:0.6s cubic-bezier(0.16,1,0.3,1);
+            --transition-interactive:0.35s ease;
+            --shadow-depth-1: 0 5px 15px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.2);
+            --shadow-depth-2: 0 10px 25px rgba(0,0,0,0.3), 0 6px 12px rgba(0,0,0,0.25);
+            --shadow-gold-aura: 0 0 35px rgba(184,134,11,0.25), 0 0 60px rgba(184,134,11,0.2);
+            --shadow-subtle-glow: 0 0 15px rgba(232,200,140,0.1);
+        }
+
+        /* SELF-HOSTED FONT DEFINITIONS */
+        @font-face {font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:local('Playfair Display Bold'),local('PlayfairDisplay-Bold'),url('fonts/playfair-display-v37-latin-700.woff2') format('woff2');}
+        @font-face {font-family:'Playfair Display';font-style:normal;font-weight:800;font-display:swap;src:local('Playfair Display ExtraBold'),local('PlayfairDisplay-ExtraBold'),url('fonts/playfair-display-v37-latin-800.woff2') format('woff2');}
+        @font-face {font-family:'Playfair Display';font-style:normal;font-weight:900;font-display:swap;src:local('Playfair Display Black'),local('PlayfairDisplay-Black'),url('fonts/playfair-display-v37-latin-900.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:local('Inter Light'),local('Inter-Light'),url('fonts/inter-v18-latin-300.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:local('Inter Regular'),local('Inter-Regular'),url('fonts/inter-v18-latin-regular.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:local('Inter Medium'),local('Inter-Medium'),url('fonts/inter-v18-latin-500.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:local('Inter SemiBold'),local('Inter-SemiBold'),url('fonts/inter-v18-latin-600.woff2') format('woff2');}
+        @font-face {font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:local('Inter Bold'),local('Inter-Bold'),url('fonts/inter-v18-latin-700.woff2') format('woff2');}
+
+        *,::after,::before{margin:0;padding:0;box-sizing:border-box}
+        html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+        body{font-family:var(--font-body);background-color:var(--color-background-primary);color:var(--color-text-primary);line-height:1.75;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+        #lenis-wrapper{position:relative;width:100%}
+        #lenis-content{position:relative;width:100%;background-color:var(--color-background-primary)}
+        #preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--color-background-primary);z-index:99999;display:flex;align-items:center;justify-content:center;opacity:1;visibility:visible;transition:opacity 1s var(--transition-smooth),visibility 1s var(--transition-smooth) .1s}
+        #preloader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+        .preloader-logo{font-family:var(--font-display);font-size:clamp(4rem,15vw,6rem);font-weight:900;background:linear-gradient(135deg,var(--color-gold-highlight) 0%,var(--color-gold-primary) 50%,var(--color-gold-shadow) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:preloaderShine 2.5s infinite ease-in-out}
+        @keyframes preloaderShine{0%,to{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+        .container{width:92%;max-width:1280px;margin:0 auto;padding:0 20px}
+        h1,h2,h3,h4,h5,h6{font-family:var(--font-display);color:var(--color-text-primary);line-height:1.3;margin-bottom:1.5rem;font-weight:700}
+        .shiny-gold-heading{background:linear-gradient(120deg,var(--color-gold-brilliant) 20%,var(--color-gold-primary) 50%,var(--color-gold-highlight) 80%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:textShimmer 5s infinite linear;background-size:200% 100%}
+        @keyframes textShimmer{0%{background-position:-100% 0}to{background-position:100% 0}}
+        h1{font-size:clamp(2.3rem,5.8vw,4.5rem);color:var(--color-text-primary)}
+        .hero-h1-subline{font-family:var(--font-body);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;color:var(--color-text-secondary);display:block;margin-top:.5rem;line-height:1.5}
+        h2{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:3rem;text-align:center}
+        h3{font-size:clamp(1.6rem,4vw,2.6rem);font-family:var(--font-display);color:var(--color-text-primary);line-height:1.3;margin-bottom:1.5rem;font-weight:700}
+        .usp-card h3,.service-card h3,.project-card h3{font-size:clamp(1.2rem,3vw,1.6rem);font-family:var(--font-body);font-weight:600;color:var(--color-gold-highlight);margin-bottom:.8rem}
+        p{font-size:clamp(.9rem,1.7vw,1.05rem);color:var(--color-text-secondary);margin-bottom:1.5rem}
+        section p.section-intro-text{max-width:700px;margin-left:auto;margin-right:auto;color:var(--color-text-secondary)}
+        a{color:var(--color-gold-highlight);text-decoration:none;transition:color var(--transition-interactive)}
+        a:focus,a:hover{color:var(--color-gold-brilliant)}
+
+        .main-header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.25rem 0;background-color:rgba(26,26,29,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,134,11,.2);box-shadow:0 5px 25px rgba(0,0,0,.3);transition:background-color var(--transition-smooth),padding var(--transition-smooth),box-shadow var(--transition-smooth)}
+        .main-header.scrolled{padding:1rem 0;background-color:rgba(37,38,43,.85);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+        .main-header .container{display:flex;justify-content:space-between;align-items:center}
+        .logo-link{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+        .logo-svg-icon{width:50px;height:50px;flex-shrink:0}
+        .logo-svg-icon .circle{fill:var(--color-gold-primary);transition:fill var(--transition-interactive)}
+        .logo-svg-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
+        .logo-link:hover .logo-svg-icon .circle{fill:var(--color-gold-highlight)}
+        .site-title-text{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,1.8rem);font-weight:700;color:var(--color-gold-brilliant);white-space:nowrap}
+        .site-title-text span{color:var(--color-gold-highlight);font-weight:700}
+        .main-nav{margin-left:auto}
+        .main-nav ul{list-style:none;display:flex;padding-left:0}
+        .main-nav li{margin-left:2.5rem}
+        .main-nav a{font-size:.9rem;letter-spacing:1.5px;text-transform:uppercase;padding:.9rem .3rem;position:relative;color:var(--color-text-secondary);font-weight:500}
+        .main-nav a::after{content:'';position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);width:0;height:2px;background-color:var(--color-gold-primary);transition:width var(--transition-interactive)}
+        .main-nav a.active::after,.main-nav a:hover::after{width:calc(100% - .6rem)}
+        .main-nav a.active{color:var(--color-gold-highlight)}
+        .main-nav a:hover{color:var(--color-gold-highlight)}
+        .menu-toggle{display:none;background:none;border:none;color:var(--color-gold-primary)!important;font-size:1.8rem;cursor:pointer;padding:.5rem;z-index:1005}
+        button.menu-toggle:focus,button.menu-toggle:hover{color:var(--color-gold-highlight)!important}
+
+        .hero-section{
+            min-height: 95vh; /* Adjusted for content visibility */
+            padding: 7rem 0 5rem; /* MODIFIED: Reduced top padding from 9rem, adjusted bottom */
+            display:flex;
+            flex-direction: column; /* Allow vertical stacking and centering */
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            position:relative;
+            background:linear-gradient(rgba(26,26,29,.7),rgba(26,26,29,.9)),radial-gradient(circle at 50% 0%,rgba(184,134,11,.07) 0%,transparent 50%),var(--color-background-primary);
+            overflow:hidden;
+        }
+        .hero-content-wrapper{
+            max-width:850px;
+            width: 90%; /* Ensure it doesn't get too wide on very large screens, helps with centering */
+            position:relative;
+            z-index:1;
+            margin:0 auto;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        .hero-section h1{margin-bottom:.8rem;color:var(--color-text-primary);font-weight:800;line-height:1.25}
+        .hero-section p.subtitle{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--color-text-secondary);max-width:720px;margin:1.5rem auto 2.5rem;line-height:1.75}
+
+        .hero-services-showcase{
+            display:flex;flex-wrap:wrap;justify-content:center;
+            gap:.8rem 1rem;
+            margin-bottom:3rem; /* Space before CTA */
+            max-width:800px;
+            width: 100%;
+        }
+        .service-chip{background-color:var(--color-background-secondary);color:var(--color-text-secondary);padding:.6rem 1.1rem;border-radius:25px;font-size:clamp(.8rem,1.9vw,.95rem);font-weight:500;display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(184,134,11,.25);box-shadow:0 3px 7px rgba(0,0,0,.25);animation:floatAnimation 4s ease-in-out infinite;transition:transform .3s ease,box-shadow .3s ease,color .3s ease,background-color .3s ease;flex-basis:calc(25% - 1rem);min-width:160px;box-sizing:border-box;justify-content:center}
+        .service-chip:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 6px 12px rgba(0,0,0,.35),var(--shadow-subtle-glow);color:var(--color-gold-highlight);background-color:var(--color-background-tertiary)}
+        .service-chip .chip-icon{font-size:clamp(1rem,2.1vw,1.2rem);line-height:1}
+        .service-chip:nth-child(2){animation-delay:.2s}
+        .service-chip:nth-child(3){animation-delay:.4s}
+        .service-chip:nth-child(4){animation-delay:.6s}
+        .service-chip:nth-child(5){animation-delay:.1s}
+        .service-chip:nth-child(6){animation-delay:.3s}
+        .service-chip:nth-child(7){animation-delay:.5s}
+        .service-chip:nth-child(8){animation-delay:.7s}
+        @keyframes floatAnimation{0%,to{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+        .hero-cta-button{font-family:var(--font-body);font-weight:600;font-size:1.05rem;padding:1rem 2.5rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;display:inline-block;box-shadow:var(--shadow-depth-1),var(--shadow-gold-aura);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);animation:pulseButton 3s infinite ease-in-out 1s}
+        .hero-cta-button:focus,.hero-cta-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-depth-2),0 0 40px rgba(232,200,140,.35)}
+        @keyframes pulseButton{0%,to{transform:scale(1);opacity:.95}50%{transform:scale(1.02);opacity:1}}
+
+        .content-section{padding:5.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+        .content-section:last-of-type{border-bottom:none}
+        .content-section .section-title-container h2::after{content:'';display:block;width:70px;height:3px;background-color:var(--color-gold-primary);margin:1.2rem auto 0}
+        .section-intro-text{font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--color-text-secondary);text-align:center;margin-bottom:4.5rem;max-width:780px}
+        .animate-on-scroll{opacity:0}
+        .animate-on-scroll.fade-in{transition:opacity .8s var(--transition-smooth)}
+        .animate-on-scroll.fade-in-up{transform:translateY(40px);transition:opacity .8s var(--transition-smooth),transform .8s var(--transition-smooth)}
+        .animate-on-scroll.is-visible{opacity:1;transform:translateY(0)}
+        .why-invest-section{background-color:var(--color-background-primary)}
+        .why-invest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:4rem}
+        .usp-card{background-color:var(--color-background-secondary);padding:2.5rem 2rem;border-radius:12px;border:1px solid rgba(184,134,11,.2);box-shadow:var(--shadow-depth-1);transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive);display:flex;flex-direction:column}
+        .usp-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);border-color:rgba(184,134,11,.4);background-color:var(--color-background-tertiary)}
+        .usp-icon-wrapper{width:50px;height:50px;background-color:rgba(184,134,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)}
+        .usp-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0;flex-grow:1}
+        .golden-pillars-section{text-align:center;margin-top:3rem}
+        .pillars-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+        .pillar-card{text-align:center;padding:1.5rem}
+        .pillar-icon{font-size:2.2rem;color:var(--color-gold-primary);margin-bottom:1rem;display:block}
+        .pillar-card h4{font-family:var(--font-body);font-weight:600;color:var(--color-text-primary);font-size:1.1rem;margin-bottom:.5rem;line-height:1.3}
+        .pillar-card p{font-size:.85rem;color:var(--color-text-muted);line-height:1.6;margin-bottom:0}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem}
+        .service-card{background-color:var(--color-background-secondary);padding:2rem 1.8rem;border-radius:10px;text-align:left;border-left:4px solid var(--color-gold-mid);box-shadow:var(--shadow-depth-1);transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive);display:flex;flex-direction:column}
+        .service-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);border-left-color:var(--color-gold-highlight);background-color:var(--color-background-tertiary)}
+        .service-icon-wrapper{width:50px;height:50px;background-color:rgba(184,134,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:24px;color:var(--color-gold-primary)}
+        .service-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0;flex-grow:1}
+        .client-success-section{background-color:var(--color-background-primary)}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:3.5rem}
+        .testimonial-card{background-color:var(--color-background-secondary);padding:2rem 1.8rem;border-radius:10px;border-left:4px solid var(--color-gold-antique);box-shadow:var(--shadow-depth-1);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,background-color .3s ease}
+        .testimonial-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-depth-2),var(--shadow-subtle-glow);background-color:var(--color-background-tertiary)}
+        .testimonial-icon{font-size:2rem;color:var(--color-gold-primary);margin-bottom:.8rem;line-height:1}
+        .testimonial-quote{font-style:italic;color:var(--color-text-primary);margin-bottom:1rem;flex-grow:1;font-size:.95rem}
+        .testimonial-attribution{font-size:.8rem;color:var(--color-gold-highlight);font-weight:600;text-align:right}
+        .recognition-strip{text-align:center;padding-top:2.5rem;border-top:1px solid rgba(184,134,11,.15)}
+        .recognition-logos span{display:inline-block;margin:.7rem 1.2rem;padding:.6rem 1.2rem;font-family:var(--font-body);font-size:.85rem;color:var(--color-gold-highlight);font-weight:500;border:1.5px solid var(--color-gold-mid);border-radius:6px;background-color:transparent;box-shadow:none;transition:color var(--transition-interactive),border-color var(--transition-interactive),background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive)}
+        .recognition-logos span:hover{color:var(--color-gold-brilliant);border-color:var(--color-gold-highlight);background-color:rgba(184,134,11,.08);transform:translateY(-2px);box-shadow:0 3px 8px rgba(184,134,11,.15)}
+        .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:3rem}
+        .project-card{background-color:var(--color-background-secondary);padding:2.2rem 1.8rem;border-radius:10px;border-left:4px solid var(--color-gold-primary);box-shadow:var(--shadow-depth-1);display:flex;flex-direction:column;transition:transform var(--transition-interactive),box-shadow var(--transition-interactive),border-left-color var(--transition-interactive),background-color var(--transition-interactive)}
+        .project-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-depth-2),var(--shadow-gold-aura);border-left-color:var(--color-gold-highlight);background-color:var(--color-background-tertiary)}
+        .project-card-icon{font-size:2rem;color:var(--color-gold-primary);margin-bottom:1.2rem;line-height:1}
+        .project-card p{font-size:.88rem;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1rem;flex-grow:1}
+        .project-learn-more{font-size:.85rem;color:var(--color-gold-primary);text-transform:uppercase;letter-spacing:1px;font-weight:600;align-self:flex-start;margin-top:auto;padding-top:.5rem}
+        .project-learn-more:hover{color:var(--color-gold-highlight)}
+        .cta-final-section{background-color:var(--color-background-primary);text-align:center;padding:6rem 0;position:relative}
+        .cta-final-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 100%,rgba(184,134,11,.1) 0%,transparent 60%);pointer-events:none}
+        .cta-content-area{position:relative;z-index:1;max-width:750px;margin:0 auto}
+        .form-title{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.2rem);color:var(--color-gold-highlight);margin-bottom:2.5rem;text-align:center}
+        .cta-subtitle{font-size:clamp(.95rem,2vw,1.15rem);color:var(--color-text-secondary);margin-bottom:3rem;line-height:1.7}
+        .contact-form-embedded{max-width:600px;margin:0 auto;text-align:left}
+        .form-input-group{margin-bottom:1.5rem}
+        .form-input-group label{display:block;font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:1px;font-weight:500}
+        .form-text-input,.form-textarea-input{width:100%;padding:.9rem 1.1rem;background-color:var(--color-background-secondary);border:1px solid var(--color-background-tertiary);color:var(--color-text-primary);border-radius:6px;font-family:var(--font-body);font-size:.95rem;transition:border-color var(--transition-interactive),box-shadow var(--transition-interactive),background-color var(--transition-interactive)}
+        .form-text-input:focus,.form-textarea-input:focus{outline:none;border-color:var(--color-gold-mid);box-shadow:0 0 0 3px rgba(184,134,11,.25);background-color:var(--color-background-tertiary)}
+        .form-textarea-input{min-height:110px;resize:vertical}
+        .form-submit-button{font-family:var(--font-body);font-weight:600;font-size:1rem;padding:1rem 2.6rem;background-color:var(--color-gold-primary);color:var(--color-background-primary);border:none;border-radius:50px;text-transform:uppercase;letter-spacing:1.2px;cursor:pointer;display:inline-block;box-shadow:var(--shadow-depth-1);transition:background-color var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive);margin-top:1rem}
+        .form-submit-button:focus,.form-submit-button:hover{background-color:var(--color-gold-highlight);transform:translateY(-3px);box-shadow:var(--shadow-depth-2)}
+
+        .site-footer{background-color:var(--color-background-primary);padding:3.5rem 0 2.5rem;text-align:center;border-top:1px solid rgba(184,134,11,.15)}
+        .footer-logo-icon{width:50px;height:50px;margin:0 auto 1.2rem;display:block}
+        .footer-logo-icon .circle{fill:var(--color-gold-mid)}
+        .footer-logo-icon .letter-g{font-family:var(--font-display);fill:var(--color-background-primary);font-weight:900}
+        .footer-social-links a{display:inline-block;color:var(--color-text-muted);margin:0 .7rem;font-size:.85rem;text-transform:uppercase;font-weight:500;border:1px solid transparent;padding:.25rem .4rem;border-radius:4px}
+        .footer-social-links a:hover{color:var(--color-gold-highlight);border-color:var(--color-gold-primary)}
+        .site-footer p{font-size:.8rem;color:var(--color-text-muted);margin-bottom:.4rem}
+        .footer-seo-text{font-size:.7rem;color:var(--color-text-muted);opacity:.6;max-width:550px;margin:1.2rem auto 0;line-height:1.45}
+
+        @media (max-width:991px){.main-header .container{flex-wrap:wrap}.logo-link{margin-right:auto}.main-nav li{margin-left:1.5rem}.main-nav a{font-size:.85rem;letter-spacing:1.5px}.pillars-grid,.projects-grid,.testimonial-grid{grid-template-columns:1fr}.recognition-logos span{margin:.5rem;padding:.5rem 1rem}.hero-services-showcase{max-width:600px}.service-chip{flex-basis:calc(33.333% - 1rem);min-width:140px}}
+        @media (max-width:767px){.menu-toggle{display:block}.main-nav{display:none;flex-direction:column;width:100%;position:absolute;top:100%;left:0;background-color:rgba(37,38,43,.98);backdrop-filter:blur(18px);padding:.5rem 0;box-shadow:0 12px 30px rgba(0,0,0,.4);border-top:1px solid rgba(184,134,11,.15);animation:mobileNavSlideDown .5s var(--transition-smooth) forwards}@keyframes mobileNavSlideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.main-nav.active{display:flex}.main-nav ul{flex-direction:column;width:100%}.main-nav li{margin:0;width:100%}.main-nav a{display:block;padding:1rem;font-size:.9rem;text-align:center;border-bottom:1px solid rgba(184,134,11,.08);width:100%;letter-spacing:2px;color:var(--color-text-secondary)}.main-nav li:last-child a{border-bottom:none}.main-nav a::after,.main-nav a::before{display:none}.main-nav a:hover{background-color:rgba(184,134,11,.05);color:var(--color-gold-highlight)}
+
+        /* MODIFICATION: Increased top padding for mobile hero section for more space */
+        .hero-section{min-height:auto; padding: 7rem 0 4rem;} /* Was 6rem 0 4rem */
+
+        .hero-services-showcase{gap:.6rem .8rem;max-width:100%;margin-bottom:2.5rem} /* Adjusted margin for mobile */
+        .service-chip{padding:.4rem .8rem;flex-basis:calc(50% - .8rem);min-width:120px}
+        .content-section{padding:3.5rem 0}.section-intro-text{margin-bottom:2.5rem}.form-title{font-size:clamp(1.3rem,5vw,1.8rem);margin-bottom:2rem}.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:1fr;gap:1.8rem}.recognition-strip h3{margin-bottom:1.5rem}.recognition-logos span{font-size:.75rem;margin:.4rem .6rem;padding:.4rem .8rem;border-width:1px}}
+        @media (max-width:480px){h1{font-size:clamp(1.8rem,7vw,2.8rem)}.hero-h1-subline{font-size:clamp(1.1rem,4.5vw,1.4rem)}h2{font-size:clamp(1.6rem,6vw,2.2rem)}.hero-section p.subtitle{font-size:.9rem}
+        .hero-cta-button{padding:.8rem 2rem;font-size:.9rem;} /* Removed specific margin-bottom, general flow will handle */
+        .main-header .container{padding-left:15px;padding-right:15px}.container{padding-left:15px;padding-right:15px;width:100%}.project-card-icon,.service-icon-wrapper,.usp-icon-wrapper{width:45px;height:45px;font-size:20px;margin-bottom:1rem}.project-card,.service-card,.testimonial-card,.usp-card{padding:1.8rem 1.5rem}.golden-pillars-section h3{font-size:clamp(1.3rem,4vw,1.7rem)}.pillar-card h4{font-size:1rem}.recognition-strip h3{font-size:clamp(1.1rem,3.5vw,1.5rem)}.service-chip{flex-basis:calc(50% - .6rem);font-size:.7rem;padding:.3rem .6rem}}
+        @media (min-width:992px){.pillars-grid,.projects-grid,.services-grid,.why-invest-grid{grid-template-columns:repeat(3,1fr)}.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}}
+        @media (min-width:1200px){.projects-grid,.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
+        @media (min-width:1440px){.container{max-width:1360px}.hero-content-wrapper{max-width:900px}.section-intro-text{max-width:800px}}
+        ::-webkit-scrollbar{width:10px;height:10px}
+        ::-webkit-scrollbar-track{background:var(--color-background-primary)}
+        ::-webkit-scrollbar-thumb{background:var(--color-gold-mid);border-radius:10px;border:2px solid var(--color-background-primary)}
+        ::-webkit-scrollbar-thumb:hover{background:var(--color-gold-primary)}
+    </style>
+</head>
+<body>
+    <div id="preloader"><div class="preloader-logo">G</div></div>
+
+    <div id="lenis-wrapper">
+        <div id="lenis-content">
+
+            <header class="main-header" id="pageHeader">
+                <div class="container">
+                    <a href="#hero" class="logo-link">
+                        <svg class="logo-svg-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="circle" cx="50" cy="50" r="44"/>
+                            <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
+                        </svg>
+                        <span class="site-title-text">Golden Luxe <span>Media</span></span>
+                    </a>
+                    <nav class="main-nav" id="pageNav">
+                        <ul>
+                            <li><a href="#hero" class="active">Home</a></li>
+                            <li><a href="#services">Our Expertise</a></li>
+                            <li><a href="#why-invest">Our Approach</a></li>
+                            <li><a href="#client-success">Client Success</a></li>
+                            <li><a href="#projects">Case Studies</a></li>
+                            <li><a href="#contact">Connect</a></li>
+                        </ul>
+                    </nav>
+                    <button class="menu-toggle" id="navToggleBtn" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+                </div>
+            </header>
+
+            <main>
+                <section id="hero" class="hero-section">
+                    <div class="hero-content-wrapper animate-on-scroll fade-in-up">
+                        <h1>
+                            <span class="shiny-gold-heading">Forge Your Digital Dynasty.</span>
+                            <br/>
+                            <span class="hero-h1-subline">Achieve Unrivaled Brand Distinction.</span>
+                        </h1>
+                        <p class="subtitle">Golden Luxe Media crafts digital empires for select brands. We deliver visionary strategies, finely-tuned luxury experiences, and clear ROI to build your lasting legacy.</p>
+
+                        <div class="hero-services-showcase"> <!-- Moved Above CTA -->
+                            <span class="service-chip"><span class="chip-icon">🔍</span> SEO Mastery</span>
+                            <span class="service-chip"><span class="chip-icon">📈</span> Digital Marketing</span>
+                            <span class="service-chip"><span class="chip-icon">🎨</span> UI/UX Design</span>
+                            <span class="service-chip"><span class="chip-icon">⚜️</span> Branding</span> <!-- Changed -->
+                            <span class="service-chip"><span class="chip-icon">💻</span> Web Development</span>
+                            <span class="service-chip"><span class="chip-icon">📱</span> App Development</span>
+                            <span class="service-chip"><span class="chip-icon">🎯</span> Performance Marketing</span>
+                            <span class="service-chip"><span class="chip-icon">☁️</span> Cloud Services</span>
+                        </div>
+
+                        <a href="#why-invest" class="hero-cta-button">Explore Our Method</a>
+
+                    </div>
+                </section>
+
+                <section id="why-invest" class="content-section why-invest-section">
+                    <div class="container">
+                        <div class="section-title-container animate-on-scroll fade-in">
+                            <h2><span class="shiny-gold-heading">The Golden Luxe Standard: What We Deliver</span></h2>
+                        </div>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">True luxury stands apart. We are architects of your digital distinction, focused on turning your brand's potential into clear market leadership and sustainable profit.</p>
+                        <div class="why-invest-grid">
+                            <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                                <div class="usp-icon-wrapper">🚀</div>
+                                <h3>Visionary Strategy for Market Leadership</h3>
+                                <p>We design digital roadmaps that seize current opportunities and secure your brand's iconic status for the future. Experience strategy that leads.</p>
+                            </div>
+                            <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                                 <div class="usp-icon-wrapper">📈</div>
+                                 <h3>Data-Driven ROI: Luxury That Performs</h3>
+                                <p>Our sharp focus on data ensures every part of your digital presence is fine-tuned for top results, turning investment into measurable growth.</p>
+                            </div>
+                            <div class="usp-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <div class="usp-icon-wrapper">🎯</div>
+                                <h3>Custom Craftsmanship, Dedicated Partnership</h3>
+                                <p>Your brand's unique story is our guide. Expect careful attention to detail, clear communication, and a collaborative path to digital excellence.</p>
+                            </div>
+                        </div>
+
+                        <div class="golden-pillars-section animate-on-scroll fade-in" data-io-delay="0.4s">
+                            <h3>Our Golden Promise: The Principles That Guide Us</h3>
+                            <div class="pillars-grid">
+                                <div class="pillar-card">
+                                    <span class="pillar-icon">🛡️</span>
+                                    <h4>Absolute Discretion</h4>
+                                    <p>Your plans and strategies are protected with complete confidentiality, building a strong foundation of trust.</p>
+                                </div>
+                                <div class="pillar-card">
+                                    <span class="pillar-icon">💡</span>
+                                    <h4>Commitment to Excellence</h4>
+                                    <p>We constantly strive for perfection, making sure everything we deliver reflects the highest quality and innovation.</p>
+                                </div>
+                                <div class="pillar-card">
+                                    <span class="pillar-icon">🌍</span>
+                                    <h4>Strategic Foresight</h4>
+                                    <p>We anticipate market changes, preparing your brand for lasting growth and relevance in a fast-moving digital world.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="services" class="content-section">
+                    <div class="container">
+                        <div class="section-title-container animate-on-scroll fade-in">
+                            <h2><span class="shiny-gold-heading">Our Premier Expertise: Driving Digital Growth</span></h2>
+                        </div>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our complete range of luxury digital marketing services is designed to boost every aspect of your brand, ensuring strong, unified market impact.</p>
+                        <div class="services-grid">
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                                <div class="service-icon-wrapper">🔍</div>
+                                <h3>Premier SEO & Authority Content</h3>
+                                <p>Dominate search results. We position your brand as the leading authority with smart keyword strategies and engaging, high-value content.</p>
+                            </div>
+                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.1s">
+                                <div class="service-icon-wrapper">🎯</div>
+                                <h3>High-Impact Performance Marketing</h3>
+                                <p>Turn ad spend into significant returns. Our targeted campaigns capture the right audience and convert them into loyal customers, maximizing your ROI.</p>
+                            </div>
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                                <div class="service-icon-wrapper">📱</div>
+                                <h3>Luxury Social Media & Community Building</h3>
+                                <p>Create desire on exclusive social platforms. We build a captivating social presence with engaging content that grows an active community and drives results.</p>
+                            </div>
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <div class="service-icon-wrapper">🌐</div>
+                                <h3>Custom Luxury Web Design & Development</h3>
+                                <p>Your website, a stunning digital flagship. We create immersive, high-performing online experiences—beautifully designed and perfectly functional.</p>
+                            </div>
+                             <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.4s">
+                                <div class="service-icon-wrapper">💬</div>
+                                <h3>AI-Powered Client Engagement</h3>
+                                <p>Enhance client interactions with smart, 24/7 support. Our AI tools offer personalized communication, nurturing leads and providing top-tier service.</p>
+                            </div>
+                            <div class="service-card animate-on-scroll fade-in-up" data-io-delay="0.5s">
+                                <div class="service-icon-wrapper">💎</div>
+                                <h3>End-to-End Brand Scaling</h3>
+                                <p>True digital success needs a unified approach. We offer full brand strategy, sharp market analysis, and advanced analytics for total market leadership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="client-success" class="content-section client-success-section">
+                    <div class="container">
+                        <div class="section-title-container animate-on-scroll fade-in">
+                            <h2><span class="shiny-gold-heading">Real Impact: Client Success Stories</span></h2>
+                        </div>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">Our commitment to building digital legacies is shown in our clients' success. While we maintain strict confidentiality, these examples highlight the results we achieve.</p>
+
+                        <div class="testimonial-grid">
+                            <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                                <span class="testimonial-icon">💬</span>
+                                <p class="testimonial-quote"><em>"Golden Luxe Media didn't just meet expectations; they far surpassed them. Our online revenue experienced transformative growth in the first year, establishing us as the clear leader."</em></p>
+                                <p class="testimonial-attribution">- Priya Sharma, Founder, AuraGlow Jewels</p>
+                            </div>
+                            <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                                <span class="testimonial-icon">✨</span>
+                                <p class="testimonial-quote"><em>"Their strategic thinking was a game-changer. We now connect with our ideal high-net-worth clients in ways we hadn't imagined."</em></p>
+                                <p class="testimonial-attribution">- Arjun Varma, CMO, Elysian Voyages International</p>
+                            </div>
+                            <div class="testimonial-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <span class="testimonial-icon">🏆</span>
+                                <p class="testimonial-quote"><em>"Their dedication to understanding our unique brand was exceptional. Golden Luxe are true partners in achieving our digital goals."</em></p>
+                                <p class="testimonial-attribution">- Ananya Deshmukh, Director, Maison de Rêve Couture</p>
+                            </div>
+                        </div>
+
+                        <div class="recognition-strip animate-on-scroll fade-in" data-io-delay="0.4s">
+                            <h3>Strategies Informed by Industry-Leading Insights</h3>
+                            <div class="recognition-logos">
+                                <span>McKinsey Insights (Conceptual Application)</span>
+                                <span>HBR Principles (Strategic Frameworks)</span>
+                                <span>Luxury Institute Findings (Market Parallels)</span>
+                                <span>Google Best Practices (Quality Benchmark)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="content-section">
+                    <div class="container">
+                        <div class="section-title-container animate-on-scroll fade-in">
+                            <h2><span class="shiny-gold-heading">Case Studies: Demonstrating Success</span></h2>
+                        </div>
+                        <p class="section-intro-text animate-on-scroll fade-in" data-io-delay="0.1s">See how we've helped elite brands achieve significant growth and market leadership. These highlights showcase our custom strategies and commitment to impactful results.</p>
+                        <div class="projects-grid">
+                            <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.0s">
+                                <div class="project-card-icon">⭐</div>
+                                <h3>ROI Surge for a Premier Online Jeweler</h3>
+                                <p>Achieved 180% organic traffic increase & 75% online sales uplift via targeted SEO & CRO for a high-end e-commerce brand within 12 months.</p>
+                            </div>
+                            <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.15s">
+                                <div class="project-card-icon">🚀</div>
+                                <h3>Market Entry for an Exclusive Yacht Charter Co.</h3>
+                                <p>Secured top 3 search rankings & 300% qualified inquiry increase via digital brand positioning and targeted HNW lead generation.</p>
+                            </div>
+                            <div class="project-card animate-on-scroll fade-in-up" data-io-delay="0.3s">
+                                <div class="project-card-icon">💎</div>
+                                <h3>Digital Revival for a Parisian Couture House</h3>
+                                <p>Orchestrated a digital renaissance with a modern web experience & content strategy, leading to 50% social engagement growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="cta-final-section">
+                     <div class="container cta-content-area">
+                        <div class="animate-on-scroll fade-in">
+                            <h2><span class="shiny-gold-heading">Your Digital Dynasty Awaits. Let's Build It.</span></h2>
+                            <p class="cta-subtitle">The highest level of digital distinction is achievable. If your brand is ready for transformative growth and market leadership, connect with Golden Luxe Media for a confidential, strategic consultation.</p>
+                        </div>
+                        <h3 class="form-title animate-on-scroll fade-in" data-io-delay="0.1s">Begin Your Journey to Digital Supremacy</h3>
+                        <form action="#" method="POST" class="contact-form-embedded animate-on-scroll fade-in-up" data-io-delay="0.2s">
+                            <div class="form-input-group">
+                                <label for="contactName">Full Name</label>
+                                <input type="text" id="contactName" name="name" class="form-text-input" required placeholder="e.g., Sterling Archer">
+                            </div>
+                            <div class="form-input-group">
+                                <label for="contactEmail">Business Email</label>
+                                <input type="email" id="contactEmail" name="email" class="form-text-input" required placeholder="e.g., s.archer@luxecorp.com">
+                            </div>
+                            <div class="form-input-group">
+                                <label for="contactCompany">Company & Website</label>
+                                <input type="text" id="contactCompany" name="company_website" class="form-text-input" placeholder="e.g., Luxe Corp - https://luxecorp.com">
+                            </div>
+                            <div class="form-input-group">
+                                <label for="contactService">Primary Interest (Optional)</label>
+                                <select id="contactService" name="service" class="form-text-input">
+                                    <option value="">Select a Focus Area...</option>
+                                    <option value="seo_authority">Premier SEO & Authority Content</option>
+                                    <option value="performance_marketing">High-Impact Performance Marketing</option>
+                                    <option value="social_content">Luxury Social Media & Community</option>
+                                    <option value="web_dev_hosting">Custom Luxury Web Design</option>
+                                    <option value="conversational_ai">AI-Powered Client Engagement</option>
+                                    <option value="brand_amplification">End-to-End Brand Scaling</option>
+                                    <option value="full_strategy">Complete Digital Growth Strategy</option>
+                                </select>
+                            </div>
+                            <div class="form-input-group">
+                                <label for="contactMessage">Your Vision for Digital Growth</label>
+                                <textarea id="contactMessage" name="message" rows="5" class="form-textarea-input" required placeholder="Tell us about your brand's goals..."></textarea>
+                            </div>
+                            <div style="text-align: center;">
+                                <button type="submit" class="form-submit-button">Request Your Premier Consultation</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="site-footer">
+                 <div class="container">
+                    <svg class="footer-logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="circle" cx="50" cy="50" r="44"/>
+                        <text class="letter-g" x="50" y="70" font-size="60" text-anchor="middle">G</text>
+                    </svg>
+                    <div class="footer-social-links animate-on-scroll fade-in" data-io-delay="0.1s" style="margin: 1.5rem 0;">
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn">LI</a>
+                        <a href="#" aria-label="Instagram" title="Instagram">IG</a>
+                        <a href="#" aria-label="Behance" title="Behance">BE</a>
+                        <a href="#" aria-label="Clutch Reviews" title="Clutch Reviews">CL</a>
+                    </div>
+                    <p class="animate-on-scroll fade-in" data-io-delay="0.2s">© <span id="currentYear"></span> Golden Luxe Media. Architects of Digital Distinction.</p>
+                    <p class="footer-seo-text animate-on-scroll fade-in" data-io-delay="0.3s">Golden Luxe Media: Premier Digital Marketing for luxury brands. Expert SEO, Custom Web Design, High-ROI Performance Marketing, and Strategic Content for market leadership & HNW client engagement.</p>
+                </div>
+            </footer>
+
+        </div> <!-- END #lenis-content -->
+    </div> <!-- END #lenis-wrapper -->
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => { preloader.classList.add('loaded'); }, 1200);
+                });
+            }
+
+            function initializeLenis() {
+                if (typeof Lenis !== 'undefined') {
+                    const lenis = new Lenis({
+                        duration: 1.6,
+                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                        smoothWheel: true, wheelMultiplier: 0.9,
+                        smoothTouch: false, touchMultiplier: 1.8,
+                    });
+
+                    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+                    requestAnimationFrame(raf);
+
+                    const pageHeader = document.getElementById('pageHeader');
+                    const navToggleBtn = document.getElementById('navToggleBtn');
+                    const pageNav = document.getElementById('pageNav');
+
+                    if (navToggleBtn && pageNav) {
+                        navToggleBtn.addEventListener('click', () => {
+                            const isActive = pageNav.classList.toggle('active');
+                            navToggleBtn.setAttribute('aria-expanded', isActive);
+                            navToggleBtn.innerHTML = isActive ? '✕' : '☰';
+                        });
+                    }
+
+                    const navLinks = document.querySelectorAll('.main-nav a, .logo-link, .hero-cta-button');
+                    navLinks.forEach(link => {
+                        const targetId = link.getAttribute('href');
+                        if (targetId && targetId.startsWith('#') && targetId.length > 1 && document.querySelector(targetId)) {
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                let offsetVal = pageHeader ? -pageHeader.offsetHeight -10 : -80;
+                                if (targetId === "#hero") offsetVal = 0;
+
+                                lenis.scrollTo(targetId, { offset: offsetVal, duration: 2.0, easing: (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t) });
+
+                                if (pageNav && pageNav.classList.contains('active')) {
+                                    pageNav.classList.remove('active');
+                                    if (navToggleBtn) {
+                                        navToggleBtn.setAttribute('aria-expanded', 'false');
+                                        navToggleBtn.innerHTML = '☰';
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+                    const allSections = document.querySelectorAll('main section[id]');
+                    const mainNavLinks = document.querySelectorAll('.main-nav a');
+
+                    function updateActiveLinkOnScroll() {
+                        let currentSectionId = 'hero';
+                        const headerHeight = pageHeader ? pageHeader.offsetHeight : 70;
+                        const scrollPosition = lenis.scroll + (window.innerHeight * 0.4) + headerHeight;
+
+                        allSections.forEach(section => {
+                            const sectionTop = section.offsetTop;
+                            if (scrollPosition >= sectionTop) {
+                                currentSectionId = section.getAttribute('id');
+                            }
+                        });
+                        mainNavLinks.forEach(navLink => {
+                            navLink.classList.remove('active');
+                            if (navLink.getAttribute('href').substring(1) === currentSectionId) {
+                                navLink.classList.add('active');
+                            }
+                        });
+                    }
+
+                    if (pageHeader) {
+                        lenis.on('scroll', (e) => {
+                            pageHeader.classList.toggle('scrolled', e.scroll > 50);
+                            updateActiveLinkOnScroll();
+                        });
+                    }
+                    updateActiveLinkOnScroll();
+
+                } else {
+                    console.warn("Lenis library not fully available. Using fallback scroll.");
+                    setupFallbackScroll();
+                }
+            }
+
+            function setupFallbackScroll() {
+                const navToggleBtn = document.getElementById('navToggleBtn');
+                const pageNav = document.getElementById('pageNav');
+                if (navToggleBtn && pageNav) {
+                    navToggleBtn.addEventListener('click', () => {
+                        const isActive = pageNav.classList.toggle('active');
+                        navToggleBtn.setAttribute('aria-expanded', isActive);
+                        navToggleBtn.innerHTML = isActive ? '✕' : '☰';
+                    });
+                }
+
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    if (anchor.getAttribute('href').length > 1 && document.querySelector(anchor.getAttribute('href'))) {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const targetElement = document.querySelector(this.getAttribute('href'));
+                            if (targetElement) {
+                                const pageHeaderFallback = document.getElementById('pageHeader');
+                                let offset = pageHeaderFallback ? pageHeaderFallback.offsetHeight : 70;
+                                if (this.getAttribute('href') === '#hero') offset = 0;
+
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - offset,
+                                    behavior: 'smooth'
+                                });
+                                if (pageNav && pageNav.classList.contains('active')) {
+                                    pageNav.classList.remove('active');
+                                    if (navToggleBtn) {
+                                        navToggleBtn.setAttribute('aria-expanded', 'false');
+                                        navToggleBtn.innerHTML = '☰';
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+                const pageHeaderFallback = document.getElementById('pageHeader');
+                if (pageHeaderFallback) {
+                    window.addEventListener('scroll', () => {
+                         pageHeaderFallback.classList.toggle('scrolled', window.scrollY > 50);
+                    });
+                }
+            }
+
+            initializeLenis();
+
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                if (el.classList.contains('fade-in-up')) {
+                    el.style.transform = 'translateY(40px)';
+                }
+                let transitionProps = ['opacity 0.8s var(--transition-smooth)'];
+                if(el.classList.contains('fade-in-up')) {
+                    transitionProps.push('transform 0.8s var(--transition-smooth)');
+                }
+                el.style.transition = transitionProps.join(', ');
+            });
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.willChange = 'transform, opacity';
+                        const delay = entry.target.dataset.ioDelay;
+                        const applyVisibility = () => {
+                            entry.target.style.opacity = '1';
+                            if (entry.target.classList.contains('fade-in-up')) {
+                                entry.target.style.transform = 'translateY(0px)';
+                            }
+                        };
+
+                        if (delay) {
+                            setTimeout(applyVisibility, parseFloat(delay) * 1000);
+                        } else {
+                            applyVisibility();
+                        }
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            animatedElements.forEach(el => observer.observe(el));
+
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+
+            const contactForm = document.querySelector('.contact-form-embedded');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (event) => { // Removed async
+                    event.preventDefault();
+                    const submitButton = contactForm.querySelector('.form-submit-button');
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.textContent = 'Preparing Email...';
+                    submitButton.disabled = true;
+
+                    let statusMessageEl = contactForm.querySelector('.form-status-message');
+                    if (!statusMessageEl) {
+                        statusMessageEl = document.createElement('p');
+                        statusMessageEl.className = 'form-status-message';
+                        statusMessageEl.style.textAlign = 'center';
+                        statusMessageEl.style.marginTop = '1rem';
+                        statusMessageEl.style.fontSize = '0.9rem';
+                        statusMessageEl.style.fontWeight = '500';
+                        const buttonContainer = submitButton.closest('div');
+                        if (buttonContainer && buttonContainer.parentNode) {
+                            buttonContainer.parentNode.insertBefore(statusMessageEl, buttonContainer.nextSibling);
+                        } else {
+                            contactForm.insertBefore(statusMessageEl, submitButton.nextSibling);
+                        }
+                    }
+                    statusMessageEl.textContent = '';
+                    statusMessageEl.style.color = 'var(--color-text-secondary)';
+
+                    const formData = new FormData(contactForm);
+                    const name = formData.get('name') || 'N/A';
+                    const email = formData.get('email') || 'N/A';
+                    const company_website = formData.get('company_website') || 'N/A';
+                    const service = formData.get('service') || 'N/A'; // Will be empty string if not selected, or "N/A" if not present
+                    const message = formData.get('message') || 'No message provided.';
+
+                    const emailTo = 'assistant.of.keren.glm@zohomail.in';
+                    const emailSubject = `Contact Form Submission from ${name} (${company_website !== 'N/A' ? company_website.split(' - ')[0] : email})`;
+
+                    const emailBody = `
+New Contact Form Submission:
+
+Name: ${name}
+Business Email: ${email}
+Company & Website: ${company_website}
+Primary Interest: ${service || 'Not specified'}
+
+Message:
+${message}
+
+----------------------------------
+This email was generated from the contact form on Golden Luxe Media website.
+                    `;
+
+                    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody.trim())}`;
+
+                    // Attempt to open mail client
+                    // Note: Mailto links have length limitations (around 2000 characters for GET, which this emulates).
+                    // Very long messages might be truncated or fail to open in some email clients/browsers.
+                    try {
+                        window.location.href = mailtoLink;
+                        statusMessageEl.textContent = 'Your email client should open. Please complete and send the email. If it doesn\'t open, please copy the details manually.';
+                        statusMessageEl.style.color = 'var(--color-gold-highlight)';
+                        contactForm.reset(); // Reset form fields
+                    } catch (e) {
+                        console.error("Error opening mailto link:", e);
+                        statusMessageEl.textContent = 'Could not open email client. Please copy details or try again.';
+                        statusMessageEl.style.color = '#E74C3C';
+                    }
+
+
+                    // Restore button state after a short delay
+                    setTimeout(() => {
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                        // Clear status message after a longer delay
+                        setTimeout(() => {
+                            if (statusMessageEl) statusMessageEl.textContent = '';
+                        }, 7000);
+                    }, 1500); // Delay to allow mail client to open
+                });
+            }
+        });
+    </script>
+</body>
+</html>
